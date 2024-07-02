@@ -65,28 +65,27 @@
 
           </ul>
         </nav>
-
-        <button class="header__burger burger">
-          <div class="burger__open-btn">
-            <svg width="37" height="11" viewBox="0 0 37 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1H36" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-              <path d="M1 7H36" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </div>
-
-          <div class="burger__close-btn">
-            <svg width="37" height="11" viewBox="0 0 37 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1H36" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-              <path d="M1 9.0957L18.1193 5.4654L36 9.26562" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </div>
-
-        </button>
       </div>
-
+      
       <div class="header__contacts contacts">
         <a href="tel:8 900 362 52 69" class="contacts__item contacts__item_phone">8 900 362 52 69</a>
       </div>
+      <button class="header__burger burger">
+        <div class="burger__open-btn">
+          <svg width="37" height="11" viewBox="0 0 37 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1H36" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
+            <path d="M1 7H36" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+
+        <div class="burger__close-btn">
+          <svg width="37" height="11" viewBox="0 0 37 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1H36" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
+            <path d="M1 9.0957L18.1193 5.4654L36 9.26562" stroke="#555A5E" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+
+      </button>
     </div>
   </div>
 </header>
@@ -173,150 +172,204 @@
 
   <footer class="footer">
   <div class="container footer__container">
-    <!-- <div class="footer__top"> -->
-    <div class="footer__logo logo">
-      <!-- !!!!!!!!!!!!!!!! возможно надо переименовать в index.html: -->
-      <a href="index.html" class="logo__link">
-        <img class="logo__ecoteh" width="241" height="45" src="img/ecoteh.png" alt="Логотип Сибирь">
-      </a>
-      <a href="#" class="logo__link">
-        <img class="logo__sk" width="241" height="45" src="img/sk.png" alt="Логотип Сибирь">
-      </a>
-    </div>
-    <!-- </div> -->
+    <div class="footer__top-block">
 
-    <div class="footer__contacts-block contacts-block">
+      <form action="" class="footer__form form">
+        <h3 class="form__title">
+          Заказать звонок
+        </h3>
+        <p class="form__desc">
+          Оставьте ваши данные и наш менеджер свяжется с вами
+        </p>
+        <button type="submit" class="btn btn_green btn_reset form__btn">
+
+        </button>
+
+        <div class="form__agreement-wrap">
+          <span class="form__agreement-text">
+            Нажимая кнопку «Отправить», вы соглашаетесь с
+          </span>
+          <a class="form__agreement-link" href="agreement.html" target="_blank">
+            условиями обработки персональных данных
+          </a>
+        </div>
+        
+      </form>
+      <div class="footer__img-wrap">
+        <img src="img/footer-img.jpg" alt="">
+
+      </div>
+      <div>
+
+      </div>
+
+
+    </div>
+
+
+    <button class="btn btn_w_167 btn_white btn_reset footer__btn popup-link" href="#popup-form">
+      Отправить заявку
+    </button>
+
+    <div class="footer__middle-block">
+
       <div class="footer__contacts contacts">
-        <a href="tel:+7 (3452) 55-11-30" class="contacts__item contacts__item_phone">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M6.34404 1H3.85612C1.91853 1 0.529257 2.83418 1.14943 4.67221C2.389 8.34581 4.0559 11.6003 6.2278 13.7722C8.3997 15.9441 11.6542 17.611 15.3278 18.8505C17.1658 19.4708 19 18.0815 19 16.1439V13.6555C19 12.9433 18.614 12.2871 17.9915 11.9409L15.824 10.7359L15.6668 10.6575C15.1341 10.4209 14.52 10.4324 13.9933 10.6959L12.0106 11.6861L11.9635 11.6714C11.8852 11.6459 11.7972 11.6152 11.7009 11.5788C11.208 11.3926 10.7142 11.1326 10.2569 10.7897C10.0585 10.641 9.87092 10.4793 9.6958 10.3042C9.51851 10.1269 9.35484 9.93672 9.20431 9.73532C8.86264 9.27817 8.60281 8.78441 8.41608 8.29148L8.3231 8.02871L8.30767 7.98022L9.29857 6.00051C9.58809 5.42155 9.57332 4.73697 9.25912 4.17097L8.05927 2.00961C7.7133 1.38649 7.05669 1 6.34404 1Z"
-              stroke="#2FA7BE" stroke-width="2" />
-          </svg>
-          +7 (3452) 55-11-30
+        <a href="tel:8 900 362 52 69" class="contacts__item contacts__item_phone">
+          8 900 362 52 69
         </a>
-        <a href="mailto:ecoteh.72@gmail.com" class="contacts__item contacts__item_email">
-          <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M5.5 5L13 8.875L20.5 5M22.6 1H3.4C2.08 1 1.012 2.0125 1.012 3.25L1 16.75C1 17.9875 2.08 19 3.4 19H22.6C23.92 19 25 17.9875 25 16.75V3.25C25 2.0125 23.92 1 22.6 1Z"
-              stroke="#2FA7BE" stroke-width="2" stroke-linecap="round" />
-          </svg>
-          ecoteh.72@gmail.com
+        <a href="mailto:info@sibir.com" class="contacts__item contacts__item_email">
+          info@sibir.com
         </a>
+        <p class="contacts__item contacts__item_address">
+          Россия, Тюмень, ул. Клары Цеткин 61, к2
+          Ежедневно: 10:00-17:00
+        </p>
       </div>
 
-      <div class="footer__social social">
-        <a href="#" class="social__link">
-          <svg width="34" height="32" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M13 27.1714L13.5 19.8567C13.5 19.8567 27.5 8.23705 27.5 7.66559C27.5 7.09413 26.5 7.66562 26.5 7.66562L9.5 17.9061L2 15.9556C2 15.9556 1 15.5189 1 14.9803C1 14.4416 2 14.005 2 14.005L30.5 3.27683C30.5 3.27683 31.8613 2.65396 32.5 3.27683C32.7285 3.49969 33 3.76448 33 4.25212C33 4.25212 28.5 27.659 27.5 28.6343C27 29.1219 26.5 29.1219 25.5 28.6343C24.6887 28.2387 18 23.2702 18 23.2702L14.5 26.6837C14 27.1713 13.5001 27.1713 13.0001 27.1714H13Z"
-              stroke="#2FA7BE" stroke-width="2" />
-          </svg>
-        </a>
-        <a href="#" class="social__link">
-          <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M16 29.5333C23.732 29.5333 30 23.2579 30 15.5167C30 7.77548 23.732 1.5 16 1.5C8.26801 1.5 2 7.77548 2 15.5167C2 18.6504 3.02717 21.544 4.7628 23.8782L2 30.5L9.24138 27.7948C11.2451 28.9027 13.549 29.5333 16 29.5333ZM12.1086 6.53244C12.588 7.00321 12.8223 7.34826 13.5469 8.41559C14.2717 9.48307 14.0266 10.2991 12.8223 10.9877C12.6859 11.0657 12.5343 11.1214 12.3795 11.1781C12.0087 11.3141 11.62 11.4567 11.3808 11.9295C11.0417 12.5996 12.795 15.0557 14.7403 17.1086C16.6583 18.9919 19.0558 20.4044 19.5322 20.4045C20.0799 20.4046 20.2403 19.9699 20.4187 19.4864C20.5454 19.1433 20.6811 18.7756 20.9707 18.5212C21.4739 18.0791 22.4123 17.5794 22.8918 18.0503C23.528 18.675 23.7898 18.9315 23.9664 19.1044C24.1894 19.3229 24.2762 19.408 24.8098 19.9336C25.401 20.516 25.2893 21.3461 24.3272 22.2878C23.4376 23.1586 22.6559 23.525 21.4533 23.7003C20.3693 23.8583 19.2847 23.4251 18.0318 22.9247C17.8947 22.8699 17.7556 22.8143 17.6142 22.7587C14.7638 21.6358 13.3435 20.3698 11.3808 18.0503C11.3074 17.9636 11.2351 17.8784 11.164 17.7945C9.52296 15.8591 8.48681 14.6371 8.02426 11.9295C8.00477 11.8154 7.98066 11.6952 7.95543 11.5696C7.75135 10.5529 7.47439 9.17315 8.98326 7.69194C9.46294 7.22105 11.3808 5.81777 12.1086 6.53244Z"
-              stroke="#2FA7BE" stroke-width="2" />
-          </svg>
-        </a>
+      <div class="footer__nav-wrap">
+        <nav class="nav footer__nav">
+          <ul class="nav__list">
+
+            <li class="nav__item">
+              <a href="o-proekte.html" class="nav__link">
+                <p class="nav__text">
+                  О проекте
+                </p>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="planirovki.html" class="nav__link">
+                <p class="nav__text">
+                  Планировки
+                </p>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="mestopologenie.html" class="nav__link">
+                <p class="nav__text">
+                  Местоположение
+                </p>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="kontakty.html" class="nav__link">
+                <p class="nav__text">
+                  Контакты
+                </p>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+        <nav class="nav footer__nav">
+          <ul class="nav__list">
+
+            <li class="nav__item">
+              <a href="o-proekte.html" class="nav__link">
+                <p class="nav__text">
+                  О проекте
+                </p>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="planirovki.html" class="nav__link">
+                <p class="nav__text">
+                  Планировки
+                </p>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="mestopologenie.html" class="nav__link">
+                <p class="nav__text">
+                  Местоположение
+                </p>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="kontakty.html" class="nav__link">
+                <p class="nav__text">
+                  Контакты
+                </p>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+
+        <nav class="nav footer__nav">
+          <ul class="nav__list">
+
+            <li class="nav__item">
+              <a href="o-proekte.html" class="nav__link">
+                <p class="nav__text">
+                  О проекте
+                </p>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="planirovki.html" class="nav__link">
+                <p class="nav__text">
+                  Планировки
+                </p>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="mestopologenie.html" class="nav__link">
+                <p class="nav__text">
+                  Местоположение
+                </p>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="kontakty.html" class="nav__link">
+                <p class="nav__text">
+                  Контакты
+                </p>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
       </div>
 
-      <button class="btn btn_w_167 btn_white btn_reset footer__btn popup-link" href="#popup-form">
-        Отправить заявку
-      </button>
     </div>
-
-
-    <nav class="nav footer__nav">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a href="index.html" class="nav__link nav__link_footer">
-            <p class="nav__text">
-              Главная
-            </p>
-          </a>
-        </li>
-        <li class="nav__item">
-          <div class="nav__dot"></div>
-        </li>
-        <li class="nav__item">
-          <a href="catalog.html" class="nav__link nav__link_footer">
-            <p class="nav__text">
-              Каталог
-            </p>
-          </a>
-        </li>
-        <li class="nav__item">
-          <div class="nav__dot"></div>
-        </li>
-        <li class="nav__item">
-          <a href="utelizaciya-shin.html" class="nav__link nav__link_footer">
-            <p class="nav__text">
-              Утилизация шин
-            </p>
-          </a>
-        </li>
-        <li class="nav__item">
-          <div class="nav__dot"></div>
-        </li>
-        <li class="nav__item">
-          <a href="o-companii.html" class="nav__link nav__link_footer">
-            <p class="nav__text">
-              О компании
-            </p>
-          </a>
-        </li>
-        <li class="nav__item">
-          <div class="nav__dot"></div>
-        </li>
-        <li class="nav__item">
-          <a href="novosti.html" class="nav__link nav__link_footer">
-            <p class="nav__text">
-              Новости
-            </p>
-          </a>
-        </li>
-        <li class="nav__item">
-          <div class="nav__dot"></div>
-        </li>
-        <li class="nav__item">
-          <a href="portfolio.html" class="nav__link nav__link_footer">
-            <p class="nav__text">
-              Портфолио
-            </p>
-          </a>
-        </li>
-        <li class="nav__item">
-          <div class="nav__dot"></div>
-        </li>
-        <li class="nav__item">
-          <a href="kontakty.html" class="nav__link nav__link_footer">
-            <p class="nav__text">
-              Контакты
-            </p>
-          </a>
-        </li>
-      </ul>
-    </nav>
 
 
     <div class="footer__bottom-block">
-      <div class="footer__policy-block">
-        <div class="footer__copyright copyright">
-          <p class="copyright__text">
-            © «Сибирь», 2010 - 2024
-          </p>
-          <p class="copyright__text">
-            Все права защищены
-          </p>
-        </div>
 
-        <a href="./policy.html" class="footer__policy" target="_blank">
-          Политика конфиденциальности
+      <div class="footer__logo logo">
+        <a href="index.html" class="logo__link">
+          <img class="logo__ecoteh" width="241" height="45" src="img/logo.svg" alt="Логотип Сибирь">
         </a>
       </div>
 
+      <p class="copyright__text">
+        © 2024, ООО СЗ «Сибирь»
+      </p>
+
+      <div class="footer__info-links">
+        <a href="./policy.html" class="footer__policy" target="_blank">
+          Политика конфиденциальности
+        </a>
+        <a href="https://xn--80az8a.xn--d1aqf.xn--p1ai/%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D1%8B/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3-%D0%BD%D0%BE%D0%B2%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BA/%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82/60004"
+          class="footer__policy" target="_blank">
+          Проектные декларации
+        </a>
+      </div>
+
+      <button class="btn btn_white btn_reset footer__btn popup-link" href="#popup-form">
+        Форма уведомления
+      </button>
 
       <a href="https://ww.net.ru/" class="footer__developer developer" target="_blank">
         <svg width="53" height="30" viewBox="0 0 53 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -360,10 +413,20 @@
             d="M40.1472 15.6508L32.3588 22.1366H27.6792L40.1472 11.7516L52.6152 22.1366H47.9358L40.1472 15.6508Z"
             fill="#828282" />
         </svg>
+        <p class="developer__text">
+          Сайт разработан
+          DIGITAL STUDIO WW
+        </p>
       </a>
+
+      <p class="footer__desc">
+        Любая информация, представленная на данном сайте, носит исключительно информационный характер, не является публичной офертой, определяемой положениями статьи 437 ГК РФ.
+      </p>
 
 
     </div>
+
+
   </div>
 
   <div class="cookie">

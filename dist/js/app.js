@@ -2,7 +2,6 @@ Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
 
-
 //подсветка активного пункта меню:---------------------------------------------------------
 const body = document.querySelector("body");
 const page = body.getAttribute("data-page");
@@ -157,16 +156,18 @@ if (previews) {
 // -------------------------------------------- start корзина: ---------------------------------------------
 
 const headerCartBtn = document.querySelector(".btn__cart");
-function setCartActive() {
-  headerCartBtn.classList.add("btn__cart_active");
+if (headerCartBtn) {
+  function setCartActive() {
+    headerCartBtn.classList.add("btn__cart_active");
+  }
+  function setCartEmpty() {
+    headerCartBtn.classList.remove("btn__cart_active");
+  }
+  headerCartBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "cart.html";
+  });
 }
-function setCartEmpty() {
-  headerCartBtn.classList.remove("btn__cart_active");
-}
-headerCartBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  window.location.href = "cart.html";
-});
 
 const cartItemDelBtns = document.querySelectorAll(".card__del-btn");
 if (cartItemDelBtns) {
@@ -628,7 +629,6 @@ jQuery(($) => {
 
 jQuery(($) => {
   if ($(window).width() > 0) {
-
     $(".owl-carousel-index").owlCarousel({
       loop: true,
       margin: 16,
@@ -670,8 +670,7 @@ jQuery(($) => {
         0: {
           nav: false,
           margin: 5,
-          items: 1
-
+          items: 1,
 
           // items: window.screen.width / 360,
         },
@@ -679,7 +678,7 @@ jQuery(($) => {
           nav: false,
           margin: 5,
 
-          items: 1.3
+          items: 1.3,
 
           // items: window.screen.width / 360,
         },
@@ -687,32 +686,32 @@ jQuery(($) => {
           nav: false,
           margin: 5,
 
-          items: 1.7
+          items: 1.7,
 
           // items: window.screen.width / 360,
         },
         650: {
           nav: false,
-          items: 2.2
+          items: 2.2,
 
           // items: window.screen.width / 360,
         },
         800: {
           nav: false,
-          items: 2.5
+          items: 2.5,
           // items: window.screen.width / 420,
         },
         900: {
           nav: false,
-          items: 3
+          items: 3,
           // items: window.screen.width / 420,
         },
         1200: {
           nav: false,
-          items: 4
+          items: 4,
         },
         1350: {
-          items: 4
+          items: 4,
         },
       },
     });
@@ -737,12 +736,12 @@ jQuery(($) => {
           margin: 13,
         },
         600: {
-        nav: false,
-        items: 4,
-        margin: 15,
+          nav: false,
+          items: 4,
+          margin: 15,
         },
         1050: {
-          items: 4
+          items: 4,
         },
       },
     });
@@ -764,7 +763,7 @@ jQuery(($) => {
           nav: false,
           // margin: 5,
           items: 1,
-      autoWidth:true,
+          autoWidth: true,
 
           // margin: 13,
         },
@@ -802,21 +801,19 @@ jQuery(($) => {
           nav: false,
           items: 2.4,
           // margin: 15,
-          },
+        },
         1050: {
-        nav: false,
-        items: 2.7,
-        // margin: 15,
+          nav: false,
+          items: 2.7,
+          // margin: 15,
         },
         1180: {
-          items: 3
+          items: 3,
         },
       },
     });
-
   }
 });
-
 
 // -------------------------------------------- end OWL ---------------------------------------------
 
@@ -915,52 +912,48 @@ if (goodsCartBtn) {
 // -------------------------------------------- start сертификаты: ---------------------------------------------
 // -------------------------------------------- end корзина ---------------------------------------------
 
-
 $("#phone_1").mask("+7(999) 999 99 99");
 $("#phone_2").mask("+7(999) 999 99 99");
 
-
 // -------------------------------------------- start Куки: ---------------------------------------------
-function setCookie(name, value, lifetimeDays=30, path="/") {
+function setCookie(name, value, lifetimeDays = 30, path = "/") {
   var expires = "";
   if (lifetimeDays) {
-      var date = new Date();
-      date.setTime(date.getTime() + (lifetimeDays*24*60*60*1000));
-      expires = "; expires=" + date.toUTCString();
+    var date = new Date();
+    date.setTime(date.getTime() + lifetimeDays * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
   }
-  document.cookie = name + "=" + (value || "")  + expires + "; path=" + path;
+  document.cookie = name + "=" + (value || "") + expires + "; path=" + path;
 }
 
 function getCookie(name) {
   var nameEQ = name + "=";
   var cookies = document.cookie.split(";");
-  for(var i=0; i < cookies.length; i++) {
-      var c = cookies[i];
-      while (c.charAt(0) == " ")
-          c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0)
-          return c.substring(nameEQ.length, c.length);
+  for (var i = 0; i < cookies.length; i++) {
+    var c = cookies[i];
+    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
   }
   return null;
 }
 
 if (!getCookie("CookiePolicyAccepted")) {
-  $('.cookie').show();
+  $(".cookie").show();
 } else {
-  $('.cookie').hide();
+  $(".cookie").hide();
 }
 
 function acceptCookiePolicy() {
   console.log("acceptCookiePolicy");
   setCookie("CookiePolicyAccepted", true);
-  $('.cookie').fadeTo(500, 0);
+  $(".cookie").fadeTo(500, 0);
   setTimeout(() => {
-    $('.cookie').hide();
+    $(".cookie").hide();
   }, 500);
 }
 function closeCookiePolicyNotification() {
   console.log("closeCookiePolicyNotification");
-  $('.cookie').fadeOut(300);
+  $(".cookie").fadeOut(300);
 }
 // -------------------------------------------- end Куки ---------------------------------------------
 // -------------------------------------------- start Отзывы: ---------------------------------------------
