@@ -174,16 +174,46 @@
   <div class="container footer__container">
     <div class="footer__top-block">
 
-      <form action="" class="footer__form form">
+      <form class="footer__form form" id="footer-form" action="#" method="post" enctype="multipart/form-data">
         <h3 class="form__title">
           Заказать звонок
         </h3>
         <p class="form__desc">
           Оставьте ваши данные и наш менеджер свяжется с вами
         </p>
-        <button type="submit" class="btn btn_green btn_reset form__btn">
 
+        <div class="form__label-block">
+          <label class="form__label">
+            <span class="form__label-text">
+              Имя
+            </span>
+            <span class="form__label-star">
+              *
+            </span>
+  
+            <input class="form__input" type="text" name="name" placeholder="Как вас зовут?" required>
+          </label>
+          <label class="form__label">
+            <span class="form__label-text">
+              Телефон
+            </span>
+            <span class="form__label-star">
+              *
+            </span>
+            <input class="form__input" type="tel" name="phone" placeholder="Номер телефона" required>
+          </label>
+          <label class="form__label">
+            <span class="form__label-text">
+              E-mail
+            </span>
+            <input class="form__input" type="email" name="email" placeholder="E-mail">
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn_green btn_reset form__btn">
+          Отправить
         </button>
+
 
         <div class="form__agreement-wrap">
           <span class="form__agreement-text">
@@ -193,7 +223,7 @@
             условиями обработки персональных данных
           </a>
         </div>
-        
+
       </form>
       <div class="footer__img-wrap">
         <img src="img/footer-img.jpg" alt="">
@@ -205,11 +235,6 @@
 
 
     </div>
-
-
-    <button class="btn btn_w_167 btn_white btn_reset footer__btn popup-link" href="#popup-form">
-      Отправить заявку
-    </button>
 
     <div class="footer__middle-block">
 
@@ -228,12 +253,15 @@
 
       <div class="footer__nav-wrap">
         <nav class="nav footer__nav">
+          <span class="nav__title">
+            Недвижимость
+          </span>
           <ul class="nav__list">
 
             <li class="nav__item">
               <a href="o-proekte.html" class="nav__link">
                 <p class="nav__text">
-                  О проекте
+                  Проекты
                 </p>
               </a>
             </li>
@@ -241,7 +269,7 @@
             <li class="nav__item">
               <a href="planirovki.html" class="nav__link">
                 <p class="nav__text">
-                  Планировки
+                  Коммерция
                 </p>
               </a>
             </li>
@@ -249,7 +277,7 @@
             <li class="nav__item">
               <a href="mestopologenie.html" class="nav__link">
                 <p class="nav__text">
-                  Местоположение
+                  Способ покупки
                 </p>
               </a>
             </li>
@@ -257,7 +285,7 @@
             <li class="nav__item">
               <a href="kontakty.html" class="nav__link">
                 <p class="nav__text">
-                  Контакты
+                  Акции
                 </p>
               </a>
             </li>
@@ -266,12 +294,15 @@
         </nav>
 
         <nav class="nav footer__nav">
+          <span class="nav__title">
+            Квартиры
+          </span>
           <ul class="nav__list">
 
             <li class="nav__item">
               <a href="o-proekte.html" class="nav__link">
                 <p class="nav__text">
-                  О проекте
+                  Студии
                 </p>
               </a>
             </li>
@@ -279,7 +310,7 @@
             <li class="nav__item">
               <a href="planirovki.html" class="nav__link">
                 <p class="nav__text">
-                  Планировки
+                  1-комнатные
                 </p>
               </a>
             </li>
@@ -287,7 +318,7 @@
             <li class="nav__item">
               <a href="mestopologenie.html" class="nav__link">
                 <p class="nav__text">
-                  Местоположение
+                  2-комнатные
                 </p>
               </a>
             </li>
@@ -295,7 +326,7 @@
             <li class="nav__item">
               <a href="kontakty.html" class="nav__link">
                 <p class="nav__text">
-                  Контакты
+                  3-комнатные
                 </p>
               </a>
             </li>
@@ -304,12 +335,15 @@
         </nav>
 
         <nav class="nav footer__nav">
+          <span class="nav__title">
+            о компании
+          </span>
           <ul class="nav__list">
 
             <li class="nav__item">
               <a href="o-proekte.html" class="nav__link">
                 <p class="nav__text">
-                  О проекте
+                  О компании
                 </p>
               </a>
             </li>
@@ -317,7 +351,7 @@
             <li class="nav__item">
               <a href="planirovki.html" class="nav__link">
                 <p class="nav__text">
-                  Планировки
+                  Новости
                 </p>
               </a>
             </li>
@@ -325,7 +359,7 @@
             <li class="nav__item">
               <a href="mestopologenie.html" class="nav__link">
                 <p class="nav__text">
-                  Местоположение
+                  Сотрудничество
                 </p>
               </a>
             </li>
@@ -340,24 +374,26 @@
 
           </ul>
         </nav>
+
+
       </div>
 
     </div>
-
 
     <div class="footer__bottom-block">
 
       <div class="footer__logo logo">
         <a href="index.html" class="logo__link">
-          <img class="logo__ecoteh" width="241" height="45" src="img/logo.svg" alt="Логотип Сибирь">
+          <img class="logo__ecoteh" width="116" height="43" src="img/logo-white.svg" alt="Логотип Сибирь">
         </a>
       </div>
 
-      <p class="copyright__text">
+      <p class="footer__copyright">
         © 2024, ООО СЗ «Сибирь»
       </p>
 
       <div class="footer__info-links">
+      <!-- <div class="footer__info-links"> -->
         <a href="./policy.html" class="footer__policy" target="_blank">
           Политика конфиденциальности
         </a>
@@ -420,7 +456,8 @@
       </a>
 
       <p class="footer__desc">
-        Любая информация, представленная на данном сайте, носит исключительно информационный характер, не является публичной офертой, определяемой положениями статьи 437 ГК РФ.
+        Любая информация, представленная на данном сайте, носит исключительно информационный характер, не является
+        публичной офертой, определяемой положениями статьи 437 ГК РФ.
       </p>
 
 
