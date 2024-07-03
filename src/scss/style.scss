@@ -3301,6 +3301,33 @@ a {
     }
   }
 
+  .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 253px 820px;
+    gap: 60px;
+
+    .about__content-wrap {
+      display: grid;
+      grid-template-columns: 60% 1fr;
+      grid-template-rows: 19px 1fr;
+      gap: 40px;
+
+      .about__desc {
+      }
+      .about__title {
+      }
+      .about__text {
+      }
+
+    }
+
+    .about__img {
+      grid-column: 2 span;
+    }
+
+  }
+
   // --------------- slider start ---------------
 
   .glavnaya__section_slider {
