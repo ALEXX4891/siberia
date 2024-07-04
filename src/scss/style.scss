@@ -2942,6 +2942,7 @@ a {
   height: 80px;
   z-index: 100;
   background-color: rgba($color-white, 0.8);
+  backdrop-filter: blur(22px);
 
   .header__nav {
     .nav__list {
@@ -3776,7 +3777,7 @@ a {
 
                 &_active {
                   color: #000;
-                  border-color: red;
+                  border-color: #56693E;
                   // border-bottom: 2px solid red;
                 }
               }
