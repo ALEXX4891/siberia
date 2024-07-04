@@ -630,10 +630,13 @@ jQuery(($) => {
 jQuery(($) => {
   if ($(window).width() > 0) {
     $(".owl-carousel-index").owlCarousel({
+      // screenLeft:true,
+      // startPosition: 1,
+
       loop: false,
-      center: true,
+      // center: true,
       margin: 20,
-      items: 4.5,
+      items: 4,
       nav: true,
       // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
       dots: false,
@@ -641,6 +644,7 @@ jQuery(($) => {
       autoplay: false,
       smartSpeed: 1000,
       autoplayTimeout: 5000,
+      stagePadding: 104, // позволяет задать начальное положение первого слайда
       responsive: {
         0: {
           nav: false,
