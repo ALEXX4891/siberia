@@ -959,6 +959,28 @@ function closeCookiePolicyNotification() {
 // -------------------------------------------- start Отзывы: ---------------------------------------------
 
 // -------------------------------------------- end Отзывы ---------------------------------------------
-// -------------------------------------------- start Отзывы: ---------------------------------------------
+// -------------------------------------------- start Селект: ---------------------------------------------
 
-// -------------------------------------------- end Отзывы ---------------------------------------------
+const selects = document.querySelectorAll(".my-select");
+console.log(selects);
+if (selects) {
+  selects.forEach((select) => {
+    select.addEventListener("click", (event) => {
+      console.log("click");
+      select.classList.toggle("my-select_open");
+    });
+    const selectOptions = select.querySelectorAll(".my-select__item");
+    selectOptions.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        const input = select.querySelector(".my-select__text");
+        event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+        input.innerHTML = item.innerHTML;
+        input.classList.add("my-select__text_active");
+        input.setAttribute("data-id", item.getAttribute("data-id"));
+        select.classList.remove("my-select_open");
+        select.classList.add("my-select_active");
+      });
+    });
+  });
+}
+// -------------------------------------------- end Селект ---------------------------------------------

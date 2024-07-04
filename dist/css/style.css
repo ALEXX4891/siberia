@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: Inter;
   font-display: swap;
@@ -998,43 +999,13 @@ a {
 }
 
 .title {
-  position: relative;
-  padding: 15px 90px;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 39.14px;
-  text-align: center;
-  color: #555a5e;
-  margin: 0 auto;
-  width: max-content;
-  max-width: 100%;
-  text-transform: uppercase;
-  background-image: url(../img/bg-title.svg);
-  background-repeat: no-repeat;
-  background-position: top left;
-  background-size: 180px;
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48.41px;
+  text-align: left;
+  color: #363636;
 }
-@media (max-width: 1280px) {
-  .title {
-    padding: 15px 60px;
-  }
-}
-@media (max-width: 760px) {
-  .title {
-    font-family: Commissioner;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24.46px;
-    background-size: 80px;
-    padding: 5px 42px;
-  }
-}
-@media (max-width: 400px) {
-  .title {
-    width: 100%;
-  }
-}
-
 .link {
   font-size: 22px;
   font-weight: 500;
@@ -2359,9 +2330,6 @@ a {
   color: rgba(255, 255, 255, 0.1);
   transition: color 0.3s ease-in-out;
 }
-.footer .footer__container .footer__middle-block .footer__nav-wrap .footer__nav .nav__list .nav__link:hover {
-  color: #fff;
-}
 .footer .footer__container .footer__bottom-block {
   padding-top: 25px;
   grid-row: 4/5;
@@ -2487,7 +2455,7 @@ a {
 .glavnaya .main .about .about__container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 253px 820px;
+  grid-template-rows: minmax(253px, auto) 820px;
   gap: 60px 0;
 }
 .glavnaya .main .about .about__container .about__content-wrap {
@@ -2515,14 +2483,14 @@ a {
   color: #56693e;
 }
 .glavnaya .main .about .about__container .about__content-wrap .about__text-block {
-  align-items: end;
   grid-area: 2/2/3/3;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
+  grid-template-rows: 24px auto 12px 1fr;
+  align-items: start;
 }
 .glavnaya .main .about .about__container .about__content-wrap .about__text-block .about__text {
+  grid-row: 2/3;
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
@@ -2532,7 +2500,7 @@ a {
   letter-spacing: -1.4px;
 }
 .glavnaya .main .about .about__container .about__content-wrap .about__text-block .about__text:last-child {
-  align-self: start;
+  grid-row: 4/5;
 }
 .glavnaya .main .about .about__container .about__img-wrap {
   grid-column: 2 span;
@@ -2599,9 +2567,135 @@ a {
   height: 36px;
   left: 1009px;
   top: 155px;
-  background: #748D55;
+  background: #748d55;
   border-radius: 5px;
   color: white;
+}
+.glavnaya .main .choice {
+  grid-row: 5/6;
+}
+.glavnaya .main .choice .my-select {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3px;
+  width: 150px;
+  height: 50px;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 7px;
+  background: rgb(255, 255, 255);
+  padding: 8px 12px;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.glavnaya .main .choice .my-select .my-select__arrow {
+  width: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.glavnaya .main .choice .my-select .my-select_w_350 {
+  width: 350px;
+}
+.glavnaya .main .choice .my-select .my-select__wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2px;
+}
+.glavnaya .main .choice .my-select .my-select__placeholder {
+  color: rgba(21, 0, 0, 0.5);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+}
+.glavnaya .main .choice .my-select .my-select__text {
+  position: absolute;
+  top: 20px;
+  left: 11px;
+  color: rgb(34, 34, 34);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+  display: none;
+  white-space: nowrap;
+  width: 88%;
+  white-space: nowrap; /* Текст не переносится */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
+  text-overflow: ellipsis; /* Добавляем многоточие */
+}
+.glavnaya .main .choice .my-select .my-select__text_active {
+  display: block;
+}
+.glavnaya .main .choice .my-select .my-select__list {
+  position: absolute;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  /* высота выпадающего списка: */
+  height: 400px;
+  border: 1px solid #816f6f;
+  border-radius: 7px;
+  background: rgb(249, 249, 249);
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+  color: rgb(34, 34, 34);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+.glavnaya .main .choice .my-select .my-select__list_type-filter {
+  height: auto;
+}
+.glavnaya .main .choice .my-select .my-select__list .my-select__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 34px;
+  padding: 0 12px;
+}
+.glavnaya .main .choice .my-select .my-select__list .my-select__item:hover {
+  background: rgba(87, 0, 0, 0.2);
+}
+.glavnaya .main .choice .my-select .my-select__list .my-select__item:hover .checkbox__mark {
+  border: 1.06px solid rgb(255, 255, 255);
+}
+.glavnaya .main .choice .my-select .my-select:hover {
+  border: 1px solid rgb(140, 139, 139);
+  background: rgb(249, 249, 249);
+}
+.glavnaya .main .choice .my-select.my-select_open {
+  border: 1px solid rgb(140, 139, 139);
+  background: rgb(249, 249, 249);
+}
+.glavnaya .main .choice .my-select.my-select_open .my-select__list {
+  display: block;
+}
+.glavnaya .main .choice .my-select.my-select_open .my-select__arrow {
+  transform: rotate(180deg);
+}
+.glavnaya .main .choice .my-select .my-select_active .my-select__placeholder {
+  position: absolute;
+  font-size: 10px;
+  top: 8px;
+  left: 11px;
+}
+.glavnaya .main .choice .my-select .my-select__checkbox {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.glavnaya .main .choice .my-select .my-select__checkbox .checkbox__mark {
+  top: 0;
+  width: 17px;
+  height: 17px;
+  border: 1.06px solid rgb(210, 210, 210);
 }
 .glavnaya .glavnaya__section_slider {
   background: #f3fafc;
