@@ -1057,3 +1057,25 @@ if (selects) {
   }
 }
 // -------------------------------------------- end Селект ---------------------------------------------
+
+const plansItem = document.querySelectorAll(".plans__item");
+if (plansItem) {
+  plansItem.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      plansItem.forEach((item) => {
+        item.classList.remove("plans__item_active");
+      });
+      item.classList.add("plans__item_active");
+    });
+  });
+}
+
+// plans__filter-item
+const plansFilterItem = document.querySelectorAll(".plans__filter-item");
+if (plansFilterItem) {
+  plansFilterItem.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      item.classList.toggle("plans__filter-item_active");
+    });
+  });
+}
