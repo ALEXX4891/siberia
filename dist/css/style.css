@@ -2004,6 +2004,119 @@ a {
   text-transform: uppercase;
 }
 
+.select-frame {
+  max-width: 517.33px;
+  width: 100%;
+  min-height: 60px;
+  position: relative;
+  background: transparent;
+  padding: 8px 27px 8px 20px;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.select-frame .select__wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2px;
+}
+.select-frame .select__placeholder {
+  color: rgba(21, 0, 0, 0.5);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+}
+.select-frame .select__text {
+  position: absolute;
+  top: 20px;
+  left: 11px;
+  color: rgb(34, 34, 34);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+  display: none;
+  white-space: nowrap;
+  width: 88%;
+  white-space: nowrap; /* Текст не переносится */
+  overflow: hidden; /* Обрезаем всё за пределами блока */
+  text-overflow: ellipsis; /* Добавляем многоточие */
+}
+.select-frame .select__text_active {
+  display: block;
+}
+.select-frame .select__list {
+  position: absolute;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  /* высота выпадающего списка: */
+  height: auto;
+  border: 1px solid #816f6f;
+  border-radius: 7px;
+  background: rgb(249, 249, 249);
+  z-index: 1;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 110%;
+  color: rgb(34, 34, 34);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+.select-frame .select__list .select__list_type-filter {
+  height: auto;
+}
+.select-frame .select__list .select__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 34px;
+  padding: 0 12px;
+}
+.select-frame .select__list .select__item:hover {
+  background: rgba(87, 0, 0, 0.2);
+}
+.select-frame .select__list .select__item:hover .checkbox__mark {
+  border: 1.06px solid rgb(255, 255, 255);
+}
+.select-frame .select__list .select:hover {
+  border: 1px solid rgb(140, 139, 139);
+  background: rgb(249, 249, 249);
+}
+.select-frame.select_open {
+  border: 1px solid rgb(140, 139, 139);
+  background: rgb(249, 249, 249);
+}
+.select-frame.select_open .select__list {
+  display: block;
+}
+.select-frame.select_open .select__arrow {
+  transform: rotate(180deg);
+}
+.select-frame.select_active .select__placeholder {
+  display: none;
+}
+.select-frame .select__checkbox {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.select-frame .select__checkbox .checkbox__mark {
+  top: 0;
+  width: 17px;
+  height: 17px;
+  border: 1.06px solid rgb(210, 210, 210);
+}
+
 .runner-wraper {
   display: flex;
   flex-flow: column nowrap;
@@ -2408,7 +2521,7 @@ a {
 .glavnaya .main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 748px 120px auto 100px auto 100px auto 100px auto 100px auto;
+  grid-template-rows: 748px 120px auto 150px auto 100px auto 100px auto 100px auto;
 }
 .glavnaya .main .banner {
   grid-row: 1/2;
@@ -2574,128 +2687,109 @@ a {
 .glavnaya .main .choice {
   grid-row: 5/6;
 }
-.glavnaya .main .choice .my-select {
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3px;
-  width: 150px;
-  height: 50px;
-  border: 1px solid rgb(210, 210, 210);
-  border-radius: 7px;
-  background: rgb(255, 255, 255);
-  padding: 8px 12px;
-  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+.glavnaya .main .choice .choice__container {
+  max-width: 1612px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 50px;
 }
-.glavnaya .main .choice .my-select .my-select__arrow {
-  width: 19px;
+.glavnaya .main .choice .choice__container .choice__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px 30px;
+  align-items: center;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 10px;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block .choice__label {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+  color: #000000;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block .choice__buttons-select {
+  padding: 0 2%;
+  display: grid;
+  grid-template-columns: 24% 18% 18% 18% 18%;
+  justify-content: center;
+  gap: 0px;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block .choice__buttons-select .choice__buttons-select-item {
+  width: 100%;
+  height: 100%;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block .choice__buttons-select .choice__buttons-select-item_active {
+  color: #000;
+  border-color: red;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block .choice__square-select {
+  padding: 0px 5%;
+  display: grid;
+  grid-template-columns: 48% 0% 48%;
+  justify-content: center;
+  gap: 3%;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block .choice__square-select .select__wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block .choice__square-select .select__placeholder {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  color: rgba(97, 97, 97, 0.5);
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block .choice__square-select .select__input {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: right;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__input-block .choice__square-select .s-input-interval__range {
+  margin-bottom: -1px;
+  margin-top: -1px;
+  padding: 0 1.6rem;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__btns-block {
+  grid-column: 2 span;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 10px;
+}
+.glavnaya .main .choice .choice__container .choice__form .choice__btns-block .choice__btn-filter {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.glavnaya .main .choice .my-select .my-select_w_350 {
-  width: 350px;
-}
-.glavnaya .main .choice .my-select .my-select__wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2px;
-}
-.glavnaya .main .choice .my-select .my-select__placeholder {
-  color: rgba(21, 0, 0, 0.5);
+  padding: 10px 20px;
+  background: #e7f0db;
+  border-radius: 50px;
   font-size: 16px;
-  font-weight: 400;
-  line-height: 110%;
+  font-weight: 500;
+  color: #56693e;
 }
-.glavnaya .main .choice .my-select .my-select__text {
-  position: absolute;
-  top: 20px;
-  left: 11px;
-  color: rgb(34, 34, 34);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 110%;
-  display: none;
-  white-space: nowrap;
-  width: 88%;
-  white-space: nowrap; /* Текст не переносится */
-  overflow: hidden; /* Обрезаем всё за пределами блока */
-  text-overflow: ellipsis; /* Добавляем многоточие */
+.glavnaya .main .choice .choice__container .choice__form .choice__btns-block .choice__btn-filter_active {
+  background: #748D55;
+  color: white;
 }
-.glavnaya .main .choice .my-select .my-select__text_active {
-  display: block;
-}
-.glavnaya .main .choice .my-select .my-select__list {
-  position: absolute;
-  overflow: hidden;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  /* высота выпадающего списка: */
-  height: 400px;
-  border: 1px solid #816f6f;
-  border-radius: 7px;
-  background: rgb(249, 249, 249);
-  z-index: 1;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 110%;
-  color: rgb(34, 34, 34);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  display: none;
-}
-.glavnaya .main .choice .my-select .my-select__list_type-filter {
-  height: auto;
-}
-.glavnaya .main .choice .my-select .my-select__list .my-select__item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 34px;
-  padding: 0 12px;
-}
-.glavnaya .main .choice .my-select .my-select__list .my-select__item:hover {
-  background: rgba(87, 0, 0, 0.2);
-}
-.glavnaya .main .choice .my-select .my-select__list .my-select__item:hover .checkbox__mark {
-  border: 1.06px solid rgb(255, 255, 255);
-}
-.glavnaya .main .choice .my-select .my-select:hover {
-  border: 1px solid rgb(140, 139, 139);
-  background: rgb(249, 249, 249);
-}
-.glavnaya .main .choice .my-select.my-select_open {
-  border: 1px solid rgb(140, 139, 139);
-  background: rgb(249, 249, 249);
-}
-.glavnaya .main .choice .my-select.my-select_open .my-select__list {
-  display: block;
-}
-.glavnaya .main .choice .my-select.my-select_open .my-select__arrow {
-  transform: rotate(180deg);
-}
-.glavnaya .main .choice .my-select .my-select_active .my-select__placeholder {
-  position: absolute;
-  font-size: 10px;
-  top: 8px;
-  left: 11px;
-}
-.glavnaya .main .choice .my-select .my-select__checkbox {
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.glavnaya .main .choice .my-select .my-select__checkbox .checkbox__mark {
-  top: 0;
-  width: 17px;
-  height: 17px;
-  border: 1.06px solid rgb(210, 210, 210);
+.glavnaya .main .choice .choice__container .choice__form .choice__btn-request {
+  justify-self: end;
 }
 .glavnaya .glavnaya__section_slider {
   background: #f3fafc;

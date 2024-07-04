@@ -961,26 +961,46 @@ function closeCookiePolicyNotification() {
 // -------------------------------------------- end Отзывы ---------------------------------------------
 // -------------------------------------------- start Селект: ---------------------------------------------
 
-const selects = document.querySelectorAll(".my-select");
+const selects = document.querySelectorAll(".select");
 console.log(selects);
 if (selects) {
   selects.forEach((select) => {
     select.addEventListener("click", (event) => {
       console.log("click");
-      select.classList.toggle("my-select_open");
+      select.classList.toggle("select_open");
     });
-    const selectOptions = select.querySelectorAll(".my-select__item");
+    const selectOptions = select.querySelectorAll(".select__item");
     selectOptions.forEach((item) => {
       item.addEventListener("click", (event) => {
-        const input = select.querySelector(".my-select__text");
+        const input = select.querySelector(".select__text");
         event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
         input.innerHTML = item.innerHTML;
-        input.classList.add("my-select__text_active");
+        input.classList.add("select__text_active");
         input.setAttribute("data-id", item.getAttribute("data-id"));
-        select.classList.remove("my-select_open");
-        select.classList.add("my-select_active");
+        select.classList.remove("select_open");
+        select.classList.add("select_active");
       });
     });
   });
+
+  const choiceBtns = document.querySelectorAll(".choice__buttons-select-item");
+
+  if (choiceBtns) {
+    choiceBtns.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        item.classList.toggle("choice__buttons-select-item_active");
+      });
+    });
+  }
+
+  const filterBtns = document.querySelectorAll(".choice__btn-filter");
+
+  if (filterBtns) {
+    filterBtns.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        item.classList.toggle("choice__btn-filter_active");
+      });
+    });
+  }
 }
 // -------------------------------------------- end Селект ---------------------------------------------

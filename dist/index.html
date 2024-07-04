@@ -171,20 +171,243 @@
             2 очередь
           </div>
 
-        </div>      
+        </div>
 
       </div>
     </section>
 
     <section class="section section_choice choice">
-      <div class="container about__container">
+      <div class="container choice__container">
         <h2 class="choice__title title">
           Выбрать квартиру мечты
 
         </h2>
 
-        <form class="choice__form" action="#" method="post" enctype="multipart/form-data">
-          <!-- <div class="choice__input-block">
+        <div class="choice__form" action="#" method="post" enctype="multipart/form-data">
+
+          <div class="choice__input-block">
+            <p class="choice__label">
+              Проект
+            </p>
+            <div class="choice__select select select-frame">
+              <div class="select__wrapper">
+                <span class="select__placeholder">
+                  Сосновый
+                </span>
+                <p class="select__text select__text_carton"></p>
+              </div>
+              <span class="select__arrow">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.3335 1L7.54039 7L13.3335 1" stroke="#363636" stroke-width="1.5" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <ul class="select__list select__list_carton">
+                <li class="select__item">Сосновый</li>
+                <li class="select__item">Дубовый</li>
+                <li class="select__item">Березовый</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="choice__input-block">
+            <p class="choice__label">
+              Комнат
+            </p>
+            <div class="choice__buttons-select select-frame">
+              <button class="choice__buttons-select-item">
+                Студия
+              </button>
+              <button class="choice__buttons-select-item">
+                1
+              </button>
+              <button class="choice__buttons-select-item">
+                2
+              </button>
+              <button class="choice__buttons-select-item">
+                3
+              </button>
+              <button class="choice__buttons-select-item">
+                3+
+              </button>
+            </div>
+          </div>
+
+          <div class="choice__input-block">
+            <p class="choice__label">
+              Площадь, м2
+            </p>
+            <div class="choice__square-select select-frame">
+              <div class="select__wrapper">
+                <span class="select__placeholder">
+                  от
+                </span>
+                <input class="select__input" type="number" min="0" max="1000" value="26">
+              </div>
+
+              <span class="select__arrow">
+                |
+              </span>
+              <div class="select__wrapper">
+                <span class="select__placeholder">
+                  до
+                </span>
+                <input class="select__input" type="number" min="0" max="1000" value="75">
+              </div>
+
+
+              <!-- <div class="s-input-interval__range">
+                <div class="s-range s-range--default s-range--primary" >
+                  <div role="button" tabindex="0" class="s-range__rail" >
+                    <div class="s-range__track" >
+                      <div class="s-range__progress"
+                        style="width: 100%; left: 0%; transition: left 0.5s ease 0s, width 0.5s ease 0s, background-color 0.3s ease-in-out 0s;"
+                        ></div>
+                      <div role="button" tabindex="0" class="s-range-dot"
+                        style="left: 0%; transition: left 0.5s ease 0s;" >
+                        <div class="s-range-dot__handle"></div>
+                      </div>
+                      <div role="button" tabindex="0" class="s-range-dot"
+                        style="left: 100%; transition: left 0.5s ease 0s;" >
+                        <div class="s-range-dot__handle"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+
+          <div class="choice__btns-block">
+            <button class="choice__btn-filter">
+              Балкон
+            </button>
+            <button class="choice__btn-filter">
+              Гардеробная
+            </button>
+            <button class="choice__btn-filter">
+              Окна на 2 стороны
+            </button>
+            <button class="choice__btn-filter">
+              Окна на 3 стороны
+            </button>
+            <button class="choice__btn-filter">
+              Гостевой санузел
+            </button>
+            <button class="choice__btn-filter">
+              Кухня-гостиная
+            </button>
+          </div>
+
+          <button class="choice__btn-request btn btn_reset btn_dark">
+            Запросить планировки
+          </button>
+
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- <div class="select select_carton select_w_250">
+            <div class="select__wrapper">
+              <span class="select__placeholder">
+                Тип картона
+              </span>
+              <p class="select__text select__text_carton"></p>
+            </div>
+            <span class="select__arrow">
+              <img src="img/arrow-down.svg" alt="arrow">
+            </span>
+            <ul class="select__list select__list_carton my-simplebar-input">
+              <li class="select__item">Тип №1</li>
+              <li class="select__item">Тип №2</li>
+              <li class="select__item">Тип №3</li>
+              <li class="select__item">Тип №4</li>
+              <li class="select__item">Тип №5</li>
+            </ul>
+          </div> -->
+
+    <!-- <div class="choice__input-block">
+            <div class="lots-filter-grid__field lots-filter-grid__field--size-2" data-v-ef60f1d2="">
+              <div class="lots-filter-grid__field-component s-group s-group--primary s-group--filter s-group--wrap"
+                data-v-6df5affa="" data-v-ef60f1d2="">
+                <div class="s-group__label" data-v-6df5affa="">Комнат</div>
+                <div class="s-group__wrapper" data-v-6df5affa="">
+                  <div
+                    class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter s-chip--active"
+                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
+                    <div class="s-chip__border s-chip__border--active" data-v-7f39b670=""></div><span
+                      class="s-chip__content" data-v-7f39b670=""> Студия </span>
+                  </div>
+                  <div disabled="disabled"
+                    class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter s-chip--disabled"
+                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
+                    <div class="s-chip__border" data-v-7f39b670=""></div><span class="s-chip__content"
+                      data-v-7f39b670=""> 1 </span>
+                  </div>
+                  <div class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter"
+                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
+                    <div class="s-chip__border" data-v-7f39b670=""></div><span class="s-chip__content"
+                      data-v-7f39b670=""> 2 </span>
+                  </div>
+                  <div class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter"
+                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
+                    <div class="s-chip__border" data-v-7f39b670=""></div><span class="s-chip__content"
+                      data-v-7f39b670=""> 3 </span>
+                  </div>
+                  <div class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter"
+                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
+                    <div class="s-chip__border" data-v-7f39b670=""></div><span class="s-chip__content"
+                      data-v-7f39b670=""> 4+ </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+    <!-- <div class="choice__input-block">
+            <div class="lots-filter-grid__field lots-filter-grid__field--size-4" data-v-ef60f1d2="">
+              <div
+                class="s-input-interval lots-filter-grid__field-component s-input-interval--default s-input-interval--primary"
+               data-v-ef60f1d2="">
+                <div class="s-input-interval__label">Площадь, м²</div>
+                <div class="s-input-interval__group"><label
+                    class="s-input-interval-field s-input-interval__field s-input-interval-field--default s-input-interval-field--primary"
+                    data-v-3d1b148a=""><span class="s-input-interval-field__heading"
+                      data-v-3d1b148a="">от</span><input type="text" value="26" class="s-input-interval-field__native"
+                      data-v-3d1b148a=""></label><label
+                    class="s-input-interval-field s-input-interval__field s-input-interval-field--default s-input-interval-field--primary"
+                    data-v-3d1b148a=""><span class="s-input-interval-field__heading"
+                      data-v-3d1b148a="">до</span><input type="text" value="141" class="s-input-interval-field__native"
+                      data-v-3d1b148a=""></label></div>
+                <div class="s-input-interval__range">
+                  <div role="slider" aria-valuemin="26" aria-valuemax="141" aria-valuenow="26-32"
+                    aria-orientation="horizontal" aria-label="Числовое значение или отрезок между 26 и 141"
+                    class="s-range s-range--default s-range--primary" >
+                    <div role="button" tabindex="0" class="s-range__rail" >
+                      <div class="s-range__track" >
+                        <div class="s-range__progress"
+                          style="width: 5.21739%; left: 0%; transition: left 0.5s ease 0s, width 0.5s ease 0s, background-color 0.3s ease-in-out 0s;"
+                          ></div>
+                        <div role="button" tabindex="0" class="s-range-dot"
+                          style="left: 0%; transition: left 0.5s ease 0s;" >
+                          <div class="s-range-dot__handle"></div>
+                        </div>
+                        <div role="button" tabindex="0" class="s-range-dot"
+                          style="left: 5.21739%; transition: left 0.5s ease 0s;" >
+                          <div class="s-range-dot__handle"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+    <!-- <div class="choice__input-block">
             <div class="choice__input">
               <div class="choice__title">
                 Проект  
@@ -257,135 +480,13 @@
             </div>
           </div> -->
 
-          <div class="my-select">
-            <div class="my-select__wrapper">
-              <span class="my-select__placeholder">
-                Сосновый
-              </span>
-              <p class="my-select__text my-select__text_carton"></p>
-            </div>
-            <span class="my-select__arrow">
-              <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.3335 1L7.54039 7L13.3335 1" stroke="#363636" stroke-width="1.5" stroke-linejoin="round"/>
-              </svg>                
-            </span>
-            <ul class="my-select__list my-select__list_carton">
-              <li class="my-select__item">Тип №1</li>
-              <li class="my-select__item">Тип №2</li>
-              <li class="my-select__item">Тип №3</li>
-              <li class="my-select__item">Тип №4</li>
-              <li class="my-select__item">Тип №5</li>
-            </ul>
-          </div>
-
-          <!-- <div class="my-select my-select_carton my-select_w_250">
-            <div class="my-select__wrapper">
-              <span class="my-select__placeholder">
-                Тип картона
-              </span>
-              <p class="my-select__text my-select__text_carton"></p>
-            </div>
-            <span class="my-select__arrow">
-              <img src="img/arrow-down.svg" alt="arrow">
-            </span>
-            <ul class="my-select__list my-select__list_carton my-simplebar-input">
-              <li class="my-select__item">Тип №1</li>
-              <li class="my-select__item">Тип №2</li>
-              <li class="my-select__item">Тип №3</li>
-              <li class="my-select__item">Тип №4</li>
-              <li class="my-select__item">Тип №5</li>
-            </ul>
-          </div> -->
-
-          <div class="choice__input-block">
-            <div class="lots-filter-grid__field lots-filter-grid__field--size-2" data-v-ef60f1d2="">
-              <div class="lots-filter-grid__field-component s-group s-group--primary s-group--filter s-group--wrap"
-                data-v-6df5affa="" data-v-ef60f1d2="">
-                <div class="s-group__label" data-v-6df5affa="">Комнат</div>
-                <div class="s-group__wrapper" data-v-6df5affa="">
-                  <div
-                    class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter s-chip--active"
-                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
-                    <div class="s-chip__border s-chip__border--active" data-v-7f39b670=""></div><!----><span
-                      class="s-chip__content" data-v-7f39b670=""> Студия </span><!---->
-                  </div>
-                  <div disabled="disabled"
-                    class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter s-chip--disabled"
-                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
-                    <div class="s-chip__border" data-v-7f39b670=""></div><!----><span class="s-chip__content"
-                      data-v-7f39b670=""> 1 </span><!---->
-                  </div>
-                  <div class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter"
-                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
-                    <div class="s-chip__border" data-v-7f39b670=""></div><!----><span class="s-chip__content"
-                      data-v-7f39b670=""> 2 </span><!---->
-                  </div>
-                  <div class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter"
-                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
-                    <div class="s-chip__border" data-v-7f39b670=""></div><!----><span class="s-chip__content"
-                      data-v-7f39b670=""> 3 </span><!---->
-                  </div>
-                  <div class="filter-offer s-chip s-chip--primary-common-filter s-chip--design-common-filter"
-                    style="width:;height:;" data-v-7f39b670="" data-v-1d035eaf="" data-v-6df5affa="">
-                    <div class="s-chip__border" data-v-7f39b670=""></div><!----><span class="s-chip__content"
-                      data-v-7f39b670=""> 4+ </span><!---->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="choice__input-block">
-            <div class="lots-filter-grid__field lots-filter-grid__field--size-4" data-v-ef60f1d2="">
-              <div
-                class="s-input-interval lots-filter-grid__field-component s-input-interval--default s-input-interval--primary"
-                data-v-13f28419="" data-v-ef60f1d2="">
-                <div class="s-input-interval__label" data-v-13f28419="">Площадь, м²</div>
-                <div class="s-input-interval__group" data-v-13f28419=""><label
-                    class="s-input-interval-field s-input-interval__field s-input-interval-field--default s-input-interval-field--primary"
-                    data-v-3d1b148a="" data-v-13f28419=""><span class="s-input-interval-field__heading"
-                      data-v-3d1b148a="">от</span><input type="text" value="26" class="s-input-interval-field__native"
-                      data-v-3d1b148a=""></label><label
-                    class="s-input-interval-field s-input-interval__field s-input-interval-field--default s-input-interval-field--primary"
-                    data-v-3d1b148a="" data-v-13f28419=""><span class="s-input-interval-field__heading"
-                      data-v-3d1b148a="">до</span><input type="text" value="141" class="s-input-interval-field__native"
-                      data-v-3d1b148a=""></label></div>
-                <div class="s-input-interval__range" data-v-13f28419="">
-                  <div role="slider" aria-valuemin="26" aria-valuemax="141" aria-valuenow="26-32"
-                    aria-orientation="horizontal" aria-label="Числовое значение или отрезок между 26 и 141"
-                    class="s-range s-range--default s-range--primary" data-v-b6c64412="" data-v-13f28419="">
-                    <div role="button" tabindex="0" class="s-range__rail" data-v-b6c64412="">
-                      <div class="s-range__track" data-v-b6c64412="">
-                        <div class="s-range__progress"
-                          style="width: 5.21739%; left: 0%; transition: left 0.5s ease 0s, width 0.5s ease 0s, background-color 0.3s ease-in-out 0s;"
-                          data-v-b6c64412=""></div>
-                        <div role="button" tabindex="0" class="s-range-dot"
-                          style="left: 0%; transition: left 0.5s ease 0s;" data-v-3b133937="" data-v-b6c64412="">
-                          <div class="s-range-dot__handle" data-v-3b133937=""></div>
-                        </div>
-                        <div role="button" tabindex="0" class="s-range-dot"
-                          style="left: 5.21739%; transition: left 0.5s ease 0s;" data-v-3b133937="" data-v-b6c64412="">
-                          <div class="s-range-dot__handle" data-v-3b133937=""></div>
-                        </div><!----><!---->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
 
 
-        </form>
-
-
-
-        Выбрать квартиру мечты
+    <!-- Выбрать квартиру мечты
         Проект
-        Комнат
-        Площадь, м2
+        Комнат -->
+    <!-- Площадь, м2
         Сосновый
         Студия
         1
@@ -404,9 +505,8 @@
         Окна на 3 стороны
         Гостевой санузел
         Кухня-гостиная
-        Запросить планировки
+        Запросить планировки -->
 
-    </section>
 
     <!-- <div class="container glavnaya__container glavnaya__container_slider">
       <div class="glavnaya__slider slider swiper">
