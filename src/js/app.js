@@ -630,9 +630,10 @@ jQuery(($) => {
 jQuery(($) => {
   if ($(window).width() > 0) {
     $(".owl-carousel-index").owlCarousel({
-      loop: true,
+      loop: false,
+      center: true,
       margin: 20,
-      items: 4.25,
+      items: 4.5,
       nav: true,
       // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
       dots: false,
@@ -653,6 +654,54 @@ jQuery(($) => {
           // items: 4
         },
       },
+    });
+
+    // $(".owl-carousel-index").owlCarousel({
+    //   loop: false,
+    //   center: true,
+    //   margin: 20,
+    //   // items: 4.5,
+    //   nav: true,
+    //   // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
+    //   dots: false,
+    //   singleItem: false,
+    //   autoplay: false,
+    //   smartSpeed: 1000,
+    //   autoplayTimeout: 5000,
+    //   responsive: {
+    //     0: {
+    //       nav: false,
+    //       items: 1,
+    //     },
+    //     800: {
+    //       nav: false,
+    //       items: 1,
+    //     },
+    //     1200: {
+    //       items: 1,
+    //     },
+    //   },
+    // });
+
+    $(".owl-carousel-slider").owlCarousel({
+      loop: true,
+      margin: 20,
+      nav: true,
+      dots: false,
+      autoplay: false,
+      smartSpeed: 1000,
+      autoplayTimeout: 5000,
+      responsive:{ //Адаптация в зависимости от разрешения экрана
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
     });
 
     $(".owl-carousel-about").owlCarousel({
