@@ -631,8 +631,8 @@ jQuery(($) => {
   if ($(window).width() > 0) {
     $(".owl-carousel-index").owlCarousel({
       loop: true,
-      margin: 16,
-      items: 3,
+      margin: 20,
+      items: 4.25,
       nav: true,
       // navText : ["<i class='fa fa-chevron-left'>>>>></i>","<i class='fa fa-chevron-right'><<<<<<<</i>"],
       dots: false,

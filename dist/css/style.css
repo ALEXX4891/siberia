@@ -2521,7 +2521,7 @@ a {
 .glavnaya .main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 748px 120px auto 150px auto 100px auto 100px auto 100px auto;
+  grid-template-rows: 748px 120px auto 150px auto 142px auto 100px auto 100px auto;
 }
 .glavnaya .main .banner {
   grid-row: 1/2;
@@ -2790,6 +2790,147 @@ a {
 }
 .glavnaya .main .choice .choice__container .choice__form .choice__btn-request {
   justify-self: end;
+}
+.glavnaya .main .regions {
+  grid-row: 7/8;
+}
+.glavnaya .main .regions .regions__container {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 43px;
+}
+.glavnaya .main .regions .regions__container .regions__list {
+  width: calc(100vw - 104px);
+}
+.glavnaya .main .regions .regions__container .regions__list .regions__item {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 20px;
+  align-content: start;
+  max-width: 413px;
+  width: 100%;
+  min-height: 371px;
+  height: 100%;
+  padding: 40px;
+  background: linear-gradient(231.8deg, #9ABC6F 4.26%, #7BAD3B 100%);
+  border-radius: 10px;
+}
+.glavnaya .main .regions .regions__container .regions__list .regions__item .regions__item-title {
+  font-family: Inter;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 30.26px;
+  text-align: left;
+  color: #fff;
+}
+.glavnaya .main .regions .regions__container .regions__list .regions__item .regions__item-text {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  text-align: left;
+  color: #fff;
+}
+.glavnaya .main .regions .regions__container .regions__list .regions__item_1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: url("../img/fon-1.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  opacity: 0.1;
+}
+.glavnaya .main .regions .regions__container .regions__list .regions__item_2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: url("../img/fon-2.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  opacity: 0.1;
+}
+.glavnaya .main .regions .regions__container .regions__list .regions__item_3::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: url("../img/fon-3.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  opacity: 0.1;
+}
+.glavnaya .main .regions .regions__container .regions__list .regions__item_4::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: url("../img/fon-4.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  opacity: 0.1;
+}
+.glavnaya .main .regions .regions__container .regions__list .regions__item_5::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: url("../img/fon-5.svg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: contain;
+  opacity: 0.1;
+}
+.glavnaya .main .regions .regions__container .regions__list .owl-nav {
+  position: absolute;
+  top: -95px;
+  right: 105px;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 20px;
+  align-items: center;
+}
+@media (max-width: 1280px) {
+  .glavnaya .main .regions .regions__container .regions__list .owl-nav {
+    display: none;
+  }
+}
+.glavnaya .main .regions .regions__container .regions__list .owl-nav .owl-prev {
+  background: url("../img/owl-index-prew-btn.svg") !important;
+  width: 55px;
+  height: 55px;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  cursor: pointer;
+}
+.glavnaya .main .regions .regions__container .regions__list .owl-nav .owl-prev span {
+  display: none;
+}
+.glavnaya .main .regions .regions__container .regions__list .owl-nav .owl-next {
+  background: url("../img/owl-index-next-btn.svg") !important;
+  width: 55px;
+  height: 55px;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  cursor: pointer;
+}
+.glavnaya .main .regions .regions__container .regions__list .owl-nav .owl-next span {
+  display: none;
+  /* display: block; */
+  /* background-image: url("../img/owl_next.svg");
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  cursor: pointer; */
 }
 .glavnaya .glavnaya__section_slider {
   background: #f3fafc;
