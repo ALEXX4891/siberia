@@ -3771,18 +3771,15 @@ a {
                 font-weight: 400;
                 color: rgba(#000, 0.5);
                 border-bottom: 2px solid transparent;
-                transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+                transition: color 0.3s ease-in-out,
+                  border-color 0.3s ease-in-out;
 
                 &_active {
                   color: #000;
                   border-color: red;
                   // border-bottom: 2px solid red;
-
-                  
                 }
-
               }
-
             }
 
             .choice__square-select {
@@ -3798,8 +3795,6 @@ a {
                 grid-auto-flow: column;
                 justify-content: space-between;
                 gap: 10px;
-
-
               }
 
               .select__placeholder {
@@ -3807,8 +3802,7 @@ a {
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 19.36px;
-                color: rgba(#616161, 0.5); ;
-
+                color: rgba(#616161, 0.5);
               }
               .select__input {
                 font-family: Inter;
@@ -3816,7 +3810,6 @@ a {
                 font-weight: 400;
                 line-height: 21.78px;
                 text-align: right;
-
               }
               .s-input-interval__range {
                 margin-bottom: -1px;
@@ -3825,7 +3818,6 @@ a {
               }
             }
           }
-
 
           .choice__btns-block {
             grid-column: 2 span;
@@ -3847,7 +3839,7 @@ a {
               color: #56693e;
 
               &_active {
-                background: #748D55;
+                background: #748d55;
                 color: white;
               }
             }
