@@ -133,13 +133,13 @@ document.addEventListener("keydown", function (e) {
 // -------------------------------------------- end popup: ---------------------------------------------
 
 // -------------------------------------------- start gallery: ---------------------------------------------
-const previews = document.querySelectorAll(".slider_img");
+const previews = document.querySelectorAll(".plans__item");
 
 if (previews) {
   previews.forEach((item) => {
     item.addEventListener("click", function () {
       const imgBox = document
-        .querySelector(".article__img")
+        .querySelector(".plans__img")
         .querySelector("img");
       const img = item.querySelector("img").getAttribute("src");
       imgBox.setAttribute("src", img);
