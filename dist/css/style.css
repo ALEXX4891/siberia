@@ -1054,6 +1054,7 @@ a {
 
 .main {
   padding-top: 80px;
+  overflow: hidden;
 }
 
 .card {
@@ -1627,7 +1628,6 @@ a {
 .cookie .cookie__btn {
   color: #008ed7;
   cursor: pointer;
-  font-family: "Noto Sans Display";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -2550,6 +2550,8 @@ a {
 .footer .footer__container .footer__bottom-block .footer__desc {
   grid-column: 9/10;
   grid-row: 1/3;
+  opacity: 0.5;
+  color: #fff;
 }
 
 .glavnaya .main {
