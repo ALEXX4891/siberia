@@ -1121,4 +1121,10 @@ function init() {
   // Размещение геообъекта на карте.
   myMap.geoObjects.add(myMark);
 }
+
+
+const mapMarks = document.querySelector(".map__mark-item");
+mapMarks.addEventListener("click", (event) => {
+  mapMarks.classList.toggle("map__mark-item_active");  
+})
 // -------------------------------------------- end Карта ---------------------------------------------

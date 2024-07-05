@@ -4404,6 +4404,7 @@ color: #363636;
         }
       }
       .geo__map {
+        position: relative;
         width: 100%;
         height: 100%;
         border: 1px solid #EDEDED;
@@ -4425,6 +4426,109 @@ color: #363636;
         [class*="controls-pane"] {
           display: none !important;
         }
+
+        .map__mark-list-wrap {
+          width: 494px;
+          position: absolute;
+          // top: calc(50% - 675px/2 - 0.5px);
+          top: 62px;
+          left: 50px;
+          bottom: 63px;
+          z-index: 1000;
+          background: #FFFFFF;
+          border-radius: 5px;
+          padding: 50px;
+          gap: 36px;
+
+          display: grid;
+          grid-auto-flow: row;
+          align-content: start;
+          // grid-template-columns: 1fr 1fr;
+          // align-items: center;
+          // justify-content: center;
+          // gap: 15px 17px;
+          // padding: 31px 53px;
+          // width: 100%;
+          // height: 100%;
+          // border: 1px solid #EDEDED;
+          // border-radius: 5px;
+          .map__title {
+            //styleName: н3;
+            font-family: Inter;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 30.26px;
+            text-align: left;
+            color: #000;
+
+          }
+          .map__mark-list {
+            display: grid;
+            grid-auto-flow: row;
+            gap: 20px;
+            .map__mark-item {
+              display: grid;
+              // grid-auto-flow: column;
+              grid-template-columns: auto auto 1fr;
+
+
+              align-items: center;
+              justify-content: start;
+              gap: 15px;
+              // display: grid;
+              // grid-template-columns: 1fr 1fr;
+              // grid-auto-flow: row;
+              // align-items: center;
+              // justify-content: center;
+              // gap: 15px 17px;
+              // padding: 31px 53px;
+              // width: 100%;
+              // height: 100%;
+              // border: 1px solid #EDEDED;
+              // border-radius: 5px;
+              font-family: Inter;
+              font-size: 20px;
+              font-weight: 400;
+              line-height: 24.2px;
+              text-align: left;
+              color: rgba(#000, 0.6);
+              cursor: pointer;
+
+              .map__mark-icon {
+                & svg circle {
+                  // fill: #CEDFB8;
+                }
+
+                & svg path {
+                  // fill: #56693E;
+                  // stroke: #000;
+
+                }
+              }
+              .map__mark-text {
+                justify-self: start;
+                
+                // align-self: start;
+              }
+              .map__mark-number {
+                justify-self: end;
+
+                // align-self: e;
+
+              }
+
+              &_active {
+                // color: rgba(#000, 1);
+
+                & svg path {
+                  // fill: #000000;
+                }
+              }
+  
+            }
+          }
+        }
+
 
       }
     }
