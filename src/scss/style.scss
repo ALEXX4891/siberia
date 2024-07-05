@@ -737,6 +737,7 @@ a {
   gap: 10px;
   background: #1f384f;
   border-radius: 15px;
+
   @media (max-width: 1280px) {
     padding: 30px;
     align-items: center;
@@ -752,6 +753,7 @@ a {
     color: $color-white;
     text-transform: uppercase;
     margin-bottom: 5px;
+
     @media (max-width: 900px) {
       font-family: Commissioner;
       font-size: 22px;
@@ -767,6 +769,7 @@ a {
     text-align: center;
     margin-bottom: 17px;
     color: $color-white;
+
     @media (max-width: 900px) {
       max-width: 350px;
     }
@@ -777,6 +780,7 @@ a {
     flex-flow: row nowrap;
     gap: 20px;
     margin-bottom: 8px;
+
     @media (max-width: 900px) {
       gap: 10px;
     }
@@ -3584,7 +3588,7 @@ a {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        border-radius: 15px;
+        border-radius: 10px;
 
         .bunner__content-wrap {
           display: grid;
@@ -3901,7 +3905,8 @@ a {
         }
   
         .regions__list {
-          width: 100vw;
+          max-width: 1920px;
+          margin: 0 auto;
           // overflow: auto;
           // display: grid;
           // grid-auto-flow: column;
@@ -4091,15 +4096,16 @@ a {
           .slider__item {
             display: block;
             border-radius: 10px;
+            overflow: hidden;
             width: 100%;
             height: 100%;
             
             & img {
               aspect-ratio: 1712/820;
-              width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
+              // width: 100%;
+            // height: 100%;
+            // object-fit: cover;
+            // object-position: center;
             }
 
             &_1 {
@@ -4170,6 +4176,9 @@ a {
     }
 
     .plans {
+      max-width: 1920px;
+      width: 100%;
+      margin: 0 auto;
       padding: 80px 0;
       grid-row: 11/12;
       background: #F5F5F5;
@@ -4230,7 +4239,6 @@ a {
       }
 
       .plans__list {
-        background: #FFFFFF;
         padding: 59px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -4242,6 +4250,9 @@ a {
         justify-items: center;
         align-items: center;
         align-content: center;
+        
+        background: #FFFFFF;
+        border-radius: 10px;
 
         .plans__item {
           width: 100%;
@@ -4249,6 +4260,7 @@ a {
           display: grid;
           align-items: center;
           justify-items: center;
+          cursor: pointer;
 
           &_active {
             border: 2px solid #9ABC6F;
@@ -4277,23 +4289,37 @@ a {
       }
       .plans__detail {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 20px;
+        grid-template-columns: 44% 28%;
+        grid-template-rows: 22% 11% 29%;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        padding: 20px;
+        gap: 6px 14%;
+        background: #FFFFFF;
+        border-radius: 10px;
 
 
         .plans__img {
+          // justify-self: end;
           grid-row: 3 span;
         }
         .plans__desc {
+          align-self: end;
+          justify-self: start;
           font-family: Inter;
-font-size: 14px;
-font-weight: 400;
-line-height: 16.94px;
-text-align: left;
-color: #616161;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 16.94px;
+          text-align: left;
+          color: #616161;
         }
         .plans__name {
+          justify-self: center;
+          align-self: start;
+
+
           //styleName: н3;
 font-family: Inter;
 font-size: 25px;
@@ -4304,6 +4330,9 @@ color: #363636;
 
         }
         .plans__btn {
+          justify-self: center;
+          align-self: start;
+
         }
       }
     }
@@ -4321,7 +4350,7 @@ color: #363636;
 
       .geo__desc {
         font-family: Inter;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
         line-height: 22.4px;
         text-align: left;
@@ -4337,22 +4366,20 @@ color: #363636;
 
         .geo__advantages-item {
           display: grid;
-          grid-template-columns: 5fr 2fr;
+          grid-template-columns: 7fr 3fr;
           grid-auto-flow: row;
-          align-items: start;
-          // justify-items: center;
+          align-items: center;
           justify-content: center;
-          gap: 20px 15px;
-
-          padding: 42px 52px;
-          gap: 20px;          
+          gap: 15px 17px;
+          padding: 31px 53px;
           width: 100%;
           height: 100%;
-          // height: 156px;          
           border: 1px solid #EDEDED;
           border-radius: 5px;
+      
           
           .geo__advantages-title {
+
             font-family: Inter;
             font-size: 22px;
             font-weight: 500;
@@ -4364,6 +4391,8 @@ color: #363636;
           .geo__advantages-icon {
           }
           .geo__advantages-desc {
+            align-self: start;
+
             grid-column: 2 span;
             font-family: Inter;
             font-size: 18px;

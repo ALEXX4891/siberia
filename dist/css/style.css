@@ -2567,7 +2567,7 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .glavnaya .main .banner .banner__container .bunner__content-wrap {
   display: grid;
@@ -2837,7 +2837,8 @@ a {
   margin: 0 auto;
 }
 .glavnaya .main .regions .regions__container .regions__list {
-  width: 100vw;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 .glavnaya .main .regions .regions__container .regions__list .regions__item {
   display: grid;
@@ -2988,15 +2989,12 @@ a {
 .glavnaya .main .slider .slider__container .slider__list .slider__item {
   display: block;
   border-radius: 10px;
+  overflow: hidden;
   width: 100%;
   height: 100%;
 }
 .glavnaya .main .slider .slider__container .slider__list .slider__item img {
   aspect-ratio: 1712/820;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 .glavnaya .main .slider .slider__container .owl-nav {
   position: absolute;
@@ -3046,6 +3044,9 @@ a {
   cursor: pointer; */
 }
 .glavnaya .main .plans {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
   padding: 80px 0;
   grid-row: 11/12;
   background: #F5F5F5;
@@ -3093,7 +3094,6 @@ a {
   color: #616161;
 }
 .glavnaya .main .plans .plans__list {
-  background: #FFFFFF;
   padding: 59px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3103,6 +3103,8 @@ a {
   justify-items: center;
   align-items: center;
   align-content: center;
+  background: #FFFFFF;
+  border-radius: 10px;
 }
 .glavnaya .main .plans .plans__list .plans__item {
   width: 100%;
@@ -3110,6 +3112,7 @@ a {
   display: grid;
   align-items: center;
   justify-items: center;
+  cursor: pointer;
 }
 .glavnaya .main .plans .plans__list .plans__item_active {
   border: 2px solid #9ABC6F;
@@ -3117,14 +3120,23 @@ a {
 }
 .glavnaya .main .plans .plans__detail {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 44% 28%;
+  grid-template-rows: 22% 11% 29%;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  padding: 20px;
+  gap: 6px 14%;
+  background: #FFFFFF;
+  border-radius: 10px;
 }
 .glavnaya .main .plans .plans__detail .plans__img {
   grid-row: 3 span;
 }
 .glavnaya .main .plans .plans__detail .plans__desc {
+  align-self: end;
+  justify-self: start;
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -3133,12 +3145,18 @@ a {
   color: #616161;
 }
 .glavnaya .main .plans .plans__detail .plans__name {
+  justify-self: center;
+  align-self: start;
   font-family: Inter;
   font-size: 25px;
   font-weight: 400;
   line-height: 30.26px;
   text-align: left;
   color: #363636;
+}
+.glavnaya .main .plans .plans__detail .plans__btn {
+  justify-self: center;
+  align-self: start;
 }
 .glavnaya .main .geo {
   grid-row: 13/14;
@@ -3151,7 +3169,7 @@ a {
 }
 .glavnaya .main .geo .geo__desc {
   font-family: Inter;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 22.4px;
   text-align: left;
@@ -3167,13 +3185,12 @@ a {
 }
 .glavnaya .main .geo .geo__advantages-list .geo__advantages-item {
   display: grid;
-  grid-template-columns: 5fr 2fr;
+  grid-template-columns: 7fr 3fr;
   grid-auto-flow: row;
-  align-items: start;
+  align-items: center;
   justify-content: center;
-  gap: 20px 15px;
-  padding: 42px 52px;
-  gap: 20px;
+  gap: 15px 17px;
+  padding: 31px 53px;
   width: 100%;
   height: 100%;
   border: 1px solid #EDEDED;
@@ -3188,6 +3205,7 @@ a {
   color: #000000;
 }
 .glavnaya .main .geo .geo__advantages-list .geo__advantages-item .geo__advantages-desc {
+  align-self: start;
   grid-column: 2 span;
   font-family: Inter;
   font-size: 18px;
