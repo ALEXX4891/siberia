@@ -1122,9 +1122,69 @@ function init() {
   myMap.geoObjects.add(myMark);
 }
 
+// function setVisible() {
+//   myGeoObject4.options.set({
+//     visible: false
+//   });
+//   myGeoObject3.options.set({
+//     visible: false
+//   });
+//   myGeoObject2.options.set({
+//     visible: false
+//   });
+//   myGeoObject.options.set({
+//     visible: false
+//   });
+// }
+// $(document).ready(function() {
+//   $('#change-map').on('click', function() {
+//     setVisible();
+//   });
+// });
+
 
 const mapMarks = document.querySelector(".map__mark-item");
 mapMarks.addEventListener("click", (event) => {
   mapMarks.classList.toggle("map__mark-item_active");  
 })
 // -------------------------------------------- end Карта ---------------------------------------------
+//--------------------------Запрос к БД----------------------------
+// Загружаем список контрагентов с БД:
+async function fetchToDB(options) {
+  // Блок try выполнится полностью, если не будет ошибок:
+  try {
+    // Выполняем запрос:
+    const responce = await fetch("main.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(options),
+    });
+    const infoList = await responce.json();
+    return infoList; // Возвращаем результат запроса
+  } catch (err) {
+    // Блок catch сработает только если будут какие-то ошибки в блоке try:
+    // Выведем в консоли информацию об ошибке:
+    console.log("При запросе к БД произошла ошибка, детали ниже:");
+    console.error(err);
+    // Вернем исключение с текстом поясняющим детали ошибки:
+    alert("Произошла ошибка при запросе к БД!");
+    throw new Error("Запрос завершился неудачно.");
+  }
+}
+
+let options = {
+  // опции для получения списка всех контрагентов
+  function: "getAll",
+  table: "apartments",
+  all: "*",
+};
+
+// const arrApartments = await fetchToDB(options);
+// console.log(arrApartments);
+
+// console.log(options);
+// await fetchToDB(options); 
+// требуется подключить скрипт как модуль, иначе await не работает!!!
+//--------------------------end Запрос к БД----------------------------
