@@ -4406,9 +4406,25 @@ color: #363636;
       .geo__map {
         width: 100%;
         height: 100%;
-        background-color: #004e83;
+        border: 1px solid #EDEDED;
+        // background-color: #004e83;
         grid-column: 2 span;
         grid-row: 4 / 5;
+
+        .map__container {
+          padding: 0;
+          width: 100%;
+          height: 100%;
+        }
+        
+        [class*="ground-pane"] {
+          // filter: grayscale(1);
+        }
+        
+        [class*="copyrights-pane"],
+        [class*="controls-pane"] {
+          display: none !important;
+        }
 
       }
     }

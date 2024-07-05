@@ -138,9 +138,7 @@ const previews = document.querySelectorAll(".plans__item");
 if (previews) {
   previews.forEach((item) => {
     item.addEventListener("click", function () {
-      const imgBox = document
-        .querySelector(".plans__img")
-        .querySelector("img");
+      const imgBox = document.querySelector(".plans__img").querySelector("img");
       const img = item.querySelector("img").getAttribute("src");
       imgBox.setAttribute("src", img);
     });
@@ -695,17 +693,18 @@ jQuery(($) => {
       autoplay: false,
       smartSpeed: 1000,
       autoplayTimeout: 5000,
-      responsive:{ //Адаптация в зависимости от разрешения экрана
-        0:{
-            items:1
+      responsive: {
+        //Адаптация в зависимости от разрешения экрана
+        0: {
+          items: 1,
         },
-        600:{
-            items:1
+        600: {
+          items: 1,
         },
-        1000:{
-            items:1
-        }
-    }
+        1000: {
+          items: 1,
+        },
+      },
     });
 
     $(".owl-carousel-about").owlCarousel({
@@ -1057,7 +1056,7 @@ if (selects) {
   }
 }
 // -------------------------------------------- end Селект ---------------------------------------------
-
+// -------------------------------------------- start Планы: ---------------------------------------------
 const plansItem = document.querySelectorAll(".plans__item");
 if (plansItem) {
   plansItem.forEach((item) => {
@@ -1079,3 +1078,47 @@ if (plansFilterItem) {
     });
   });
 }
+
+// -------------------------------------------- end Планы ---------------------------------------------
+// -------------------------------------------- start Карта ---------------------------------------------
+// Функция ymaps.ready() будет вызвана, когда
+// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+
+ymaps.ready(init);
+function init() {
+  // Создание карты.
+  let myMap = new ymaps.Map("map", {
+    // Координаты центра карты.
+    // Порядок по умолчанию: «широта, долгота».
+    // Чтобы не определять координаты центра карты вручную,
+    // воспользуйтесь инструментом Определение координат.
+    // center: [48.872185073737896, 2.354223999999991],
+    center: [56.97004647141038, 65.79187000766548],
+
+    // Уровень масштабирования. Допустимые значения:
+    // от 0 (весь мир) до 19.
+    zoom: 14.7,
+  });
+
+  // Создание геообъекта с типом точка (метка).
+  let myMark = new ymaps.Placemark(
+    [56.971359032603615,65.80127919688765],
+    // [56.97004647141038,65.79187000766548],
+    {},
+    {
+      // Опции.
+      // Необходимо указать данный тип макета.
+      iconLayout: "default#image",
+      // Своё изображение иконки метки.
+      iconImageHref: "img/pin.svg",
+      // Размеры метки.
+      iconImageSize: [42, 58],
+      // Смещение левого верхнего угла иконки относительно
+      // её "ножки" (точки привязки).
+      iconImageOffset: [-21, -58],
+    }
+  );
+  // Размещение геообъекта на карте.
+  myMap.geoObjects.add(myMark);
+}
+// -------------------------------------------- end Карта ---------------------------------------------

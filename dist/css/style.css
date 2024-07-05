@@ -3217,9 +3217,18 @@ a {
 .glavnaya .main .geo .geo__map {
   width: 100%;
   height: 100%;
-  background-color: #004e83;
+  border: 1px solid #EDEDED;
   grid-column: 2 span;
   grid-row: 4/5;
+}
+.glavnaya .main .geo .geo__map .map__container {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.glavnaya .main .geo .geo__map [class*=copyrights-pane],
+.glavnaya .main .geo .geo__map [class*=controls-pane] {
+  display: none !important;
 }
 .glavnaya .glavnaya__section_slider {
   background: #f3fafc;
