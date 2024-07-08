@@ -1063,7 +1063,7 @@ if (choiceForm) {
         input.classList.add("select__text_active");
         input.setAttribute("data-id", item.getAttribute("data-id"));
         queryParams.project = item.getAttribute("data-id");
-        console.log(queryParams);
+        // console.log(queryParams);
         selectProject.classList.remove("select_open");
         selectProject.classList.add("select_active");
       });
@@ -1087,7 +1087,7 @@ if (choiceForm) {
               queryParams.numbers_of_rooms = queryParams.numbers_of_rooms + ", " + item.getAttribute("data-id");
             }
           });
-          console.log(queryParams);
+          // console.log(queryParams);
         });
       });
     }
@@ -1106,7 +1106,7 @@ if (choiceForm) {
         } else {
           queryParams[key] = "";
         }
-        console.log(queryParams);
+        // console.log(queryParams);
       });
     });
   }
@@ -1134,18 +1134,21 @@ if (choiceForm) {
     const submitBtn = choiceForm.querySelector(".form__btn");
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
-      console.log("click");
-
-
+      // console.log("click");
     // choiceForm.addEventListener("submit", (event) => {
       event.preventDefault();
       queryParams.name = document.querySelector(".form__input_name").value;
       queryParams.phone = document.querySelector(".form__input_phone").value;
       queryParams.email = document.querySelector(".form__input_email").value;
       queryParams.message = document.querySelector(".form__input_textarea").value;
-      console.log(queryParams);
+      // console.log(queryParams);
       fetchToPost(queryParams);
-      return false;
+      // const popupActive = document.querySelector(".popup.open");
+      // popupClose(popupActive);
+      const popupSuccess = document.querySelector("#success");
+      popupOpen(popupSuccess);
+
+      // return false;
     });
   }
 
@@ -1328,7 +1331,68 @@ console.log(arrApartments);
 // требуется подключить скрипт как модуль, иначе await не работает!!!
 //--------------------------end Запрос к БД----------------------------
 
-// const footerForm = document.querySelector(".footer__form");
+const footerForm = document.querySelector(".footer__form");
+if (footerForm) {
+  const submitBtn = footerForm.querySelector(".form__btn");
+  submitBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    let queryParams = {
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    };
+
+    queryParams.name = document.querySelector(".form__input_name").value;
+    queryParams.phone = document.querySelector(".form__input_phone").value;
+    queryParams.email = document.querySelector(".form__input_email").value;
+  // footerForm.addEventListener("submit", (event) => {
+  //   event.preventDefault();
+  //   const footerName = document.querySelector(".footer__input-name");
+  //   const footerEmail = document.querySelector(".footer__input-email");
+  //   const footerPhone = document.querySelector(".footer__input-phone");
+  //   console.log(footerName.value);
+  //   console.log(footerEmail.value);
+  //   console.log(footerPhone.value);
+  //   footerName.value = "";
+  //   footerEmail.value = "";
+  //   footerPhone.value = "";
+  //   return false;
+  // });
+    console.log(queryParams);
+    fetchToPostFooter(queryParams);
+    const popupSuccess = document.querySelector("#success");
+    popupOpen(popupSuccess);
+  });
+}
+
+async function fetchToPostFooter(queryParams) {
+  console.log(JSON.stringify(queryParams));
+  // Блок try выполнится полностью, если не будет ошибок:
+  try {
+    // Выполняем запрос:
+    const responce = await fetch("files/post-mail.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(queryParams),
+    });
+    // const infoList = await responce.json();
+    // return infoList; // Возвращаем результат запроса
+    // console.log(responce);
+  } catch (err) {
+    // Блок catch сработает только если будут какие-то ошибки в блоке try:
+    // Выведем в консоли информацию об ошибке:
+    console.log("При оптравке письма произошла ошибка, детали ниже:");
+    console.error(err);
+    // Вернем исключение с текстом поясняющим детали ошибки:
+    alert("Произошла ошибка при оптравке письма!");
+    throw new Error("Запрос завершился неудачно.");
+  }
+}
+
+
 
 // footerForm.addEventListener("submit", (event) => {
 //   event.preventDefault();
@@ -1348,6 +1412,7 @@ console.log(arrApartments);
 //-------------------------- start отправка формы на почту ------------------------------
 
 async function fetchToPost(queryParams) {
+  // console.log(JSON.stringify(queryParams));
   // Блок try выполнится полностью, если не будет ошибок:
   try {
     // Выполняем запрос:
@@ -1360,7 +1425,7 @@ async function fetchToPost(queryParams) {
     });
     // const infoList = await responce.json();
     // return infoList; // Возвращаем результат запроса
-    console.log(responce);
+    // console.log(responce);
   } catch (err) {
     // Блок catch сработает только если будут какие-то ошибки в блоке try:
     // Выведем в консоли информацию об ошибке:

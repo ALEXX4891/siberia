@@ -12,6 +12,23 @@ if ($inputData) {
   $arrData = [];
 
   foreach ($arrKeys as $key) {
+
+    if ($key == 'name') {
+      // $arrData['function'] = $data[$key];
+      $name = $data[$key];
+    }
+    if ($key == 'phone') {
+      // $arrData['all'] = $data[$key];
+      $phone = $data[$key];
+    }
+    if ($key == 'email') {
+      // $arrData['table'] = $data[$key];
+      $email = $data[$key];
+    }
+    if ($key == 'message') {
+      // $arrData['id'] = $data[$key];
+      $message = $data[$key];
+    }
     if ($key == 'project') {
       // $arrData['function'] = $data[$key];
       $project = $data[$key];
@@ -67,8 +84,25 @@ $subject = 'Заявка с моего сайта';
 // текст письма
 // $message = 'Пользователь' . $_POST['name'] . ' отправил вам письмо:<br />' . $_POST['message'] . '<br />
 // Связяться с ним можно по email <a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>';
-$message = 'Пользователь ' . $_POST['name'] . ' заказал звонок на номер:<br />' . $_POST['phone'] . '.<br />
-Связяться с ним можно по email <a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>.';
+$message = '<h1>Запрос планировок:</h1><br/>
+Пользователь ' . $name . '.<br />
+Email <a href="mailto:' . $email . '">' . $email . '</a>.<br /> 
+Телефон <a href="tel:' . $phone . '">' . $phone . '</a>.<br />
+Сообщение от пользователя: ' . $message . '.<br />
+Интересует проект: ' . $project . '.<br />
+Количество комнат: ' . $numbers_of_rooms . '.<br />
+Площадь: ' . $area . '.<br />
+Балкон: ' . $balcony . '.<br />
+Гардеробная: ' . $dressing_room . '.<br />
+Окна на 2 стороны: ' . $side_2 . '.<br />
+Окна на 3 стороны: ' . $side_3 . '.<br />
+Гостевой санузел: ' . $guest_bathroom . '.<br />
+Кухня-гостинная: ' . $kitchen_living_room;
+
+
+
+
+
 
 // Для отправки HTML-письма должен быть установлен заголовок Content-type
 $headers  = 'MIME-Version: 1.0' . "\r\n";
