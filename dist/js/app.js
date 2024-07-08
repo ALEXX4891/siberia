@@ -68,7 +68,7 @@ function popupOpen(curentPopup) {
     } else {
       bodyLock();
     }
-    console.log(curentPopup);
+    // console.log(curentPopup);
     curentPopup.classList.add("open");
     curentPopup.addEventListener("click", function (e) {
       if (!e.target.closest(".popup__content")) {
@@ -1128,16 +1128,24 @@ if (choiceForm) {
     });
   }
 
-  const choiceForm = document.querySelector(".choice__form");
+  const choiceForm = document.querySelector("#choice-form");
+  // console.log(choiceForm);
   if (choiceForm) {
-    choiceForm.addEventListener("submit", (event) => {
+    const submitBtn = choiceForm.querySelector(".form__btn");
+    // console.log(submitBtn);
+    submitBtn.addEventListener("click", (event) => {
+      console.log("click");
+
+
+    // choiceForm.addEventListener("submit", (event) => {
       event.preventDefault();
       queryParams.name = document.querySelector(".form__input_name").value;
       queryParams.phone = document.querySelector(".form__input_phone").value;
       queryParams.email = document.querySelector(".form__input_email").value;
       queryParams.message = document.querySelector(".form__input_textarea").value;
       console.log(queryParams);
-      // return false;
+      fetchToPost(queryParams);
+      return false;
     });
   }
 
@@ -1285,7 +1293,7 @@ async function fetchToDB(options) {
   // Блок try выполнится полностью, если не будет ошибок:
   try {
     // Выполняем запрос:
-    const responce = await fetch("main.php", {
+    const responce = await fetch("files/main.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1339,30 +1347,30 @@ console.log(arrApartments);
 
 //-------------------------- start отправка формы на почту ------------------------------
 
-// async function fetchToPost(queryParams) {
-//   // Блок try выполнится полностью, если не будет ошибок:
-//   try {
-//     // Выполняем запрос:
-//     const responce = await fetch("post-request.php", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(queryParams),
-//     });
-//     // const infoList = await responce.json();
-//     // return infoList; // Возвращаем результат запроса
-//     console.log(responce);
-//   } catch (err) {
-//     // Блок catch сработает только если будут какие-то ошибки в блоке try:
-//     // Выведем в консоли информацию об ошибке:
-//     console.log("При оптравке письма произошла ошибка, детали ниже:");
-//     console.error(err);
-//     // Вернем исключение с текстом поясняющим детали ошибки:
-//     alert("Произошла ошибка при оптравке письма!");
-//     throw new Error("Запрос завершился неудачно.");
-//   }
-// }
+async function fetchToPost(queryParams) {
+  // Блок try выполнится полностью, если не будет ошибок:
+  try {
+    // Выполняем запрос:
+    const responce = await fetch("files/post-request.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(queryParams),
+    });
+    // const infoList = await responce.json();
+    // return infoList; // Возвращаем результат запроса
+    console.log(responce);
+  } catch (err) {
+    // Блок catch сработает только если будут какие-то ошибки в блоке try:
+    // Выведем в консоли информацию об ошибке:
+    console.log("При оптравке письма произошла ошибка, детали ниже:");
+    console.error(err);
+    // Вернем исключение с текстом поясняющим детали ошибки:
+    alert("Произошла ошибка при оптравке письма!");
+    throw new Error("Запрос завершился неудачно.");
+  }
+}
 
 // const choiceSendBtn = document.querySelector(".choice__btn");
 // choiceSendBtn.addEventListener("click", (event) => {
