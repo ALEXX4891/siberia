@@ -7,9 +7,9 @@ $mode = 'prod'; // режим продакшн
 
 
 if ($mode == 'dev') {
-  $str = '{"table":"contractor","all":"*","select":"SELECT"}';
-  $str = '{"function":"goActive","table":"contractor","idContractor":2,"isActive":"1"}';
-  $str = '{"table":"contractor","idContractor":2,"name":"ООО « Жизнь большое название 2»","taxNumber":978777112,"address":"г. Тюмень. ул. Фармана Салманова, д. 2","telephone":"+7 987 333 31-12","email":"email2@example.com","function":"update"}';
+  $str = '{"function":"getAll","table":"apartments","all":"*"}';
+  // $str = '{"function":"goActive","table":"contractor","idContractor":2,"isActive":"1"}';
+  // $str = '{"table":"contractor","idContractor":2,"name":"ООО « Жизнь большое название 2»","taxNumber":978777112,"address":"г. Тюмень. ул. Фармана Салманова, д. 2","telephone":"+7 987 333 31-12","email":"email2@example.com","function":"update"}';
   $inputData = $str;
 } else if ($mode == 'prod') {
   $inputData = file_get_contents('php://input');
@@ -234,9 +234,9 @@ function getData($sql)
 
   // конфигурация подключения к БД:
   $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "plant";
+  $username = "wwserver_siberia";
+  $password = "n1WbPE%u";
+  $dbname = "wwserver_siberia";
   $contractor = [];
   $limit = '';
   $offset = '';

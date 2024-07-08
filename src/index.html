@@ -120,9 +120,9 @@
                 </svg>
               </span>
               <ul class="select__list select__list_carton">
-                <li class="select__item">Сосновый</li>
-                <li class="select__item">Дубовый</li>
-                <li class="select__item">Березовый</li>
+                <li class="select__item" data-id="sosnoviy">Сосновый</li>
+                <li class="select__item" data-id="duboviy">Дубовый</li>
+                <li class="select__item" data-id="berezoviy">Березовый</li>
               </ul>
             </div>
           </div>
@@ -132,19 +132,19 @@
               Комнат
             </p>
             <div class="choice__buttons-select select-frame">
-              <button class="choice__buttons-select-item">
+              <button class="choice__buttons-select-item" data-id="studio">
                 Студия
               </button>
-              <button class="choice__buttons-select-item">
+              <button class="choice__buttons-select-item" data-id="1-k">
                 1
               </button>
-              <button class="choice__buttons-select-item">
+              <button class="choice__buttons-select-item" data-id="2-k">
                 2
               </button>
-              <button class="choice__buttons-select-item">
+              <button class="choice__buttons-select-item" data-id="3-k">
                 3
               </button>
-              <button class="choice__buttons-select-item">
+              <button class="choice__buttons-select-item" data-id="3+">
                 3+
               </button>
             </div>
@@ -159,7 +159,7 @@
                 <span class="select__placeholder">
                   от
                 </span>
-                <input class="select__input" type="number" min="0" max="1000" value="26">
+                <input class="select__input select__input_from" type="number" min="0" max="1000" value="26">
               </div>
 
               <span class="select__arrow">
@@ -169,7 +169,7 @@
                 <span class="select__placeholder">
                   до
                 </span>
-                <input class="select__input" type="number" min="0" max="1000" value="75">
+                <input class="select__input select__input_to" type="number" min="0" max="1000" value="75">
               </div>
 
 
@@ -197,27 +197,27 @@
           </div>
 
           <div class="choice__btns-block">
-            <button class="choice__btn-filter">
+            <button class="choice__btn-filter" data-id="balcony">
               Балкон
             </button>
-            <button class="choice__btn-filter">
+            <button class="choice__btn-filter" data-id="dressing_room">
               Гардеробная
             </button>
-            <button class="choice__btn-filter">
+            <button class="choice__btn-filter" data-id="side_2">
               Окна на 2 стороны
             </button>
-            <button class="choice__btn-filter">
+            <button class="choice__btn-filter" data-id="side_3">
               Окна на 3 стороны
             </button>
-            <button class="choice__btn-filter">
+            <button class="choice__btn-filter" data-id="guest_bathroom">
               Гостевой санузел
             </button>
-            <button class="choice__btn-filter">
+            <button class="choice__btn-filter" data-id="kitchen_living_room">
               Кухня-гостиная
             </button>
           </div>
 
-          <button class="choice__btn-request btn btn_reset btn_dark">
+          <button class="choice__btn-request btn btn_reset btn_dark popup-link" href="#popup-form">
             Запросить планировки
           </button>
 
@@ -368,28 +368,28 @@
 
         <ul class="plans__list">
           <li class="plans__item plans__item_1">
-            <img src="@img/kv-1.svg" alt="квартира">
+            <img src="@img/kv-1.jpg" alt="квартира">
           </li>
           <li class="plans__item plans__item_2">
-            <img src="@img/kv-2.svg" alt="квартира">
+            <img src="@img/kv-2.jpg" alt="квартира">
           </li>
           <li class="plans__item plans__item_3">
-            <img src="@img/kv-3.svg" alt="квартира">
+            <img src="@img/kv-3.jpg" alt="квартира">
           </li>
           <li class="plans__item plans__item_4">
-            <img src="@img/kv-4.svg" alt="квартира">
+            <img src="@img/kv-4.jpg" alt="квартира">
           </li>
           <li class="plans__item plans__item_5">
-            <img src="@img/kv-5.svg" alt="квартира">
+            <img src="@img/kv-5.jpg" alt="квартира">
           </li>
           <li class="plans__item plans__item_6">
-            <img src="@img/kv-6.svg" alt="квартира">
+            <img src="@img/kv-6.jpg" alt="квартира">
           </li>
           <li class="plans__item plans__item_7">
-            <img src="@img/kv-7.svg" alt="квартира">
+            <img src="@img/kv-7.jpg" alt="квартира">
           </li>
           <li class="plans__item plans__item_8">
-            <img src="@img/kv-8.svg" alt="квартира">
+            <img src="@img/kv-8.jpg" alt="квартира">
           </li>
         </ul>
         <div class="plans__detail">

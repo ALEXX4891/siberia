@@ -1004,8 +1004,24 @@ function acceptCookiePolicy() {
   }, 500);
 }
 function closeCookiePolicyNotification() {
-  console.log("closeCookiePolicyNotification");
+  // console.log("closeCookiePolicyNotification");
   $(".cookie").fadeOut(300);
+}
+
+const cookieBtn = document.querySelector(".cookie__btn");
+if (cookieBtn) {
+  cookieBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    acceptCookiePolicy();
+  });
+}
+
+const cookieCloseBtn = document.querySelector(".cookie__close");
+if (cookieCloseBtn) {
+  cookieCloseBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    closeCookiePolicyNotification();
+  });
 }
 // -------------------------------------------- end Куки ---------------------------------------------
 // -------------------------------------------- start Отзывы: ---------------------------------------------
@@ -1013,47 +1029,139 @@ function closeCookiePolicyNotification() {
 // -------------------------------------------- end Отзывы ---------------------------------------------
 // -------------------------------------------- start Селект: ---------------------------------------------
 
-const selects = document.querySelectorAll(".select");
-console.log(selects);
-if (selects) {
-  selects.forEach((select) => {
-    select.addEventListener("click", (event) => {
-      console.log("click");
-      select.classList.toggle("select_open");
+let queryParams =  {
+  project: "sosnoviy",
+  numbers_of_rooms: "",
+  area: "",
+  balcony: "",
+  dressing_room: "",
+  side_2: "",
+  side_3: "",
+  guest_bathroom: "",
+  kitchen_living_room: "",
+};
+
+// console.log(selects);
+const selectProject = document.querySelector(".choice__select");
+if (selectProject) {
+  // selects.forEach((select) => {
+    selectProject.addEventListener("click", (event) => {
+      // console.log("click");
+      selectProject.classList.toggle("select_open");
     });
-    const selectOptions = select.querySelectorAll(".select__item");
+    const selectOptions = selectProject.querySelectorAll(".select__item");
     selectOptions.forEach((item) => {
       item.addEventListener("click", (event) => {
-        const input = select.querySelector(".select__text");
+        const input = selectProject.querySelector(".select__text");
         event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
         input.innerHTML = item.innerHTML;
         input.classList.add("select__text_active");
         input.setAttribute("data-id", item.getAttribute("data-id"));
-        select.classList.remove("select_open");
-        select.classList.add("select_active");
+        queryParams.project = item.getAttribute("data-id");
+        console.log(queryParams);
+        selectProject.classList.remove("select_open");
+        selectProject.classList.add("select_active");
       });
     });
-  });
+  // });
 
-  const choiceBtns = document.querySelectorAll(".choice__buttons-select-item");
+  const choiceButtonsSelect = document.querySelector(".choice__buttons-select");
+  if (choiceButtonsSelect) {
+    // const btns = choiceButtonsSelect.querySelectorAll(".choice__buttons-select-item");
 
-  if (choiceBtns) {
-    choiceBtns.forEach((item) => {
-      item.addEventListener("click", (event) => {
-        item.classList.toggle("choice__buttons-select-item_active");
+    const choiceBtns = document.querySelectorAll(".choice__buttons-select-item");
+
+    if (choiceBtns) {
+      choiceBtns.forEach((item) => {
+        item.addEventListener("click", (event) => {
+          item.classList.toggle("choice__buttons-select-item_active");
+          queryParams.numbers_of_rooms = "";
+
+          choiceBtns.forEach((item) => {
+            if (item.classList.contains("choice__buttons-select-item_active")) {
+              queryParams.numbers_of_rooms = queryParams.numbers_of_rooms + ", " + item.getAttribute("data-id");
+            }
+          });
+          console.log(queryParams);
+        });
       });
-    });
+    }
   }
 
+  
   const filterBtns = document.querySelectorAll(".choice__btn-filter");
 
   if (filterBtns) {
     filterBtns.forEach((item) => {
       item.addEventListener("click", (event) => {
         item.classList.toggle("choice__btn-filter_active");
+        let key = item.getAttribute("data-id");
+        if (item.classList.contains("choice__btn-filter_active")) {
+          queryParams[key] = "yes";
+        } else {
+          queryParams[key] = "";
+        }
+        console.log(queryParams);
       });
     });
   }
+
+  const choice__square = document.querySelector(".choice__square-select");
+  if (choice__square) {
+    const inputFrom = choice__square.querySelector(".select__input_from"); 
+    const inputTo = choice__square.querySelector(".select__input_to");
+
+    inputFrom.addEventListener("input", (event) => {
+      queryParams.area = inputFrom.value + " - " + inputTo.value;
+      console.log(queryParams);
+    });
+
+    inputTo.addEventListener("input", (event) => {
+      queryParams.area = inputFrom.value + " - " + inputTo.value;
+      console.log(queryParams);
+    });
+  }
+    // const btns = choiceButtonsSelect.querySelectorAll(".choice__buttons-select-item";
+
+
+    // btns.forEach((btn) => {
+    //   btn.addEventListener("click", (event) => {
+    //     const input = choiceButtonsSelect.querySelector(".choice__buttons-select-text");
+    //     event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+    //     input.innerHTML = btn.innerHTML;
+    //     input.classList.add("choice__buttons-select-text_active");
+    //     input.setAttribute("data-id", btn.getAttribute("data-id"));
+    //     queryParams.numbers_of_rooms = btn.getAttribute("data-id");
+    //     // console.log(queryParams);
+    //     choiceButtonsSelect.classList.remove("choice__buttons-select_active");
+    //   });
+    // });
+// }
+
+// console.log(selects);
+// const selects = document.querySelectorAll(".select");
+// if (selects) {
+//   selects.forEach((select) => {
+//     select.addEventListener("click", (event) => {
+//       console.log("click");
+//       select.classList.toggle("select_open");
+//     });
+//     const selectOptions = select.querySelectorAll(".select__item");
+//     selectOptions.forEach((item) => {
+//       item.addEventListener("click", (event) => {
+//         const input = select.querySelector(".select__text");
+//         event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+//         input.innerHTML = item.innerHTML;
+//         input.classList.add("select__text_active");
+//         input.setAttribute("data-id", item.getAttribute("data-id"));
+//         select.classList.remove("select_open");
+//         select.classList.add("select_active");
+//       });
+//     });
+//   });
+
+
+
 }
 // -------------------------------------------- end Селект ---------------------------------------------
 // -------------------------------------------- start Планы: ---------------------------------------------
@@ -1084,9 +1192,11 @@ if (plansFilterItem) {
 // Функция ymaps.ready() будет вызвана, когда
 // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
 
+
 ymaps.ready(init);
 function init() {
   // Создание карты.
+
   let myMap = new ymaps.Map("map", {
     // Координаты центра карты.
     // Порядок по умолчанию: «широта, долгота».
@@ -1180,6 +1290,84 @@ let options = {
   table: "apartments",
   all: "*",
 };
+
+const arrApartments = await fetchToDB(options);
+console.log(arrApartments);
+
+// console.log(options);
+// await fetchToDB(options); 
+// требуется подключить скрипт как модуль, иначе await не работает!!!
+//--------------------------end Запрос к БД----------------------------
+
+// const footerForm = document.querySelector(".footer__form");
+
+// footerForm.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const footerName = document.querySelector(".footer__input-name");
+//   const footerEmail = document.querySelector(".footer__input-email");
+//   const footerPhone = document.querySelector(".footer__input-phone");
+//   console.log(footerName.value);
+//   console.log(footerEmail.value);
+//   console.log(footerPhone.value);
+//   footerName.value = "";
+//   footerEmail.value = "";
+//   footerPhone.value = "";
+//   return false;
+// });
+
+
+//--------------------------Запрос к БД----------------------------
+// Загружаем список контрагентов с БД:
+async function fetchToPost(queryParams) {
+  // Блок try выполнится полностью, если не будет ошибок:
+  try {
+    // Выполняем запрос:
+    const responce = await fetch("post-request.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(queryParams),
+    });
+    // const infoList = await responce.json();
+    // return infoList; // Возвращаем результат запроса
+    console.log(responce);
+  } catch (err) {
+    // Блок catch сработает только если будут какие-то ошибки в блоке try:
+    // Выведем в консоли информацию об ошибке:
+    console.log("При оптравке письма произошла ошибка, детали ниже:");
+    console.error(err);
+    // Вернем исключение с текстом поясняющим детали ошибки:
+    alert("Произошла ошибка при оптравке письма!");
+    throw new Error("Запрос завершился неудачно.");
+  }
+}
+
+const choiceSendBtn = document.querySelector(".choice__btn");
+choiceSendBtn.addEventListener("click", (event) => {
+  // fetchToPost(queryParams)
+  
+  const arrApartments = fetchToPost(queryParams);
+  console.log(arrApartments);
+  // event.preventDefault();
+  // const footerName = document.querySelector(".footer__input-name");
+  // const footerEmail = document.querySelector(".footer__input-email");
+  // const footerPhone = document.querySelector(".footer__input-phone");
+  // console.log(footerName.value);
+  // console.log(footerEmail.value);
+  // console.log(footerPhone.value);
+  // footerName.value = "";
+  // footerEmail.value = "";
+  // footerPhone.value = "";
+  // return false;
+});
+
+// let postOptions = {
+//   // опции для получения списка всех контрагентов
+//   function: "getAll",
+//   table: "apartments",
+//   all: "*",
+// };
 
 // const arrApartments = await fetchToDB(options);
 // console.log(arrApartments);
