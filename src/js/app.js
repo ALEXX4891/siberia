@@ -1030,6 +1030,10 @@ if (cookieCloseBtn) {
 // -------------------------------------------- start Селект: ---------------------------------------------
 
 let queryParams =  {
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
   project: "sosnoviy",
   numbers_of_rooms: "",
   area: "",
@@ -1042,8 +1046,9 @@ let queryParams =  {
 };
 
 // console.log(selects);
-const selectProject = document.querySelector(".choice__select");
-if (selectProject) {
+const choiceForm = document.querySelector(".choice__form");
+if (choiceForm) {
+  const selectProject = document.querySelector(".choice__select");
   // selects.forEach((select) => {
     selectProject.addEventListener("click", (event) => {
       // console.log("click");
@@ -1110,6 +1115,7 @@ if (selectProject) {
   if (choice__square) {
     const inputFrom = choice__square.querySelector(".select__input_from"); 
     const inputTo = choice__square.querySelector(".select__input_to");
+    queryParams.area = inputFrom.value + " - " + inputTo.value;
 
     inputFrom.addEventListener("input", (event) => {
       queryParams.area = inputFrom.value + " - " + inputTo.value;
@@ -1121,6 +1127,21 @@ if (selectProject) {
       console.log(queryParams);
     });
   }
+
+  const choiceForm = document.querySelector(".choice__form");
+  if (choiceForm) {
+    choiceForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      queryParams.name = document.querySelector(".form__input_name").value;
+      queryParams.phone = document.querySelector(".form__input_phone").value;
+      queryParams.email = document.querySelector(".form__input_email").value;
+      queryParams.message = document.querySelector(".form__input_textarea").value;
+      console.log(queryParams);
+      // return false;
+    });
+  }
+
+  // const 
     // const btns = choiceButtonsSelect.querySelectorAll(".choice__buttons-select-item";
 
 
@@ -1316,51 +1337,51 @@ console.log(arrApartments);
 // });
 
 
-//--------------------------Запрос к БД----------------------------
-// Загружаем список контрагентов с БД:
-async function fetchToPost(queryParams) {
-  // Блок try выполнится полностью, если не будет ошибок:
-  try {
-    // Выполняем запрос:
-    const responce = await fetch("post-request.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(queryParams),
-    });
-    // const infoList = await responce.json();
-    // return infoList; // Возвращаем результат запроса
-    console.log(responce);
-  } catch (err) {
-    // Блок catch сработает только если будут какие-то ошибки в блоке try:
-    // Выведем в консоли информацию об ошибке:
-    console.log("При оптравке письма произошла ошибка, детали ниже:");
-    console.error(err);
-    // Вернем исключение с текстом поясняющим детали ошибки:
-    alert("Произошла ошибка при оптравке письма!");
-    throw new Error("Запрос завершился неудачно.");
-  }
-}
+//-------------------------- start отправка формы на почту ------------------------------
 
-const choiceSendBtn = document.querySelector(".choice__btn");
-choiceSendBtn.addEventListener("click", (event) => {
-  // fetchToPost(queryParams)
+// async function fetchToPost(queryParams) {
+//   // Блок try выполнится полностью, если не будет ошибок:
+//   try {
+//     // Выполняем запрос:
+//     const responce = await fetch("post-request.php", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(queryParams),
+//     });
+//     // const infoList = await responce.json();
+//     // return infoList; // Возвращаем результат запроса
+//     console.log(responce);
+//   } catch (err) {
+//     // Блок catch сработает только если будут какие-то ошибки в блоке try:
+//     // Выведем в консоли информацию об ошибке:
+//     console.log("При оптравке письма произошла ошибка, детали ниже:");
+//     console.error(err);
+//     // Вернем исключение с текстом поясняющим детали ошибки:
+//     alert("Произошла ошибка при оптравке письма!");
+//     throw new Error("Запрос завершился неудачно.");
+//   }
+// }
+
+// const choiceSendBtn = document.querySelector(".choice__btn");
+// choiceSendBtn.addEventListener("click", (event) => {
+//   // fetchToPost(queryParams)
   
-  const arrApartments = fetchToPost(queryParams);
-  console.log(arrApartments);
-  // event.preventDefault();
-  // const footerName = document.querySelector(".footer__input-name");
-  // const footerEmail = document.querySelector(".footer__input-email");
-  // const footerPhone = document.querySelector(".footer__input-phone");
-  // console.log(footerName.value);
-  // console.log(footerEmail.value);
-  // console.log(footerPhone.value);
-  // footerName.value = "";
-  // footerEmail.value = "";
-  // footerPhone.value = "";
-  // return false;
-});
+//   const arrApartments = fetchToPost(queryParams);
+//   console.log(arrApartments);
+//   // event.preventDefault();
+//   // const footerName = document.querySelector(".footer__input-name");
+//   // const footerEmail = document.querySelector(".footer__input-email");
+//   // const footerPhone = document.querySelector(".footer__input-phone");
+//   // console.log(footerName.value);
+//   // console.log(footerEmail.value);
+//   // console.log(footerPhone.value);
+//   // footerName.value = "";
+//   // footerEmail.value = "";
+//   // footerPhone.value = "";
+//   // return false;
+// });
 
 // let postOptions = {
 //   // опции для получения списка всех контрагентов
@@ -1375,4 +1396,5 @@ choiceSendBtn.addEventListener("click", (event) => {
 // console.log(options);
 // await fetchToDB(options); 
 // требуется подключить скрипт как модуль, иначе await не работает!!!
-//--------------------------end Запрос к БД----------------------------
+
+//--------------------------end Отправка формы на почту----------------------------
