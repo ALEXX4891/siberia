@@ -133,17 +133,17 @@ document.addEventListener("keydown", function (e) {
 // -------------------------------------------- end popup: ---------------------------------------------
 
 // -------------------------------------------- start gallery: ---------------------------------------------
-const previews = document.querySelectorAll(".plans__item");
+// const previews = document.querySelectorAll(".plans__item");
 
-if (previews) {
-  previews.forEach((item) => {
-    item.addEventListener("click", function () {
-      const imgBox = document.querySelector(".plans__img").querySelector("img");
-      const img = item.querySelector("img").getAttribute("src");
-      imgBox.setAttribute("src", img);
-    });
-  });
-}
+// if (previews) {
+//   previews.forEach((item) => {
+//     item.addEventListener("click", function () {
+//       const imgBox = document.querySelector(".plans__img").querySelector("img");
+//       const img = item.querySelector("img").getAttribute("src");
+//       imgBox.setAttribute("src", img);
+//     });
+//   });
+// }
 
 // -------------------------------------------- end gallery: ---------------------------------------------
 
@@ -521,98 +521,98 @@ if (catalog) {
 // -------------------------------------------- end Каталог ---------------------------------------------
 // -------------------------------------------- start Описание товара: ---------------------------------------------
 
-const goodsItem = document.querySelector(".goods-item__main");
-if (goodsItem) {
-  const montageBtn = goodsItem.querySelector(".btn_montage");
+// const goodsItem = document.querySelector(".goods-item__main");
+// if (goodsItem) {
+//   const montageBtn = goodsItem.querySelector(".btn_montage");
 
-  montageBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    montageBtn.classList.toggle("btn_montage_active");
-  });
+//   montageBtn.addEventListener("click", function (e) {
+//     e.preventDefault();
+//     montageBtn.classList.toggle("btn_montage_active");
+//   });
 
-  const botMenu = goodsItem.querySelectorAll(".bot-block__menu-item");
-  const botText = goodsItem.querySelectorAll(".bot-block__text");
-  botMenu.forEach((item) => {
-    item.addEventListener("click", function (e) {
-      const id = item.getAttribute("data-id");
-      botMenu.forEach((item) => {
-        item.classList.remove("bot-block__menu-item_active");
-      });
-      item.classList.add("bot-block__menu-item_active");
+//   const botMenu = goodsItem.querySelectorAll(".bot-block__menu-item");
+//   const botText = goodsItem.querySelectorAll(".bot-block__text");
+//   botMenu.forEach((item) => {
+//     item.addEventListener("click", function (e) {
+//       const id = item.getAttribute("data-id");
+//       botMenu.forEach((item) => {
+//         item.classList.remove("bot-block__menu-item_active");
+//       });
+//       item.classList.add("bot-block__menu-item_active");
 
-      botText.forEach((item) => {
-        item.classList.remove("bot-block__text_active");
-        if (item.getAttribute("data-id") === id) {
-          item.classList.add("bot-block__text_active");
-        }
-      });
-    });
-  });
+//       botText.forEach((item) => {
+//         item.classList.remove("bot-block__text_active");
+//         if (item.getAttribute("data-id") === id) {
+//           item.classList.add("bot-block__text_active");
+//         }
+//       });
+//     });
+//   });
 
-  const previews = document.querySelectorAll(".small-img-wrap__img");
+//   const previews = document.querySelectorAll(".small-img-wrap__img");
 
-  if (previews) {
-    previews.forEach((item) => {
-      item.addEventListener("click", function () {
-        const imgBox = document
-          .querySelector(".goods-item__img")
-          .querySelector("img");
-        const img = item.querySelector("img").getAttribute("src");
-        imgBox.setAttribute("src", img);
-      });
-    });
-  }
+//   if (previews) {
+//     previews.forEach((item) => {
+//       item.addEventListener("click", function () {
+//         const imgBox = document
+//           .querySelector(".goods-item__img")
+//           .querySelector("img");
+//         const img = item.querySelector("img").getAttribute("src");
+//         imgBox.setAttribute("src", img);
+//       });
+//     });
+//   }
 
-  // счетчик количества карточек в корзине:
-  const plus = goodsItem.querySelector(".in-cart__counter-btn_plus");
-  const minus = goodsItem.querySelector(".in-cart__counter-btn_minus");
-  const counterValue = goodsItem.querySelector(".in-cart__counter-value");
-  const totalCost = goodsItem.querySelector(".cost__cost-value");
-  const priceEl = goodsItem.querySelector(".in-cart__price").innerHTML;
-  let price = parseInt(priceEl.replace(/\s/g, ""));
-  console.log(totalCost);
+//   // счетчик количества карточек в корзине:
+//   const plus = goodsItem.querySelector(".in-cart__counter-btn_plus");
+//   const minus = goodsItem.querySelector(".in-cart__counter-btn_minus");
+//   const counterValue = goodsItem.querySelector(".in-cart__counter-value");
+//   const totalCost = goodsItem.querySelector(".cost__cost-value");
+//   const priceEl = goodsItem.querySelector(".in-cart__price").innerHTML;
+//   let price = parseInt(priceEl.replace(/\s/g, ""));
+//   console.log(totalCost);
 
-  let quontity = 0;
-  counterValue.addEventListener("input", function (e) {
-    if (Number(counterValue.value) <= 0) {
-      quontity = 0;
-      counterValue.value = 0;
-    } else {
-      quontity = counterValue.value;
-    }
-    totalCost.innerHTML = (quontity * price).toLocaleString();
-  });
+//   let quontity = 0;
+//   counterValue.addEventListener("input", function (e) {
+//     if (Number(counterValue.value) <= 0) {
+//       quontity = 0;
+//       counterValue.value = 0;
+//     } else {
+//       quontity = counterValue.value;
+//     }
+//     totalCost.innerHTML = (quontity * price).toLocaleString();
+//   });
 
-  plus.addEventListener("click", function (e) {
-    quontity++;
-    counterValue.value = quontity;
-    console.log(quontity * price);
-    totalCost.innerHTML = (quontity * price).toLocaleString();
-  });
+//   plus.addEventListener("click", function (e) {
+//     quontity++;
+//     counterValue.value = quontity;
+//     console.log(quontity * price);
+//     totalCost.innerHTML = (quontity * price).toLocaleString();
+//   });
 
-  minus.addEventListener("click", function (e) {
-    if (counterValue.value > 0) {
-      quontity--;
-      counterValue.value = quontity;
-      totalCost.innerHTML = (quontity * price).toLocaleString();
-      console.log(quontity * price);
-      totalCost.innerHTML = (quontity * price).toLocaleString();
-    }
-  });
+//   minus.addEventListener("click", function (e) {
+//     if (counterValue.value > 0) {
+//       quontity--;
+//       counterValue.value = quontity;
+//       totalCost.innerHTML = (quontity * price).toLocaleString();
+//       console.log(quontity * price);
+//       totalCost.innerHTML = (quontity * price).toLocaleString();
+//     }
+//   });
 
-  const colorBtn = goodsItem.querySelectorAll(".color-list__color-item");
-  if (colorBtn) {
-    colorBtn.forEach((item) => {
-      item.addEventListener("click", function (e) {
-        e.preventDefault();
-        colorBtn.forEach((item) => {
-          item.classList.remove("color-list__color-item_active");
-        });
-        item.classList.add("color-list__color-item_active");
-      });
-    });
-  }
-}
+//   const colorBtn = goodsItem.querySelectorAll(".color-list__color-item");
+//   if (colorBtn) {
+//     colorBtn.forEach((item) => {
+//       item.addEventListener("click", function (e) {
+//         e.preventDefault();
+//         colorBtn.forEach((item) => {
+//           item.classList.remove("color-list__color-item_active");
+//         });
+//         item.classList.add("color-list__color-item_active");
+//       });
+//     });
+//   }
+// }
 
 // -------------------------------------------- end Описание товара ---------------------------------------------
 // -------------------------------------------- start OWL: ---------------------------------------------
@@ -1471,8 +1471,28 @@ document.addEventListener("click", (event) => {
       item.classList.remove("plans__item_active");
     });
     event.target.closest(".plans__item").classList.add("plans__item_active");
+    const imgBox = document.querySelector(".plans__img").querySelector("img");
+    const img = event.target.closest(".plans__item").querySelector("img").getAttribute("src");
+    imgBox.setAttribute("src", img);
+    const id = event.target.closest(".plans__item").getAttribute("data-id");
+    // console.log(id);
+    const title = document.querySelector(".plans__name");
+    title.textContent = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
+
   };
 });
+
+// const previews = document.querySelectorAll(".plans__item");
+
+// if (previews) {
+//   previews.forEach((item) => {
+//     item.addEventListener("click", function () {
+//       const imgBox = document.querySelector(".plans__img").querySelector("img");
+//       const img = item.querySelector("img").getAttribute("src");
+//       imgBox.setAttribute("src", img);
+//     });
+//   });
+// }
 
 //активные кнопки фильтра планировок:
 const plansFilterItem = document.querySelectorAll(".plans__filter-item");
@@ -1483,20 +1503,21 @@ if (plansFilterItem) {
         item.classList.remove("plans__filter-item_active");
       });
       item.classList.add("plans__filter-item_active");
-      console.log(item.innerHTML);
+      // console.log(item.innerHTML);
       const key = item.innerHTML.trim();
       previewPlansRender(apartmentsForRender, key);
+      setInfo();
     });
   });
 }
 
 
 function filterPreviewArr (key, arr) {
-  console.log(key);
-  console.log(key === 'Студия');
+  // console.log(key);
+  // console.log(key === 'Студия');
   // console.log(arr);
   if (key === 'Студия') {
-    console.log('Студия');
+    // console.log('Студия');
     return arr.filter((obj) => obj.number_of_rooms === 1 && obj.studio === 1 && obj.commerce === 0);
   }
   if (key === '1') {
@@ -1523,7 +1544,7 @@ function previewPlansRender (arr, key='Студия') {
   // console.log(copyArr);
   // Фильтрация массива по фильтру:
   copyArr = filterPreviewArr(key, copyArr);
-  console.log(copyArr);
+  // console.log(copyArr);
   copyArr.forEach((obj) => {
     getPreviewPlansItem(obj);
   })
@@ -1533,14 +1554,47 @@ previewPlansRender (apartmentsForRender, 'Студия');
 
 function getPreviewPlansItem (obj) {
   const previewList = document.querySelector(".plans__list");
-  console.log(previewList);
+  // console.log(previewList);
   const previewItem = document.createElement("li");
   previewItem.classList.add("plans__item");
+  const id = obj.id;
+  previewItem.setAttribute("data-id", id);
   const previewImg = document.createElement("img");
   previewImg.src = `img/${obj.image}`;
   previewImg.alt = "планировка квартиры";
   previewItem.append(previewImg);
   previewList.append(previewItem);
 }
+
+const plansItem = document.querySelector(".plans__item");
+
+function setInfo() {
+  console.log('setInfo');
+  console.log(plansItem);
+
+  plansItem.classList.add("plans__item_active");
+  // console.log(plans__item);
+  
+  // title.innerHTML = "1-комнатная 60м2";
+  // console.log(title);
+  const imgBox = document.querySelector(".plans__img").querySelector("img");
+  const img = plansItem.querySelector("img").getAttribute("src");
+  imgBox.setAttribute("src", img);
+  const title = document.querySelector(".plans__name");
+  const id = plansItem.getAttribute("data-id");
+  title.textContent = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
+  // console.log(img);
+    // imgBox.setAttribute("src", img);
+  // console.log(imgBox);
+  // plans__item.addEventListener("click", (event) => {
+    // const imgBox = document.querySelector(".plans__img").querySelector("img");
+    // const img = event.target.closest(".plans__item").querySelector("img").getAttribute("src");
+    // imgBox.setAttribute("src", img);
+  // });  
+}
+setInfo();
+
+// }
+
 
 // -------------------------------------------- end Планы ---------------------------------------------

@@ -3088,6 +3088,7 @@ a {
 .glavnaya .main .plans .plans__detail .plans__name {
   justify-self: center;
   align-self: start;
+  width: 100%;
   font-family: Inter;
   font-size: 25px;
   font-weight: 400;
