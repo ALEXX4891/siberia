@@ -78,7 +78,7 @@ if ($inputData) {
 }
 
 // несколько получателей
-$to = 'alexx4891@mail.ru';
+$to = 'info@sibir.com';
 
 // $to  = 'aidan@example.com' . ', ';  // обратите внимание на запятую
 // $to .= 'wez@example.com';
@@ -103,7 +103,7 @@ Email <a href="mailto:' . $email . '">' . $email . '</a>.<br />
 
 // Для отправки HTML-письма должен быть установлен заголовок Content-type
 $headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 // Дополнительные заголовки
 // $headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
@@ -116,6 +116,3 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 mail($to, $subject, $message, $headers);
 
 // header('Location: ' . index.html);
-
-
-
