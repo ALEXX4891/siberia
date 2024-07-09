@@ -1211,7 +1211,7 @@ if (choiceForm) {
       queryParams.clientName = notificationForm.querySelector(".notification__input_client-name").value;
       queryParams.clientPhone = notificationForm.querySelector(".notification__input_client-phone").value;
       queryParams.message = notificationForm.querySelector(".notification__input_textarea").value;
-      console.log(queryParams);
+      // console.log(queryParams);
       postNotification(queryParams);
       // const popupActive = document.querySelector(".popup.open");
       // popupClose(popupActive);
@@ -1371,7 +1371,7 @@ let options = {
 
 const arrApartments = await fetchToDB(options);
 const apartmentsForRender = [...arrApartments]
-console.log(apartmentsForRender);
+// console.log(apartmentsForRender);
 
 // console.log(options);
 // await fetchToDB(options); 
