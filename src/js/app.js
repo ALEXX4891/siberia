@@ -1197,6 +1197,7 @@ if (choiceForm) {
 }
 // -------------------------------------------- end Селект ---------------------------------------------
 // -------------------------------------------- start Планы: ---------------------------------------------
+//активные планировки:
 const plansItem = document.querySelectorAll(".plans__item");
 if (plansItem) {
   plansItem.forEach((item) => {
@@ -1209,14 +1210,50 @@ if (plansItem) {
   });
 }
 
-// plans__filter-item
+//активные кнопки фильтра планировок:
 const plansFilterItem = document.querySelectorAll(".plans__filter-item");
 if (plansFilterItem) {
-  plansFilterItem.forEach((item) => {
-    item.addEventListener("click", (event) => {
-      item.classList.toggle("plans__filter-item_active");
+  plansFilterItem.forEach((item) => {    
+    item.addEventListener("click", (event) => {      
+      plansFilterItem.forEach((item) => {
+        item.classList.remove("plans__filter-item_active");
+      });
+      item.classList.add("plans__filter-item_active");
     });
   });
+}
+
+function previewPlansRender (arr) {
+  const previewList = document.querySelector(".plans__list");
+  previewList.innerHTML = "";
+  let copyArr = [...arr];
+
+
+  
+
+  apartmentsForRender.filter((obj) => {
+    if (obj.rooms === queryParams.numbers_of_rooms) {
+      apartmentsForRender 
+    }
+  })
+
+
+  apartmentsForRender.forEach((obj) => {
+    getPreviewPlansItem(obj);
+  })
+}
+
+function getPreviewPlansItem (obj) {
+  const previewList = document.querySelector(".plans__list");
+  console.log(previewList);
+  const previewItem = document.createElement("li");
+  plan.classList.add("plans__item");
+  const previewImg = document.createElement("img");
+  previewImg.src = `@img/${obj.image}`; 
+  previewImg.alt = "планировка квартиры";
+  previewItem.append(previewImg);
+  previewList.append(previewItem);
+  
 }
 
 // -------------------------------------------- end Планы ---------------------------------------------
@@ -1324,7 +1361,8 @@ let options = {
 };
 
 const arrApartments = await fetchToDB(options);
-console.log(arrApartments);
+const apartmentsForRender = [...arrApartments]
+console.log(apartmentsForRender);
 
 // console.log(options);
 // await fetchToDB(options); 

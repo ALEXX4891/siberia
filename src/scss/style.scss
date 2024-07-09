@@ -3378,6 +3378,10 @@ border-radius: 10px;
         &_email {
         }
 
+        &_phone {
+          opacity: 0;
+        }
+
         .contacts__text {
         }
 
@@ -3483,6 +3487,7 @@ border-radius: 10px;
 
             font-weight: 500;
             color: white;
+            opacity: 0;
             &:hover {
               color: $color-black;
             }
