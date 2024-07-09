@@ -3053,6 +3053,7 @@ a {
   align-items: center;
   justify-items: center;
   cursor: pointer;
+  border: 2px solid transparent;
 }
 .glavnaya .main .plans .plans__list .plans__item_active {
   border: 2px solid #9abc6f;

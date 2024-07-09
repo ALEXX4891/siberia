@@ -4496,6 +4496,8 @@ border-radius: 10px;
           align-items: center;
           justify-items: center;
           cursor: pointer;
+          border: 2px solid transparent;
+
 
           &_active {
             border: 2px solid #9abc6f;

@@ -1196,67 +1196,6 @@ if (choiceForm) {
 
 }
 // -------------------------------------------- end Селект ---------------------------------------------
-// -------------------------------------------- start Планы: ---------------------------------------------
-//активные планировки:
-const plansItem = document.querySelectorAll(".plans__item");
-if (plansItem) {
-  plansItem.forEach((item) => {
-    item.addEventListener("click", (event) => {
-      plansItem.forEach((item) => {
-        item.classList.remove("plans__item_active");
-      });
-      item.classList.add("plans__item_active");
-    });
-  });
-}
-
-//активные кнопки фильтра планировок:
-const plansFilterItem = document.querySelectorAll(".plans__filter-item");
-if (plansFilterItem) {
-  plansFilterItem.forEach((item) => {    
-    item.addEventListener("click", (event) => {      
-      plansFilterItem.forEach((item) => {
-        item.classList.remove("plans__filter-item_active");
-      });
-      item.classList.add("plans__filter-item_active");
-    });
-  });
-}
-
-function previewPlansRender (arr) {
-  const previewList = document.querySelector(".plans__list");
-  previewList.innerHTML = "";
-  let copyArr = [...arr];
-
-
-  
-
-  apartmentsForRender.filter((obj) => {
-    if (obj.rooms === queryParams.numbers_of_rooms) {
-      apartmentsForRender 
-    }
-  })
-
-
-  apartmentsForRender.forEach((obj) => {
-    getPreviewPlansItem(obj);
-  })
-}
-
-function getPreviewPlansItem (obj) {
-  const previewList = document.querySelector(".plans__list");
-  console.log(previewList);
-  const previewItem = document.createElement("li");
-  plan.classList.add("plans__item");
-  const previewImg = document.createElement("img");
-  previewImg.src = `@img/${obj.image}`; 
-  previewImg.alt = "планировка квартиры";
-  previewItem.append(previewImg);
-  previewList.append(previewItem);
-  
-}
-
-// -------------------------------------------- end Планы ---------------------------------------------
 // -------------------------------------------- start Карта ---------------------------------------------
 // Функция ymaps.ready() будет вызвана, когда
 // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
@@ -1509,3 +1448,99 @@ async function fetchToPost(queryParams) {
 // требуется подключить скрипт как модуль, иначе await не работает!!!
 
 //--------------------------end Отправка формы на почту----------------------------
+
+// -------------------------------------------- start Планы: ---------------------------------------------
+//активные планировки:
+// const plansItem = document.querySelectorAll(".plans__item");
+// if (plansItem) {
+//   plansItem.forEach((item) => {
+//     item.addEventListener("click", (event) => {
+//       plansItem.forEach((item) => {
+//         item.classList.remove("plans__item_active");
+//       });
+//       item.classList.add("plans__item_active");
+//     });
+//   });
+// }
+
+document.addEventListener("click", (event) => {
+  // if (!event.target.closest(".plans__item")) return;
+  if (event.target.closest(".plans__item")) {
+    const plansItem = document.querySelectorAll(".plans__item");
+    plansItem.forEach((item) => {
+      item.classList.remove("plans__item_active");
+    });
+    event.target.closest(".plans__item").classList.add("plans__item_active");
+  };
+});
+
+//активные кнопки фильтра планировок:
+const plansFilterItem = document.querySelectorAll(".plans__filter-item");
+if (plansFilterItem) {
+  plansFilterItem.forEach((item) => {    
+    item.addEventListener("click", (event) => {      
+      plansFilterItem.forEach((item) => {
+        item.classList.remove("plans__filter-item_active");
+      });
+      item.classList.add("plans__filter-item_active");
+      console.log(item.innerHTML);
+      const key = item.innerHTML.trim();
+      previewPlansRender(apartmentsForRender, key);
+    });
+  });
+}
+
+
+function filterPreviewArr (key, arr) {
+  console.log(key);
+  console.log(key === 'Студия');
+  // console.log(arr);
+  if (key === 'Студия') {
+    console.log('Студия');
+    return arr.filter((obj) => obj.number_of_rooms === 1 && obj.studio === 1 && obj.commerce === 0);
+  }
+  if (key === '1') {
+    return arr.filter((obj) => obj.number_of_rooms === 1 && obj.studio === 0 && obj.commerce === 0);
+  }
+  if (key === '2') {
+    return arr.filter((obj) => obj.number_of_rooms === 2 && obj.studio === 0 && obj.commerce === 0);
+  }
+  if (key === '3') {
+    return arr.filter((obj) => obj.number_of_rooms === 3 && obj.studio === 0 && obj.commerce === 0);
+  }
+  if (key === '3+') {
+    return arr.filter((obj) => obj.number_of_rooms > 3 && obj.studio === 0 && obj.commerce === 0);
+  }
+  if (key === 'Коммерция') {
+    return arr.filter((obj) => obj.commerce === 1);
+  }
+}
+
+function previewPlansRender (arr, key='Студия') {
+  const previewList = document.querySelector(".plans__list");
+  previewList.innerHTML = "";
+  let copyArr = [...arr];
+  // console.log(copyArr);
+  // Фильтрация массива по фильтру:
+  copyArr = filterPreviewArr(key, copyArr);
+  console.log(copyArr);
+  copyArr.forEach((obj) => {
+    getPreviewPlansItem(obj);
+  })
+}
+
+previewPlansRender (apartmentsForRender, 'Студия');
+
+function getPreviewPlansItem (obj) {
+  const previewList = document.querySelector(".plans__list");
+  console.log(previewList);
+  const previewItem = document.createElement("li");
+  previewItem.classList.add("plans__item");
+  const previewImg = document.createElement("img");
+  previewImg.src = `img/${obj.image}`;
+  previewImg.alt = "планировка квартиры";
+  previewItem.append(previewImg);
+  previewList.append(previewItem);
+}
+
+// -------------------------------------------- end Планы ---------------------------------------------
