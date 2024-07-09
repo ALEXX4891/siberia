@@ -13,11 +13,6 @@ if ($inputData) {
 
   foreach ($arrKeys as $key) {
 
-    if ($key == 'apartment') {
-      // $arrData['table'] = $data[$key];
-      $apartment = $data[$key];
-    }
-
     if ($key == 'name') {
       // $arrData['function'] = $data[$key];
       $name = $data[$key];
@@ -94,7 +89,15 @@ $message = '<h1>Запрос планировок:</h1><br/>
 Email <a href="mailto:' . $email . '">' . $email . '</a>.<br /> 
 Телефон <a href="tel:' . $phone . '">' . $phone . '</a>.<br />
 Сообщение от пользователя: ' . $message . '.<br />
-Интересует квартира: ' . $apartment;
+Интересует проект: ' . $project . '.<br />
+Количество комнат: ' . $numbers_of_rooms . '.<br />
+Площадь: ' . $area . '.<br />
+Балкон: ' . $balcony . '.<br />
+Гардеробная: ' . $dressing_room . '.<br />
+Окна на 2 стороны: ' . $side_2 . '.<br />
+Окна на 3 стороны: ' . $side_3 . '.<br />
+Гостевой санузел: ' . $guest_bathroom . '.<br />
+Кухня-гостинная: ' . $kitchen_living_room;
 
 
 
@@ -106,9 +109,9 @@ $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
 
 // Дополнительные заголовки
-// $headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
+$headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
 // $headers .= 'From: '  . $_POST['name'] . '<' . $_POST['email'] . '>' . "\r\n";
-// $headers .= 'From: '  . $_POST['name'] . '<' . $_POST['name'] . '>' . "\r\n";
+$headers .= 'From: '  . $_POST['name'] . '<' . $_POST['name'] . '>' . "\r\n";
 
 
 

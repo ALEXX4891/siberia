@@ -237,7 +237,7 @@ if (cartCards.length) {
 
 // вычисление стоимости товара в корзине, в зависимости от количества:
 function getCost(item, quontity) {
-  console.log("getCost");
+  // console.log("getCost");
   const cost = item.querySelector(".card__cost");
   const priceText = item.querySelector(".card__price").innerHTML;
   const price = parseInt(priceText.replace(/\s/g, ""));
@@ -270,7 +270,7 @@ const btns = document.querySelectorAll(".stage__item");
 const articles = document.querySelectorAll(".stage__article");
 
 if (btns.length) {
-  console.log(btns);
+  // console.log(btns);
   btns.forEach((item) => {
     item.addEventListener("click", function () {
       btns.forEach((item) => {
@@ -896,7 +896,7 @@ if (headerSearchWrap) {
   if (window.screen.width <= 920) {
     headerSearchWrap.addEventListener("click", function (e) {
       headerSearchWrap.classList.add("header__search-form-wrap_active");
-      console.log("200");
+      // console.log("200");
     });
   }
 
@@ -910,7 +910,7 @@ if (headerSearchWrap) {
       // e.preventDefault();
       headerSearchWrap.classList.remove("header__search-form-wrap_active");
       inputField.value = "";
-      console.log("100");
+      // console.log("100");
       e.stopPropagation();
     });
   }
@@ -922,7 +922,7 @@ if (headerSearchWrap) {
     ) {
       headerSearchWrap.classList.remove("header__search-form-wrap_active");
       inputField.value = "";
-      console.log("400");
+      // console.log("400");
     }
   });
 }
@@ -996,7 +996,7 @@ if (!getCookie("CookiePolicyAccepted")) {
 }
 
 function acceptCookiePolicy() {
-  console.log("acceptCookiePolicy");
+  // console.log("acceptCookiePolicy");
   setCookie("CookiePolicyAccepted", true);
   $(".cookie").fadeTo(500, 0);
   setTimeout(() => {
@@ -1119,12 +1119,12 @@ if (choiceForm) {
 
     inputFrom.addEventListener("input", (event) => {
       queryParams.area = inputFrom.value + " - " + inputTo.value;
-      console.log(queryParams);
+      // console.log(queryParams);
     });
 
     inputTo.addEventListener("input", (event) => {
       queryParams.area = inputFrom.value + " - " + inputTo.value;
-      console.log(queryParams);
+      // console.log(queryParams);
     });
   }
 
@@ -1137,12 +1137,44 @@ if (choiceForm) {
       // console.log("click");
     // choiceForm.addEventListener("submit", (event) => {
       event.preventDefault();
-      queryParams.name = document.querySelector(".form__input_name").value;
-      queryParams.phone = document.querySelector(".form__input_phone").value;
-      queryParams.email = document.querySelector(".form__input_email").value;
-      queryParams.message = document.querySelector(".form__input_textarea").value;
+      queryParams.name = choiceForm.querySelector(".form__input_name").value;
+      queryParams.phone = choiceForm.querySelector(".form__input_phone").value;
+      queryParams.email = choiceForm.querySelector(".form__input_email").value;
+      queryParams.message = choiceForm.querySelector(".form__input_textarea").value;
       // console.log(queryParams);
-      fetchToPost(queryParams);
+      postForm(queryParams);
+      // const popupActive = document.querySelector(".popup.open");
+      // popupClose(popupActive);
+      const popupSuccess = document.querySelector("#success");
+      popupOpen(popupSuccess);
+
+      // return false;
+    });
+  }
+
+  const requestForm = document.querySelector("#request-form");
+  if (requestForm) {
+    const submitBtn = requestForm.querySelector(".request__btn");
+    // console.log(submitBtn);
+    submitBtn.addEventListener("click", (event) => {
+      // console.log("click");
+    // requestForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const queryParams = {
+        apartment: "",
+        name: "",
+        phone: "",
+        email: "",
+        message: "",
+      };
+      queryParams.apartment = requestForm.querySelector(".request__input_apartment").value;
+      queryParams.name = requestForm.querySelector(".request__input_name").value;
+      queryParams.phone = requestForm.querySelector(".request__input_phone").value;
+      queryParams.email = requestForm.querySelector(".request__input_email").value;
+      queryParams.message = requestForm.querySelector(".request__input_textarea").value;
+      // console.log(queryParams);
+      postRequest(queryParams);
       // const popupActive = document.querySelector(".popup.open");
       // popupClose(popupActive);
       const popupSuccess = document.querySelector("#success");
@@ -1336,7 +1368,7 @@ if (footerForm) {
   //   footerPhone.value = "";
   //   return false;
   // });
-    console.log(queryParams);
+    // console.log(queryParams);
     fetchToPostFooter(queryParams);
     const popupSuccess = document.querySelector("#success");
     popupOpen(popupSuccess);
@@ -1344,7 +1376,7 @@ if (footerForm) {
 }
 
 async function fetchToPostFooter(queryParams) {
-  console.log(JSON.stringify(queryParams));
+  // console.log(JSON.stringify(queryParams));
   // Блок try выполнится полностью, если не будет ошибок:
   try {
     // Выполняем запрос:
@@ -1388,7 +1420,33 @@ async function fetchToPostFooter(queryParams) {
 
 //-------------------------- start отправка формы на почту ------------------------------
 
-async function fetchToPost(queryParams) {
+async function postForm(queryParams) {
+  // console.log(JSON.stringify(queryParams));
+  // Блок try выполнится полностью, если не будет ошибок:
+  try {
+    // Выполняем запрос:
+    const responce = await fetch("files/post-form.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(queryParams),
+    });
+    // const infoList = await responce.json();
+    // return infoList; // Возвращаем результат запроса
+    // console.log(responce);
+  } catch (err) {
+    // Блок catch сработает только если будут какие-то ошибки в блоке try:
+    // Выведем в консоли информацию об ошибке:
+    console.log("При оптравке письма произошла ошибка, детали ниже:");
+    console.error(err);
+    // Вернем исключение с текстом поясняющим детали ошибки:
+    alert("Произошла ошибка при оптравке письма!");
+    throw new Error("Запрос завершился неудачно.");
+  }
+}
+
+async function postRequest(queryParams) {
   // console.log(JSON.stringify(queryParams));
   // Блок try выполнится полностью, если не будет ошибок:
   try {
@@ -1478,7 +1536,9 @@ document.addEventListener("click", (event) => {
     // console.log(id);
     const title = document.querySelector(".plans__name");
     title.textContent = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
-
+    const requestPopup = document.querySelector("#popup-request");
+    const requestInput = requestPopup.querySelector(".request__input_apartment");
+    requestInput.value = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
   };
 });
 
@@ -1506,7 +1566,7 @@ if (plansFilterItem) {
       // console.log(item.innerHTML);
       const key = item.innerHTML.trim();
       previewPlansRender(apartmentsForRender, key);
-      setInfo();
+      // setInfo();
     });
   });
 }
@@ -1569,8 +1629,8 @@ function getPreviewPlansItem (obj) {
 const plansItem = document.querySelector(".plans__item");
 
 function setInfo() {
-  console.log('setInfo');
-  console.log(plansItem);
+  // console.log('setInfo');
+  // console.log(plansItem);
 
   plansItem.classList.add("plans__item_active");
   // console.log(plans__item);
@@ -1583,6 +1643,10 @@ function setInfo() {
   const title = document.querySelector(".plans__name");
   const id = plansItem.getAttribute("data-id");
   title.textContent = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
+  
+  const requestPopup = document.querySelector("#popup-request");
+  const requestInput = requestPopup.querySelector(".request__input_apartment");
+  requestInput.value = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
   // console.log(img);
     // imgBox.setAttribute("src", img);
   // console.log(imgBox);
