@@ -2529,21 +2529,21 @@ a {
 
     /* Форма заявки при запросе цены и планировки */
 
-/* Auto layout */
-// display: flex;
-// flex-direction: column;
-// align-items: flex-start;
-padding: 50px;
-// gap: 20px;
-// isolation: isolate;
+    /* Auto layout */
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+    padding: 50px;
+    // gap: 20px;
+    // isolation: isolate;
 
-// position: relative;
-max-width: 495px;
-width: 100%;
-min-height: 827px;
+    // position: relative;
+    max-width: 495px;
+    width: 100%;
+    min-height: 827px;
 
-background: #FFFFFF;
-border-radius: 10px;
+    background: #FFFFFF;
+    border-radius: 10px;
 
   
     .form__title {
@@ -2663,6 +2663,180 @@ border-radius: 10px;
         color: #363636;
       }
     }
+  }
+
+  .request {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 7% 65% 12% 4%;
+    gap: 4%;
+    align-items: start;
+    justify-content: start;
+    position: relative;
+    // padding: 50px;  
+    // background: #ffffff;
+    // border-radius: 10px;
+
+    /* Форма заявки при запросе цены и планировки */
+
+    /* Auto layout */
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+    padding: 50px;
+    // gap: 20px;
+    // isolation: isolate;
+
+    // position: relative;
+    max-width: 495px;
+    width: 100%;
+    min-height: 871px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+
+  
+    .request__title {
+      font-family: Inter;
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 48.41px;
+      text-align: left;
+      max-width: 100%;
+    }
+    .request__desc {
+      max-width: 75%;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22.4px;
+      text-align: left;
+    }
+  
+    .request__label-block {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 30px;
+  
+      .request__label {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: 1fr 2fr;
+        justify-items: start;
+        align-items: start;
+        gap: 6px 0;
+  
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+  
+        border-bottom: 1px solid #a9a9a9;
+  
+        .request__label-text {
+          grid-row: 1/1;
+          color: #bababa;
+        }
+  
+        .request__label-star {
+          grid-row: 1/1;
+          color: #363636;
+        }
+  
+        .request__input {
+          grid-column: span 2;
+          width: 100%;
+          line-height: 37px;
+
+          &::placeholder {
+            font-size: 16px;
+            color: #363636;
+          }
+        }
+
+        &.request__label_textarea {
+          grid-template-columns: max-content 1fr;
+          grid-template-rows: max-content 1fr;
+
+          .request__input_textarea {
+            max-width: 395px;
+            min-height: 116px;
+          }
+
+        }
+      }
+
+      .request__label_readonly {
+        
+        border-bottom: 1px solid #D9D9D9;  
+        
+        .request__input {
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 400;
+          // line-height: 19.36px;
+          text-align: left;
+
+
+          &::placeholder {
+            color: #BABABA;
+          }
+        }
+      }
+    }
+  
+    .request__btn {
+      align-self: end;
+      width: 100%;
+      height: 60px;
+    }
+    
+    .request__close-btn {
+      position: absolute;
+      width: 20px;
+      height: 15px;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -12px;
+      }
+
+      // border: 1.5px solid #8C8C8C;
+      // flex: none;
+      // order: 2;
+      // flex-grow: 0;
+      // z-index: 2;
+
+    }
+  
+    .request__agreement-wrap {
+      align-self: end;
+  
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19.6px;
+      text-align: left;
+  
+      .request__agreement-text {
+        color: #a9a9a9;
+      }
+      .request__agreement-link {
+        color: #363636;
+      }
+    }
+  }
+
+  .popup-notification {
+
   }
 
   .popup-success {

@@ -805,6 +805,150 @@
   </div>
 </div>
 
+<div class="popup" id="popup-request">
+  <div class="popup__body">
+    <div class="popup__content popup-request">
+      <form class="request">
+        <h3 class="request__title">
+          Оставить заявку
+        </h3>
+
+        <div class="request__label-block">
+          <label class="request__label request__label_readonly">
+            <span class="request__label-text">
+              Планировка
+            </span>
+            <span class="request__label-star">
+              *
+            </span>
+
+            <input class="request__input request__input_apartment" type="text" name="apartment" placeholder="Выберите квартиру" readonly required>
+          </label>
+          <label class="request__label">
+            <span class="request__label-text">
+              ФИО
+            </span>
+            <span class="request__label-star">
+              *
+            </span>
+
+            <input class="request__input request__input_name" type="text" name="name" placeholder="Введите имя" required>
+          </label>
+          <label class="request__label">
+            <span class="request__label-text">
+              Телефон
+            </span>
+            <span class="request__label-star">
+              *
+            </span>
+            <input class="request__input request__input_phone" type="tel" name="phone" placeholder="7" required value="7">
+          </label>
+          <label class="request__label">
+            <span class="request__label-text">
+              E-mail
+            </span>
+            <input class="request__input request__input_email" type="email" name="email" placeholder="Введите e-mail">
+          </label>
+          <label class="request__label request__label_textarea">
+            <span class="request__label-text">
+              Комментарий
+            </span>
+            <textarea class="request__input request__input_textarea" name="text" placeholder="Сообщение"></textarea>
+          </label>
+        </div>
+
+        <button class="btn btn_dark btn_reset request__btn">
+          Отправить
+        </button>
+
+
+        <div class="request__agreement-wrap">
+          <span class="request__agreement-text">
+            Нажимая кнопку «Отправить», вы соглашаетесь с
+          </span>
+          <a class="request__agreement-link" href="agreement.html" target="_blank">
+            условиями обработки персональных данных
+          </a>
+        </div>
+
+        <span class="request__close-btn popup-close">
+          <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L21 16M21 1L1 16" stroke="#8C8C8C" stroke-width="1.5"/>
+          </svg>              
+        </span>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="popup-notification">
+  <div class="popup__body">
+    <div class="popup__content popup-notification">
+      <form class="popup-notification">
+        <h3 class="popup-notification__title">
+          Запросить планировки
+        </h3>
+
+        <div class="popup-notification__label-block">
+          <label class="popup-notification__label">
+            <span class="popup-notification__label-text">
+              ФИО
+            </span>
+            <span class="popup-notification__label-star">
+              *
+            </span>
+
+            <input class="popup-notification__input popup-notification__input_name" type="text" name="name" placeholder="Введите имя" required>
+          </label>
+          <label class="popup-notification__label">
+            <span class="popup-notification__label-text">
+              Телефон
+            </span>
+            <span class="popup-notification__label-star">
+              *
+            </span>
+            <input class="popup-notification__input popup-notification__input_phone" type="tel" name="phone" placeholder="7" required value="7">
+          </label>
+          <label class="popup-notification__label">
+            <span class="popup-notification__label-text">
+              E-mail
+            </span>
+            <input class="popup-notification__input popup-notification__input_email" type="email" name="email" placeholder="Введите e-mail">
+          </label>
+          <label class="popup-notification__label popup-notification__label_textarea">
+            <span class="popup-notification__label-text">
+              Комментарий
+            </span>
+            <textarea class="popup-notification__input popup-notification__input_textarea" name="text" placeholder="Сообщение"></textarea>
+          </label>
+        </div>
+
+        <button class="btn btn_dark btn_reset popup-notification__btn">
+          Отправить
+        </button>
+
+
+        <div class="popup-notification__agreement-wrap">
+          <span class="popup-notification__agreement-text">
+            Нажимая кнопку «Отправить», вы соглашаетесь с
+          </span>
+          <a class="popup-notification__agreement-link" href="agreement.html" target="_blank">
+            условиями обработки персональных данных
+          </a>
+        </div>
+
+        <span class="popup-notification__close-btn popup-close">
+          <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L21 16M21 1L1 16" stroke="#8C8C8C" stroke-width="1.5"/>
+          </svg>              
+        </span>
+
+      </form>
+    </div>
+  </div>
+</div>
+
 <div class="popup" id="success">
   <div class="popup__body">
     <div class="popup__content popup-success">
