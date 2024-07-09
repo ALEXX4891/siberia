@@ -1184,6 +1184,44 @@ if (choiceForm) {
     });
   }
 
+  const notificationForm = document.querySelector("#notification-form");
+  if (notificationForm) {
+    const submitBtn = notificationForm.querySelector(".notification__btn");
+    // console.log(submitBtn);
+    submitBtn.addEventListener("click", (event) => {
+      // console.log("click");
+    // notificationForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const queryParams = {
+        agency: "",
+        agentName: "",
+        agentPhone: "",
+        clientName: "",
+        clientPhone: "",
+        message: "",
+      };
+      // queryParams.apartment = notificationForm.querySelector(".notification__input_apartment").value;
+      // queryParams.name = notificationForm.querySelector(".notification__input_name").value;
+      // queryParams.phone = notificationForm.querySelector(".notification__input_phone").value;
+      // queryParams.email = notificationForm.querySelector(".notification__input_email").value;
+      queryParams.agency = notificationForm.querySelector(".notification__input_agency").value;
+      queryParams.agentName = notificationForm.querySelector(".notification__input_agent-name").value;
+      queryParams.agentPhone = notificationForm.querySelector(".notification__input_agent-phone").value;
+      queryParams.clientName = notificationForm.querySelector(".notification__input_client-name").value;
+      queryParams.clientPhone = notificationForm.querySelector(".notification__input_client-phone").value;
+      queryParams.message = notificationForm.querySelector(".notification__input_textarea").value;
+      console.log(queryParams);
+      postNotification(queryParams);
+      // const popupActive = document.querySelector(".popup.open");
+      // popupClose(popupActive);
+      const popupSuccess = document.querySelector("#success");
+      popupOpen(popupSuccess);
+
+      // return false;
+    });
+  }
+
   // const 
     // const btns = choiceButtonsSelect.querySelectorAll(".choice__buttons-select-item";
 
@@ -1369,13 +1407,34 @@ if (footerForm) {
   //   return false;
   // });
     // console.log(queryParams);
-    fetchToPostFooter(queryParams);
+    postCall(queryParams);
     const popupSuccess = document.querySelector("#success");
     popupOpen(popupSuccess);
   });
 }
 
-async function fetchToPostFooter(queryParams) {
+
+
+
+
+// footerForm.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const footerName = document.querySelector(".footer__input-name");
+//   const footerEmail = document.querySelector(".footer__input-email");
+//   const footerPhone = document.querySelector(".footer__input-phone");
+//   console.log(footerName.value);
+//   console.log(footerEmail.value);
+//   console.log(footerPhone.value);
+//   footerName.value = "";
+//   footerEmail.value = "";
+//   footerPhone.value = "";
+//   return false;
+// });
+
+
+//-------------------------- start отправка формы на почту ------------------------------
+
+async function postCall(queryParams) {
   // console.log(JSON.stringify(queryParams));
   // Блок try выполнится полностью, если не будет ошибок:
   try {
@@ -1400,25 +1459,6 @@ async function fetchToPostFooter(queryParams) {
     throw new Error("Запрос завершился неудачно.");
   }
 }
-
-
-
-// footerForm.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   const footerName = document.querySelector(".footer__input-name");
-//   const footerEmail = document.querySelector(".footer__input-email");
-//   const footerPhone = document.querySelector(".footer__input-phone");
-//   console.log(footerName.value);
-//   console.log(footerEmail.value);
-//   console.log(footerPhone.value);
-//   footerName.value = "";
-//   footerEmail.value = "";
-//   footerPhone.value = "";
-//   return false;
-// });
-
-
-//-------------------------- start отправка формы на почту ------------------------------
 
 async function postForm(queryParams) {
   // console.log(JSON.stringify(queryParams));
@@ -1452,6 +1492,32 @@ async function postRequest(queryParams) {
   try {
     // Выполняем запрос:
     const responce = await fetch("files/post-request.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(queryParams),
+    });
+    // const infoList = await responce.json();
+    // return infoList; // Возвращаем результат запроса
+    // console.log(responce);
+  } catch (err) {
+    // Блок catch сработает только если будут какие-то ошибки в блоке try:
+    // Выведем в консоли информацию об ошибке:
+    console.log("При оптравке письма произошла ошибка, детали ниже:");
+    console.error(err);
+    // Вернем исключение с текстом поясняющим детали ошибки:
+    alert("Произошла ошибка при оптравке письма!");
+    throw new Error("Запрос завершился неудачно.");
+  }
+}
+
+async function postNotification(queryParams) {
+  // console.log(JSON.stringify(queryParams));
+  // Блок try выполнится полностью, если не будет ошибок:
+  try {
+    // Выполняем запрос:
+    const responce = await fetch("files/post-notification.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

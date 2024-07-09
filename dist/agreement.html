@@ -423,7 +423,7 @@
         </a>
       </div>
 
-      <button class="btn btn_dark btn_reset footer__btn popup-link" href="#popup-form">
+      <button class="btn btn_dark btn_reset footer__btn popup-link" href="#popup-notification">
         Форма уведомления
       </button>
 
@@ -665,60 +665,86 @@
 <div class="popup" id="popup-notification">
   <div class="popup__body">
     <div class="popup__content popup-notification">
-      <form class="popup-notification">
-        <h3 class="popup-notification__title">
-          Запросить планировки
+      <form class="notification" id="notification-form">
+        <h3 class="notification__title">
+          Форма уведомления
         </h3>
 
-        <div class="popup-notification__label-block">
-          <label class="popup-notification__label">
-            <span class="popup-notification__label-text">
-              ФИО
-            </span>
-            <span class="popup-notification__label-star">
-              *
-            </span>
+        <div class="notification__label-block">
 
-            <input class="popup-notification__input popup-notification__input_name" type="text" name="name" placeholder="Введите имя" required>
-          </label>
-          <label class="popup-notification__label">
-            <span class="popup-notification__label-text">
-              Телефон
+          <label class="notification__label notification__agency">
+            <span class="notification__label-text">
+              Агенство недвижимости
             </span>
-            <span class="popup-notification__label-star">
+            <span class="notification__label-star">
               *
             </span>
-            <input class="popup-notification__input popup-notification__input_phone" type="tel" name="phone" placeholder="7" required value="7">
+            <input class="notification__input notification__input_agency" type="text" name="agency" placeholder="Введите название агенства" required>
           </label>
-          <label class="popup-notification__label">
-            <span class="popup-notification__label-text">
-              E-mail
+
+          <label class="notification__label notification__agent-name">
+            <span class="notification__label-text">
+              ФИО агента
             </span>
-            <input class="popup-notification__input popup-notification__input_email" type="email" name="email" placeholder="Введите e-mail">
+            <span class="notification__label-star">
+              *
+            </span>
+            <input class="notification__input notification__input_agent-name" type="text" name="agent-name" placeholder="Введите имя" required>
           </label>
-          <label class="popup-notification__label popup-notification__label_textarea">
-            <span class="popup-notification__label-text">
-              Комментарий
+
+          <label class="notification__label notification__agent-phone">
+            <span class="notification__label-text">
+              Телефон агента
             </span>
-            <textarea class="popup-notification__input popup-notification__input_textarea" name="text" placeholder="Сообщение"></textarea>
+            <span class="notification__label-star">
+              *
+            </span>
+            <input class="notification__input notification__input_agent-phone" type="tel" name="agent-phone" placeholder="7" required value="7">
+          </label>
+
+          <label class="notification__label notification__client-name">
+            <span class="notification__label-text">
+              ФИО клиента
+            </span>
+            <span class="notification__label-star">
+              *
+            </span>
+            <input class="notification__input notification__input_client-name" type="text" name="client-name" placeholder="Введите имя" required>
+          </label>
+
+          <label class="notification__label notification__client-phone">
+            <span class="notification__label-text">
+              Телефон клиента
+            </span>
+            <span class="notification__label-star">
+              *
+            </span>
+            <input class="notification__input notification__input_client-phone" type="tel" name="client-phone" placeholder="7" required value="7">
+          </label>
+
+          <label class="notification__label notification__label_textarea">
+            <span class="notification__label-text">
+              Сообщение
+            </span>
+            <textarea class="notification__input notification__input_textarea" name="text" placeholder="Сообщение"></textarea>
           </label>
         </div>
 
-        <button class="btn btn_dark btn_reset popup-notification__btn">
+        <button class="btn btn_green btn_reset notification__btn">
           Отправить
         </button>
 
 
-        <div class="popup-notification__agreement-wrap">
-          <span class="popup-notification__agreement-text">
+        <div class="notification__agreement-wrap">
+          <span class="notification__agreement-text">
             Нажимая кнопку «Отправить», вы соглашаетесь с
           </span>
-          <a class="popup-notification__agreement-link" href="agreement.html" target="_blank">
+          <a class="notification__agreement-link" href="agreement.html" target="_blank">
             условиями обработки персональных данных
           </a>
         </div>
 
-        <span class="popup-notification__close-btn popup-close">
+        <span class="notification__close-btn popup-close">
           <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L21 16M21 1L1 16" stroke="#8C8C8C" stroke-width="1.5"/>
           </svg>              
