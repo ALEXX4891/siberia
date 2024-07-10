@@ -220,9 +220,15 @@ a {
     max-width: 1280px;
   }
 }
-@media (max-width: 1400px) {
+@media (max-width: 1340px) {
   .container {
     padding: 0 30px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 660px) {
+  .container {
+    padding: 0 15px;
   }
 }
 
@@ -1139,6 +1145,22 @@ a {
 .main {
   padding-top: 80px;
   overflow: hidden;
+}
+
+@media (max-width: 1750px) {
+  .section {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1400px) {
+  .section {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 660px) {
+  .section {
+    padding: 0 15px;
+  }
 }
 
 .card {
@@ -2537,9 +2559,9 @@ a {
     gap: 5px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 660px) {
   .header .header__top-block {
-    padding: 15px 15px 26px;
+    grid-template-columns: 125px 1fr 100px 50px;
   }
 }
 .header .header__top-block .nav {
@@ -3094,6 +3116,11 @@ a {
   grid-template-columns: 1fr;
   grid-template-rows: 748px 120px auto 150px auto 142px auto 100px auto 100px auto 100px auto 100px auto;
 }
+@media (max-width: 660px) {
+  .glavnaya .main {
+    grid-template-rows: 309px 120px auto 150px auto 142px auto 100px auto 100px auto 100px auto 100px auto;
+  }
+}
 .glavnaya .main .banner {
   grid-row: 1/2;
 }
@@ -3110,10 +3137,26 @@ a {
   background-size: cover;
   border-radius: 10px;
 }
+@media (max-width: 960px) {
+  .glavnaya .main .banner .banner__container {
+    grid-template-columns: 1fr;
+    padding: 100px 30px;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .main .banner .banner__container {
+    padding: 30px 20px;
+  }
+}
 .glavnaya .main .banner .banner__container .bunner__content-wrap {
   display: grid;
   grid-template-rows: auto 50px 1fr;
   gap: 30px;
+}
+@media (max-width: 660px) {
+  .glavnaya .main .banner .banner__container .bunner__content-wrap {
+    gap: 15px;
+  }
 }
 .glavnaya .main .banner .banner__container .bunner__content-wrap .bunner__title {
   font-family: Inter;
@@ -3122,6 +3165,24 @@ a {
   line-height: 72.61px;
   text-align: left;
 }
+@media (max-width: 960px) {
+  .glavnaya .main .banner .banner__container .bunner__content-wrap .bunner__title {
+    font-family: Inter;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60.51px;
+    text-align: left;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .main .banner .banner__container .bunner__content-wrap .bunner__title {
+    font-family: Inter;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 27.84px;
+    text-align: left;
+  }
+}
 .glavnaya .main .banner .banner__container .bunner__content-wrap .bunner__text {
   font-family: Inter;
   font-size: 25px;
@@ -3129,9 +3190,29 @@ a {
   line-height: 30.26px;
   text-align: left;
 }
+@media (max-width: 660px) {
+  .glavnaya .main .banner .banner__container .bunner__content-wrap .bunner__text {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: left;
+  }
+}
 .glavnaya .main .banner .banner__container .bunner__content-wrap .bunner__btn {
   width: 271px;
   height: 60px;
+}
+@media (max-width: 660px) {
+  .glavnaya .main .banner .banner__container .bunner__content-wrap .bunner__btn {
+    width: 214px;
+    height: 49px;
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.15px;
+    text-align: center;
+  }
 }
 .glavnaya .main .about {
   grid-row: 3/4;

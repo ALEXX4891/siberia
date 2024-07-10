@@ -645,15 +645,20 @@ jQuery(($) => {
       stagePadding: 104, // позволяет задать начальное положение первого слайда
       responsive: {
         0: {
-          nav: false,
-          items: window.screen.width / 360,
+          items: 1
+          // nav: false,
+          // items: window.screen.width / 360,
         },
         800: {
-          nav: false,
-          items: window.screen.width / 420,
+          items: 2
+          // nav: false,
+          // items: window.screen.width / 420,
         },
         1200: {
-          // items: 4
+          items: 3
+        },
+        1600: {
+          items: 4
         },
       },
     });
