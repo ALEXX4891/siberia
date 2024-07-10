@@ -727,27 +727,27 @@ jQuery(($) => {
     //   },
     // });
 
-    // $(".owl-carousel-index").owlCarousel({
-    //   loop: false,
-    //   margin: 20,
-    //   nav: true,
-    //   dots: false,
-    //   autoplay: false,
-    //   smartSpeed: 1000,
-    //   autoplayTimeout: 5000,
-    //   responsive: {
-    //     //Адаптация в зависимости от разрешения экрана
-    //     0: {
-    //       items: 1,
-    //     },
-    //     600: {
-    //       items: 1,
-    //     },
-    //     1000: {
-    //       items: 1,
-    //     },
-    //   },
-    // });
+    $(".owl-carousel-slider").owlCarousel({
+      loop: false,
+      margin: 20,
+      nav: true,
+      dots: false,
+      autoplay: false,
+      smartSpeed: 1000,
+      autoplayTimeout: 5000,
+      responsive: {
+        //Адаптация в зависимости от разрешения экрана
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 1,
+        },
+        1000: {
+          items: 1,
+        },
+      },
+    });
 
     // $(".owl-carousel-about").owlCarousel({
     //   loop: false,
