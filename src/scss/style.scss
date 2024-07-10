@@ -5037,11 +5037,11 @@ a {
       // gap: 43px;
 
       @media (max-width: 1750px) {
-        padding: 103px 0;
+        padding: 103px 0 89px;
       }
 
       @media (max-width: 660px) {
-        padding: 110px 0;
+        padding: 110px 0 89px;
       }
 
 
@@ -5295,13 +5295,32 @@ a {
 
   .slider {
     // grid-row: 9/10;
+
     .slider__container {
       padding: 14px 0 95px;
       // display: grid;
       // grid-template: 25px 820px / 100%;
       // grid-template: 25px 820px / 1fr; // так не работает!!!!!!!!!!!!
-
       gap: 20px;
+
+      @media (max-width: 1750px) {
+        padding: 14px 30px 95px;
+      }
+
+      @media (max-width: 1512px) {
+        padding: 14px 0 95px;
+        max-width: 1280px;
+      }
+
+      @media (max-width: 1330px) {
+        padding: 14px 30px 95px;
+        max-width: 1280px;
+      }
+
+      @media (max-width: 660px) {
+        padding: 14px 0 95px;
+      }
+
       .slider__title {
         font-family: Inter;
         font-size: 20px;
@@ -5309,6 +5328,21 @@ a {
         text-align: left;
         color: #303030;
         letter-spacing: -1px;
+        margin-bottom: 25px;
+
+        @media (max-width: 660px) {
+
+          //styleName: текст боди;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.4px;
+  text-align: left;
+  margin-bottom: 16px;
+  padding: 0 15px;
+
+        }
+
       }
       .slider__list {
         .slider__item {
@@ -5318,12 +5352,29 @@ a {
           width: 100%;
           height: 100%;
 
+          @media (max-width: 660px) {
+            border-radius: 0;
+
+          }
+
           & img {
             aspect-ratio: 1712/820;
             // width: 100%;
             // height: 100%;
-            // object-fit: cover;
-            // object-position: center;
+            object-fit: cover;
+            object-position: center;
+
+            @media (max-width: 1512px) {
+              aspect-ratio: 1360 / 820;
+            }
+
+            @media (max-width: 960px) {
+              aspect-ratio: 1090 / 820;
+            }
+
+            @media (max-width: 660px) {
+              aspect-ratio: 1050 / 820;
+            }
           }
 
           &_1 {
@@ -5348,8 +5399,19 @@ a {
         gap: 20px;
         align-items: center;
 
+        @media (max-width: 1512px) {
+          width: 92%;
+
+        }
+
+        @media (max-width: 660px) {
+          top: 89%;
+          left: 50%;
+
+        }
+
         @media (max-width: 1280px) {
-          display: none;
+          // display: none;
         }
 
         .owl-prev {
@@ -5360,6 +5422,16 @@ a {
           background-repeat: no-repeat !important;
           background-position: center !important;
           cursor: pointer;
+
+          @media (max-width: 960px) {
+            width: 45px;
+            height: 45px;
+          }
+
+          @media (max-width: 660px) {
+            width: 35px;
+            height: 35px;
+          }
 
           & span {
             display: none;
@@ -5378,6 +5450,16 @@ a {
           background-repeat: no-repeat !important;
           background-position: center !important;
           cursor: pointer;
+
+          @media (max-width: 960px) {
+            width: 45px;
+            height: 45px;
+          }
+
+          @media (max-width: 660px) {
+            width: 35px;
+            height: 35px;
+          }
 
           & span {
             display: none;
