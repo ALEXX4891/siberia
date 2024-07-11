@@ -2707,25 +2707,10 @@ a {
     align-items: start;
     justify-content: start;
     position: relative;
-    // padding: 50px;
-    // background: #ffffff;
-    // border-radius: 10px;
-
-    /* Форма заявки при запросе цены и планировки */
-
-    /* Auto layout */
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-start;
     padding: 50px;
-    // gap: 20px;
-    // isolation: isolate;
-
-    // position: relative;
     max-width: 495px;
     width: 100%;
     min-height: 871px;
-
     background: #ffffff;
     border-radius: 10px;
 
@@ -2736,6 +2721,17 @@ a {
       line-height: 48.41px;
       text-align: left;
       max-width: 100%;
+
+      @media (max-width: 660px) {
+    grid-template-rows: 7% 65% 12% 11%;
+
+        font-size: 24px;
+        gap: 1%;
+
+
+        // grid-template-rows: 309px 100px auto 100px auto;
+        // grid-template-rows: auto 88px auto 100px;
+      }
     }
     .request__desc {
       max-width: 75%;
@@ -2873,27 +2869,18 @@ a {
     align-items: start;
     justify-content: start;
     position: relative;
-    /* Frame 6526 */
-
-    /* Auto layout */
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-start;
     padding: 50px;
-    // gap: 20px;
-    // isolation: isolate;
-
-    // position: absolute;
     max-width: 768px;
     width: 100%;
     min-height: 759px;
-    // left: 576px;
-    // top: 160px;
-
     background: #1b1b1b;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     color: #ffffff;
+
+    @media (max-width: 660px) {
+      grid-template-rows: 7% 67% 10% 10%;
+    }
 
     .notification__title {
       font-family: Inter;
@@ -2902,6 +2889,12 @@ a {
       line-height: 48.41px;
       text-align: left;
       max-width: 100%;
+
+      @media (max-width: 660px) {
+        font-size: 22px;
+
+      }
+  
     }
     .notification__desc {
       max-width: 75%;
@@ -2919,6 +2912,10 @@ a {
       grid-template-columns: 1fr 1fr;
       // grid-template-rows: repeat(4, 1fr);
       gap: 30px;
+
+      @media (max-width: 660px) {
+        display: block;
+      }
 
       .notification__label {
         display: grid;
@@ -2952,6 +2949,10 @@ a {
           &::placeholder {
             font-size: 16px;
             color: #ffffff;
+
+            @media (max-width: 660px) {
+              font-size: 15px;
+            }
           }
         }
 
@@ -3042,25 +3043,24 @@ a {
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-
     display: flex;
     flex-flow: column nowrap;
     align-items: start;
     justify-content: center;
     gap: 20px;
-
-    // max-width: 392px;
-    // min-height: 258px;
     z-index: 1000;
     opacity: 0;
-    // opacity: 1;
     transition: all 0.8s ease 0s;
-
     background: #ffffff;
     border-radius: 10px;
     max-width: 544px;
     min-height: 322px;
     padding: 50px;
+
+    @media (max-width: 660px) {
+      padding: 30px;
+      width: 100%;
+    }
 
     .popup-success__title {
       font-family: Inter;

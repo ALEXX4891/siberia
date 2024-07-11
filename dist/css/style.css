@@ -1953,8 +1953,6 @@ a {
   align-items: start;
   justify-content: start;
   position: relative;
-  /* Форма заявки при запросе цены и планировки */
-  /* Auto layout */
   padding: 50px;
   max-width: 495px;
   width: 100%;
@@ -1969,6 +1967,13 @@ a {
   line-height: 48.41px;
   text-align: left;
   max-width: 100%;
+}
+@media (max-width: 660px) {
+  .popup .request .request__title {
+    grid-template-rows: 7% 65% 12% 11%;
+    font-size: 24px;
+    gap: 1%;
+  }
 }
 .popup .request .request__desc {
   max-width: 75%;
@@ -2078,8 +2083,6 @@ a {
   align-items: start;
   justify-content: start;
   position: relative;
-  /* Frame 6526 */
-  /* Auto layout */
   padding: 50px;
   max-width: 768px;
   width: 100%;
@@ -2089,6 +2092,11 @@ a {
   border-radius: 10px;
   color: #ffffff;
 }
+@media (max-width: 660px) {
+  .popup .notification {
+    grid-template-rows: 7% 67% 10% 10%;
+  }
+}
 .popup .notification .notification__title {
   font-family: Inter;
   font-size: 40px;
@@ -2096,6 +2104,11 @@ a {
   line-height: 48.41px;
   text-align: left;
   max-width: 100%;
+}
+@media (max-width: 660px) {
+  .popup .notification .notification__title {
+    font-size: 22px;
+  }
 }
 .popup .notification .notification__desc {
   max-width: 75%;
@@ -2111,6 +2124,11 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+@media (max-width: 660px) {
+  .popup .notification .notification__label-block {
+    display: block;
+  }
 }
 .popup .notification .notification__label-block .notification__label {
   display: grid;
@@ -2140,6 +2158,11 @@ a {
 .popup .notification .notification__label-block .notification__label .notification__input::placeholder {
   font-size: 16px;
   color: #ffffff;
+}
+@media (max-width: 660px) {
+  .popup .notification .notification__label-block .notification__label .notification__input::placeholder {
+    font-size: 15px;
+  }
 }
 .popup .notification .notification__label-block .notification__label.notification__label_textarea {
   grid-template-columns: max-content 1fr;
@@ -2218,6 +2241,12 @@ a {
   max-width: 544px;
   min-height: 322px;
   padding: 50px;
+}
+@media (max-width: 660px) {
+  .popup .popup-success {
+    padding: 30px;
+    width: 100%;
+  }
 }
 .popup .popup-success .popup-success__title {
   font-family: Inter;
