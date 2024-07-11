@@ -4081,7 +4081,17 @@ a {
   padding-top: 0;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 180px auto 100px;
+  grid-template-rows: auto 95px auto 100px;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_bot {
+    grid-template-rows: auto 105px auto 100px;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main_bot {
+    grid-template-rows: auto 88px auto 100px;
+  }
 }
 .glavnaya .glavnaya__main_bot .plans {
   max-width: 1920px;
@@ -4406,6 +4416,24 @@ a {
   grid-template-rows: 48px 88px 20px 800px;
   gap: 20px;
 }
+@media (max-width: 1512px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__container {
+    grid-template-rows: 48px 88px 20px 758px;
+    gap: 20px 75px;
+  }
+}
+@media (max-width: 1250px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(86px, auto) auto 758px;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(120px, auto) auto 484px;
+  }
+}
 .glavnaya .glavnaya__main_bot .geo .geo__desc {
   font-family: Inter;
   font-size: 14px;
@@ -4414,6 +4442,11 @@ a {
   text-align: left;
   color: #616161;
 }
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__desc {
+    line-height: 19.4px;
+  }
+}
 .glavnaya .glavnaya__main_bot .geo .geo__advantages-list {
   grid-column: 2/3;
   grid-row: 1/3;
@@ -4421,6 +4454,27 @@ a {
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, 314px));
   gap: 20px;
+}
+@media (max-width: 1250px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__advantages-list {
+    grid-column: initial;
+    grid-row: initial;
+    justify-self: center;
+  }
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__advantages-list {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 560px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__advantages-list {
+    margin-bottom: 40px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 0;
+  }
 }
 .glavnaya .glavnaya__main_bot .geo .geo__advantages-list .geo__advantages-item {
   display: grid;
@@ -4435,6 +4489,24 @@ a {
   border: 1px solid #ededed;
   border-radius: 5px;
 }
+@media (max-width: 1512px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__advantages-list .geo__advantages-item {
+    gap: 0 17px;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__advantages-list .geo__advantages-item {
+    padding: 23px;
+  }
+}
+@media (max-width: 560px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__advantages-list .geo__advantages-item {
+    width: 100%;
+    padding: 19px;
+  }
+}
 .glavnaya .glavnaya__main_bot .geo .geo__advantages-list .geo__advantages-item .geo__advantages-title {
   font-family: Inter;
   font-size: 22px;
@@ -4442,6 +4514,7 @@ a {
   line-height: 26.63px;
   text-align: right;
   color: #000000;
+  white-space: nowrap;
 }
 .glavnaya .glavnaya__main_bot .geo .geo__advantages-list .geo__advantages-item .geo__advantages-desc {
   align-self: start;
@@ -4463,6 +4536,12 @@ a {
   border-radius: 10px;
   overflow: hidden;
 }
+@media (max-width: 1250px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__map {
+    grid-column: initial;
+    grid-row: initial;
+  }
+}
 .glavnaya .glavnaya__main_bot .geo .geo__map .map__container {
   padding: 0;
   width: 100%;
@@ -4473,7 +4552,8 @@ a {
   display: none !important;
 }
 .glavnaya .glavnaya__main_bot .geo .geo__map .map__mark-list-wrap {
-  width: 494px;
+  max-width: 494px;
+  width: 100%;
   position: absolute;
   top: 62px;
   left: 50px;
@@ -4486,6 +4566,20 @@ a {
   display: grid;
   grid-auto-flow: row;
   align-content: start;
+}
+@media (max-width: 1512px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__map .map__mark-list-wrap {
+    top: 40px;
+    left: 40px;
+    padding: 40px;
+    max-width: 425px;
+  }
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_bot .geo .geo__map .map__mark-list-wrap {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 .glavnaya .glavnaya__main_bot .geo .geo__map .map__mark-list-wrap .map__title {
   font-family: Inter;
@@ -8243,9 +8337,5 @@ a {
 }
 .goods-item .goods-item__container .bot-block .bot-block__text_active {
   display: block;
-}
-
-.geo {
-  display: none;
 }
 /*# sourceMappingURL=style.css.map */

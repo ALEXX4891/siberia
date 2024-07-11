@@ -5483,7 +5483,7 @@ a {
     padding-top: 0;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 180px auto 100px;
+    grid-template-rows: auto 95px auto 100px;
     // grid-template-rows:  142px auto 100px auto 100px auto 100px auto 100px auto;
 
     // grid-template-rows: 748px 120px auto 100px auto;
@@ -5495,8 +5495,14 @@ a {
       // grid-template-rows: 748px 120px auto 100px auto;
     }
 
+    @media (max-width: 960px) {
+      grid-template-rows: auto 105px auto 100px;
+
+    }
+
     @media (max-width: 660px) {
       // grid-template-rows: 309px 100px auto 100px auto;
+      grid-template-rows: auto 88px auto 100px;
     }
 
     .plans {
@@ -5862,6 +5868,26 @@ height: 48px;
         grid-template-rows: 48px 88px 20px 800px;
         // grid-auto-flow: row;
         gap: 20px;
+
+        @media (max-width: 1512px) {
+          grid-template-rows: 48px 88px 20px 758px;
+          
+          gap: 20px 75px;
+
+          // grid-template-columns: 377px 1fr;
+        }
+
+        @media (max-width: 1250px) {
+            grid-template-columns: 1fr;
+          grid-template-rows: auto minmax(86px, auto) auto 758px;
+
+        }
+
+        @media (max-width: 660px) {
+          grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(120px, auto) auto 484px;
+
+      }
       }
 
       .geo__desc {
@@ -5871,6 +5897,12 @@ height: 48px;
         line-height: 22.4px;
         text-align: left;
         color: #616161;
+
+        @media (max-width: 660px) {
+          // grid-template-rows: 309px 100px auto 100px auto;
+          line-height: 19.4px;
+
+        }
       }
       .geo__advantages-list {
         grid-column: 2 / 3;
@@ -5879,6 +5911,29 @@ height: 48px;
         display: grid;
         grid-template-columns: repeat(3, minmax(100px, 314px));
         gap: 20px;
+
+        @media (max-width: 1250px) {
+          grid-column: initial;
+          grid-row: initial;
+          justify-self: center;
+
+
+      }
+
+      @media (max-width: 960px) {
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 560px) {
+      margin-bottom: 40px;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      width: 100%;
+      margin-bottom: 0;
+
+
+
+  }
 
         .geo__advantages-item {
           display: grid;
@@ -5894,6 +5949,23 @@ height: 48px;
           border: 1px solid #ededed;
           border-radius: 5px;
 
+          @media (max-width: 1512px) {
+          gap: 0 17px;
+            box-sizing: border-box;
+            padding: 30px;
+          }
+
+          @media (max-width: 960px) {
+              padding: 23px;
+            }
+
+            @media (max-width: 560px) {
+              width: 100%;
+              padding: 19px;     
+        
+        
+          }
+
           .geo__advantages-title {
             font-family: Inter;
             font-size: 22px;
@@ -5901,6 +5973,7 @@ height: 48px;
             line-height: 26.63px;
             text-align: right;
             color: #000000;
+            white-space: nowrap;
           }
           .geo__advantages-icon {
           }
@@ -5928,6 +6001,11 @@ height: 48px;
         border-radius: 10px;
         overflow: hidden;
 
+        @media (max-width: 1250px) {
+          grid-column: initial;
+          grid-row: initial;
+      }
+
         .map__container {
           padding: 0;
           width: 100%;
@@ -5944,7 +6022,8 @@ height: 48px;
         }
 
         .map__mark-list-wrap {
-          width: 494px;
+          max-width: 494px;
+          width: 100%;
           position: absolute;
           // top: calc(50% - 675px/2 - 0.5px);
           top: 62px;
@@ -5959,15 +6038,24 @@ height: 48px;
           display: grid;
           grid-auto-flow: row;
           align-content: start;
-          // grid-template-columns: 1fr 1fr;
-          // align-items: center;
-          // justify-content: center;
-          // gap: 15px 17px;
-          // padding: 31px 53px;
-          // width: 100%;
-          // height: 100%;
-          // border: 1px solid #EDEDED;
-          // border-radius: 5px;
+
+          @media (max-width: 1512px) {
+            top: 40px;
+            left: 40px;
+            padding: 40px;
+            max-width: 425px;
+
+
+          }
+
+          @media (max-width: 960px) {
+            opacity: 0;
+            visibility: hidden;
+
+
+          }
+      
+
           .map__title {
             //styleName: н3;
             font-family: Inter;
@@ -11650,5 +11738,5 @@ cursor: pointer; */
 // .slider,
 // .plans,
 .geo {
-  display: none;
+  // display: none;
 }
