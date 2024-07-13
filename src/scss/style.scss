@@ -2262,12 +2262,30 @@ a {
     font-size: 40px;
     line-height: 150%;
     margin-bottom: 25px;
+
+    @media (max-width: 1920px) {
+      font-size: 3vw;
+      }
+  
+      @media (max-width: 660px) {
+        font-size: 6vw;
+      }
+
+
   }
 
   .personal_info-a {
     font-size: 26px;
     line-height: 150%;
     margin-bottom: 25px;
+
+    @media (max-width: 1920px) {
+      font-size: 2vw;
+      }
+  
+      @media (max-width: 660px) {
+        font-size: 5vw;
+      }
   }
 
   .policy__title {
@@ -2303,6 +2321,7 @@ a {
       }
   }
 }
+
 
 // --------------------------------------- INFO end ---------------------------------------
 // --------------------------------------- POPUP start ---------------------------------------
