@@ -2306,6 +2306,14 @@ a {
     margin-bottom: 25px;
     line-height: 150%;
     font-size: 40px;
+
+    @media (max-width: 1920px) {
+      font-size: 2vw;
+      }
+  
+      @media (max-width: 660px) {
+        font-size: 5vw;
+      }
   }
 
   .policy__item {
