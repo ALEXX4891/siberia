@@ -6126,12 +6126,33 @@ height: 48px;
           height: 100%;
         }
 
-        [class*="ground-pane"] {
-          // filter: grayscale(1);
+        .marker-class {
+          position: absolute;
+          bottom: 100%;
+          left: 0;
+          width: 42px;
+          height: 58px;
+          pointer-events: none;
         }
 
+        // [class*="ground-pane"] {
+          // filter: grayscale(1);
+        // }
+
+        // --marker
+        // [class*="marker"] {
+          // position: absolute;
+          // bottom: 100%;
+          // left: 0;
+          // width: max-content;
+          // height: max-content;
+          // pointer-events: none;
+        // }
+
+
         [class*="copyrights-pane"],
-        [class*="controls-pane"] {
+        [class*="controls-pane"],
+        [class*="map-copyrights"] {
           display: none !important;
         }
 

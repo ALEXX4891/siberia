@@ -650,8 +650,6 @@ jQuery(($) => {
           stagePadding: 15,
           margin: 5,
 
-
-
           // nav: false,
           // items: window.screen.width / 360,
         },
@@ -659,7 +657,6 @@ jQuery(($) => {
           items: 1,
           stagePadding: 15,
           margin: 5,
-
 
           // nav: false,
           // items: window.screen.width / 360,
@@ -670,8 +667,6 @@ jQuery(($) => {
           margin: 10,
           singleItem: true,
 
-
-
           // nav: false,
           // items: window.screen.width / 360,
         },
@@ -679,7 +674,6 @@ jQuery(($) => {
           items: 2,
           stagePadding: 30,
           margin: 5,
-
 
           // nav: false,
           // items: window.screen.width / 360,
@@ -1072,7 +1066,7 @@ if (cookieCloseBtn) {
 // -------------------------------------------- end Отзывы ---------------------------------------------
 // -------------------------------------------- start Селект: ---------------------------------------------
 
-let queryParams =  {
+let queryParams = {
   name: "",
   phone: "",
   email: "",
@@ -1093,31 +1087,33 @@ const choiceForm = document.querySelector(".choice__form");
 if (choiceForm) {
   const selectProject = document.querySelector(".choice__select");
   // selects.forEach((select) => {
-    selectProject.addEventListener("click", (event) => {
-      // console.log("click");
-      selectProject.classList.toggle("select_open");
+  selectProject.addEventListener("click", (event) => {
+    // console.log("click");
+    selectProject.classList.toggle("select_open");
+  });
+  const selectOptions = selectProject.querySelectorAll(".select__item");
+  selectOptions.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      const input = selectProject.querySelector(".select__text");
+      event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+      input.innerHTML = item.innerHTML;
+      input.classList.add("select__text_active");
+      input.setAttribute("data-id", item.getAttribute("data-id"));
+      queryParams.project = item.getAttribute("data-id");
+      // console.log(queryParams);
+      selectProject.classList.remove("select_open");
+      selectProject.classList.add("select_active");
     });
-    const selectOptions = selectProject.querySelectorAll(".select__item");
-    selectOptions.forEach((item) => {
-      item.addEventListener("click", (event) => {
-        const input = selectProject.querySelector(".select__text");
-        event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
-        input.innerHTML = item.innerHTML;
-        input.classList.add("select__text_active");
-        input.setAttribute("data-id", item.getAttribute("data-id"));
-        queryParams.project = item.getAttribute("data-id");
-        // console.log(queryParams);
-        selectProject.classList.remove("select_open");
-        selectProject.classList.add("select_active");
-      });
-    });
+  });
   // });
 
   const choiceButtonsSelect = document.querySelector(".choice__buttons-select");
   if (choiceButtonsSelect) {
     // const btns = choiceButtonsSelect.querySelectorAll(".choice__buttons-select-item");
 
-    const choiceBtns = document.querySelectorAll(".choice__buttons-select-item");
+    const choiceBtns = document.querySelectorAll(
+      ".choice__buttons-select-item"
+    );
 
     if (choiceBtns) {
       choiceBtns.forEach((item) => {
@@ -1127,7 +1123,10 @@ if (choiceForm) {
 
           choiceBtns.forEach((item) => {
             if (item.classList.contains("choice__buttons-select-item_active")) {
-              queryParams.numbers_of_rooms = queryParams.numbers_of_rooms + ", " + item.getAttribute("data-id");
+              queryParams.numbers_of_rooms =
+                queryParams.numbers_of_rooms +
+                ", " +
+                item.getAttribute("data-id");
             }
           });
           // console.log(queryParams);
@@ -1136,7 +1135,6 @@ if (choiceForm) {
     }
   }
 
-  
   const filterBtns = document.querySelectorAll(".choice__btn-filter");
 
   if (filterBtns) {
@@ -1156,7 +1154,7 @@ if (choiceForm) {
 
   const choice__square = document.querySelector(".choice__square-select");
   if (choice__square) {
-    const inputFrom = choice__square.querySelector(".select__input_from"); 
+    const inputFrom = choice__square.querySelector(".select__input_from");
     const inputTo = choice__square.querySelector(".select__input_to");
     queryParams.area = inputFrom.value + " - " + inputTo.value;
 
@@ -1178,12 +1176,14 @@ if (choiceForm) {
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
       // console.log("click");
-    // choiceForm.addEventListener("submit", (event) => {
+      // choiceForm.addEventListener("submit", (event) => {
       event.preventDefault();
       queryParams.name = choiceForm.querySelector(".form__input_name").value;
       queryParams.phone = choiceForm.querySelector(".form__input_phone").value;
       queryParams.email = choiceForm.querySelector(".form__input_email").value;
-      queryParams.message = choiceForm.querySelector(".form__input_textarea").value;
+      queryParams.message = choiceForm.querySelector(
+        ".form__input_textarea"
+      ).value;
       // console.log(queryParams);
       postForm(queryParams);
       // const popupActive = document.querySelector(".popup.open");
@@ -1201,7 +1201,7 @@ if (choiceForm) {
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
       // console.log("click");
-    // requestForm.addEventListener("submit", (event) => {
+      // requestForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
       const queryParams = {
@@ -1211,11 +1211,21 @@ if (choiceForm) {
         email: "",
         message: "",
       };
-      queryParams.apartment = requestForm.querySelector(".request__input_apartment").value;
-      queryParams.name = requestForm.querySelector(".request__input_name").value;
-      queryParams.phone = requestForm.querySelector(".request__input_phone").value;
-      queryParams.email = requestForm.querySelector(".request__input_email").value;
-      queryParams.message = requestForm.querySelector(".request__input_textarea").value;
+      queryParams.apartment = requestForm.querySelector(
+        ".request__input_apartment"
+      ).value;
+      queryParams.name = requestForm.querySelector(
+        ".request__input_name"
+      ).value;
+      queryParams.phone = requestForm.querySelector(
+        ".request__input_phone"
+      ).value;
+      queryParams.email = requestForm.querySelector(
+        ".request__input_email"
+      ).value;
+      queryParams.message = requestForm.querySelector(
+        ".request__input_textarea"
+      ).value;
       // console.log(queryParams);
       postRequest(queryParams);
       // const popupActive = document.querySelector(".popup.open");
@@ -1233,7 +1243,7 @@ if (choiceForm) {
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
       // console.log("click");
-    // notificationForm.addEventListener("submit", (event) => {
+      // notificationForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
       const queryParams = {
@@ -1248,12 +1258,24 @@ if (choiceForm) {
       // queryParams.name = notificationForm.querySelector(".notification__input_name").value;
       // queryParams.phone = notificationForm.querySelector(".notification__input_phone").value;
       // queryParams.email = notificationForm.querySelector(".notification__input_email").value;
-      queryParams.agency = notificationForm.querySelector(".notification__input_agency").value;
-      queryParams.agentName = notificationForm.querySelector(".notification__input_agent-name").value;
-      queryParams.agentPhone = notificationForm.querySelector(".notification__input_agent-phone").value;
-      queryParams.clientName = notificationForm.querySelector(".notification__input_client-name").value;
-      queryParams.clientPhone = notificationForm.querySelector(".notification__input_client-phone").value;
-      queryParams.message = notificationForm.querySelector(".notification__input_textarea").value;
+      queryParams.agency = notificationForm.querySelector(
+        ".notification__input_agency"
+      ).value;
+      queryParams.agentName = notificationForm.querySelector(
+        ".notification__input_agent-name"
+      ).value;
+      queryParams.agentPhone = notificationForm.querySelector(
+        ".notification__input_agent-phone"
+      ).value;
+      queryParams.clientName = notificationForm.querySelector(
+        ".notification__input_client-name"
+      ).value;
+      queryParams.clientPhone = notificationForm.querySelector(
+        ".notification__input_client-phone"
+      ).value;
+      queryParams.message = notificationForm.querySelector(
+        ".notification__input_textarea"
+      ).value;
       // console.log(queryParams);
       postNotification(queryParams);
       // const popupActive = document.querySelector(".popup.open");
@@ -1265,119 +1287,216 @@ if (choiceForm) {
     });
   }
 
-  // const 
-    // const btns = choiceButtonsSelect.querySelectorAll(".choice__buttons-select-item";
+  // const
+  // const btns = choiceButtonsSelect.querySelectorAll(".choice__buttons-select-item";
 
+  // btns.forEach((btn) => {
+  //   btn.addEventListener("click", (event) => {
+  //     const input = choiceButtonsSelect.querySelector(".choice__buttons-select-text");
+  //     event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+  //     input.innerHTML = btn.innerHTML;
+  //     input.classList.add("choice__buttons-select-text_active");
+  //     input.setAttribute("data-id", btn.getAttribute("data-id"));
+  //     queryParams.numbers_of_rooms = btn.getAttribute("data-id");
+  //     // console.log(queryParams);
+  //     choiceButtonsSelect.classList.remove("choice__buttons-select_active");
+  //   });
+  // });
+  // }
 
-    // btns.forEach((btn) => {
-    //   btn.addEventListener("click", (event) => {
-    //     const input = choiceButtonsSelect.querySelector(".choice__buttons-select-text");
-    //     event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
-    //     input.innerHTML = btn.innerHTML;
-    //     input.classList.add("choice__buttons-select-text_active");
-    //     input.setAttribute("data-id", btn.getAttribute("data-id"));
-    //     queryParams.numbers_of_rooms = btn.getAttribute("data-id");
-    //     // console.log(queryParams);
-    //     choiceButtonsSelect.classList.remove("choice__buttons-select_active");
-    //   });
-    // });
-// }
-
-// console.log(selects);
-// const selects = document.querySelectorAll(".select");
-// if (selects) {
-//   selects.forEach((select) => {
-//     select.addEventListener("click", (event) => {
-//       console.log("click");
-//       select.classList.toggle("select_open");
-//     });
-//     const selectOptions = select.querySelectorAll(".select__item");
-//     selectOptions.forEach((item) => {
-//       item.addEventListener("click", (event) => {
-//         const input = select.querySelector(".select__text");
-//         event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
-//         input.innerHTML = item.innerHTML;
-//         input.classList.add("select__text_active");
-//         input.setAttribute("data-id", item.getAttribute("data-id"));
-//         select.classList.remove("select_open");
-//         select.classList.add("select_active");
-//       });
-//     });
-//   });
-
-
-
+  // console.log(selects);
+  // const selects = document.querySelectorAll(".select");
+  // if (selects) {
+  //   selects.forEach((select) => {
+  //     select.addEventListener("click", (event) => {
+  //       console.log("click");
+  //       select.classList.toggle("select_open");
+  //     });
+  //     const selectOptions = select.querySelectorAll(".select__item");
+  //     selectOptions.forEach((item) => {
+  //       item.addEventListener("click", (event) => {
+  //         const input = select.querySelector(".select__text");
+  //         event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+  //         input.innerHTML = item.innerHTML;
+  //         input.classList.add("select__text_active");
+  //         input.setAttribute("data-id", item.getAttribute("data-id"));
+  //         select.classList.remove("select_open");
+  //         select.classList.add("select_active");
+  //       });
+  //     });
+  //   });
 }
 // -------------------------------------------- end Селект ---------------------------------------------
 // -------------------------------------------- start Карта ---------------------------------------------
 // Функция ymaps.ready() будет вызвана, когда
 // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
 
+initMap();
 
-ymaps.ready(init);
-function init() {
-  // Создание карты.
+async function initMap() {
+  //     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+  await ymaps3.ready;
 
-  let myMap = new ymaps.Map("map", {
-    // Координаты центра карты.
-    // Порядок по умолчанию: «широта, долгота».
-    // Чтобы не определять координаты центра карты вручную,
-    // воспользуйтесь инструментом Определение координат.
-    // center: [48.872185073737896, 2.354223999999991],
-    center: [56.97004647141038, 65.79187000766548],
+  const {
+    YMap,
+    YMapDefaultSchemeLayer,
+    YMapDefaultFeaturesLayer,
+    YMapMarker,
+  } = ymaps3;
+  
 
-    // Уровень масштабирования. Допустимые значения:
-    // от 0 (весь мир) до 19.
-    zoom: 14.7,
-  });
+  // const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
+  // // кластеризация маркеров
+  // const {YMapClusterer, clusterByGrid} = await ymaps3.import('@yandex/ymaps3-clusterer@0.0.1');
+  // const clusterer = new YMapClusterer({
+  //   method: clusterByGrid({gridSize: 128}),
+  //   features: map._points,
+  //   функция которая вернет YMapMarker для маркера,
+  //   функция которая вернет YMapMarker для кластера
+  // });
+  // // https://yandex.ru/dev/maps/jsapi/doc/3.0/ref/packages/clusterer/index.html
 
-  // Создание геообъекта с типом точка (метка).
-  let myMark = new ymaps.Placemark(
-    [56.971359032603615,65.80127919688765],
-    // [56.97004647141038,65.79187000766548],
-    {},
+
+  // Иницилиазируем карту
+  const map = new YMap(
+    // Передаём ссылку на HTMLElement контейнера
+    document.getElementById("map"),
+    // Передаём параметры инициализации карты
+
     {
-      // Опции.
-      // Необходимо указать данный тип макета.
-      iconLayout: "default#image",
-      // Своё изображение иконки метки.
-      iconImageHref: "img/pin.svg",
-      // Размеры метки.
-      iconImageSize: [42, 58],
-      // Смещение левого верхнего угла иконки относительно
-      // её "ножки" (точки привязки).
-      iconImageOffset: [-21, -58],
-    }
+      location: {
+        // Координаты центра карты
+        center: [65.79187000766548, 56.97004647141038],
+        // Уровень масштабирования
+        zoom: 14.7,
+      },
+    },
+    [
+      // Добавляем слой, скрываем POI
+      new YMapDefaultSchemeLayer({
+        customization: [
+          {
+            tags: {
+              any: ["poi", "transit"],
+            },
+            elements: "label",
+            stylers: [
+              {
+                opacity: 0,
+              },
+            ],
+          },
+        ],
+      }),
+      new YMapDefaultFeaturesLayer({}),
+    ]
   );
-  // Размещение геообъекта на карте.
-  myMap.geoObjects.add(myMark);
+
+  const markerElement = document.createElement('div');
+  markerElement.className = 'marker-class';
+  // markerElement.innerText = "I'm marker!";
+  // markerElement.style.width = '30px';
+  // markerElement.style.height = '30px';
+  // markerElement.src = 'img/pin.svg';
+
+  const marker = new YMapMarker(
+    {
+      source: '../img/pin.svg',
+      coordinates: [65.80127919688765, 56.971359032603615],
+      draggable: true,
+      mapFollowsOnDrag: true,
+    },
+    markerElement
+  );
+  
+  // const markeContainer = document.createElement('div');
+  // markeContainer.addChild(marker);
+  map.addChild(marker);
+
+  //     iconImageHref: "img/pin.svg",
+
 }
 
-// function setVisible() {
-//   myGeoObject4.options.set({
-//     visible: false
-//   });
-//   myGeoObject3.options.set({
-//     visible: false
-//   });
-//   myGeoObject2.options.set({
-//     visible: false
-//   });
-//   myGeoObject.options.set({
-//     visible: false
-//   });
-// }
-// $(document).ready(function() {
-//   $('#change-map').on('click', function() {
-//     setVisible();
-//   });
-// });
+// ymaps.ready(init);
+// function init() {
+//   // Создание карты.
 
+//   map = new YMap(
+//     document.getElementById("map"),
+//     {
+//       location: {
+//         center: [37.62, 55.75],
+//         zoom: 12,
+//       },
+//       showScaleInCopyrights: true,
+//     },
+//     [
+//       new YMapDefaultSchemeLayer({
+//         customization: [
+//           {
+//             tags: {
+//               any: ["poi", "transit"],
+//             },
+//             elements: "label",
+//             stylers: [
+//               {
+//                 opacity: 0,
+//               },
+//             ],
+//           },
+//         ],
+//       }),
+//       new YMapDefaultFeaturesLayer(),
+//       new YMapFeatureDataSource({ id: "clusterer-source" }),
+//       new YMapLayer({
+//         source: "clusterer-source",
+//         type: "markers",
+//         zIndex: 1800,
+//       }),
+//     ]
+//   );
+
+//   // let myMap = new ymaps.Map("map", {
+//   //   // Координаты центра карты.
+//   //   // Порядок по умолчанию: «широта, долгота».
+//   //   // Чтобы не определять координаты центра карты вручную,
+//   //   // воспользуйтесь инструментом Определение координат.
+//   //   // center: [48.872185073737896, 2.354223999999991],
+//   //   center: [56.97004647141038, 65.79187000766548],
+
+//   //   // Уровень масштабирования. Допустимые значения:
+//   //   // от 0 (весь мир) до 19.
+//   //   zoom: 14.7,
+//   // });
+
+// Создание геообъекта с типом точка (метка).
+
+// }
+
+function setVisible() {
+  myGeoObject4.options.set({
+    visible: false,
+  });
+  myGeoObject3.options.set({
+    visible: false,
+  });
+  myGeoObject2.options.set({
+    visible: false,
+  });
+  myGeoObject.options.set({
+    visible: false,
+  });
+}
+$(document).ready(function () {
+  $("#change-map").on("click", function () {
+    setVisible();
+  });
+});
 
 const mapMarks = document.querySelector(".map__mark-item");
 mapMarks.addEventListener("click", (event) => {
-  mapMarks.classList.toggle("map__mark-item_active");  
-})
+  mapMarks.classList.toggle("map__mark-item_active");
+});
 // -------------------------------------------- end Карта ---------------------------------------------
 //--------------------------Запрос к БД----------------------------
 // Загружаем список контрагентов с БД:
@@ -1413,11 +1532,11 @@ let options = {
 };
 
 const arrApartments = await fetchToDB(options);
-const apartmentsForRender = [...arrApartments]
+const apartmentsForRender = [...arrApartments];
 // console.log(apartmentsForRender);
 
 // console.log(options);
-// await fetchToDB(options); 
+// await fetchToDB(options);
 // требуется подключить скрипт как модуль, иначе await не работает!!!
 //--------------------------end Запрос к БД----------------------------
 
@@ -1436,29 +1555,25 @@ if (footerForm) {
     queryParams.name = document.querySelector(".form__input_name").value;
     queryParams.phone = document.querySelector(".form__input_phone").value;
     queryParams.email = document.querySelector(".form__input_email").value;
-  // footerForm.addEventListener("submit", (event) => {
-  //   event.preventDefault();
-  //   const footerName = document.querySelector(".footer__input-name");
-  //   const footerEmail = document.querySelector(".footer__input-email");
-  //   const footerPhone = document.querySelector(".footer__input-phone");
-  //   console.log(footerName.value);
-  //   console.log(footerEmail.value);
-  //   console.log(footerPhone.value);
-  //   footerName.value = "";
-  //   footerEmail.value = "";
-  //   footerPhone.value = "";
-  //   return false;
-  // });
+    // footerForm.addEventListener("submit", (event) => {
+    //   event.preventDefault();
+    //   const footerName = document.querySelector(".footer__input-name");
+    //   const footerEmail = document.querySelector(".footer__input-email");
+    //   const footerPhone = document.querySelector(".footer__input-phone");
+    //   console.log(footerName.value);
+    //   console.log(footerEmail.value);
+    //   console.log(footerPhone.value);
+    //   footerName.value = "";
+    //   footerEmail.value = "";
+    //   footerPhone.value = "";
+    //   return false;
+    // });
     // console.log(queryParams);
     postCall(queryParams);
     const popupSuccess = document.querySelector("#success");
     popupOpen(popupSuccess);
   });
 }
-
-
-
-
 
 // footerForm.addEventListener("submit", (event) => {
 //   event.preventDefault();
@@ -1473,7 +1588,6 @@ if (footerForm) {
 //   footerPhone.value = "";
 //   return false;
 // });
-
 
 //-------------------------- start отправка формы на почту ------------------------------
 
@@ -1584,7 +1698,7 @@ async function postNotification(queryParams) {
 // const choiceSendBtn = document.querySelector(".choice__btn");
 // choiceSendBtn.addEventListener("click", (event) => {
 //   // fetchToPost(queryParams)
-  
+
 //   const arrApartments = fetchToPost(queryParams);
 //   console.log(arrApartments);
 //   // event.preventDefault();
@@ -1611,7 +1725,7 @@ async function postNotification(queryParams) {
 // console.log(arrApartments);
 
 // console.log(options);
-// await fetchToDB(options); 
+// await fetchToDB(options);
 // требуется подключить скрипт как модуль, иначе await не работает!!!
 
 //--------------------------end Отправка формы на почту----------------------------
@@ -1639,16 +1753,29 @@ document.addEventListener("click", (event) => {
     });
     event.target.closest(".plans__item").classList.add("plans__item_active");
     const imgBox = document.querySelector(".plans__img").querySelector("img");
-    const img = event.target.closest(".plans__item").querySelector("img").getAttribute("src");
+    const img = event.target
+      .closest(".plans__item")
+      .querySelector("img")
+      .getAttribute("src");
     imgBox.setAttribute("src", img);
     const id = event.target.closest(".plans__item").getAttribute("data-id");
     // console.log(id);
     const title = document.querySelector(".plans__name");
-    title.textContent = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
+    title.textContent = `${
+      apartmentsForRender.filter((item) => item.id == id)[0].number_of_rooms
+    }-комнатная ${
+      apartmentsForRender.filter((item) => item.id == id)[0].area
+    }м2`;
     const requestPopup = document.querySelector("#popup-request");
-    const requestInput = requestPopup.querySelector(".request__input_apartment");
-    requestInput.value = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
-  };
+    const requestInput = requestPopup.querySelector(
+      ".request__input_apartment"
+    );
+    requestInput.value = `${
+      apartmentsForRender.filter((item) => item.id == id)[0].number_of_rooms
+    }-комнатная ${
+      apartmentsForRender.filter((item) => item.id == id)[0].area
+    }м2`;
+  }
 });
 
 // const previews = document.querySelectorAll(".plans__item");
@@ -1666,8 +1793,8 @@ document.addEventListener("click", (event) => {
 //активные кнопки фильтра планировок:
 const plansFilterItem = document.querySelectorAll(".plans__filter-item");
 if (plansFilterItem) {
-  plansFilterItem.forEach((item) => {    
-    item.addEventListener("click", (event) => {      
+  plansFilterItem.forEach((item) => {
+    item.addEventListener("click", (event) => {
       plansFilterItem.forEach((item) => {
         item.classList.remove("plans__filter-item_active");
       });
@@ -1680,33 +1807,46 @@ if (plansFilterItem) {
   });
 }
 
-
-function filterPreviewArr (key, arr) {
+function filterPreviewArr(key, arr) {
   // console.log(key);
   // console.log(key === 'Студия');
   // console.log(arr);
-  if (key === 'Студия') {
+  if (key === "Студия") {
     // console.log('Студия');
-    return arr.filter((obj) => obj.number_of_rooms === 1 && obj.studio === 1 && obj.commerce === 0);
+    return arr.filter(
+      (obj) =>
+        obj.number_of_rooms === 1 && obj.studio === 1 && obj.commerce === 0
+    );
   }
-  if (key === '1') {
-    return arr.filter((obj) => obj.number_of_rooms === 1 && obj.studio === 0 && obj.commerce === 0);
+  if (key === "1") {
+    return arr.filter(
+      (obj) =>
+        obj.number_of_rooms === 1 && obj.studio === 0 && obj.commerce === 0
+    );
   }
-  if (key === '2') {
-    return arr.filter((obj) => obj.number_of_rooms === 2 && obj.studio === 0 && obj.commerce === 0);
+  if (key === "2") {
+    return arr.filter(
+      (obj) =>
+        obj.number_of_rooms === 2 && obj.studio === 0 && obj.commerce === 0
+    );
   }
-  if (key === '3') {
-    return arr.filter((obj) => obj.number_of_rooms === 3 && obj.studio === 0 && obj.commerce === 0);
+  if (key === "3") {
+    return arr.filter(
+      (obj) =>
+        obj.number_of_rooms === 3 && obj.studio === 0 && obj.commerce === 0
+    );
   }
-  if (key === '3+') {
-    return arr.filter((obj) => obj.number_of_rooms > 3 && obj.studio === 0 && obj.commerce === 0);
+  if (key === "3+") {
+    return arr.filter(
+      (obj) => obj.number_of_rooms > 3 && obj.studio === 0 && obj.commerce === 0
+    );
   }
-  if (key === 'Коммерция') {
+  if (key === "Коммерция") {
     return arr.filter((obj) => obj.commerce === 1);
   }
 }
 
-function previewPlansRender (arr, key='Студия') {
+function previewPlansRender(arr, key = "Студия") {
   const previewList = document.querySelector(".plans__list");
   previewList.innerHTML = "";
   let copyArr = [...arr];
@@ -1716,12 +1856,12 @@ function previewPlansRender (arr, key='Студия') {
   // console.log(copyArr);
   copyArr.forEach((obj) => {
     getPreviewPlansItem(obj);
-  })
+  });
 }
 
-previewPlansRender (apartmentsForRender, 'Студия');
+previewPlansRender(apartmentsForRender, "Студия");
 
-function getPreviewPlansItem (obj) {
+function getPreviewPlansItem(obj) {
   const previewList = document.querySelector(".plans__list");
   // console.log(previewList);
   const previewItem = document.createElement("li");
@@ -1743,7 +1883,7 @@ function setInfo() {
 
   plansItem.classList.add("plans__item_active");
   // console.log(plans__item);
-  
+
   // title.innerHTML = "1-комнатная 60м2";
   // console.log(title);
   const imgBox = document.querySelector(".plans__img").querySelector("img");
@@ -1751,23 +1891,26 @@ function setInfo() {
   imgBox.setAttribute("src", img);
   const title = document.querySelector(".plans__name");
   const id = plansItem.getAttribute("data-id");
-  title.textContent = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
-  
+  title.textContent = `${
+    apartmentsForRender.filter((item) => item.id == id)[0].number_of_rooms
+  }-комнатная ${apartmentsForRender.filter((item) => item.id == id)[0].area}м2`;
+
   const requestPopup = document.querySelector("#popup-request");
   const requestInput = requestPopup.querySelector(".request__input_apartment");
-  requestInput.value = `${apartmentsForRender.filter(item => item.id == id)[0].number_of_rooms}-комнатная ${apartmentsForRender.filter(item => item.id == id)[0].area}м2`;
+  requestInput.value = `${
+    apartmentsForRender.filter((item) => item.id == id)[0].number_of_rooms
+  }-комнатная ${apartmentsForRender.filter((item) => item.id == id)[0].area}м2`;
   // console.log(img);
-    // imgBox.setAttribute("src", img);
+  // imgBox.setAttribute("src", img);
   // console.log(imgBox);
   // plans__item.addEventListener("click", (event) => {
-    // const imgBox = document.querySelector(".plans__img").querySelector("img");
-    // const img = event.target.closest(".plans__item").querySelector("img").getAttribute("src");
-    // imgBox.setAttribute("src", img);
-  // });  
+  // const imgBox = document.querySelector(".plans__img").querySelector("img");
+  // const img = event.target.closest(".plans__item").querySelector("img").getAttribute("src");
+  // imgBox.setAttribute("src", img);
+  // });
 }
 setInfo();
 
 // }
-
 
 // -------------------------------------------- end Планы ---------------------------------------------
