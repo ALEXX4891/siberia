@@ -1392,16 +1392,16 @@ async function initMap() {
     ]
   );
 
-  const markerElement = document.createElement('div');
+  const markerElement = document.createElement('img');
   markerElement.className = 'marker-class';
-  // markerElement.innerText = "I'm marker!";
-  // markerElement.style.width = '30px';
-  // markerElement.style.height = '30px';
-  // markerElement.src = 'img/pin.svg';
+  markerElement.innerText = "I'm marker!";
+  markerElement.style.width = '42px';
+  markerElement.style.height = '58px';
+  markerElement.src = 'img/pin.svg';
 
   const marker = new YMapMarker(
     {
-      source: '../img/pin.svg',
+      // source: '../img/pin.svg',
       coordinates: [65.80127919688765, 56.971359032603615],
       draggable: true,
       mapFollowsOnDrag: true,

@@ -4717,6 +4717,14 @@ a {
   height: 58px;
   pointer-events: none;
 }
+.glavnaya .glavnaya__main_bot .geo .geo__map [class*=marker] {
+  position: absolute;
+  bottom: 25%;
+  right: 41%;
+  width: 43px;
+  height: 23px;
+  pointer-events: none;
+}
 .glavnaya .glavnaya__main_bot .geo .geo__map [class*=copyrights-pane],
 .glavnaya .glavnaya__main_bot .geo .geo__map [class*=controls-pane],
 .glavnaya .glavnaya__main_bot .geo .geo__map [class*=map-copyrights] {
