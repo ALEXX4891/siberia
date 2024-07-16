@@ -1401,77 +1401,15 @@ async function initMap() {
 
   const marker = new YMapMarker(
     {
-      // source: '../img/pin.svg',
       coordinates: [65.80127919688765, 56.971359032603615],
       draggable: true,
       mapFollowsOnDrag: true,
     },
     markerElement
   );
-  
-  // const markeContainer = document.createElement('div');
-  // markeContainer.addChild(marker);
   map.addChild(marker);
-
-  //     iconImageHref: "img/pin.svg",
-
 }
 
-// ymaps.ready(init);
-// function init() {
-//   // Создание карты.
-
-//   map = new YMap(
-//     document.getElementById("map"),
-//     {
-//       location: {
-//         center: [37.62, 55.75],
-//         zoom: 12,
-//       },
-//       showScaleInCopyrights: true,
-//     },
-//     [
-//       new YMapDefaultSchemeLayer({
-//         customization: [
-//           {
-//             tags: {
-//               any: ["poi", "transit"],
-//             },
-//             elements: "label",
-//             stylers: [
-//               {
-//                 opacity: 0,
-//               },
-//             ],
-//           },
-//         ],
-//       }),
-//       new YMapDefaultFeaturesLayer(),
-//       new YMapFeatureDataSource({ id: "clusterer-source" }),
-//       new YMapLayer({
-//         source: "clusterer-source",
-//         type: "markers",
-//         zIndex: 1800,
-//       }),
-//     ]
-//   );
-
-//   // let myMap = new ymaps.Map("map", {
-//   //   // Координаты центра карты.
-//   //   // Порядок по умолчанию: «широта, долгота».
-//   //   // Чтобы не определять координаты центра карты вручную,
-//   //   // воспользуйтесь инструментом Определение координат.
-//   //   // center: [48.872185073737896, 2.354223999999991],
-//   //   center: [56.97004647141038, 65.79187000766548],
-
-//   //   // Уровень масштабирования. Допустимые значения:
-//   //   // от 0 (весь мир) до 19.
-//   //   zoom: 14.7,
-//   // });
-
-// Создание геообъекта с типом точка (метка).
-
-// }
 
 function setVisible() {
   myGeoObject4.options.set({
