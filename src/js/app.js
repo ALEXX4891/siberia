@@ -1,9 +1,10 @@
+const body = document.querySelector("body");
 Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
 
 //подсветка активного пункта меню:---------------------------------------------------------
-const body = document.querySelector("body");
+
 const page = body.getAttribute("data-page");
 const navLinks = document.querySelectorAll(".nav__link");
 navLinks.forEach((item) => {
@@ -11,6 +12,14 @@ navLinks.forEach((item) => {
     item.classList.add("nav__link_active");
   }
 });
+
+// const page = window.location.pathname.split("/").pop();
+// const navLinks = document.querySelectorAll(".nav__link");
+// navLinks.forEach((item) => {
+//   if (item.getAttribute("href").includes(page)) {
+//     item.classList.add("nav__link_active");
+//   }
+// });
 
 const swiper = new Swiper(".swiper", {
   // Optional parameters
@@ -1550,7 +1559,7 @@ async function postCall(queryParams) {
     console.log("При оптравке письма произошла ошибка, детали ниже:");
     console.error(err);
     // Вернем исключение с текстом поясняющим детали ошибки:
-    alert("Произошла ошибка при оптравке письма!");
+    // alert("Произошла ошибка при оптравке письма!");
     throw new Error("Запрос завершился неудачно.");
   }
 }
