@@ -6040,10 +6040,6 @@ a {
 
         .news-page__btn {
           padding: 16px 34px;
-          // max-width: 146px;
-          // width: 100%;
-          // min-height: 52px;
-          // height: max-content;
           border-radius: 50px;
           font-family: Inter;
           font-size: 18px;
@@ -6074,13 +6070,13 @@ a {
 
         .news-page__cards-item {
           display: grid;
-          // grid-template-columns: 1fr;
           grid-auto-flow: row;
+          grid-template: auto auto 1fr / 1fr;
+          gap: 15px;
+          // grid-template-columns: 1fr;
           // grid-template: auto max-content 1fr max-content / 1fr;
           // grid-template: auto auto 1fr minmax(40px, auto) / 1fr;
-          grid-template: auto auto 1fr / 1fr;
 
-          gap: 15px;
 
           .news-page__card-img-wrapper {
             margin-bottom: 10px;
@@ -6286,10 +6282,121 @@ a {
 }
 
 // --------------------------------------- NEWS-ITEM end ---------------------------------------
+// --------------------------------------- PROMO start ---------------------------------------
+.promo-page {
+  .promo-page__container {
+    padding: 30px 0 120px;
+    display: grid;
+    grid-template-columns: 1fr 292px;
+    grid-auto-flow: row;
+    gap: 40px;
+    .promo-page__title {
+      align-self: center;
 
-// --------------------------------------- ABOUT start ---------------------------------------
+    }
+    .promo-page__btn-wrapper {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: end;
+      gap: 18px;
+    }
+    .promo-page__btn {
+      padding: 16px 34px;
+      border-radius: 50px;
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 18px;
+      text-align: left;
+    }
+    .promo-page__btn_green {
+      background: #56693e;
+      color: #fff;
+      border: 1px solid #56693e;
+    }
+    .promo-page__btn_white {
+      background: #fff;
+      color: #616161;
+      border: 1px solid #56693e;
+    }
+    .promo-page__cards-list {
+      grid-column: 2 span;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      // grid-auto-flow: column;
+      grid-auto-rows: 1fr;
+      gap: 33px 40px;
+      // justify-content: start;
+      // justify-items: start;
 
-// --------------------------------------- ABOUT end ---------------------------------------
+      .promo-page__cards-item {
+        max-width: 544px;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template: auto auto 1fr / 100px 1fr;
+        gap: 15px 10px;
+
+
+        .promo-page__card-img-wrapper {
+          aspect-ratio: 544 / 245;
+          grid-column: 2 span;
+          margin-bottom: 5px;
+        
+          & img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        
+        .promo-page__card-date {
+          font-family: Inter;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 18.15px;
+          text-align: left;
+          color: #8C8C8C;
+        }
+        
+        .promo-page__card-period {
+          display: grid;
+          grid-auto-flow: column;
+          gap: 6px;
+          justify-content: start;
+
+          
+          & svg {
+          
+          }
+          
+          .promo-page__card-date-text {
+            font-family: Inter;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 18.15px;
+            text-align: left;
+            color: #748D55;
+          }
+        }
+        .promo-page__card-link {
+          grid-column: 2 span;
+
+          .promo-page__card-title {
+            font-family: Inter;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24.2px;
+            text-align: left;            
+            color: #333; 
+          }
+        }
+      }
+    }
+  }
+}
+// --------------------------------------- PROMO end ---------------------------------------
 
 // --------------------------------------- UTIL start ---------------------------------------
 
