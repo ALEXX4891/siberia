@@ -4661,14 +4661,14 @@ a {
   text-align: left;
 }
 .news-page .news-page__section .news-page__container .news-page__btn-wrapper .news-page__btn.news-page__btn_green {
-  background: #56693E;
+  background: #56693e;
   color: #fff;
-  border: 1px solid #56693E;
+  border: 1px solid #56693e;
 }
 .news-page .news-page__section .news-page__container .news-page__btn-wrapper .news-page__btn.news-page__btn_white {
   background: #fff;
   color: #616161;
-  border: 1px solid #56693E;
+  border: 1px solid #56693e;
 }
 .news-page .news-page__section .news-page__container .news-page__cards-list {
   display: grid;
@@ -4702,7 +4702,7 @@ a {
   text-align: left;
   color: #616161;
 }
-.news-page .news-page__section .news-page__container .news-page__cards-list .news-page__cards-item .news-page__card-title {
+.news-page .news-page__section .news-page__container .news-page__cards-list .news-page__cards-item .news-page__card-link .news-page__card-title {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -4711,6 +4711,126 @@ a {
   color: #363636;
 }
 
+.news-page-item .news-content .news-content__container {
+  padding: 30px 0 70px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 20px;
+}
+.news-page-item .news-content .news-content__container .news-content__btn {
+  margin-bottom: 25px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  padding: 13px 19px;
+  gap: 17px;
+  border: 1px solid #cbcbcb;
+  border-radius: 50px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: left;
+  color: #616161;
+}
+.news-page-item .news-content .news-content__container .news-content__title {
+  max-width: 1150px;
+  line-height: 53.41px;
+}
+.news-page-item .news-content .news-content__container .news-content__date {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+  color: #8c8c8c;
+  margin-bottom: 20px;
+}
+.news-page-item .news-content .news-content__container .news-content__img-wrapper {
+  margin-bottom: 40px;
+  aspect-ratio: 1712/563;
+}
+.news-page-item .news-content .news-content__container .news-content__img-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.news-page-item .news-content .news-content__container .news-content__text {
+  max-width: 1150px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.4px;
+  text-align: left;
+  color: #646464;
+}
+.news-page-item .news-page-item__news-slider {
+  position: relative;
+}
+.news-page-item .news-page-item__news-slider .news-slider__container-top {
+  padding: 75px 0 20px;
+}
+.news-page-item .news-page-item__news-slider .news-slider_swiper {
+  padding: 25px 0 100px;
+  max-width: 100%;
+}
+.news-page-item .news-page-item__news-slider .news-slider_swiper .swiper-slide {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: auto auto 1fr/1fr;
+  gap: 15px;
+}
+.news-page-item .news-page-item__news-slider .news-slider_swiper .swiper-slide .news-slider__card-img-wrapper {
+  margin-bottom: 10px;
+  aspect-ratio: 544/280;
+}
+.news-page-item .news-page-item__news-slider .news-slider_swiper .swiper-slide .news-slider__card-img-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.news-page-item .news-page-item__news-slider .news-slider_swiper .swiper-slide .news-slider__card-date {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  text-align: left;
+  color: #616161;
+}
+.news-page-item .news-page-item__news-slider .news-slider_swiper .swiper-slide .news-slider__card-link {
+  color: #363636;
+}
+.news-page-item .news-page-item__news-slider .news-slider_swiper .swiper-slide .news-slider__card-link .news-slider__card-title {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  text-align: left;
+  color: #363636;
+}
+.news-page-item .news-page-item__news-slider .swiper-navigation {
+  position: absolute;
+  top: 100px;
+  right: 95px;
+  width: 150px;
+}
+.news-page-item .news-page-item__news-slider .swiper-navigation .swiper-button {
+  width: auto;
+}
+.news-page-item .news-page-item__news-slider .swiper-navigation .swiper-button svg {
+  width: 56px;
+  height: 56px;
+}
+.news-page-item .news-page-item__news-slider .swiper-navigation .swiper-button::after {
+  display: none;
+}
 .call-form {
   margin-bottom: 119px;
   display: flex;
