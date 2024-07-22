@@ -5,21 +5,22 @@ Fancybox.bind("[data-fancybox]", {
 
 //подсветка активного пункта меню:---------------------------------------------------------
 
-const page = body.getAttribute("data-page");
-const navLinks = document.querySelectorAll(".nav__link");
-navLinks.forEach((item) => {
-  if (item.getAttribute("href") === `${page}.html`) {
-    item.classList.add("nav__link_active");
-  }
-});
-
-// const page = window.location.pathname.split("/").pop();
+// const page = body.getAttribute("data-page");
 // const navLinks = document.querySelectorAll(".nav__link");
 // navLinks.forEach((item) => {
-//   if (item.getAttribute("href").includes(page)) {
+//   if (item.getAttribute("href") === `${page}.html`) {
 //     item.classList.add("nav__link_active");
 //   }
 // });
+
+const page = window.location.pathname.split("/").pop();
+console.log(page);
+const navLinks = document.querySelectorAll(".nav__link");
+navLinks.forEach((item) => {
+  if (item.getAttribute("href").includes(page)) {
+    item.classList.add("nav__link_active");
+  }
+});
 
 const swiper = new Swiper(".swiper", {
   // Optional parameters
@@ -1466,7 +1467,7 @@ async function fetchToDB(options) {
     console.log("При запросе к БД произошла ошибка, детали ниже:");
     console.error(err);
     // Вернем исключение с текстом поясняющим детали ошибки:
-    alert("Произошла ошибка при запросе к БД!");
+    // alert("Произошла ошибка при запросе к БД!");
     throw new Error("Запрос завершился неудачно.");
   }
 }
@@ -1559,7 +1560,7 @@ async function postCall(queryParams) {
     console.log("При оптравке письма произошла ошибка, детали ниже:");
     console.error(err);
     // Вернем исключение с текстом поясняющим детали ошибки:
-    // alert("Произошла ошибка при оптравке письма!");
+    alert("Произошла ошибка при оптравке письма!");
     throw new Error("Запрос завершился неудачно.");
   }
 }

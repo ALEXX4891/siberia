@@ -3656,7 +3656,7 @@ a {
   left: 0;
   right: 0;
   // width: 100%;
-  height: 80px;
+  height: 70px;
   z-index: 100;
   background-color: rgba(white, 0.8);
   backdrop-filter: blur(22px);
@@ -3674,21 +3674,14 @@ a {
       }
 
       .nav__link {
-        // padding: 8px 16px;
-        // display: flex;
-        // flex-flow: row nowrap;
-        // align-items: center;
-        // gap: 7px;
-        // flex: none;
-        // border-radius: 2px;
         text-decoration: underline;
         text-underline-offset: 23px;
         text-decoration-color: transparent;
         text-decoration-thickness: 4px;
         transition: color 0.3s ease-in-out,
-          text-decoration-color 0.3s ease-in-out;
+        text-decoration-color 0.3s ease-in-out;
+
         .nav__text {
-          // color: white;
           font-family: Inter;
           font-size: 16px;
           font-weight: 400;
@@ -3698,47 +3691,22 @@ a {
           &:hover {
             color: #56693e;
           }
-
-          // text-align: left;
         }
+
         &_active {
           text-decoration-color: #56693e;
 
-          // background: rgba(255, 255, 255, 0.85);
-          // pointer-events: none;
           .nav__text {
             color: #56693e;
-
-            // font-weight: 700;
-            // color: $color-2FA7BE;
           }
           &:hover {
-            // background: rgba(255, 255, 255, 0.85);
           }
         }
-        // &:focus-visible {
-        //   outline: 1px solid $color-2FA7BE;
-        //   outline-offset: 5px;
-        // }
+
         &:hover {
           color: #56693e;
           text-decoration-color: #56693e;
-          // border-bottom: 4px solid #56693E;
-          // background: rgba(255, 255, 255, 0.2);
         }
-        // &:active {
-        //   background: rgba(255, 255, 255, 0.85);
-        //   color: $color-black;
-        //   .nav__text {
-        //     color: $color-black;
-        //   }
-        //   svg path {
-        //     fill: $color-black;
-        //   }
-        //   &::after {
-        //     // background-color: $color-E1670E;
-        //   }
-        // }
       }
     }
   }
