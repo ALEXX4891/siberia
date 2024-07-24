@@ -180,6 +180,53 @@ new Swiper(".regions_swiper", {
     },
   },
 });
+
+new Swiper(".apartments_swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  // loop: true,
+  // allowTouchMove: true,
+  // slidesPerView: auto, // сколько слайдов показывать, можно дробно
+  slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
+  // slidersPerGroup: 3, // сколько слайдов в группе
+  // centeredSlides: true, //выравнивание слайдов по центру
+  // initialSlide: 0, //начальный слайд (c нуля)
+
+  spaceBetween: 10,
+  // slideToClickedSlide: true, //перелистывание слайдов по клику
+  grabCursor: true, //меняет курсор при наведении на руку
+  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next_apart",
+    prevEl: ".swiper-button-prev_apart",
+  },
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   clickable: true,
+  // },
+  // mousewheel: { //перелистывание слайдов по мышке
+  //   sensitivity: 1,
+  //   eventsTarget: ".news__slider",
+  // },
+  // keyboard: { //перелистывание слайдов по нажатию клавиш
+  //   enabled: true,
+  //   onlyInViewport: true,
+  //   // pageUpDown: true,
+  // },
+  breakpoints: {
+    0: {
+      // slidesPerView: 1,
+    },
+    500: {
+      // slidesPerView: 2,
+    },
+    800: {
+      // slidesPerView: 3.35,
+    },
+  },
+});
 // -------------------------------------------- end slider: ---------------------------------------------
 // -------------------------------------------- start popup: ---------------------------------------------
 const popupLinks = document.querySelectorAll(".popup-link");
