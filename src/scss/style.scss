@@ -294,33 +294,38 @@ a {
   }
 
   &.btn_white {
-    width: 167px;
-    height: 48px;
-    border-color: $color-2DA1B7;
-    color: $color-2DA1B7;
-    border-radius: 6px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 20px;
+    display: grid;
+    place-items: center;
+    padding: 9px;
+    max-width: 260px;
+    width: 100%;
+    min-height: 60px;
+    background: #FFFFFF;
+    opacity: 0.8;
+    border: 1px solid #616161;
+    border-radius: 5px;
+    color: #616161;
+    outline: none;
+    box-shadow: none;
+
 
     &:focus-visible {
-      outline: 1px solid $color-2FA7BE;
-      outline-offset: 3px;
+      // outline: 1px solid $color-2FA7BE;
+      // outline-offset: 3px;
     }
     &:hover {
-      color: white;
-      background-color: $color-37CBD3;
-      border-color: $color-37CBD3;
+      color: #56693E;
+      border-color: #56693E;
       outline: none;
       box-shadow: none;
+      // background-color: #fff;
     }
     &:active {
-      color: white;
-      background-color: $color-2FA7BE;
-      border-color: $color-2FA7BE;
-      outline: none;
-      box-shadow: none;
+      // color: white;
+      // background-color: #000;
+      // border-color: #FFFFFF;
+      // outline: none;
+      // box-shadow: none;
     }
   }
 
@@ -4261,12 +4266,23 @@ a {
       }
       .swiper-navigation {
         position: absolute;
-        top: 100px;
-        right: 95px;
-        width: 150px;
+        top: 80px;
+        right: 100px;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        gap: 20px;
+        align-items: center;
   
         .swiper-button {
-          width: auto;
+          position: relative;
+          width: 56px;
+          height: 56px;
+          top: initial;
+          right: initial;
+          left: initial;
+          bottom: initial;
+          margin: 0;
   
           & svg {
             width: 56px;
@@ -4277,10 +4293,10 @@ a {
             display: none;
           }
   
-          &.swiper-button-next {
+          &.swiper-button-next_reg {
           }
   
-          &.swiper-button-prev {
+          &.swiper-button-prev_reg {
           }
         }
       }
@@ -4851,8 +4867,6 @@ a {
         position: absolute;
         top: 50px;
         right: 100px;
-        width: 150px;
-        height: 56px;
         display: grid;
         grid-auto-flow: column;
         justify-content: end;
@@ -4891,7 +4905,10 @@ a {
       position: relative;
       background: #F5F5F5;
       .apartments__container {
-        padding: 90px 0 100px;
+        padding: 90px 0 80px;
+        overflow: hidden;
+
+
         .apartments__top-wrap {
           margin-bottom: 35px;
           gap: 20px;
@@ -5263,9 +5280,7 @@ a {
       .swiper-navigation {
         position: absolute;
         top: 90px;
-        left: 320px;
-        width: 150px;
-        height: 56px;
+        left: 340px;
         display: grid;
         grid-auto-flow: column;
         justify-content: end;
@@ -5295,6 +5310,291 @@ a {
           }
   
           &.swiper-button-prev_apart {
+          }
+        }
+      }
+    }
+
+    .promo {
+      position: relative;
+      // min-width: 1920px;
+      .promo__container {
+        padding: 100px 0 95px;
+        // max-width: 100%;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 826px 1fr;
+        gap: 43px;
+  
+        @media (max-width: 1750px) {
+          padding: 103px 0 89px;
+        }
+  
+        @media (max-width: 660px) {
+          padding: 110px 0 89px;
+        }
+  
+        .promo__title {
+          grid-column: 2 span; 
+        }
+
+        .promo__slider-wrap {
+          // max-width: 826px;
+          overflow: hidden;
+          // min-width: 0;
+
+          .promo__list {
+            // overflow: hidden;
+            max-width: 826px;
+            // margin: 0 auto 100px;
+    
+            .promo__item {
+              padding: 0px;
+              display: grid;
+              grid-auto-flow: row;
+              grid-template-columns: auto 1fr;
+              gap: 20px 15px;
+              align-content: start;
+              // max-width: 413px;
+              // width: 100%;
+              // min-height: 371px;
+              // height: 100%;
+              border-radius: 10px; 
+  
+              // width: 403px;
+              // height: 345px;
+  
+              .promo__item-img {
+                grid-column: 2 span;
+                width: 100%;
+                aspect-ratio: 403/245;
+                border-radius: 10px;
+                overflow: hidden;
+  
+                & img {
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: center;
+                }
+              }
+              .promo__item-date {
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16.94px;
+                text-align: left;
+                color: #8c8c8c;
+              }
+  
+              .promo__item-period {
+                position: relative;
+                padding-left: 20px;
+  
+                & svg {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+              }
+    
+              .promo__item-title {
+                margin-top: -5px;
+                max-width: 330px;
+                grid-column: 2 span;
+                font-family: Inter;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 24.2px;
+                text-align: left;              
+                color: #363636;
+              } 
+            }
+          }
+        }
+
+        .promo__link {
+          display: grid;
+          grid-auto-flow: column;
+          grid-template-columns: 1fr 55px;
+          align-items: center;
+          align-content: end;
+          gap: 40px;
+          padding: 50px;
+          // isolation: isolate;
+
+          // width: 846px;
+          // height: 345px;
+
+          background: #748D55;
+          border-radius: 10px;
+
+          .promo__link-text {
+            font-family: Inter;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 38.73px;
+            text-align: left;
+            color: #FFFFFF;
+          }
+          .promo__link-arrow {
+          }
+        }
+  
+      }
+      .swiper-navigation {
+        position: absolute;
+        bottom: 5px;
+        left: 100px;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        gap: 20px;
+        align-items: center;
+  
+        .swiper-button {
+          position: relative;
+          width: 56px;
+          height: 56px;
+          top: initial;
+          right: initial;
+          left: initial;
+          bottom: initial;
+          margin: 0;
+  
+          & svg {
+            width: 56px;
+            height: 56px;
+          }
+  
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .news {
+      position: relative;
+      // min-width: 1920px;
+
+      .news__container {
+        padding: 100px 0 95px;
+        // max-width: 100%;
+        // display: grid;
+        // grid-auto-flow: row;
+        // gap: 43px;
+  
+        @media (max-width: 1750px) {
+          padding: 103px 0 89px;
+        }
+  
+        @media (max-width: 660px) {
+          padding: 110px 0 89px;
+        }
+  
+        .news__title {
+          max-width: 1712px;
+          width: 100%;
+          text-align: left;
+          margin: 0 auto 42px;
+  
+          @media (max-width: 1750px) {
+            max-width: 1280px;
+          }
+  
+          @media (max-width: 1400px) {
+            padding: 0 30px;
+          }
+  
+          @media (max-width: 960px) {
+            margin: 0 auto 33px;
+          }
+  
+          @media (max-width: 660px) {
+            padding: 0 15px;
+            margin: 0 auto 38px;
+          }
+        }
+  
+        .news__list {
+          // max-width: 1920px;
+          margin: 0 auto 40px;
+  
+          .swiper-slide {
+            max-width: 544px;
+            display: grid;
+            grid-auto-flow: row;
+            grid-template: auto auto 1fr / 1fr;
+            gap: 15px;
+            .news-slider__card-img-wrapper {
+              margin-bottom: 10px;
+              aspect-ratio: 544 / 280;
+    
+              & img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+              }
+            }
+            .news-slider__card-date {
+              font-family: Inter;
+              font-size: 15px;
+              font-weight: 400;
+              line-height: 18.15px;
+              text-align: left;
+              color: #616161;
+            }
+            .news-slider__card-link {
+              color: #363636;
+              font-family: Inter;
+              font-size: 20px;
+              font-weight: 400;
+              line-height: 24.2px;
+              text-align: left;
+              color: #363636;
+            }
+          }
+        }
+      }
+      .swiper-navigation {
+        position: absolute;
+        top: 50px;
+        right: 100px;
+        // width: 150px;
+        // height: 56px;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        gap: 20px;
+        align-items: center;
+  
+        .swiper-button {
+          position: relative;
+          width: 56px;
+          height: 56px;
+          top: initial;
+          right: initial;
+          left: initial;
+          bottom: initial;
+          margin: 0;
+  
+          & svg {
+            width: 56px;
+            height: 56px;
+          }
+  
+          &::after {
+            display: none;
+          }
+  
+          &.swiper-button-next_reg {
+          }
+  
+          &.swiper-button-prev_reg {
           }
         }
       }
@@ -6418,7 +6718,7 @@ a {
       position: absolute;
       top: 100px;
       right: 95px;
-      width: 150px;
+      // width: 150px;
 
       .swiper-button {
         width: auto;

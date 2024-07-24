@@ -226,31 +226,23 @@ a {
   box-shadow: none;
 }
 .btn.btn_white {
-  width: 167px;
-  height: 48px;
-  border-color: #2da1b7;
-  color: #2da1b7;
-  border-radius: 6px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-}
-.btn.btn_white:focus-visible {
-  outline: 1px solid #2fa7be;
-  outline-offset: 3px;
-}
-.btn.btn_white:hover {
-  color: white;
-  background-color: #37cbd3;
-  border-color: #37cbd3;
+  display: grid;
+  place-items: center;
+  padding: 9px;
+  max-width: 260px;
+  width: 100%;
+  min-height: 60px;
+  background: #FFFFFF;
+  opacity: 0.8;
+  border: 1px solid #616161;
+  border-radius: 5px;
+  color: #616161;
   outline: none;
   box-shadow: none;
 }
-.btn.btn_white:active {
-  color: white;
-  background-color: #2fa7be;
-  border-color: #2fa7be;
+.btn.btn_white:hover {
+  color: #56693E;
+  border-color: #56693E;
   outline: none;
   box-shadow: none;
 }
@@ -2979,12 +2971,23 @@ a {
 }
 .glavnaya .glavnaya__main_top .building .swiper-navigation {
   position: absolute;
-  top: 100px;
-  right: 95px;
-  width: 150px;
+  top: 80px;
+  right: 100px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 20px;
+  align-items: center;
 }
 .glavnaya .glavnaya__main_top .building .swiper-navigation .swiper-button {
-  width: auto;
+  position: relative;
+  width: 56px;
+  height: 56px;
+  top: initial;
+  right: initial;
+  left: initial;
+  bottom: initial;
+  margin: 0;
 }
 .glavnaya .glavnaya__main_top .building .swiper-navigation .swiper-button svg {
   width: 56px;
@@ -3502,8 +3505,6 @@ a {
   position: absolute;
   top: 50px;
   right: 100px;
-  width: 150px;
-  height: 56px;
   display: grid;
   grid-auto-flow: column;
   justify-content: end;
@@ -3532,7 +3533,8 @@ a {
   background: #F5F5F5;
 }
 .glavnaya .glavnaya__main_top .apartments .apartments__container {
-  padding: 90px 0 100px;
+  padding: 90px 0 80px;
+  overflow: hidden;
 }
 .glavnaya .glavnaya__main_top .apartments .apartments__container .apartments__top-wrap {
   margin-bottom: 35px;
@@ -3880,9 +3882,7 @@ a {
 .glavnaya .glavnaya__main_top .apartments .swiper-navigation {
   position: absolute;
   top: 90px;
-  left: 320px;
-  width: 150px;
-  height: 56px;
+  left: 340px;
   display: grid;
   grid-auto-flow: column;
   justify-content: end;
@@ -3904,6 +3904,240 @@ a {
   height: 56px;
 }
 .glavnaya .glavnaya__main_top .apartments .swiper-navigation .swiper-button::after {
+  display: none;
+}
+.glavnaya .glavnaya__main_top .promo {
+  position: relative;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container {
+  padding: 100px 0 95px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 826px 1fr;
+  gap: 43px;
+}
+@media (max-width: 1750px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container {
+    padding: 103px 0 89px;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container {
+    padding: 110px 0 89px;
+  }
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__title {
+  grid-column: 2 span;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap {
+  overflow: hidden;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list {
+  max-width: 826px;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item {
+  padding: 0px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: auto 1fr;
+  gap: 20px 15px;
+  align-content: start;
+  border-radius: 10px;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-img {
+  grid-column: 2 span;
+  width: 100%;
+  aspect-ratio: 403/245;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-date {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+  color: #8c8c8c;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-period {
+  position: relative;
+  padding-left: 20px;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-period svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-title {
+  margin-top: -5px;
+  max-width: 330px;
+  grid-column: 2 span;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  text-align: left;
+  color: #363636;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__link {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 55px;
+  align-items: center;
+  align-content: end;
+  gap: 40px;
+  padding: 50px;
+  background: #748D55;
+  border-radius: 10px;
+}
+.glavnaya .glavnaya__main_top .promo .promo__container .promo__link .promo__link-text {
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38.73px;
+  text-align: left;
+  color: #FFFFFF;
+}
+.glavnaya .glavnaya__main_top .promo .swiper-navigation {
+  position: absolute;
+  bottom: 5px;
+  left: 100px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 20px;
+  align-items: center;
+}
+.glavnaya .glavnaya__main_top .promo .swiper-navigation .swiper-button {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  top: initial;
+  right: initial;
+  left: initial;
+  bottom: initial;
+  margin: 0;
+}
+.glavnaya .glavnaya__main_top .promo .swiper-navigation .swiper-button svg {
+  width: 56px;
+  height: 56px;
+}
+.glavnaya .glavnaya__main_top .promo .swiper-navigation .swiper-button::after {
+  display: none;
+}
+.glavnaya .glavnaya__main_top .news {
+  position: relative;
+}
+.glavnaya .glavnaya__main_top .news .news__container {
+  padding: 100px 0 95px;
+}
+@media (max-width: 1750px) {
+  .glavnaya .glavnaya__main_top .news .news__container {
+    padding: 103px 0 89px;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main_top .news .news__container {
+    padding: 110px 0 89px;
+  }
+}
+.glavnaya .glavnaya__main_top .news .news__container .news__title {
+  max-width: 1712px;
+  width: 100%;
+  text-align: left;
+  margin: 0 auto 42px;
+}
+@media (max-width: 1750px) {
+  .glavnaya .glavnaya__main_top .news .news__container .news__title {
+    max-width: 1280px;
+  }
+}
+@media (max-width: 1400px) {
+  .glavnaya .glavnaya__main_top .news .news__container .news__title {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top .news .news__container .news__title {
+    margin: 0 auto 33px;
+  }
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main_top .news .news__container .news__title {
+    padding: 0 15px;
+    margin: 0 auto 38px;
+  }
+}
+.glavnaya .glavnaya__main_top .news .news__container .news__list {
+  margin: 0 auto 40px;
+}
+.glavnaya .glavnaya__main_top .news .news__container .news__list .swiper-slide {
+  max-width: 544px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: auto auto 1fr/1fr;
+  gap: 15px;
+}
+.glavnaya .glavnaya__main_top .news .news__container .news__list .swiper-slide .news-slider__card-img-wrapper {
+  margin-bottom: 10px;
+  aspect-ratio: 544/280;
+}
+.glavnaya .glavnaya__main_top .news .news__container .news__list .swiper-slide .news-slider__card-img-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.glavnaya .glavnaya__main_top .news .news__container .news__list .swiper-slide .news-slider__card-date {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.15px;
+  text-align: left;
+  color: #616161;
+}
+.glavnaya .glavnaya__main_top .news .news__container .news__list .swiper-slide .news-slider__card-link {
+  color: #363636;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  text-align: left;
+  color: #363636;
+}
+.glavnaya .glavnaya__main_top .news .swiper-navigation {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 20px;
+  align-items: center;
+}
+.glavnaya .glavnaya__main_top .news .swiper-navigation .swiper-button {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  top: initial;
+  right: initial;
+  left: initial;
+  bottom: initial;
+  margin: 0;
+}
+.glavnaya .glavnaya__main_top .news .swiper-navigation .swiper-button svg {
+  width: 56px;
+  height: 56px;
+}
+.glavnaya .glavnaya__main_top .news .swiper-navigation .swiper-button::after {
   display: none;
 }
 .glavnaya .slider .slider__container {
@@ -4856,7 +5090,6 @@ a {
   position: absolute;
   top: 100px;
   right: 95px;
-  width: 150px;
 }
 .news-page-item .news-page-item__news-slider .swiper-navigation .swiper-button {
   width: auto;

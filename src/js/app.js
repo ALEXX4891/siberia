@@ -53,7 +53,7 @@ new Swiper(".news-slider_swiper", {
 
   spaceBetween: 40,
   // slideToClickedSlide: true, //перелистывание слайдов по клику
-  grabCursor: true, //меняет курсор при наведении на руку
+  // grabCursor: true, //меняет курсор при наведении на руку
   watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
 
   // Navigation arrows
@@ -100,13 +100,13 @@ new Swiper(".building_swiper", {
 
   spaceBetween: 40,
   // slideToClickedSlide: true, //перелистывание слайдов по клику
-  grabCursor: true, //меняет курсор при наведении на руку
+  // grabCursor: true, //меняет курсор при наведении на руку
   watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
 
   // Navigation arrows
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next-building",
+    prevEl: ".swiper-button-prev-building",
   },
   // pagination: {
   //   el: ".swiper-pagination",
@@ -147,7 +147,7 @@ new Swiper(".regions_swiper", {
 
   spaceBetween: 20,
   // slideToClickedSlide: true, //перелистывание слайдов по клику
-  grabCursor: true, //меняет курсор при наведении на руку
+  // grabCursor: true, //меняет курсор при наведении на руку
   watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
 
   // Navigation arrows
@@ -194,13 +194,107 @@ new Swiper(".apartments_swiper", {
 
   spaceBetween: 10,
   // slideToClickedSlide: true, //перелистывание слайдов по клику
-  grabCursor: true, //меняет курсор при наведении на руку
+  // grabCursor: true, //меняет курсор при наведении на руку
   watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
 
   // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next_apart",
     prevEl: ".swiper-button-prev_apart",
+  },
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   clickable: true,
+  // },
+  // mousewheel: { //перелистывание слайдов по мышке
+  //   sensitivity: 1,
+  //   eventsTarget: ".news__slider",
+  // },
+  // keyboard: { //перелистывание слайдов по нажатию клавиш
+  //   enabled: true,
+  //   onlyInViewport: true,
+  //   // pageUpDown: true,
+  // },
+  breakpoints: {
+    0: {
+      // slidesPerView: 1,
+    },
+    500: {
+      // slidesPerView: 2,
+    },
+    800: {
+      // slidesPerView: 3.35,
+    },
+  },
+});
+
+new Swiper(".promo_swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  // loop: true,
+  // allowTouchMove: true,
+  // slidesPerView: auto, // сколько слайдов показывать, можно дробно
+  slidesPerView: 2, // сколько слайдов показывать, можно дробно
+  // slidersPerGroup: 3, // сколько слайдов в группе
+  // centeredSlides: true, //выравнивание слайдов по центру
+  // initialSlide: 0, //начальный слайд (c нуля)
+
+  spaceBetween: 20,
+  // slideToClickedSlide: true, //перелистывание слайдов по клику
+  // grabCursor: true, //меняет курсор при наведении на руку
+  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next_promo",
+    prevEl: ".swiper-button-prev_promo",
+  },
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   clickable: true,
+  // },
+  // mousewheel: { //перелистывание слайдов по мышке
+  //   sensitivity: 1,
+  //   eventsTarget: ".news__slider",
+  // },
+  // keyboard: { //перелистывание слайдов по нажатию клавиш
+  //   enabled: true,
+  //   onlyInViewport: true,
+  //   // pageUpDown: true,
+  // },
+  breakpoints: {
+    0: {
+      // slidesPerView: 1,
+    },
+    500: {
+      // slidesPerView: 2,
+    },
+    800: {
+      // slidesPerView: 3.35,
+    },
+  },
+});
+
+new Swiper(".news_swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  // loop: true,
+  // allowTouchMove: true,
+  // slidesPerView: auto, // сколько слайдов показывать, можно дробно
+  slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
+  // slidersPerGroup: 3, // сколько слайдов в группе
+  // centeredSlides: true, //выравнивание слайдов по центру
+  // initialSlide: 0, //начальный слайд (c нуля)
+
+  spaceBetween: 40,
+  // slideToClickedSlide: true, //перелистывание слайдов по клику
+  // grabCursor: true, //меняет курсор при наведении на руку
+  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next_news",
+    prevEl: ".swiper-button-prev_news",
   },
   // pagination: {
   //   el: ".swiper-pagination",
