@@ -254,12 +254,12 @@
             <p class="choice__label">
               Площадь, м2
             </p>
-            <div class="choice__square-select select-frame">
+            <div class="choice__slider-select choice__slider-select_square select-frame">
               <div class="select__wrapper">
                 <span class="select__placeholder">
                   от
                 </span>
-                <input class="select__input select__input_from" type="number" min="0" max="1000" value="26">
+                <input class="select__input select__input_from" type="number">
               </div>
 
               <span class="select__arrow">
@@ -269,7 +269,7 @@
                 <span class="select__placeholder">
                   до
                 </span>
-                <input class="select__input select__input_to" type="number" min="0" max="1000" value="75">
+                <input class="select__input select__input_to" type="number">
               </div>
 
               <div class="slider-container">
@@ -277,13 +277,11 @@
                 </div>
               </div>
 
-
               <div class="range-inputs-wrap">
-                <input class="min-range" type="range" >
-                <input class="max-range" type="range" >
+                <input class="min-range" type="range">
+                <input class="max-range" type="range">
               </div>
 
-              
             </div>
           </div>
 
@@ -462,9 +460,9 @@
             Квартиры
           </h2>
 
-          <button class="apartments__button btn btn_dark">
+          <a class="apartments__button btn btn_dark" href="apartments.html">
             Посмотреть все квартиры
-          </button>
+          </a>
         </div>
 
         <ul class="apartments__list swiper-wrapper">

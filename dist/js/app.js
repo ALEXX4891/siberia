@@ -14,7 +14,7 @@ Fancybox.bind("[data-fancybox]", {
 // });
 
 const page = window.location.pathname.split("/").pop();
-console.log(page);
+// console.log(page);
 const navLinks = document.querySelectorAll(".nav__link");
 navLinks.forEach((item) => {
   if (item.getAttribute("href").includes(page)) {
@@ -38,142 +38,162 @@ navLinks.forEach((item) => {
 //   },
 // });
 // -------------------------------------------- start range-slider: ---------------------------------------------
-const rangeSlider = document.querySelector(".range-slider");
-// текстовые инпуты:
-const priceInputs = document.querySelectorAll(".choice__square-select .select__input");
-const textInputMin = document.querySelector(".select__input_from");
-const textInputMax = document.querySelector(".select__input_to");
-console.log(priceInputs);
-// рендж инпуты:
-const rangeInputs = document.querySelectorAll(".range-inputs-wrap input");
-const rangeInputMin = document.querySelector(".min-range");
-const rangeInputMax = document.querySelector(".max-range");
 
-// основные параметры:
-const priceGap = 1;
-const minRange = 26;
-const maxRange = 81;
+function rangeSliderInit(slider, gap, minRange, maxRange) {
+  const rangeSlider = slider.querySelector(".range-slider");
+  // текстовые инпуты:
+  const priceInputs = slider.querySelectorAll(
+    ".choice__slider-select .select__input"
+  );
+  const textInputMin = slider.querySelector(".select__input_from");
+  const textInputMax = slider.querySelector(".select__input_to");
+  // console.log(priceInputs);
+  // рендж инпуты:
+  const rangeInputs = slider.querySelectorAll(".range-inputs-wrap input");
+  const rangeInputMin = slider.querySelector(".min-range");
+  const rangeInputMax = slider.querySelector(".max-range");
 
-// присваиваем значения инпутам:
-textInputMin.value = minRange;
-textInputMax.value = maxRange;
-rangeInputMin.value = minRange;
-rangeInputMax.value = maxRange;
+  // основные параметры:
+  gap = gap;
+  minRange = minRange;
+  maxRange = maxRange;
 
-textInputMin.min = minRange;
-textInputMin.min = minRange;
-rangeInputMin.min = minRange;
-rangeInputMax.min = minRange;
+  // присваиваем значения инпутам:
+  textInputMin.min = minRange;
+  textInputMax.min = minRange;
+  rangeInputMin.min = minRange;
+  rangeInputMax.min = minRange;
 
-textInputMin.max = maxRange;
-textInputMax.max = maxRange;
-rangeInputMin.max = maxRange;
-rangeInputMax.max = maxRange;
+  textInputMin.max = maxRange;
+  textInputMax.max = maxRange;
+  rangeInputMin.max = maxRange;
+  rangeInputMax.max = maxRange;
 
-textInputMin.step = priceGap;
-textInputMax.step = priceGap;
-rangeInputMin.step = priceGap;
-rangeInputMax.step = priceGap;
+  textInputMin.step = gap;
+  textInputMax.step = gap;
+  rangeInputMin.step = gap;
+  rangeInputMax.step = gap;
 
-// обработка событий текстовых инпутов:
-priceInputs.forEach((input) => {
-  input.addEventListener("input", (e) => {
-    //получаем значения из текстовых инпутов:
-    let minVal = parseInt(textInputMin.value);
-    let maxVal = parseInt(textInputMax.value);
-    let diff = maxVal - minVal;
+  // value должно стоять соследним!!!
+  textInputMin.value = minRange;
+  textInputMax.value = maxRange;
+  rangeInputMin.value = minRange;
+  rangeInputMax.value = maxRange;
 
-    // ограничиваем значение min инпута:
-    if (minVal < minRange) {
-      textInputMin.value = minRange;
-      minVal = minRange;
-    }
+  // обработка событий текстовых инпутов:
+  priceInputs.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      //получаем значения из текстовых инпутов:
+      let minVal = parseInt(textInputMin.value);
+      let maxVal = parseInt(textInputMax.value);
+      let diff = maxVal - minVal;
 
-    // ограничиваем значение max инпута:
-    if (maxVal > maxRange) {
-      textInputMax.value = maxRange;
-      maxVal = maxRange;
-    }
-
-    // ограничиваем максимальное значение min инпута:
-    if (e.target === textInputMin) {
-      if (minVal > maxVal - priceGap) {
-        textInputMin.value = maxVal - priceGap;
-        minVal = maxVal - priceGap;
+      // ограничиваем значение min инпута:
+      if (minVal < minRange) {
+        textInputMin.value = minRange;
+        minVal = minRange;
       }
-    }
 
-    // ограничиваем минимальное значение max инпута:
-    if (e.target === textInputMax) {
-      if (maxVal < minVal + priceGap) {
-        textInputMax.value = minVal + priceGap;
-        maxVal = minVal + priceGap;
+      // ограничиваем значение max инпута:
+      if (maxVal > maxRange) {
+        textInputMax.value = maxRange;
+        maxVal = maxRange;
       }
-    }
 
-    // вычисляем положение рендж инпутов:
-    if (diff >= priceGap) {
-      rangeInputMax.value = maxVal;
-      rangeInputMin.value = minVal;
-      rangeSlider.style.right = `${
-        100 - ((maxVal - minRange) * 100) / (maxRange - minRange)
-      }%`;
-      rangeSlider.style.left = `${
-        ((minVal - minRange) * 100) / (maxRange - minRange)
-      }%`;      
-    }
+      // ограничиваем максимальное значение min инпута:
+      if (e.target === textInputMin) {
+        if (minVal > maxVal - gap) {
+          textInputMin.value = maxVal - gap;
+          minVal = maxVal - gap;
+        }
+      }
+
+      // ограничиваем минимальное значение max инпута:
+      if (e.target === textInputMax) {
+        if (maxVal < minVal + gap) {
+          textInputMax.value = minVal + gap;
+          maxVal = minVal + gap;
+        }
+      }
+
+      // вычисляем положение рендж инпутов:
+      if (diff >= gap) {
+        rangeInputMax.value = maxVal;
+        rangeInputMin.value = minVal;
+        rangeSlider.style.right = `${
+          100 - ((maxVal - minRange) * 100) / (maxRange - minRange)
+        }%`;
+        rangeSlider.style.left = `${
+          ((minVal - minRange) * 100) / (maxRange - minRange)
+        }%`;
+      }
+    });
   });
-});
 
-rangeInputs.forEach((input) => {
-  input.addEventListener("input", (e) => {
-    //получаем значения из текстовых инпутов:
-    let minVal = parseInt(rangeInputMin.value);
-    let maxVal = parseInt(rangeInputMax.value);
-    let diff = maxVal - minVal;
+  rangeInputs.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      //получаем значения из текстовых инпутов:
+      let minVal = parseInt(rangeInputMin.value);
+      let maxVal = parseInt(rangeInputMax.value);
+      let diff = maxVal - minVal;
 
-    // ограничиваем значение min инпута:
-    if (minVal < minRange) {
-      rangeInputMin.value = minRange;
-      minVal = minRange;      
-    }
-
-    // ограничиваем значение max инпута:
-    if (maxVal > maxRange) {
-      rangeInputMax.value = maxRange;
-      maxVal = maxRange;
-      
-    }
-
-    // ограничиваем максимальное значение min инпута:
-    if (e.target === rangeInputMin) {
-      if (minVal > maxVal - priceGap) {
-        rangeInputMin.value = maxVal - priceGap;
-        minVal = maxVal - priceGap;        
+      // ограничиваем значение min инпута:
+      if (minVal < minRange) {
+        rangeInputMin.value = minRange;
+        minVal = minRange;
       }
-    }
 
-    // ограничиваем минимальное значение max инпута:
-    if (e.target === rangeInputMax) {
-      if (maxVal < minVal + priceGap) {
-        rangeInputMax.value = minVal + priceGap;
-        maxVal = minVal + priceGap;        
+      // ограничиваем значение max инпута:
+      if (maxVal > maxRange) {
+        rangeInputMax.value = maxRange;
+        maxVal = maxRange;
       }
-    }
 
-    // вычисляем положение рендж инпутов:
-    if (diff >= priceGap) {
-      textInputMin.value = minVal;
-      textInputMax.value = maxVal;
-      rangeSlider.style.right = `${
-        100 - ((maxVal - minRange) * 100) / (maxRange - minRange)
-      }%`;
-      rangeSlider.style.left = `${
-        ((minVal - minRange) * 100) / (maxRange - minRange)
-      }%`;      
-    }
+      // ограничиваем максимальное значение min инпута:
+      if (e.target === rangeInputMin) {
+        if (minVal > maxVal - gap) {
+          rangeInputMin.value = maxVal - gap;
+          minVal = maxVal - gap;
+        }
+      }
+
+      // ограничиваем минимальное значение max инпута:
+      if (e.target === rangeInputMax) {
+        if (maxVal < minVal + gap) {
+          rangeInputMax.value = minVal + gap;
+          maxVal = minVal + gap;
+        }
+      }
+
+      // вычисляем положение рендж инпутов:
+      if (diff >= gap) {
+        textInputMin.value = minVal;
+        textInputMax.value = maxVal;
+        rangeSlider.style.right = `${
+          100 - ((maxVal - minRange) * 100) / (maxRange - minRange)
+        }%`;
+        rangeSlider.style.left = `${
+          ((minVal - minRange) * 100) / (maxRange - minRange)
+        }%`;
+      }
+    });
   });
-});
+}
+
+const squareSlider = document.querySelector(".choice__slider-select_square");
+if (squareSlider) {
+  rangeSliderInit(squareSlider, 1, 26, 81);
+}
+
+const costSlider = document.querySelector(".choice__slider-select_cost");
+if (costSlider) {
+  rangeSliderInit(costSlider, 1, 2300000, 7000000);
+}
+
+const floorSlider = document.querySelector(".choice__slider-select_floor");
+if (floorSlider) {
+  rangeSliderInit(floorSlider, 1, 1, 4);
+}
 
 // -------------------------------------------- end range-slider: ---------------------------------------------
 // -------------------------------------------- start slider: ---------------------------------------------
@@ -230,7 +250,7 @@ new Swiper(".building_swiper", {
   // loop: true,
   // allowTouchMove: true,
   // slidesPerView: auto, // сколько слайдов показывать, можно дробно
-  slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
+  slidesPerView: "auto", // сколько слайдов показывать, можно дробно
   // slidersPerGroup: 3, // сколько слайдов в группе
   // centeredSlides: true, //выравнивание слайдов по центру
   // initialSlide: 0, //начальный слайд (c нуля)
@@ -277,7 +297,7 @@ new Swiper(".regions_swiper", {
   // loop: true,
   // allowTouchMove: true,
   // slidesPerView: auto, // сколько слайдов показывать, можно дробно
-  slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
+  slidesPerView: "auto", // сколько слайдов показывать, можно дробно
   // slidersPerGroup: 3, // сколько слайдов в группе
   // centeredSlides: true, //выравнивание слайдов по центру
   // initialSlide: 0, //начальный слайд (c нуля)
@@ -324,7 +344,7 @@ new Swiper(".apartments_swiper", {
   // loop: true,
   // allowTouchMove: true,
   // slidesPerView: auto, // сколько слайдов показывать, можно дробно
-  slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
+  slidesPerView: "auto", // сколько слайдов показывать, можно дробно
   // slidersPerGroup: 3, // сколько слайдов в группе
   // centeredSlides: true, //выравнивание слайдов по центру
   // initialSlide: 0, //начальный слайд (c нуля)
@@ -418,7 +438,7 @@ new Swiper(".news_swiper", {
   // loop: true,
   // allowTouchMove: true,
   // slidesPerView: auto, // сколько слайдов показывать, можно дробно
-  slidesPerView: 'auto', // сколько слайдов показывать, можно дробно
+  slidesPerView: "auto", // сколько слайдов показывать, можно дробно
   // slidersPerGroup: 3, // сколько слайдов в группе
   // centeredSlides: true, //выравнивание слайдов по центру
   // initialSlide: 0, //начальный слайд (c нуля)
@@ -1516,27 +1536,27 @@ let queryParams = {
 // console.log(selects);
 const choiceForm = document.querySelector(".choice__form");
 if (choiceForm) {
-  const selectProject = document.querySelector(".choice__select");
-  // selects.forEach((select) => {
-  selectProject.addEventListener("click", (event) => {
-    // console.log("click");
-    selectProject.classList.toggle("select_open");
-  });
-  const selectOptions = selectProject.querySelectorAll(".select__item");
-  selectOptions.forEach((item) => {
-    item.addEventListener("click", (event) => {
-      const input = selectProject.querySelector(".select__text");
-      event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
-      input.innerHTML = item.innerHTML;
-      input.classList.add("select__text_active");
-      input.setAttribute("data-id", item.getAttribute("data-id"));
-      queryParams.project = item.getAttribute("data-id");
-      // console.log(queryParams);
-      selectProject.classList.remove("select_open");
-      selectProject.classList.add("select_active");
+  const selectProject = document.querySelectorAll(".choice__select");
+  selectProject.forEach((select) => {
+    select.addEventListener("click", (event) => {
+      // console.log("click");
+      select.classList.toggle("select_open");
+    });
+    const selectOptions = select.querySelectorAll(".select__item");
+    selectOptions.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        const input = select.querySelector(".select__text");
+        event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+        input.innerHTML = item.innerHTML;
+        input.classList.add("select__text_active");
+        input.setAttribute("data-id", item.getAttribute("data-id"));
+        queryParams.project = item.getAttribute("data-id");
+        // console.log(queryParams);
+        select.classList.remove("select_open");
+        select.classList.add("select_active");
+      });
     });
   });
-  // });
 
   const choiceButtonsSelect = document.querySelector(".choice__buttons-select");
   if (choiceButtonsSelect) {
@@ -1583,7 +1603,7 @@ if (choiceForm) {
     });
   }
 
-  const choice__square = document.querySelector(".choice__square-select");
+  const choice__square = document.querySelector(".choice__slider-select");
   if (choice__square) {
     const inputFrom = choice__square.querySelector(".select__input_from");
     const inputTo = choice__square.querySelector(".select__input_to");
@@ -1768,13 +1788,8 @@ async function initMap() {
   //     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
   await ymaps3.ready;
 
-  const {
-    YMap,
-    YMapDefaultSchemeLayer,
-    YMapDefaultFeaturesLayer,
-    YMapMarker,
-  } = ymaps3;
-  
+  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
+    ymaps3;
 
   // const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
   // // кластеризация маркеров
@@ -1786,7 +1801,6 @@ async function initMap() {
   //   функция которая вернет YMapMarker для кластера
   // });
   // // https://yandex.ru/dev/maps/jsapi/doc/3.0/ref/packages/clusterer/index.html
-
 
   // Иницилиазируем карту
   const map = new YMap(
@@ -1823,12 +1837,12 @@ async function initMap() {
     ]
   );
 
-  const markerElement = document.createElement('img');
-  markerElement.className = 'marker-class';
+  const markerElement = document.createElement("img");
+  markerElement.className = "marker-class";
   markerElement.innerText = "I'm marker!";
-  markerElement.style.width = '42px';
-  markerElement.style.height = '58px';
-  markerElement.src = 'img/pin.svg';
+  markerElement.style.width = "42px";
+  markerElement.style.height = "58px";
+  markerElement.src = "img/pin.svg";
 
   const marker = new YMapMarker(
     {
@@ -1840,7 +1854,6 @@ async function initMap() {
   );
   map.addChild(marker);
 }
-
 
 function setVisible() {
   myGeoObject4.options.set({
@@ -1863,9 +1876,11 @@ $(document).ready(function () {
 });
 
 const mapMarks = document.querySelector(".map__mark-item");
-mapMarks.addEventListener("click", (event) => {
-  mapMarks.classList.toggle("map__mark-item_active");
-});
+if (mapMarks) {
+  mapMarks.addEventListener("click", (event) => {
+    mapMarks.classList.toggle("map__mark-item_active");
+  });
+}
 // -------------------------------------------- end Карта ---------------------------------------------
 //--------------------------Запрос к БД----------------------------
 // Загружаем список контрагентов с БД:
