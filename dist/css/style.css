@@ -3089,7 +3089,6 @@ a {
   right: 0%;
   height: 100%;
   background: #748D55;
-  margin: 0 13px;
 }
 .glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .range-inputs-wrap {
   position: absolute;
@@ -3107,7 +3106,6 @@ a {
   pointer-events: none;
   cursor: pointer;
   -webkit-appearance: none;
-  margin: 0 10px;
 }
 .glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .range-inputs-wrap input[type=range]::-webkit-slider-thumb {
   height: 15px;

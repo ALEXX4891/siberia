@@ -40,10 +40,10 @@ navLinks.forEach((item) => {
 // -------------------------------------------- start range-slider: ---------------------------------------------
 const rangeSlider = document.querySelector(".range-slider");
 // текстовые инпуты:
-const priceInputs = document.querySelectorAll(".price-inputs-wrap input");
+const priceInputs = document.querySelectorAll(".choice__square-select .select__input");
 const textInputMin = document.querySelector(".select__input_from");
 const textInputMax = document.querySelector(".select__input_to");
-
+console.log(priceInputs);
 // рендж инпуты:
 const rangeInputs = document.querySelectorAll(".range-inputs-wrap input");
 const rangeInputMin = document.querySelector(".min-range");
