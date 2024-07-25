@@ -3076,32 +3076,46 @@ a {
     width: 30px;
   }
 }
-.glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .slider-container {
-  width: 100%;
-  height: 6px;
-  position: relative;
-  background: #e4e4e4;
-  border-radius: 5px;
+.glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .slider-container {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  height: 3px;
 }
-.glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .slider-container .price-slider {
+.glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .slider-container .range-slider {
+  position: absolute;
+  left: 0%;
+  right: 0%;
   height: 100%;
-  left: 25%;
-  right: 15%;
-  position: absolute;
-  border-radius: 5px;
-  background: #01940b;
+  background: #748D55;
+  margin: 0 13px;
 }
-.glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .range-input {
-  position: relative;
-  width: 100%;
-}
-.glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .range-input .range {
+.glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .range-inputs-wrap {
   position: absolute;
-  width: 100%;
-  height: 5px;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+.glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .range-inputs-wrap input {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  height: 100%;
   background: none;
-  top: -5px;
+  pointer-events: none;
   cursor: pointer;
+  -webkit-appearance: none;
+  margin: 0 10px;
+}
+.glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .range-inputs-wrap input[type=range]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #748D55;
+  pointer-events: auto;
+  -webkit-appearance: none;
 }
 .glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__btns-block {
   grid-column: 2 span;
