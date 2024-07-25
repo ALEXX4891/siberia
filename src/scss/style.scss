@@ -4504,10 +4504,11 @@ a {
 
               .slider-container {
                 position: absolute;
-                top: calc(100% - 1px);
+                top: calc(100% - 2px);
                 left: 0;
                 right: 0;
                 height: 3px;
+                margin: 0 23px;
 
                 .range-slider {
                   position: absolute;
@@ -4515,15 +4516,15 @@ a {
                   right: 0%;
                   height: 100%;
                   background: #748D55;
-                  // margin: 0 13px;
                 }
               }
               .range-inputs-wrap {
                 position: absolute;
-                top: calc(100% - 1px);
+                top: calc(100% - 2px);
                 left: 0;
                 right: 0;
                 height: 3px;                
+                margin: 0 20px;
 
                 & input {
                   position: absolute;
@@ -4534,7 +4535,6 @@ a {
                   pointer-events: none;
                   cursor: pointer;
                   -webkit-appearance: none;
-                  // margin: 0 10px;
                 }
 
                 input[type="range"]::-webkit-slider-thumb {

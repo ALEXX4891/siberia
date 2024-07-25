@@ -3078,10 +3078,11 @@ a {
 }
 .glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .slider-container {
   position: absolute;
-  top: calc(100% - 1px);
+  top: calc(100% - 2px);
   left: 0;
   right: 0;
   height: 3px;
+  margin: 0 23px;
 }
 .glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .slider-container .range-slider {
   position: absolute;
@@ -3092,10 +3093,11 @@ a {
 }
 .glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .range-inputs-wrap {
   position: absolute;
-  top: calc(100% - 1px);
+  top: calc(100% - 2px);
   left: 0;
   right: 0;
   height: 3px;
+  margin: 0 20px;
 }
 .glavnaya .glavnaya__main_top .choice .choice__container .choice__form .choice__input-block .choice__square-select .range-inputs-wrap input {
   position: absolute;
