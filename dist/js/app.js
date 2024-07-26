@@ -15,7 +15,7 @@ Fancybox.bind("[data-fancybox]", {
 
 let page = window.location.pathname.split("/").pop();
 if (page === "") {
-  page = "index"
+  page = "index";
 } else {
   const navLinks = document.querySelectorAll(".nav__link");
   navLinks.forEach((item) => {
@@ -199,6 +199,22 @@ if (floorSlider) {
 }
 
 // -------------------------------------------- end range-slider: ---------------------------------------------
+// -------------------------------------------- start checkbox-lable: ---------------------------------------------
+const checkbox = document.querySelectorAll(".checkbox__label");
+if (checkbox) {
+  checkbox.forEach((item) => {
+    if (item.querySelector(".checkbox__input").checked) {
+      item.classList.add("checkbox__label_active");
+    }
+    item.addEventListener("click", function () {
+      checkbox.forEach((item) => {
+        item.classList.remove("checkbox__label_active");
+      })
+      item.classList.add("checkbox__label_active");
+    });
+  });
+}
+// -------------------------------------------- end checkbox-lable: ---------------------------------------------
 // -------------------------------------------- start slider: ---------------------------------------------
 new Swiper(".news-slider_swiper", {
   // Optional parameters
@@ -1530,8 +1546,8 @@ let queryParams = {
   area: "",
   balcony: "",
   dressing_room: "",
-  side_2: "",
-  side_3: "",
+  two_side: "",
+  three_side: "",
   guest_bathroom: "",
   kitchen_living_room: "",
 };

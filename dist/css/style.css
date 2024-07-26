@@ -757,7 +757,7 @@ a {
 }
 
 .main {
-  padding-top: 80px;
+  padding-top: 70px;
   overflow: hidden;
 }
 
@@ -2082,6 +2082,9 @@ a {
   gap: 2px;
 }
 .select-frame .select__placeholder {
+  position: absolute;
+  top: 21px;
+  left: 20px;
   color: rgba(21, 0, 0, 0.5);
   font-size: 16px;
   font-weight: 400;
@@ -5591,17 +5594,14 @@ a {
   align-self: center;
 }
 .apartments-page .choice .choice__container .choice__form .choice__btns-block .choice__btns-wrap {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: start;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
   gap: 10px;
 }
 @media (max-width: 1750px) {
   .apartments-page .choice .choice__container .choice__form .choice__btns-block .choice__btns-wrap {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
     gap: 10px 15px;
   }
 }
@@ -5676,12 +5676,16 @@ a {
   min-height: 655px;
   background: #ffffff;
   border-radius: 5px;
+}
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link {
   display: grid;
   grid-auto-flow: row;
   grid-template-rows: auto 1fr auto auto;
   gap: 10px;
+  width: 100%;
+  height: 100%;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-title {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-title {
   font-family: Inter;
   font-size: 15px;
   font-weight: 400;
@@ -5689,17 +5693,17 @@ a {
   text-align: left;
   color: #616161;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-img {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-img {
   padding: 30px;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-img img {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-img img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-desc {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-desc {
   font-family: Inter;
   font-size: 18px;
   font-weight: 500;
@@ -5707,14 +5711,14 @@ a {
   text-align: left;
   color: #616161;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-price-wrap {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-price-wrap {
   display: grid;
   grid-auto-flow: column;
   justify-content: start;
   align-items: end;
   gap: 10px;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-price-wrap .apartments__item-new-price {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-price-wrap .apartments__item-new-price {
   font-family: Inter;
   font-size: 30px;
   font-weight: 500;
@@ -5722,7 +5726,7 @@ a {
   text-align: left;
   color: #000;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-price-wrap .apartments__item-old-price {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-price-wrap .apartments__item-old-price {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -5731,7 +5735,7 @@ a {
   color: #8c8c8c;
   text-decoration: line-through;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-footer {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-footer {
   display: flex;
   gap: 5px;
   flex-flow: row wrap;
@@ -5740,7 +5744,7 @@ a {
   padding-top: 15px;
   min-height: 90px;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-footer .apartments__item-footer-item {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-footer .apartments__item-footer-item {
   padding: 8px 16px;
   border: 1px solid #748d55;
   border-radius: 50px;
@@ -5749,7 +5753,7 @@ a {
   gap: 10px;
   height: max-content;
 }
-.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-footer .apartments__item-footer-item .apartments__item-footer-item-text {
+.apartments-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link .apartments__item-footer .apartments__item-footer-item .apartments__item-footer-item-text {
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
@@ -5761,5 +5765,321 @@ a {
 .apartments-page .apartments .apartments__container .apartments__button {
   justify-self: center;
   width: 320px;
+}
+
+.apartments-item-page .about {
+  background: #f5f5f5;
+}
+.apartments-item-page .about .about__container {
+  padding: 10px 0 80px;
+  display: grid;
+  grid-template: auto/1fr 565px;
+  gap: 20px;
+}
+.apartments-item-page .about .about__container .about__left {
+  position: relative;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 144px;
+}
+.apartments-item-page .about .about__container .about__left .about__btn-back {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 15px;
+  padding: 13px 20px;
+  border: 1px solid #cbcbcb;
+  border-radius: 50px;
+  height: max-content;
+  width: max-content;
+}
+.apartments-item-page .about .about__container .about__left .about__btn-back .about__btn-text {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  text-align: left;
+  color: #616161;
+}
+.apartments-item-page .about .about__container .about__left .about__compass {
+  position: absolute;
+  top: 25px;
+  right: 5px;
+  width: 130px;
+  height: 130px;
+}
+.apartments-item-page .about .about__container .about__left .about__img {
+  justify-self: center;
+}
+.apartments-item-page .about .about__container .about__left .about__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.apartments-item-page .about .about__container .about__left .about__btn-wrap {
+  justify-self: center;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+}
+.apartments-item-page .about .about__container .about__left .about__btn-wrap .about__btn {
+  padding: 10px 20px;
+  border: 1px solid #cbcbcb;
+  border-radius: 50px;
+  color: #616161;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: center;
+}
+.apartments-item-page .about .about__container .about__left .about__btn-wrap .about__btn.about__btn_active {
+  padding: 10px 20px;
+  background: #56693e;
+  border-radius: 50px;
+  color: #fff;
+}
+.apartments-item-page .about .about__container .about__right {
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: grid;
+  grid-auto-flow: row;
+  align-content: start;
+  gap: 15px;
+}
+.apartments-item-page .about .about__container .about__right .about__btn-complex {
+  margin-bottom: 25px;
+  padding: 9px 20px 9px 9px;
+  border: 1px solid #dfdfdf;
+  border-radius: 50px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  align-items: center;
+  align-content: center;
+  width: max-content;
+  height: max-content;
+}
+.apartments-item-page .about .about__container .about__right .about__btn-complex .about__btn-complex-img {
+  width: 30px;
+  height: 30px;
+  background: rgba(154, 188, 111, 0.2);
+  border-radius: 50%;
+}
+.apartments-item-page .about .about__container .about__right .about__btn-complex .about__btn-complex-text {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: #363636;
+}
+.apartments-item-page .about .about__container .about__right .about__right-title {
+  font-family: Inter;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30.26px;
+  text-align: left;
+  color: #616161;
+}
+.apartments-item-page .about .about__container .about__right .about__right-price-wrap {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+  align-items: end;
+  justify-content: start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dfdfdf;
+}
+.apartments-item-page .about .about__container .about__right .about__right-price-wrap .about__right-new-price {
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48.41px;
+  text-align: left;
+  color: #363636;
+}
+.apartments-item-page .about .about__container .about__right .about__right-price-wrap .about__right-old-price {
+  font-family: Inter;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30.26px;
+  text-align: left;
+  color: #616161;
+  text-decoration: line-through;
+}
+.apartments-item-page .about .about__container .about__right .about__right-info {
+  margin-bottom: 25px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+.apartments-item-page .about .about__container .about__right .about__right-info .about__right-info-left {
+  display: grid;
+  grid-template: max-content max-content/max-content max-content;
+  gap: 5px 50px;
+  justify-content: start;
+  align-content: center;
+}
+.apartments-item-page .about .about__container .about__right .about__right-info .about__right-info-left .about__right-info-title {
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  text-align: left;
+  color: #616161;
+}
+.apartments-item-page .about .about__container .about__right .about__right-info .about__right-info-left .about__right-info-text {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  text-align: left;
+  color: #363636;
+}
+.apartments-item-page .about .about__container .about__right .about__right-info .choice__select {
+  width: 170px;
+  height: max-content;
+  align-self: center;
+}
+.apartments-item-page .about .about__container .about__right .about__right-btn-block {
+  margin-bottom: 35px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 10px;
+}
+.apartments-item-page .about .about__container .about__right .about__right-btn-block .about__right-btn-block-title {
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  text-align: left;
+  color: #616161;
+}
+.apartments-item-page .about .about__container .about__right .about__right-btn-block .about__right-btn-block-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+.apartments-item-page .about .about__container .about__right .about__right-btn-block .about__right-btn-block-wrap .about__right-btn-block-filter {
+  padding: 6px 17px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: #8cab64;
+  white-space: nowrap;
+  border: 1px solid #8cab64;
+  border-radius: 50px;
+  pointer-events: none;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap {
+  margin-bottom: 35px;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .about__right-payment-title {
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.2px;
+  text-align: left;
+  color: #616161;
+  margin-bottom: 10px;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .checkbox-list {
+  display: grid;
+  grid-template: auto/1fr 1fr;
+  gap: 10px;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .checkbox-list .checkbox .checkbox__label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 12px 15px 15px;
+  min-height: 80px;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+  background-color: transparent;
+  display: grid;
+  grid-auto-flow: row;
+  align-content: space-between;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .checkbox-list .checkbox .checkbox__label.checkbox__label_active {
+  border: 1px solid #EFFCDE;
+  background: #EFFCDE;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .checkbox-list .checkbox .checkbox__label .checkbox__input {
+  display: none;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .checkbox-list .checkbox .checkbox__label .checkbox__input:checked + .checkbox__mark::before {
+  opacity: 1;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .checkbox-list .checkbox .checkbox__label .checkbox__mark {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #CBCBCB;
+  background-color: #fff;
+  z-index: 1;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .checkbox-list .checkbox .checkbox__label .checkbox__mark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 12px;
+  height: 12px;
+  background-color: #748D55;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .checkbox-list .checkbox .checkbox__label .checkbox__tite {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+  color: #616161;
+  opacity: 0.8;
+}
+.apartments-item-page .about .about__container .about__right .about__right-payment-wrap .checkbox-list .checkbox .checkbox__label .checkbox__desc {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  text-align: left;
+  color: #363636;
+}
+.apartments-item-page .about .about__container .about__right .about__right-bot-btn-wrap {
+  display: grid;
+  grid-template: max-content/1fr 1fr;
+  gap: 10px;
+}
+.apartments-item-page .about .about__container .about__right .about__right-bot-btn-wrap .about__right-bot-btn {
+  width: auto;
+}
+.apartments-item-page .about .about__container .about__right .about__right-desc {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.4);
 }
 /*# sourceMappingURL=style.css.map */

@@ -53,13 +53,13 @@ if ($inputData) {
       // $arrData['taxNumber'] = $data[$key];
       $taxNumber = $data[$key];
     }
-    if ($key == 'side_2') {
-      // $arrData['side_2'] = $data[$key];
-      $side_2 = $data[$key];
+    if ($key == 'two_side') {
+      // $arrData['two_side'] = $data[$key];
+      $two_side = $data[$key];
     }
-    if ($key == 'side_3') {
-      // $arrData['side_3'] = $data[$key];
-      $side_3 = $data[$key];
+    if ($key == 'three_side') {
+      // $arrData['three_side'] = $data[$key];
+      $three_side = $data[$key];
     }
     if ($key == 'guest_bathroom') {
       // $arrData['guest_bathroom'] = $data[$key];
@@ -94,8 +94,8 @@ Email <a href="mailto:' . $email . '">' . $email . '</a>.<br />
 Площадь: ' . $area . '.<br />
 Балкон: ' . $balcony . '.<br />
 Гардеробная: ' . $dressing_room . '.<br />
-Окна на 2 стороны: ' . $side_2 . '.<br />
-Окна на 3 стороны: ' . $side_3 . '.<br />
+Окна на 2 стороны: ' . $two_side . '.<br />
+Окна на 3 стороны: ' . $three_side . '.<br />
 Гостевой санузел: ' . $guest_bathroom . '.<br />
 Кухня-гостинная: ' . $kitchen_living_room;
 
