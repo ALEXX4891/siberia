@@ -6186,4 +6186,9 @@ a {
 .apartments-item-page .slider .slider__container .reparation_swiper .swiper-button-next_rep {
   right: 40px;
 }
+.apartments-item-page .map {
+  width: 100%;
+  height: 600px;
+  background: #0fa5ad;
+}
 /*# sourceMappingURL=style.css.map */
