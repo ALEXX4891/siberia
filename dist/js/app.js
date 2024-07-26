@@ -13,7 +13,7 @@ Fancybox.bind("[data-fancybox]", {
 //   }
 // });
 
-const page = window.location.pathname.split("/").pop();
+let page = window.location.pathname.split("/").pop();
 if (page === "") {
   page = "index"
 } else {
