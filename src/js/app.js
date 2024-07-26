@@ -3,6 +3,36 @@ Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
 
+// --------------------------------------- start кнопки ремонта: ---------------------------------------------
+const aboutBtnWrap = document.querySelector(".about__btn-wrap");
+if (aboutBtnWrap) {
+  const aboutBtns = aboutBtnWrap.querySelectorAll(".about__btn");  // console.log(aboutBtns);
+  aboutBtns.forEach((item) => {
+    item.addEventListener("click", function () {
+      console.log('тест');
+      aboutBtns.forEach((item) => {
+        item.classList.remove("about__btn_active");
+      });
+      item.classList.add("about__btn_active");
+    });
+  });
+}
+
+
+const sliderBtnList = document.querySelector(".slider__btn-list");
+if (sliderBtnList) {
+  const sliderBtns = sliderBtnList.querySelectorAll(".slider__btn");
+  sliderBtns.forEach((item) => {
+    item.addEventListener("click", function () {
+      console.log('тест');
+      sliderBtns.forEach((item) => {
+        item.classList.remove("slider__btn_active");
+      });
+      item.classList.add("slider__btn_active");
+    });
+  });
+}
+// --------------------------------------- end кнопки ремонта: ---------------------------------------------
 //подсветка активного пункта меню:---------------------------------------------------------
 
 // const page = body.getAttribute("data-page");
@@ -207,6 +237,7 @@ if (checkbox) {
       item.classList.add("checkbox__label_active");
     }
     item.addEventListener("click", function () {
+      console.log('тест');
       checkbox.forEach((item) => {
         item.classList.remove("checkbox__label_active");
       })
@@ -497,6 +528,53 @@ new Swiper(".news_swiper", {
     },
   },
 });
+
+new Swiper(".reparation_swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  // loop: true,
+  // allowTouchMove: true,
+  // slidesPerView: auto, // сколько слайдов показывать, можно дробно
+  slidesPerView: 1, // сколько слайдов показывать, можно дробно
+  // slidersPerGroup: 3, // сколько слайдов в группе
+  // centeredSlides: true, //выравнивание слайдов по центру
+  // initialSlide: 0, //начальный слайд (c нуля)
+
+  // spaceBetween: 40,
+  // slideToClickedSlide: true, //перелистывание слайдов по клику
+  // grabCursor: true, //меняет курсор при наведении на руку
+  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next_rep",
+    prevEl: ".swiper-button-prev_rep",
+  },
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   clickable: true,
+  // },
+  // mousewheel: { //перелистывание слайдов по мышке
+  //   sensitivity: 1,
+  //   eventsTarget: ".news__slider",
+  // },
+  // keyboard: { //перелистывание слайдов по нажатию клавиш
+  //   enabled: true,
+  //   onlyInViewport: true,
+  //   // pageUpDown: true,
+  // },
+  breakpoints: {
+    0: {
+      // slidesPerView: 1,
+    },
+    500: {
+      // slidesPerView: 2,
+    },
+    800: {
+      // slidesPerView: 3.35,
+    },
+  },
+});
 // -------------------------------------------- end slider: ---------------------------------------------
 // -------------------------------------------- start popup: ---------------------------------------------
 const popupLinks = document.querySelectorAll(".popup-link");
@@ -510,6 +588,7 @@ if (popupLinks.length > 0) {
   for (let index = 0; index < popupLinks.length; index++) {
     const popupLink = popupLinks[index];
     popupLink.addEventListener("click", function (e) {
+      console.log('тест');
       const popupName = popupLink.getAttribute("href").replace("#", "");
       const curentPopup = document.getElementById(popupName); //получаем id попап-окна
       popupOpen(curentPopup);
@@ -523,6 +602,7 @@ if (popupCloseIcon.length > 0) {
   for (let index = 0; index < popupCloseIcon.length; index++) {
     const el = popupCloseIcon[index];
     el.addEventListener("click", function (e) {
+      console.log('тест');
       popupClose(el.closest(".popup")); //ближайший родитель класса popup
       e.preventDefault();
     });
@@ -541,6 +621,7 @@ function popupOpen(curentPopup) {
     // console.log(curentPopup);
     curentPopup.classList.add("open");
     curentPopup.addEventListener("click", function (e) {
+      console.log('тест');
       if (!e.target.closest(".popup__content")) {
         // если клик был по области вокруг попапа то ничего не делаем
         popupClose(e.target.closest(".popup"));
@@ -608,6 +689,7 @@ document.addEventListener("keydown", function (e) {
 // if (previews) {
 //   previews.forEach((item) => {
 //     item.addEventListener("click", function () {
+  // console.log('тест');
 //       const imgBox = document.querySelector(".plans__img").querySelector("img");
 //       const img = item.querySelector("img").getAttribute("src");
 //       imgBox.setAttribute("src", img);
@@ -632,6 +714,7 @@ if (headerCartBtn) {
     headerCartBtn.classList.remove("btn__cart_active");
   }
   headerCartBtn.addEventListener("click", function (e) {
+    console.log('тест');
     e.preventDefault();
     window.location.href = "cart.html";
   });
@@ -642,6 +725,7 @@ if (cartItemDelBtns) {
   cartItemDelBtns.forEach((item) => {
     const el = item.closest(".cart__card");
     item.addEventListener("click", function (e) {
+      console.log('тест');
       e.preventDefault();
       el.remove();
       getTotalCost();
@@ -658,6 +742,7 @@ if (cartCards.length) {
     btnMontage.forEach((item) => {
       // изменение вида кнопки при клике:
       item.addEventListener("click", function () {
+        console.log('тест');
         item.classList.toggle("btn_montage_active");
         // const cost = item.closest(".cart__card").querySelector(".card__cost");
         // let quontity = item
@@ -688,6 +773,7 @@ if (cartCards.length) {
     });
 
     plus.addEventListener("click", function () {
+      console.log('тест');
       quontity++;
       counterValue.value = quontity;
       getCost(item, quontity);
@@ -695,6 +781,7 @@ if (cartCards.length) {
       setCartActive();
     });
     minus.addEventListener("click", function () {
+      console.log('тест');
       if (counterValue.value > 0) {
         quontity--;
         counterValue.value = quontity;
@@ -743,6 +830,7 @@ if (btns.length) {
   // console.log(btns);
   btns.forEach((item) => {
     item.addEventListener("click", function () {
+      console.log('тест');
       btns.forEach((item) => {
         item.classList.remove("stage__item_active");
       });
@@ -762,66 +850,67 @@ if (btns.length) {
 
 // -------------------------------------------- start Отзывы: ---------------------------------------------
 
-document.addEventListener("click", function (e) {
-  // закрытие отзывов при клике на другой елемент:
-  if (!e.target.closest(".card_about_open")) {
-    const cardsFeedback = document.querySelectorAll(".card_about");
+// document.addEventListener("click", function (e) {
+//   console.log('тест');
+//   // закрытие отзывов при клике на другой елемент:
+//   if (!e.target.closest(".card_about_open")) {
+//     const cardsFeedback = document.querySelectorAll(".card_about");
 
-    cardsFeedback.forEach((item) => {
-      item.classList.remove("card_about_open");
-    });
-  }
+//     cardsFeedback.forEach((item) => {
+//       item.classList.remove("card_about_open");
+//     });
+//   }
 
-  // открытие отзывов:
-  const openBtns = document.querySelectorAll(".feedback-btn_open");
-  if (openBtns) {
-    openBtns.forEach((item) => {
-      if (e.target.closest(".feedback-btn_open") == item) {
-        const card = item.closest(".card_about");
-        const truthCardTextBlock = card.querySelector(".card__desc_hide");
-        const truthCardText = truthCardTextBlock.textContent;
-        const cardTextBlockForShow = card.querySelector(".card__desc_show");
-        card.classList.add("card_about_open");
-        cardTextBlockForShow.textContent = truthCardText;
-      }
-    });
-  }
+//   // открытие отзывов:
+//   const openBtns = document.querySelectorAll(".feedback-btn_open");
+//   if (openBtns) {
+//     openBtns.forEach((item) => {
+//       if (e.target.closest(".feedback-btn_open") == item) {
+//         const card = item.closest(".card_about");
+//         const truthCardTextBlock = card.querySelector(".card__desc_hide");
+//         const truthCardText = truthCardTextBlock.textContent;
+//         const cardTextBlockForShow = card.querySelector(".card__desc_show");
+//         card.classList.add("card_about_open");
+//         cardTextBlockForShow.textContent = truthCardText;
+//       }
+//     });
+//   }
 
-  // закрытие отзывов:
-  const closeBtns = document.querySelectorAll(".feedback-btn_close");
-  if (closeBtns) {
-    closeBtns.forEach((item) => {
-      if (e.target.closest(".feedback-btn_close") == item) {
-        const card = item.closest(".card_about");
-        const truthCardTextBlock = card.querySelector(".card__desc_hide");
-        const truthCardText = truthCardTextBlock.textContent;
-        const cardTextBlockForShow = card.querySelector(".card__desc_show");
-        card.classList.remove("card_about_open");
-        const cardTextTrim = truthCardText.slice(0, 140) + "...";
-        cardTextBlockForShow.textContent = cardTextTrim;
-      }
-    });
-  }
-});
+//   // закрытие отзывов:
+//   const closeBtns = document.querySelectorAll(".feedback-btn_close");
+//   if (closeBtns) {
+//     closeBtns.forEach((item) => {
+//       if (e.target.closest(".feedback-btn_close") == item) {
+//         const card = item.closest(".card_about");
+//         const truthCardTextBlock = card.querySelector(".card__desc_hide");
+//         const truthCardText = truthCardTextBlock.textContent;
+//         const cardTextBlockForShow = card.querySelector(".card__desc_show");
+//         card.classList.remove("card_about_open");
+//         const cardTextTrim = truthCardText.slice(0, 140) + "...";
+//         cardTextBlockForShow.textContent = cardTextTrim;
+//       }
+//     });
+//   }
+// });
 
-// форматирование отзывов при загрузке страницы:
-const cardsFeedback = document.querySelectorAll(".card_about");
-if (cardsFeedback.length) {
-  cardsFeedback.forEach((item) => {
-    const truthCardTextBlock = item.querySelector(".card__desc_hide");
-    const truthCardText = truthCardTextBlock.textContent;
-    // console.log(truthCardText);
-    const cardTextBlockForShow = item.querySelector(".card__desc_show");
+// // форматирование отзывов при загрузке страницы:
+// const cardsFeedback = document.querySelectorAll(".card_about");
+// if (cardsFeedback.length) {
+//   cardsFeedback.forEach((item) => {
+//     const truthCardTextBlock = item.querySelector(".card__desc_hide");
+//     const truthCardText = truthCardTextBlock.textContent;
+//     // console.log(truthCardText);
+//     const cardTextBlockForShow = item.querySelector(".card__desc_show");
 
-    if (truthCardText.length > 160) {
-      item.classList.add("card_about_overflow");
-      const cardTextTrim = truthCardText.slice(0, 140) + "...";
-      cardTextBlockForShow.textContent = cardTextTrim;
-    } else {
-      cardTextBlockForShow.textContent = truthCardText;
-    }
-  });
-}
+//     if (truthCardText.length > 160) {
+//       item.classList.add("card_about_overflow");
+//       const cardTextTrim = truthCardText.slice(0, 140) + "...";
+//       cardTextBlockForShow.textContent = cardTextTrim;
+//     } else {
+//       cardTextBlockForShow.textContent = truthCardText;
+//     }
+//   });
+// }
 
 // -------------------------------------------- end Отзывы ---------------------------------------------
 
@@ -833,6 +922,7 @@ if (catalog) {
     activOptionsItem.forEach((item) => {
       const closeBtn = item.querySelector(".activ-options__icon");
       closeBtn.addEventListener("click", function () {
+        console.log('тест');
         item.remove();
       });
     });
@@ -846,6 +936,7 @@ if (catalog) {
       ".activ-options__icon"
     );
     closeBtn.addEventListener("click", function () {
+      console.log('тест');
       activOptionsItem.forEach((item) => {
         item.remove();
       });
@@ -856,6 +947,7 @@ if (catalog) {
   const menuItem = catalog.querySelectorAll(".filter__item_head");
   menuItem.forEach((item) => {
     item.addEventListener("click", function () {
+      console.log('тест');
       menuItem.forEach((item) => {
         item.classList.remove("filter__item_head_active");
       });
@@ -867,6 +959,7 @@ if (catalog) {
   const filterItem = catalog.querySelectorAll(".filter__item_body");
   filterItem.forEach((item) => {
     item.addEventListener("click", function (e) {
+      console.log('тест');
       //закрытие всех остальных фильтров:
       filterItem.forEach((item) => {
         if (item !== e.target.closest(".filter__item_body")) {
@@ -893,6 +986,7 @@ if (catalog) {
     }
   });
   document.addEventListener("click", function (e) {
+    console.log('тест');
     if (!e.target.closest(".filter__item_body")) {
       filterItem.forEach((item) => {
         item.classList.remove("filter__item_body_active");
@@ -909,6 +1003,7 @@ if (catalog) {
     catalogCards.forEach((item) => {
       const cartLinkBtn = item.querySelector(".in-cart__icon");
       cartLinkBtn.addEventListener("click", function (e) {
+        console.log('тест');
         e.preventDefault();
         window.location.href = cartLinkBtn.getAttribute("data-href");
       });
@@ -917,6 +1012,7 @@ if (catalog) {
       if (colorBtn) {
         colorBtn.forEach((item) => {
           item.addEventListener("click", function (e) {
+            console.log('тест');
             e.preventDefault();
             colorBtn.forEach((item) => {
               item.classList.remove("card__color-item_active");
@@ -928,10 +1024,12 @@ if (catalog) {
 
       const toCartBtn = item.querySelector(".card__btn_to-cart");
       toCartBtn.addEventListener("click", function (e) {
+        console.log('тест');
         e.preventDefault();
       });
       const cartBtn = item.querySelector(".card__btn_in-cart");
       cartBtn.addEventListener("click", function (e) {
+        console.log('тест');
         e.preventDefault();
       });
 
@@ -954,6 +1052,7 @@ if (catalog) {
       });
 
       plus.addEventListener("click", function (e) {
+        console.log('тест');
         e.preventDefault();
 
         quontity++;
@@ -962,6 +1061,7 @@ if (catalog) {
         // getTotalCost();
       });
       minus.addEventListener("click", function (e) {
+        console.log('тест');
         if (counterValue.value > 0) {
           e.preventDefault();
 
@@ -975,11 +1075,13 @@ if (catalog) {
       const montageBtn = item.querySelector(".btn_montage");
 
       montageBtn.addEventListener("click", function (e) {
+        console.log('тест');
         e.preventDefault();
         montageBtn.classList.toggle("btn_montage_active");
       });
 
       toCartBtn.addEventListener("click", function (e) {
+        console.log('тест');
         e.preventDefault();
         toCartBtn.classList.add("card__btn_to-cart_hide");
         cartBtn.classList.add("card__btn_in-cart_visible");
@@ -996,6 +1098,7 @@ if (catalog) {
 //   const montageBtn = goodsItem.querySelector(".btn_montage");
 
 //   montageBtn.addEventListener("click", function (e) {
+  // console.log('тест');
 //     e.preventDefault();
 //     montageBtn.classList.toggle("btn_montage_active");
 //   });
@@ -1004,6 +1107,7 @@ if (catalog) {
 //   const botText = goodsItem.querySelectorAll(".bot-block__text");
 //   botMenu.forEach((item) => {
 //     item.addEventListener("click", function (e) {
+  // console.log('тест');
 //       const id = item.getAttribute("data-id");
 //       botMenu.forEach((item) => {
 //         item.classList.remove("bot-block__menu-item_active");
@@ -1024,6 +1128,7 @@ if (catalog) {
 //   if (previews) {
 //     previews.forEach((item) => {
 //       item.addEventListener("click", function () {
+  // console.log('тест');
 //         const imgBox = document
 //           .querySelector(".goods-item__img")
 //           .querySelector("img");
@@ -1054,6 +1159,7 @@ if (catalog) {
 //   });
 
 //   plus.addEventListener("click", function (e) {
+  // console.log('тест');
 //     quontity++;
 //     counterValue.value = quontity;
 //     console.log(quontity * price);
@@ -1061,6 +1167,7 @@ if (catalog) {
 //   });
 
 //   minus.addEventListener("click", function (e) {
+  // console.log('тест');
 //     if (counterValue.value > 0) {
 //       quontity--;
 //       counterValue.value = quontity;
@@ -1074,6 +1181,7 @@ if (catalog) {
 //   if (colorBtn) {
 //     colorBtn.forEach((item) => {
 //       item.addEventListener("click", function (e) {
+  // console.log('тест');
 //         e.preventDefault();
 //         colorBtn.forEach((item) => {
 //           item.classList.remove("color-list__color-item_active");
@@ -1383,11 +1491,13 @@ const headerNav = document.querySelector(".header__nav");
 
 if (burger) {
   burger.addEventListener("click", function (e) {
+    console.log('тест');
     burger.classList.toggle("burger_active");
     headerNav.classList.toggle("nav_active");
   });
 
   document.addEventListener("click", function (e) {
+    console.log('тест-глобальный');
     if (!e.target.closest(".header__nav") && !e.target.closest(".burger")) {
       burger.classList.remove("burger_active");
       headerNav.classList.remove("nav_active");
@@ -1402,6 +1512,7 @@ const headerSearchWrap = document.querySelector(".header__search-form-wrap");
 if (headerSearchWrap) {
   if (window.screen.width <= 920) {
     headerSearchWrap.addEventListener("click", function (e) {
+      console.log('тест');
       headerSearchWrap.classList.add("header__search-form-wrap_active");
       // console.log("200");
     });
@@ -1414,6 +1525,7 @@ if (headerSearchWrap) {
 
   if (closeSearchBtn) {
     closeSearchBtn.addEventListener("click", function (e) {
+      console.log('тест');
       // e.preventDefault();
       headerSearchWrap.classList.remove("header__search-form-wrap_active");
       inputField.value = "";
@@ -1423,6 +1535,7 @@ if (headerSearchWrap) {
   }
 
   document.addEventListener("click", function (e) {
+    console.log('тест');
     if (
       !e.target.closest(".search-form") &&
       headerSearchWrap.classList.contains("header__search-form-wrap_active")
@@ -1443,6 +1556,7 @@ if (goodsCartBtn) {
   // const goodsQuantity = document.querySelector(".goods__quantity");
   goodsCartBtn.forEach((item) => {
     item.addEventListener("click", function (e) {
+      console.log('тест');
       e.preventDefault();
       item.classList.toggle("goods-item__btn_to-cart_active");
       // headerCartBtn.classList.toggle("btn__cart_active");
@@ -1458,6 +1572,7 @@ if (goodsCartBtn) {
 // if (sertificates) {
 //   sertificates.forEach((item) => {
 //     item.addEventListener("click", function (e) {
+  // console.log('тест');
 //       const img = item.innerHTML;
 //       // const img = item.querySelector("img").getAttribute("src");
 //       console.log(img);
@@ -1518,6 +1633,7 @@ function closeCookiePolicyNotification() {
 const cookieBtn = document.querySelector(".cookie__btn");
 if (cookieBtn) {
   cookieBtn.addEventListener("click", function (e) {
+    console.log('тест');
     e.preventDefault();
     acceptCookiePolicy();
   });
@@ -1526,6 +1642,7 @@ if (cookieBtn) {
 const cookieCloseBtn = document.querySelector(".cookie__close");
 if (cookieCloseBtn) {
   cookieCloseBtn.addEventListener("click", function (e) {
+    console.log('тест');
     e.preventDefault();
     closeCookiePolicyNotification();
   });
@@ -1558,12 +1675,14 @@ if (choiceForm) {
   const selectProject = document.querySelectorAll(".choice__select");
   selectProject.forEach((select) => {
     select.addEventListener("click", (event) => {
+      console.log('тест');
       // console.log("click");
       select.classList.toggle("select_open");
     });
     const selectOptions = select.querySelectorAll(".select__item");
     selectOptions.forEach((item) => {
       item.addEventListener("click", (event) => {
+        console.log('тест');
         const input = select.querySelector(".select__text");
         event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
         input.innerHTML = item.innerHTML;
@@ -1588,6 +1707,7 @@ if (choiceForm) {
     if (choiceBtns) {
       choiceBtns.forEach((item) => {
         item.addEventListener("click", (event) => {
+          console.log('тест');
           item.classList.toggle("choice__buttons-select-item_active");
           queryParams.numbers_of_rooms = "";
 
@@ -1610,6 +1730,7 @@ if (choiceForm) {
   if (filterBtns) {
     filterBtns.forEach((item) => {
       item.addEventListener("click", (event) => {
+        console.log('тест');
         item.classList.toggle("choice__btn-filter_active");
         let key = item.getAttribute("data-id");
         if (item.classList.contains("choice__btn-filter_active")) {
@@ -1645,6 +1766,7 @@ if (choiceForm) {
     const submitBtn = choiceForm.querySelector(".form__btn");
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
+      console.log('тест');
       // console.log("click");
       // choiceForm.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -1670,6 +1792,7 @@ if (choiceForm) {
     const submitBtn = requestForm.querySelector(".request__btn");
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
+      console.log('тест');
       // console.log("click");
       // requestForm.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -1712,6 +1835,7 @@ if (choiceForm) {
     const submitBtn = notificationForm.querySelector(".notification__btn");
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
+      console.log('тест');
       // console.log("click");
       // notificationForm.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -1762,6 +1886,7 @@ if (choiceForm) {
 
   // btns.forEach((btn) => {
   //   btn.addEventListener("click", (event) => {
+    // console.log('тест');
   //     const input = choiceButtonsSelect.querySelector(".choice__buttons-select-text");
   //     event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
   //     input.innerHTML = btn.innerHTML;
@@ -1779,12 +1904,14 @@ if (choiceForm) {
   // if (selects) {
   //   selects.forEach((select) => {
   //     select.addEventListener("click", (event) => {
+    // console.log('тест');
   //       console.log("click");
   //       select.classList.toggle("select_open");
   //     });
   //     const selectOptions = select.querySelectorAll(".select__item");
   //     selectOptions.forEach((item) => {
   //       item.addEventListener("click", (event) => {
+    // console.log('тест');
   //         const input = select.querySelector(".select__text");
   //         event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
   //         input.innerHTML = item.innerHTML;
@@ -1897,6 +2024,7 @@ $(document).ready(function () {
 const mapMarks = document.querySelector(".map__mark-item");
 if (mapMarks) {
   mapMarks.addEventListener("click", (event) => {
+    console.log('тест');
     mapMarks.classList.toggle("map__mark-item_active");
   });
 }
@@ -1947,6 +2075,7 @@ const footerForm = document.querySelector(".footer__form");
 if (footerForm) {
   const submitBtn = footerForm.querySelector(".form__btn");
   submitBtn.addEventListener("click", (event) => {
+    console.log('тест');
     event.preventDefault();
     let queryParams = {
       name: "",
@@ -2100,6 +2229,7 @@ async function postNotification(queryParams) {
 
 // const choiceSendBtn = document.querySelector(".choice__btn");
 // choiceSendBtn.addEventListener("click", (event) => {
+  // console.log('тест');
 //   // fetchToPost(queryParams)
 
 //   const arrApartments = fetchToPost(queryParams);
@@ -2139,6 +2269,7 @@ async function postNotification(queryParams) {
 // if (plansItem) {
 //   plansItem.forEach((item) => {
 //     item.addEventListener("click", (event) => {
+  // console.log('тест');
 //       plansItem.forEach((item) => {
 //         item.classList.remove("plans__item_active");
 //       });
@@ -2148,6 +2279,7 @@ async function postNotification(queryParams) {
 // }
 
 document.addEventListener("click", (event) => {
+  console.log('тест');
   // if (!event.target.closest(".plans__item")) return;
   if (event.target.closest(".plans__item")) {
     const plansItem = document.querySelectorAll(".plans__item");
@@ -2186,6 +2318,7 @@ document.addEventListener("click", (event) => {
 // if (previews) {
 //   previews.forEach((item) => {
 //     item.addEventListener("click", function () {
+  console.log('тест');
 //       const imgBox = document.querySelector(".plans__img").querySelector("img");
 //       const img = item.querySelector("img").getAttribute("src");
 //       imgBox.setAttribute("src", img);
@@ -2198,6 +2331,7 @@ const plansFilterItem = document.querySelectorAll(".plans__filter-item");
 if (plansFilterItem) {
   plansFilterItem.forEach((item) => {
     item.addEventListener("click", (event) => {
+      console.log('тест');
       plansFilterItem.forEach((item) => {
         item.classList.remove("plans__filter-item_active");
       });
@@ -2307,6 +2441,7 @@ function setInfo() {
   // imgBox.setAttribute("src", img);
   // console.log(imgBox);
   // plans__item.addEventListener("click", (event) => {
+    console.log('тест');
   // const imgBox = document.querySelector(".plans__img").querySelector("img");
   // const img = event.target.closest(".plans__item").querySelector("img").getAttribute("src");
   // imgBox.setAttribute("src", img);
@@ -2317,3 +2452,4 @@ setInfo();
 // }
 
 // -------------------------------------------- end Планы ---------------------------------------------
+

@@ -738,6 +738,14 @@ a {
   text-align: left;
   color: #333333;
 }
+.title.title_30 {
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36.31px;
+  text-align: left;
+  color: #000;
+}
 .title.title_40 {
   font-family: Inter;
   font-size: 40px;
@@ -5830,18 +5838,28 @@ a {
   padding: 10px 20px;
   border: 1px solid #cbcbcb;
   border-radius: 50px;
-  color: #616161;
+  color: rgba(97, 97, 97, 0.8);
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.78px;
   text-align: center;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.apartments-item-page .about .about__container .about__left .about__btn-wrap .about__btn:hover {
+  color: #FFFFFF;
+  background-color: #9ABC6F;
+  border-color: #9ABC6F;
+}
+.apartments-item-page .about .about__container .about__left .about__btn-wrap .about__btn:active {
+  color: #FFFFFF;
+  background-color: #56693E;
+  border: 1px solid #56693E;
 }
 .apartments-item-page .about .about__container .about__left .about__btn-wrap .about__btn.about__btn_active {
-  padding: 10px 20px;
-  background: #56693e;
-  border-radius: 50px;
-  color: #fff;
+  color: #FFFFFF;
+  background-color: #56693E;
+  border: 1px solid #56693E;
 }
 .apartments-item-page .about .about__container .about__right {
   padding: 40px;
@@ -6081,5 +6099,91 @@ a {
   line-height: 16.8px;
   text-align: left;
   color: rgba(0, 0, 0, 0.4);
+}
+.apartments-item-page .slider .slider__container {
+  padding: 100px 0 40px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 40.33% 57.33%;
+  gap: 2.33%;
+}
+.apartments-item-page .slider .slider__container .slider__left {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 22px;
+  align-content: start;
+}
+.apartments-item-page .slider .slider__container .slider__left .slider__head-title {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  color: #000;
+  opacity: 0.5;
+}
+.apartments-item-page .slider .slider__container .slider__left .slider__btn-list {
+  margin-bottom: 35px;
+}
+.apartments-item-page .slider .slider__container .slider__left .slider__btn-list .slider__btn {
+  padding: 14px 25px;
+  border: 1px solid #363636;
+  border-radius: 50px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.78px;
+  color: #363636;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  border: 1px solid #CBCBCB;
+  color: rgba(97, 97, 97, 0.8);
+}
+.apartments-item-page .slider .slider__container .slider__left .slider__btn-list .slider__btn:hover {
+  color: #56693E;
+  background-color: transparent;
+  border-color: #748D55;
+}
+.apartments-item-page .slider .slider__container .slider__left .slider__btn-list .slider__btn:active {
+  background-color: transparent;
+  border: 1px solid #363636;
+  color: #363636;
+}
+.apartments-item-page .slider .slider__container .slider__left .slider__btn-list .slider__btn.slider__btn_active {
+  background-color: transparent;
+  border: 1px solid #363636;
+  color: #363636;
+}
+.apartments-item-page .slider .slider__container .slider__left .slider__text {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  text-align: left;
+  color: #646464;
+  max-width: 590px;
+}
+.apartments-item-page .slider .slider__container .reparation_swiper {
+  overflow: hidden;
+  position: relative;
+}
+.apartments-item-page .slider .slider__container .reparation_swiper .swiper-wrapper .swiper-slide {
+  overflow: hidden;
+  border-radius: 10px;
+}
+.apartments-item-page .slider .slider__container .reparation_swiper .swiper-button {
+  width: 55px;
+  height: 55px;
+  top: 54%;
+  translate: 0 -50%;
+  z-index: 1;
+}
+.apartments-item-page .slider .slider__container .reparation_swiper .swiper-button::after {
+  display: none;
+}
+.apartments-item-page .slider .slider__container .reparation_swiper .swiper-button-prev_rep {
+  left: 40px;
+}
+.apartments-item-page .slider .slider__container .reparation_swiper .swiper-button-next_rep {
+  right: 40px;
 }
 /*# sourceMappingURL=style.css.map */

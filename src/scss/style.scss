@@ -923,6 +923,15 @@ a {
     color: #333333;
   }
 
+  &.title_30 {
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36.31px;
+    text-align: left;
+    color: #000;
+  }
+
   &.title_40 {
     font-family: Inter;
     font-size: 40px;
@@ -6687,10 +6696,6 @@ a {
         max-width: 1150px;
         line-height: 53.41px;
       }
-      .title {
-      }
-      .title_25 {
-      }
       .news-content__date {
         font-family: Inter;
         font-size: 14px;
@@ -7673,22 +7678,37 @@ a {
           display: grid;
           grid-auto-flow: column;
           gap: 10px;
+
           .about__btn {
             padding: 10px 20px;
             border: 1px solid #cbcbcb;
             border-radius: 50px;
-            color: #616161;
+            color: rgba(#616161, 0.8);
             font-family: Inter;
             font-size: 18px;
             font-weight: 400;
             line-height: 21.78px;
             text-align: center;
+            transition: color 0.3s ease-in-out,
+              background-color 0.3s ease-in-out,
+              border-color 0.3s ease-in-out;
+
+            &:hover {
+              color: #FFFFFF;
+              background-color: #9ABC6F;
+              border-color: #9ABC6F;
+            }
+
+            &:active {
+              color: #FFFFFF;
+              background-color: #56693E;
+              border: 1px solid #56693E;
+            }
 
             &.about__btn_active {
-              padding: 10px 20px;
-              background: #56693e;
-              border-radius: 50px;
-              color: #fff;
+              color: #FFFFFF;
+              background-color: #56693E;
+              border: 1px solid #56693E;
             }
           }
         }
@@ -7971,6 +7991,114 @@ a {
           color: rgba(#000, 0.4);
         }
       }
+    }
+  }
+
+  .slider {
+    .slider__container {
+      padding: 100px 0 40px;
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: 40.33% 57.33%;
+      gap: 2.33%;
+      .slider__left {
+        display: grid;
+        grid-auto-flow: row;
+        gap: 22px;
+        align-content: start;
+
+        .slider__head-title {
+          font-family: Inter;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 27px;
+          text-align: left;
+          color: #000;
+          opacity: 0.5;
+        }
+        .slider__btn-list {
+          margin-bottom: 35px;
+
+          .slider__btn {
+            padding: 14px 25px;
+            border: 1px solid #363636;
+            border-radius: 50px;
+            font-family: Inter;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21.78px;
+            color: #363636;
+            transition: color 0.3s ease-in-out,
+            background-color 0.3s ease-in-out,
+            border-color 0.3s ease-in-out;
+            border: 1px solid #CBCBCB;
+            color: rgba(#616161, 0.8);
+
+            &:hover {
+              color: #56693E;
+              background-color: transparent;
+              border-color: #748D55;
+            }
+
+            &:active {
+              background-color: transparent;
+              border: 1px solid #363636;
+              color: #363636;
+            }
+
+            &.slider__btn_active {
+              background-color: transparent;
+              border: 1px solid #363636;
+              color: #363636;
+            }
+          }
+        }
+        .slider__title {
+        }
+        .slider__text {
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 23.2px;
+          text-align: left;
+          color: #646464;
+          max-width: 590px;
+
+        }
+      }
+
+      .reparation_swiper {
+        overflow: hidden;
+        position: relative;
+
+        .swiper-wrapper {
+          .swiper-slide {
+            overflow: hidden;
+            border-radius: 10px;
+          }
+        }
+
+        .swiper-button {
+          width: 55px;
+          height: 55px;
+          top: 54%;
+          translate: 0 -50%;
+          z-index: 1;
+          &::after {
+            display: none;
+          }
+        }
+        .swiper-button-prev {
+        }
+        .swiper-button-prev_rep {
+          left: 40px;
+        }
+        .swiper-button-next_rep {
+          right: 40px;
+        }
+      }
+
+      
     }
   }
 }
