@@ -14,13 +14,16 @@ Fancybox.bind("[data-fancybox]", {
 // });
 
 const page = window.location.pathname.split("/").pop();
-// console.log(page);
-const navLinks = document.querySelectorAll(".nav__link");
-navLinks.forEach((item) => {
-  if (item.getAttribute("href").includes(page)) {
-    item.classList.add("nav__link_active");
-  }
-});
+if (page === "") {
+  page = "index"
+} else {
+  const navLinks = document.querySelectorAll(".nav__link");
+  navLinks.forEach((item) => {
+    if (item.getAttribute("href").includes(page)) {
+      item.classList.add("nav__link_active");
+    }
+  });
+}
 
 // const swiper = new Swiper(".swiper", {
 //   // Optional parameters
