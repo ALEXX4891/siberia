@@ -52,13 +52,13 @@ if ($inputData) {
       // $arrData['taxNumber'] = $data[$key];
       $taxNumber = $data[$key];
     }
-    if ($key == 'two_side') {
-      // $arrData['two_side'] = $data[$key];
-      $two_side = $data[$key];
+    if ($key == 'side_2') {
+      // $arrData['side_2'] = $data[$key];
+      $side_2 = $data[$key];
     }
-    if ($key == 'three_side') {
-      // $arrData['three_side'] = $data[$key];
-      $three_side = $data[$key];
+    if ($key == 'side_3') {
+      // $arrData['side_3'] = $data[$key];
+      $side_3 = $data[$key];
     }
     if ($key == 'guest_bathroom') {
       // $arrData['guest_bathroom'] = $data[$key];
@@ -72,82 +72,34 @@ if ($inputData) {
 }
 
 // несколько получателей
-// $to = 'info@sibir.com';
+$contacts = [
+  // "info@sibir.com",
+  "alexx4891@mail.ru",
+  // more emails
+];
 
-// $to  = 'aidan@example.com' . ', ';  // обратите внимание на запятую
-// $to .= 'wez@example.com';
+$to = implode(", ", $contacts);
+$from = 'info@sibir.com';
 
 // тема письма
-// $subject = 'Письмо с моего сайта';
+$subject = 'Заказ звонка с siberia-dev.ru';
 
 // текст письма
 // $message = 'Пользователь' . $_POST['name'] . ' отправил вам письмо:<br />' . $_POST['message'] . '<br />
 // Связяться с ним можно по email <a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>';
-// $message = '<h1>Запрос планировок:</h1><br/>
-// Пользователь ' . $name . '.<br />
-// Email <a href="mailto:' . $email . '">' . $email . '</a>.<br /> 
-// Телефон <a href="tel:' . $phone . '">' . $phone . '</a>.<br />
-// Сообщение от пользователя: ' . $message . '.<br />
-// Интересует проект: ' . $project . '.<br />
-// Количество комнат: ' . $numbers_of_rooms . '.<br />
-// Площадь: ' . $area . '.<br />
-// Балкон: ' . $balcony . '.<br />
-// Гардеробная: ' . $dressing_room . '.<br />
-// Окна на 2 стороны: ' . $two_side . '.<br />
-// Окна на 3 стороны: ' . $three_side . '.<br />
-// Гостевой санузел: ' . $guest_bathroom . '.<br />
-// Кухня-гостинная: ' . $kitchen_living_room;
-
-
-
-
-
-
-// // Для отправки HTML-письма должен быть установлен заголовок Content-type
-// $headers  = 'MIME-Version: 1.0' . "\r\n";
-// $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
-
-// // Дополнительные заголовки
-// $headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
-// // $headers .= 'From: '  . $_POST['name'] . '<' . $_POST['email'] . '>' . "\r\n";
-// $headers .= 'From: '  . $_POST['name'] . '<' . $_POST['name'] . '>' . "\r\n";
-
-
-
-// // Отправляем
-// mail($to, $subject, $message, $headers);
-
-// header('Location: ' . index.html);
-
-
-
-// несколько получателей
-$to = 'info@sibir.com';
-
-// $to  = 'aidan@example.com' . ', ';  // обратите внимание на запятую
-// $to .= 'wez@example.com';
-
-// тема письма
-$subject = 'Заказ звонка с моего сайта';
-
-// текст письма
-// $message = 'Пользователь' . $_POST['name'] . ' отправил вам письмо:<br />' . $_POST['message'] . '<br />
-// Связяться с ним можно по email <a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>';
-$message = $name . ' заказал звонок на номер:<br />' . $phone . '.<br />
-Связяться с ним можно по email <a href="mailto:' . $email . '">' . $email . '</a>.';
+$message = "{$name} заказал звонок на номер:<br />{$phone}.<br />
+Связяться с ним можно по email <a href=\"mailto:{$email}\">{$email}</a>.";
 
 // Для отправки HTML-письма должен быть установлен заголовок Content-type
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
-// Дополнительные заголовки
-$headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
-// $headers .= 'From: '  . $_POST['name'] . '<' . $_POST['email'] . '>' . "\r\n";
-$headers .= 'From: '  . $_POST['name'] . '<' . $_POST['name'] . '>' . "\r\n";
-
-
+$headers  = "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/html; charset=utf-8\r\n";
+$headers .= "From: {$from}\r\n";
+$headers .= "Bcc: {$to}\r\n";
+$headers .= "Date: " . date(DATE_RFC2822);
 
 // Отправляем
 mail($to, $subject, $message, $headers);
+echo json_encode('OK!');
+
 
 // header('Location: ' . index.html);

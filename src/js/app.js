@@ -1672,8 +1672,8 @@ let queryParams = {
   area: "",
   balcony: "",
   dressing_room: "",
-  two_side: "",
-  three_side: "",
+  side_2: "",
+  side_3: "",
   guest_bathroom: "",
   kitchen_living_room: "",
 };
@@ -1681,29 +1681,27 @@ let queryParams = {
 // console.log(selects);
 const choiceForm = document.querySelector(".choice__form");
 if (choiceForm) {
-  const selectProject = document.querySelectorAll(".choice__select");
-  selectProject.forEach((select) => {
-    select.addEventListener("click", (event) => {
-      console.log('тест');
-      // console.log("click");
-      select.classList.toggle("select_open");
-    });
-    const selectOptions = select.querySelectorAll(".select__item");
-    selectOptions.forEach((item) => {
-      item.addEventListener("click", (event) => {
-        console.log('тест');
-        const input = select.querySelector(".select__text");
-        event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
-        input.innerHTML = item.innerHTML;
-        input.classList.add("select__text_active");
-        input.setAttribute("data-id", item.getAttribute("data-id"));
-        queryParams.project = item.getAttribute("data-id");
-        // console.log(queryParams);
-        select.classList.remove("select_open");
-        select.classList.add("select_active");
-      });
+  const selectProject = document.querySelector(".choice__select");
+  // selects.forEach((select) => {
+  selectProject.addEventListener("click", (event) => {
+    // console.log("click");
+    selectProject.classList.toggle("select_open");
+  });
+  const selectOptions = selectProject.querySelectorAll(".select__item");
+  selectOptions.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      const input = selectProject.querySelector(".select__text");
+      event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+      input.innerHTML = item.innerHTML;
+      input.classList.add("select__text_active");
+      input.setAttribute("data-id", item.getAttribute("data-id"));
+      queryParams.project = item.getAttribute("data-id");
+      // console.log(queryParams);
+      selectProject.classList.remove("select_open");
+      selectProject.classList.add("select_active");
     });
   });
+  // });
 
   const choiceButtonsSelect = document.querySelector(".choice__buttons-select");
   if (choiceButtonsSelect) {
@@ -1716,7 +1714,6 @@ if (choiceForm) {
     if (choiceBtns) {
       choiceBtns.forEach((item) => {
         item.addEventListener("click", (event) => {
-          console.log('тест');
           item.classList.toggle("choice__buttons-select-item_active");
           queryParams.numbers_of_rooms = "";
 
@@ -1739,7 +1736,6 @@ if (choiceForm) {
   if (filterBtns) {
     filterBtns.forEach((item) => {
       item.addEventListener("click", (event) => {
-        console.log('тест');
         item.classList.toggle("choice__btn-filter_active");
         let key = item.getAttribute("data-id");
         if (item.classList.contains("choice__btn-filter_active")) {
@@ -1752,7 +1748,7 @@ if (choiceForm) {
     });
   }
 
-  const choice__square = document.querySelector(".choice__slider-select");
+  const choice__square = document.querySelector(".choice__square-select");
   if (choice__square) {
     const inputFrom = choice__square.querySelector(".select__input_from");
     const inputTo = choice__square.querySelector(".select__input_to");
@@ -1775,7 +1771,7 @@ if (choiceForm) {
     const submitBtn = choiceForm.querySelector(".form__btn");
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
-      console.log('тест');
+    // choiceForm.addEventListener("submit", (event) => {
       // console.log("click");
       // choiceForm.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -1786,12 +1782,26 @@ if (choiceForm) {
         ".form__input_textarea"
       ).value;
       // console.log(queryParams);
-      postForm(queryParams);
+      if (queryParams.name === "" || queryParams.phone === "") {
+        alert("Заполните обязательные поля");
+        return;
+      } else {
+        postForm(queryParams).then((res) => {
+          if (res === 'OK!') {
+          const popupSuccess = document.querySelector("#success");
+          popupOpen(popupSuccess);
+          } else {
+            alert('Произошла ошибка, попробуйте позже.');
+            // const popupError = document.querySelector("#error");
+            // popupOpen(popupError);
+          }
+        });
+      }
+      // const popupSuccess = document.querySelector("#success");
+      // popupOpen(popupSuccess);
+      // postForm(queryParams);
       // const popupActive = document.querySelector(".popup.open");
       // popupClose(popupActive);
-      const popupSuccess = document.querySelector("#success");
-      popupOpen(popupSuccess);
-
       // return false;
     });
   }
@@ -1801,7 +1811,6 @@ if (choiceForm) {
     const submitBtn = requestForm.querySelector(".request__btn");
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
-      console.log('тест');
       // console.log("click");
       // requestForm.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -1829,11 +1838,34 @@ if (choiceForm) {
         ".request__input_textarea"
       ).value;
       // console.log(queryParams);
-      postRequest(queryParams);
+      if (queryParams.apartment === "" || queryParams.name === "" || queryParams.phone === "") {
+        alert("Заполните обязательные поля");
+        return;
+      } else {
+        postRequest(queryParams).then((res) => {
+          if (res === 'OK!') {
+          const popupSuccess = document.querySelector("#success");
+          popupOpen(popupSuccess);
+          // return false;
+          } else {
+            alert('Произошла ошибка, попробуйте позже.');
+            // return false;
+
+            // const popupError = document.querySelector("#error");
+            // popupOpen(popupError);
+          }
+        });
+      }
+
+      // if (queryParams.phone === "") {
+      //   queryParams.apartment = "Отсутствует";
+      // }
+
+      // postRequest(queryParams);
       // const popupActive = document.querySelector(".popup.open");
       // popupClose(popupActive);
-      const popupSuccess = document.querySelector("#success");
-      popupOpen(popupSuccess);
+      // const popupSuccess = document.querySelector("#success");
+      // popupOpen(popupSuccess);
 
       // return false;
     });
@@ -1844,7 +1876,6 @@ if (choiceForm) {
     const submitBtn = notificationForm.querySelector(".notification__btn");
     // console.log(submitBtn);
     submitBtn.addEventListener("click", (event) => {
-      console.log('тест');
       // console.log("click");
       // notificationForm.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -1880,13 +1911,21 @@ if (choiceForm) {
         ".notification__input_textarea"
       ).value;
       // console.log(queryParams);
-      postNotification(queryParams);
-      // const popupActive = document.querySelector(".popup.open");
-      // popupClose(popupActive);
-      const popupSuccess = document.querySelector("#success");
-      popupOpen(popupSuccess);
-
-      // return false;
+      if (queryParams.agency === "" || queryParams.agentName === "" || queryParams.agentPhone === "" || queryParams.clientName === "" || queryParams.clientPhone === "") {
+        alert("Заполните обязательные поля");
+        return;
+      } else {
+        postNotification(queryParams).then((res) => {
+          if (res === 'OK!') {
+          const popupSuccess = document.querySelector("#success");
+          popupOpen(popupSuccess);
+          } else {
+            alert('Произошла ошибка, попробуйте позже.');
+            // const popupError = document.querySelector("#error");
+            // popupOpen(popupError);
+          }
+        });
+      }
     });
   }
 
@@ -1895,7 +1934,6 @@ if (choiceForm) {
 
   // btns.forEach((btn) => {
   //   btn.addEventListener("click", (event) => {
-    // console.log('тест');
   //     const input = choiceButtonsSelect.querySelector(".choice__buttons-select-text");
   //     event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
   //     input.innerHTML = btn.innerHTML;
@@ -1913,14 +1951,12 @@ if (choiceForm) {
   // if (selects) {
   //   selects.forEach((select) => {
   //     select.addEventListener("click", (event) => {
-    // console.log('тест');
   //       console.log("click");
   //       select.classList.toggle("select_open");
   //     });
   //     const selectOptions = select.querySelectorAll(".select__item");
   //     selectOptions.forEach((item) => {
   //       item.addEventListener("click", (event) => {
-    // console.log('тест');
   //         const input = select.querySelector(".select__text");
   //         event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
   //         input.innerHTML = item.innerHTML;
@@ -2134,7 +2170,6 @@ const footerForm = document.querySelector(".footer__form");
 if (footerForm) {
   const submitBtn = footerForm.querySelector(".form__btn");
   submitBtn.addEventListener("click", (event) => {
-    console.log('тест');
     event.preventDefault();
     let queryParams = {
       name: "",
@@ -2160,9 +2195,25 @@ if (footerForm) {
     //   return false;
     // });
     // console.log(queryParams);
-    postCall(queryParams);
-    const popupSuccess = document.querySelector("#success");
-    popupOpen(popupSuccess);
+    // postCall(queryParams);
+    // const popupSuccess = document.querySelector("#success");
+    // popupOpen(popupSuccess);
+
+    if (queryParams.name === "" || queryParams.phone === "") {
+      alert("Заполните обязательные поля");
+      return;
+    } else {
+      postCall(queryParams).then((res) => {
+        if (res === 'OK!') {
+        const popupSuccess = document.querySelector("#success");
+        popupOpen(popupSuccess);
+        } else {
+          alert('Произошла ошибка, попробуйте позже.');
+          // const popupError = document.querySelector("#error");
+          // popupOpen(popupError);
+        }
+      });
+    }
   });
 }
 
@@ -2194,6 +2245,8 @@ async function postCall(queryParams) {
       },
       body: JSON.stringify(queryParams),
     });
+    const res = await responce.json();
+    return res; // Возвращаем результат запроса
     // const infoList = await responce.json();
     // return infoList; // Возвращаем результат запроса
     // console.log(responce);
@@ -2203,7 +2256,7 @@ async function postCall(queryParams) {
     console.log("При оптравке письма произошла ошибка, детали ниже:");
     console.error(err);
     // Вернем исключение с текстом поясняющим детали ошибки:
-    alert("Произошла ошибка при оптравке письма!");
+    // alert("Произошла ошибка при оптравке письма!");
     throw new Error("Запрос завершился неудачно.");
   }
 }
@@ -2220,6 +2273,8 @@ async function postForm(queryParams) {
       },
       body: JSON.stringify(queryParams),
     });
+    const res = await responce.json();
+    return res; // Возвращаем результат запроса
     // const infoList = await responce.json();
     // return infoList; // Возвращаем результат запроса
     // console.log(responce);
@@ -2246,6 +2301,8 @@ async function postRequest(queryParams) {
       },
       body: JSON.stringify(queryParams),
     });
+    const res = await responce.json();
+    return res; // Возвращаем результат запроса
     // const infoList = await responce.json();
     // return infoList; // Возвращаем результат запроса
     // console.log(responce);
@@ -2272,9 +2329,9 @@ async function postNotification(queryParams) {
       },
       body: JSON.stringify(queryParams),
     });
-    // const infoList = await responce.json();
-    // return infoList; // Возвращаем результат запроса
-    // console.log(responce);
+    const res = await responce.json();
+    return res; // Возвращаем результат запроса
+    // console.log(infoList);
   } catch (err) {
     // Блок catch сработает только если будут какие-то ошибки в блоке try:
     // Выведем в консоли информацию об ошибке:
@@ -2288,7 +2345,6 @@ async function postNotification(queryParams) {
 
 // const choiceSendBtn = document.querySelector(".choice__btn");
 // choiceSendBtn.addEventListener("click", (event) => {
-  // console.log('тест');
 //   // fetchToPost(queryParams)
 
 //   const arrApartments = fetchToPost(queryParams);

@@ -8945,6 +8945,8 @@ a {
 .project-page {  
   .project-page__section {
     position: relative;
+    background: #F5F5F5;
+
     .project-page__container {
       padding: 36px 0 95px;
       display: grid;
@@ -9061,6 +9063,10 @@ a {
           height: max-content;
           border-radius: 10px;
           overflow: hidden;
+
+          &.project-page__item_no-show {
+            display: none;
+          }
 
           .project-page__card-img {
             position: relative;

@@ -6873,6 +6873,7 @@ a {
 }
 .project-page .project-page__section {
   position: relative;
+  background: #F5F5F5;
 }
 .project-page .project-page__section .project-page__container {
   padding: 36px 0 95px;
@@ -6964,6 +6965,9 @@ a {
   height: max-content;
   border-radius: 10px;
   overflow: hidden;
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item.project-page__item_no-show {
+  display: none;
 }
 .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-img {
   position: relative;
