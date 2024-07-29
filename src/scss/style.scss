@@ -8446,21 +8446,20 @@ a {
         //   grid-template-rows: auto 1fr auto auto;
         //   gap: 10px;
 
-          .apartments__item {
-            padding: 20px;
-            max-width: 420.5px;
-            min-height: 655px;
-            background: #ffffff;
-            border-radius: 5px;
-  
-            .apartments__item-link {
-              display: grid;
-              grid-auto-flow: row;
-              grid-template-rows: auto 1fr auto auto;
-              gap: 10px;
-              min-height: 655px;
+        .apartments__item {
+          padding: 20px;
+          max-width: 420.5px;
+          min-height: 655px;
+          background: #ffffff;
+          border-radius: 5px;
 
-            }
+          .apartments__item-link {
+            display: grid;
+            grid-auto-flow: row;
+            grid-template-rows: auto 1fr auto auto;
+            gap: 10px;
+            min-height: 655px;
+          }
 
           .apartments__item-title {
             font-family: Inter;
@@ -8838,7 +8837,7 @@ a {
   .bot {
     background: #363636;
     padding: 50px 0 40px;
-    
+
     .bot__container {
       display: grid;
       // width: 100%;
@@ -8891,17 +8890,14 @@ a {
         // gap: 60px;
         // width: 494px;
         // height: 479px;
-        background: #FFFFFF;
+        background: #ffffff;
         border-radius: 10px;
-
-
       }
       .address__title {
         margin-bottom: 7px;
       }
       .address__desc {
         margin-bottom: 60px;
-
       }
       .address__wrapper {
         display: grid;
@@ -8921,7 +8917,6 @@ a {
             line-height: 16.94px;
             text-align: left;
             color: #616161;
-
           }
           .address__item-text {
             font-family: Inter;
@@ -8930,18 +8925,14 @@ a {
             line-height: 19.36px;
             text-align: left;
             color: #000;
-
           }
 
           &.address__item_address {
             grid-column: 2 span;
-
           }
         }
-
-
       }
-  
+
       .address__btn {
       }
     }
@@ -8949,9 +8940,337 @@ a {
 }
 
 // --------------------------------------- apartments-page-item end ---------------------------------------
-// --------------------------------------- &&&&&& start ---------------------------------------
+// --------------------------------------- project-page start ---------------------------------------
 
-// --------------------------------------- &&&&&& end ---------------------------------------
+.project-page {  
+  .project-page__section {
+    position: relative;
+    .project-page__container {
+      padding: 36px 0 95px;
+      display: grid;
+      grid-template: auto 729px / 870px 1fr;
+      gap: 40px;
+
+      .project-page__top-wrap {
+        grid-column: 2 span;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        .project-page__title {
+        }
+  
+        .project-page__btns-wrap {
+          position: relative;
+          width: 330px;
+          height: 52px;
+          background: #ffffff;
+          border: 1px solid #d5d5d5;
+          border-radius: 50px;
+  
+          .project-page__button {
+            padding: 9px 10px;  
+            background: #363636;
+            border-radius: 140px;
+            border-radius: 50px;
+            
+            .project-page__button-text {
+              font-family: Inter;
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 21.78px;
+              text-align: center;
+              color: #fff;
+              text-transform: uppercase;
+            }
+
+            & svg {
+              display: none;
+            }
+          }
+          
+          .project-page__button_list {
+            color: #fff;
+            background-color: #363636;
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 50%;
+
+          }
+          
+          .project-page__button_map {
+            color: #363636;
+            background-color: transparent;
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 50%;
+
+            .project-page__button-text {
+              color: #363636;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+
+
+      .project-page__list {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+        gap: 20px;
+        overflow: auto;
+        padding-right: 10px;
+
+
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {  
+          width: 4px; 
+          background-color: #DEDEDE;
+          border-radius: 100px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          width: 4px; 
+          border-radius: 100px;
+          background: #B1B1B1;
+        }
+
+        .project-page__item {
+        }
+
+        .project-page__link {
+        }
+
+
+        .project-page__item {
+          display: grid;
+          grid-auto-flow: row;
+          grid-template-rows: 356px 1fr;
+          // max-width: 1000px;
+          // width: 100%;
+          min-height: 563px;
+          height: max-content;
+          border-radius: 10px;
+          overflow: hidden;
+
+          .project-page__card-img {
+            position: relative;
+            height: 356px;
+            overflow: hidden;
+
+            & img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+
+            .project-page__card-info {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              padding: 30px;
+              display: grid;
+              grid-auto-flow: column;
+              align-items: center;
+              gap: 15px;
+              grid-template-columns: auto auto 1fr;
+
+              // border-radius: 10px;
+              // height: 100%;
+              // background: rgba(0, 0, 0, 0.5);
+              // display: grid;
+              // grid-auto-flow: column;
+              // place-items: center;
+              // gap: 10px;
+
+              .project-page__card-label {
+                font-family: Inter;
+                font-size: 30px;
+                font-weight: 500;
+                line-height: 36.31px;
+                text-align: left;
+                color: #fff;
+                text-transform: uppercase;
+
+                &.project-page__card-label_small {
+                  font-family: Inter;
+                  font-size: 20px;
+                  font-weight: 700;
+                  line-height: 24.2px;
+                  text-align: left;                  
+                  color: #fff;
+                }
+              }
+              .project-page__card-info-btn {
+                /* Статус проекта */
+                /* Auto layout */
+                // display: flex;
+                // flex-direction: column;
+                // align-items: center;
+                display: grid;
+                place-items: center;
+                padding: 10px 15px;
+                margin-left: auto;
+                // gap: 7px;
+
+                // margin: 0 auto;
+                // width: 78px;
+                // height: 39px;
+
+                background: #ffffff;
+                backdrop-filter: blur(15px);
+                border-radius: 5px;
+
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 19.36px;
+                text-align: center;
+                color: #56693e;
+                text-transform: uppercase;
+              }
+            }
+          }
+
+          .project-page__card-content {
+            padding: 30px;
+            display: grid;
+            height: 100%;
+            // grid-auto-flow: row;
+            grid-template-rows: 1fr auto;
+            background: #fff;
+            align-self: start;
+
+            .project-page__card-title {
+              margin-bottom: 15px;
+            }
+
+            .project-page__card-text {
+              margin-bottom: 55px;
+            }
+
+            .project-page__card-price {
+              // margin-bottom: 70px;
+              font-family: Inter;
+              font-size: 20px;
+              font-weight: 400;
+              line-height: 24.2px;
+              text-align: left;
+              color: #000000;
+            }
+
+            .project-page__card-footer {
+              padding-top: 15px;
+              border-top: 1px solid rgba(#000000, 0.1);
+              display: grid;
+              grid-auto-flow: row;
+              gap: 10px;
+
+              .project-page__card-bot-wrap {
+                // margin-bottom: 10px;
+                display: grid;
+                grid-auto-flow: column;
+                justify-content: space-between;
+
+                .project-page__card-key {
+                  font-family: Inter;
+                  font-size: 16px;
+                  font-weight: 400;
+                  line-height: 19.36px;
+                  text-align: left;
+                  color: #616161;
+                }
+
+                .project-page__card-value {
+                  font-family: Inter;
+                  font-size: 16px;
+                  font-weight: 400;
+                  line-height: 19.36px;
+                  text-align: left;
+                  color: #363636;
+                }
+              }
+              .project-page__card-link {
+                margin-top: 10px;
+                font-family: Inter;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 19.36px;
+                text-align: left;
+                color: #748d55;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+
+      .project-page__map {
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+      }      
+    }
+  }
+
+  &.project-page__full-map {
+    
+    .project-page__section {
+      height: calc(100vh - 70px);
+
+      .project-page__container {
+
+        .project-page__top-wrap {
+
+          .project-page__btns-wrap {
+            position: initial;
+            .project-page__button_map {
+              position: absolute;
+              top: 30px;
+              right: 95px;
+              z-index: 1000;
+              height: max-content;
+              width: max-content;
+  
+              .project-page__button-text {
+                display: none;
+              }
+  
+              & svg {
+                display: block;
+              }
+  
+            }
+          }
+        }
+
+        .project-page__map {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+        }
+      }
+    }
+
+    .footer {
+      display: none;
+    }
+  }
+}
+
+// --------------------------------------- project-page end ---------------------------------------
 
 // --------------------------------------- NEWS-ITEM start ---------------------------------------
 

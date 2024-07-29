@@ -3,6 +3,15 @@ Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
 
+const projectMapBtn = document.querySelector(".project-page__button_map");
+if (projectMapBtn) {
+  projectMapBtn.addEventListener("click", function (e) {
+    console.log('тест');
+    const body = projectMapBtn.closest("body");
+    body.classList.toggle("project-page__full-map");
+  });
+}
+
 // --------------------------------------- start кнопки ремонта: ---------------------------------------------
 const aboutBtnWrap = document.querySelector(".about__btn-wrap");
 if (aboutBtnWrap) {
@@ -2502,4 +2511,5 @@ setInfo();
 // }
 
 // -------------------------------------------- end Планы ---------------------------------------------
+
 

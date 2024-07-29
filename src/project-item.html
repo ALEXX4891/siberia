@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('./html/head.html', {
+"title": "Сибирь. Проекты",
+})
+
+<body class="project-page">
+  @@include('./html/header.html', {})
+
+  <main class="main">
+    <section class="section project-page__section">
+      <div class="container project-page__container">
+        <div class="project-page__top-wrap">
+          <h2 class="project-page__title title title_40">
+            Проекты
+          </h2>
+          <div class="project-page__btns-wrap">
+            <button class="project-page__button project-page__button_list">
+              Списком
+            </button>
+            <button class="project-page__button project-page__button_map">
+              на карте
+            </button>
+          </div>
+        </div>
+
+        <ul class="project-page__list">
+          <li class="project-page__item">
+            <a class="project-page__link" href="project-item.html">
+
+            </a>
+          </li>
+          <li class="project-page__item">
+            <a class="project-page__link" href="project-item.html">
+
+            </a>
+          </li>
+        </ul>
+        <div class="project-page__map" id="map">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  @@include('./html/footer.html', {})
+</body>
+
+</html>
