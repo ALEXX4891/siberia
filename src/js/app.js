@@ -1934,8 +1934,7 @@ async function initMap() {
   //     // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
   await ymaps3.ready;
 
-  const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
-    ymaps3;
+  const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker} = ymaps3;
 
   // const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
   // // кластеризация маркеров
@@ -1999,6 +1998,57 @@ async function initMap() {
     markerElement
   );
   map.addChild(marker);
+
+  const map2 = new YMap(
+    // Передаём ссылку на HTMLElement контейнера
+    document.getElementById("map2"),
+    // Передаём параметры инициализации карты
+
+    {
+      location: {
+        // Координаты центра карты
+        center: [65.50887, 57.150993],
+        // Уровень масштабирования
+        zoom: 14.7,
+      },
+    },
+    [
+      // Добавляем слой, скрываем POI
+      new YMapDefaultSchemeLayer({
+        customization: [
+          {
+            tags: {
+              any: ["poi", "transit"],
+            },
+            elements: "label",
+            stylers: [
+              {
+                opacity: 0,
+              },
+            ],
+          },
+        ],
+      }),
+      new YMapDefaultFeaturesLayer({}),
+    ]
+  );
+
+  const markerElement2 = document.createElement("img");
+  markerElement2.className = "marker-class";
+  markerElement2.innerText = "I'm marker!";
+  markerElement2.style.width = "100%";
+  markerElement2.style.height = "100%";
+  markerElement2.src = "img/pin-office.svg";
+
+  const marker2 = new YMapMarker(
+    {
+      coordinates: [65.50887, 57.150993],
+      draggable: true,
+      mapFollowsOnDrag: true,
+    },
+    markerElement2
+  );
+  map2.addChild(marker2);
 }
 
 function setVisible() {
