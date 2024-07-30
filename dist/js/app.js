@@ -12,6 +12,45 @@ if (projectMapBtn) {
   });
 }
 
+const asideMenu = document.querySelector(".aside-menu");
+if (asideMenu) {
+  const links = asideMenu.querySelectorAll(".slider__toggle-link");
+
+  links.forEach((item) => {
+    item.addEventListener("click", function () {
+      console.log('тест');
+      links.forEach((item) => {
+        item.classList.remove("slider__toggle-link_active");
+      });
+      item.classList.add("slider__toggle-link_active");
+    });
+  });
+
+  document.addEventListener("scroll", () => {
+    console.log("scroll");
+
+    // получаем все секции с атрибутом id
+    let sections = Array.from(document.querySelectorAll("section"))
+      .filter((section) => section.hasAttribute('id'));
+
+    sections.forEach((section) => {
+      // получаем параметры секции
+      const rect = section.getBoundingClientRect();
+      // проверяем что начало секции находится в первой половине экрана
+      if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
+        console.log(rect.top);
+        links.forEach((item) => {
+          if (item.getAttribute("href").replace("#", "") === section.id) {
+            item.classList.add("slider__toggle-link_active");
+          } else {
+            item.classList.remove("slider__toggle-link_active");
+          }
+        });
+      }
+    });
+  });
+}
+
 // --------------------------------------- start кнопки ремонта: ---------------------------------------------
 const aboutBtnWrap = document.querySelector(".about__btn-wrap");
 if (aboutBtnWrap) {
@@ -591,7 +630,7 @@ new Swiper(".slider_swiper", {
   // loop: true,
   // allowTouchMove: true,
   // slidesPerView: auto, // сколько слайдов показывать, можно дробно
-  slidesPerView: 1, // сколько слайдов показывать, можно дробно
+  slidesPerView: "auto", // сколько слайдов показывать, можно дробно
   // slidersPerGroup: 3, // сколько слайдов в группе
   // centeredSlides: true, //выравнивание слайдов по центру
   // initialSlide: 0, //начальный слайд (c нуля)
@@ -599,7 +638,7 @@ new Swiper(".slider_swiper", {
   // spaceBetween: 40,
   // slideToClickedSlide: true, //перелистывание слайдов по клику
   // grabCursor: true, //меняет курсор при наведении на руку
-  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+  // watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
 
   // Navigation arrows
   navigation: {
