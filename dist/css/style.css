@@ -7072,7 +7072,9 @@ a {
   border-left: 3px solid #56693e;
 }
 .project-item-page .project-item-page__main .slim .container {
-  padding: 33px 0 40px;
+  border-top: 70px solid transparent;
+  margin-top: -70px;
+  padding: 63px 0 40px;
   display: grid;
   grid-template: auto/1fr 232px;
   gap: 60px;
@@ -7154,7 +7156,7 @@ a {
 }
 .project-item-page .project-item-page__main .slim .choice .choice__container .choice__wrap {
   max-width: 1712px;
-  padding: 50px 50px 35px;
+  padding: 20px 50px 35px;
   display: grid;
   grid-auto-flow: row;
   gap: 55px;
@@ -7664,7 +7666,7 @@ a {
   display: none;
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container {
-  padding: 63px 0 40px;
+  padding: 63px 0 100px;
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap {
   display: grid;
@@ -7888,36 +7890,50 @@ a {
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap .map__mark-list .map__mark-item_active svg path {
   fill: #000000;
 }
-.project-item-page .apartments {
+.project-item-page .project-item-page__main .slim .commercial {
   position: relative;
   background: #f5f5f5;
 }
-.project-item-page .apartments .apartments__container {
-  padding: 80px 0 80px;
+.project-item-page .project-item-page__main .slim .commercial .commercial__container {
+  padding: 83px 0 40px;
+}
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap {
+  padding: 0;
   overflow: hidden;
 }
-.project-item-page .apartments .apartments__container .apartments__title {
-  margin-bottom: 45px;
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__top-wrap {
+  margin-bottom: 35px;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
 }
-.project-item-page .apartments .apartments__container .apartments__list {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__top-wrap .commercial__button {
+  width: 100%;
+  max-width: 100%;
+}
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list {
   grid-column: 3 span;
   min-width: 0;
+  height: max-content;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item {
-  padding: 20px;
-  max-width: 420.5px;
-  min-height: 655px;
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item {
+  max-width: 459px;
+  min-height: 542px;
   background: #ffffff;
   border-radius: 5px;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-link {
+  padding: 20px;
+  width: 100%;
   display: grid;
   grid-auto-flow: row;
-  grid-template-rows: auto 1fr auto auto;
+  height: max-content;
+  align-content: start;
+  align-items: start;
   gap: 10px;
-  min-height: 655px;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-title {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-title {
+  margin-bottom: 10px;
   font-family: Inter;
   font-size: 15px;
   font-weight: 400;
@@ -7925,17 +7941,17 @@ a {
   text-align: left;
   color: #616161;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-img {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-img {
   padding: 30px;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-img img {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-img img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-desc {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-desc {
   font-family: Inter;
   font-size: 18px;
   font-weight: 500;
@@ -7943,14 +7959,14 @@ a {
   text-align: left;
   color: #616161;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-price-wrap {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-price-wrap {
   display: grid;
   grid-auto-flow: column;
   justify-content: start;
   align-items: end;
   gap: 10px;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-price-wrap .apartments__item-new-price {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-price-wrap .commercial__item-new-price {
   font-family: Inter;
   font-size: 30px;
   font-weight: 500;
@@ -7958,7 +7974,7 @@ a {
   text-align: left;
   color: #000;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-price-wrap .apartments__item-old-price {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-price-wrap .commercial__item-old-price {
   font-family: Inter;
   font-size: 18px;
   font-weight: 400;
@@ -7967,7 +7983,7 @@ a {
   color: #8c8c8c;
   text-decoration: line-through;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-footer {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-footer {
   display: flex;
   gap: 5px;
   flex-flow: row wrap;
@@ -7976,7 +7992,7 @@ a {
   padding-top: 15px;
   min-height: 90px;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-footer .apartments__item-footer-item {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-footer .commercial__item-footer-item {
   padding: 8px 16px;
   border: 1px solid #748d55;
   border-radius: 50px;
@@ -7985,7 +8001,7 @@ a {
   gap: 10px;
   height: max-content;
 }
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-footer .apartments__item-footer-item .apartments__item-footer-item-text {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list .commercial__item .commercial__item-footer .commercial__item-footer-item .commercial__item-footer-item-text {
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
@@ -7994,57 +8010,57 @@ a {
   color: #748d55;
   text-wrap: nowrap;
 }
-.project-item-page .apartments .apartments__container .about {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about {
   grid-row: 3/4;
 }
-.project-item-page .apartments .apartments__container .about .about__container {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(253px, auto) 820px;
   gap: 60px 0;
 }
 @media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container {
     grid-template-rows: minmax(253px, auto) 710px;
     gap: 16px 0;
   }
 }
 @media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container {
     grid-template-rows: minmax(366px, auto) 560px;
   }
 }
 @media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container {
     grid-template-rows: minmax(326px, auto) 273px;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap {
   display: grid;
   grid-template-columns: 57% 32%;
   grid-template-rows: 19px 1fr;
   gap: 16% 11%;
 }
 @media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap {
     gap: 16% 8%;
   }
 }
 @media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     gap: 0;
   }
 }
 @media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap {
     grid-template-columns: 1fr;
     grid-template-rows: max-content max-content max-content;
     gap: 20px;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__desc {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__desc {
   grid-area: 1/1/2/2;
   font-family: Inter;
   font-size: 16px;
@@ -8054,12 +8070,12 @@ a {
   color: #8c8c8c;
 }
 @media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__desc {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__desc {
     grid-area: 1/1/2/2;
   }
 }
 @media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__desc {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__desc {
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
@@ -8067,7 +8083,7 @@ a {
     text-align: left;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__title {
   grid-area: 2/1/3/2;
   font-family: Inter;
   font-size: 80px;
@@ -8077,24 +8093,24 @@ a {
   color: #56693e;
 }
 @media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__title {
     font-size: 62px;
     line-height: 74.82px;
   }
 }
 @media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__title {
     grid-area: 2/1/3/2;
   }
 }
 @media (max-width: 960px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__title {
     font-size: 50px;
     line-height: 60.82px;
   }
 }
 @media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__title {
     font-family: Inter;
     font-size: 30px;
     font-weight: 400;
@@ -8102,7 +8118,7 @@ a {
     text-align: left;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__text-block {
   grid-area: 2/2/3/3;
   display: grid;
   grid-template-columns: 1fr;
@@ -8110,16 +8126,16 @@ a {
   align-items: start;
 }
 @media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__text-block {
     grid-template-rows: 0px auto 12px 1fr;
   }
 }
 @media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__text-block {
     grid-area: 3/1/4/2;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block .about__text {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__text-block .about__text {
   grid-row: 2/3;
   font-family: Inter;
   font-size: 16px;
@@ -8130,72 +8146,72 @@ a {
   letter-spacing: -1.4px;
 }
 @media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block .about__text {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__text-block .about__text {
     letter-spacing: -1.1px;
     line-height: 20.4px;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block .about__text:last-child {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__content-wrap .about__text-block .about__text:last-child {
   grid-row: 4/5;
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap {
   grid-column: 2 span;
   position: relative;
 }
 @media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap {
     height: 100%;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .about__img {
   border-radius: 10px;
   display: block;
 }
 @media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .about__img {
     object-fit: cover;
     width: 100%;
     height: 100%;
     object-position: center;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .gp {
   cursor: pointer;
 }
 @media (max-width: 1750px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .gp {
     display: none;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp path {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .gp path {
   stroke: transparent;
   transition: stroke 0.3s ease-in-out;
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp path:hover {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .gp path:hover {
   stroke: white;
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp_1 {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .gp_1 {
   position: absolute;
   left: 399.5px;
   top: 330.5px;
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp_2 {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .gp_2 {
   position: absolute;
   left: 924.5px;
   top: 303.5px;
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp_3 {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .gp_3 {
   position: absolute;
   left: 541.5px;
   top: 206.5px;
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp-no {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .gp-no {
   position: absolute;
   left: 795.5px;
   top: 53.5px;
   pointer-events: none;
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img-first {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .about__img-first {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8211,11 +8227,11 @@ a {
   border-radius: 5px;
 }
 @media (max-width: 1750px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img-first {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .about__img-first {
     display: none;
   }
 }
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img-second {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .about__img-second {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -8232,21 +8248,21 @@ a {
   color: white;
 }
 @media (max-width: 1750px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img-second {
+  .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .about .about__container .about__img-wrap .about__img-second {
     display: none;
   }
 }
-.project-item-page .apartments .swiper-navigation {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .swiper-navigation {
   position: absolute;
-  top: 80px;
-  right: 105px;
+  top: 81px;
+  left: 676px;
   display: grid;
   grid-auto-flow: column;
   justify-content: end;
   gap: 20px;
   align-items: center;
 }
-.project-item-page .apartments .swiper-navigation .swiper-button {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .swiper-navigation .swiper-button {
   position: relative;
   width: 56px;
   height: 56px;
@@ -8256,37 +8272,65 @@ a {
   bottom: initial;
   margin: 0;
 }
-.project-item-page .apartments .swiper-navigation .swiper-button svg {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .swiper-navigation .swiper-button svg {
   width: 56px;
   height: 56px;
 }
-.project-item-page .apartments .swiper-navigation .swiper-button::after {
+.project-item-page .project-item-page__main .slim .commercial .commercial__container .swiper-navigation .swiper-button::after {
   display: none;
 }
-.project-item-page .bot {
+.project-item-page .project-item-page__main .slim .buy {
+  background: #f5f5f5;
+}
+.project-item-page .project-item-page__main .slim .buy .buy__container {
+  padding: 63px 0 65px;
+}
+.project-item-page .project-item-page__main .slim .buy .buy__container .buy__wrap {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 30px;
+}
+.project-item-page .project-item-page__main .slim .buy .buy__container .buy__wrap .buy__list {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 20px;
+}
+.project-item-page .project-item-page__main .slim .buy .buy__container .buy__wrap .buy__list .buy__item {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: max-content 1fr;
+  padding: 30px;
+  gap: 20px;
+  max-width: 460px;
+  min-height: 225px;
+  background: #FFFFFF;
+  border-radius: 5px;
+}
+.project-item-page .project-item-page__main .slim .bot {
   background: #363636;
   padding: 50px 0 40px;
 }
-.project-item-page .bot .bot__container .bot__wrap {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap {
   display: grid;
-  grid-template-columns: 494px 1fr;
+  grid-template-columns: 460px 1fr;
   grid-template-rows: 479px;
   align-items: center;
   justify-content: space-between;
   gap: 0 20px;
 }
-.project-item-page .bot .bot__container .bot__wrap .bot__map {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .bot__map {
   width: 100%;
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
 }
-.project-item-page .bot .bot__container .bot__wrap .bot__map img {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .bot__map img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.project-item-page .bot .bot__container .bot__wrap .bot__map .marker-class {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .bot__map .marker-class {
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -8294,7 +8338,7 @@ a {
   height: 58px;
   pointer-events: none;
 }
-.project-item-page .bot .bot__container .bot__wrap .bot__map [class*=marker] {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .bot__map [class*=marker] {
   position: absolute;
   bottom: 50%;
   right: 50%;
@@ -8302,31 +8346,31 @@ a {
   height: 44px;
   pointer-events: none;
 }
-.project-item-page .bot .bot__container .bot__wrap .address {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .address {
   padding: 50px;
   width: 100%;
   height: 100%;
   background: #ffffff;
   border-radius: 10px;
 }
-.project-item-page .bot .bot__container .bot__wrap .address__title {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .address__title {
   margin-bottom: 7px;
 }
-.project-item-page .bot .bot__container .bot__wrap .address__desc {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .address__desc {
   margin-bottom: 60px;
 }
-.project-item-page .bot .bot__container .bot__wrap .address__wrapper {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .address__wrapper {
   display: grid;
   grid-template: 1fr 1fr/auto 1fr;
   gap: 30px 40px;
   margin-bottom: 60px;
 }
-.project-item-page .bot .bot__container .bot__wrap .address__wrapper .address__item {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .address__wrapper .address__item {
   display: grid;
   grid-auto-flow: row;
   gap: 8px;
 }
-.project-item-page .bot .bot__container .bot__wrap .address__wrapper .address__item .address__item-title {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .address__wrapper .address__item .address__item-title {
   font-family: Inter;
   font-size: 14px;
   font-weight: 400;
@@ -8334,7 +8378,7 @@ a {
   text-align: left;
   color: #616161;
 }
-.project-item-page .bot .bot__container .bot__wrap .address__wrapper .address__item .address__item-text {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .address__wrapper .address__item .address__item-text {
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
@@ -8342,624 +8386,7 @@ a {
   text-align: left;
   color: #000;
 }
-.project-item-page .bot .bot__container .bot__wrap .address__wrapper .address__item.address__item_address {
+.project-item-page .project-item-page__main .slim .bot .bot__container .bot__wrap .address__wrapper .address__item.address__item_address {
   grid-column: 2 span;
-}
-.project-item-page .banner {
-  padding-bottom: 100px;
-  grid-row: 1/2;
-}
-@media (max-width: 1750px) {
-  .project-item-page .banner {
-    padding: 0 20px;
-  }
-}
-@media (max-width: 1400px) {
-  .project-item-page .banner {
-    padding: 0 30px;
-  }
-}
-@media (max-width: 660px) {
-  .project-item-page .banner {
-    padding: 0 15px;
-  }
-}
-.project-item-page .banner .banner__container {
-  min-height: 820px;
-  padding: 128px 60px;
-  display: grid;
-  grid-auto-flow: row;
-  gap: 20px;
-  align-content: start;
-  color: white;
-  background: url("../img/banner-img.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
-}
-@media (max-width: 960px) {
-  .project-item-page .banner .banner__container {
-    grid-template-columns: 1fr;
-    padding: 100px 30px;
-  }
-}
-@media (max-width: 660px) {
-  .project-item-page .banner .banner__container {
-    padding: 30px 20px;
-  }
-}
-.project-item-page .banner .banner__container .banner__title {
-  font-family: Inter;
-  font-size: 60px;
-  font-weight: 500;
-  line-height: 72.61px;
-  text-align: left;
-  max-width: 740px;
-}
-@media (max-width: 960px) {
-  .project-item-page .banner .banner__container .banner__title {
-    font-family: Inter;
-    font-size: 50px;
-    font-weight: 500;
-    line-height: 60.51px;
-    text-align: left;
-  }
-}
-@media (max-width: 660px) {
-  .project-item-page .banner .banner__container .banner__title {
-    font-family: Inter;
-    font-size: 23px;
-    font-weight: 500;
-    line-height: 27.84px;
-    text-align: left;
-  }
-}
-.project-item-page .banner .banner__container .banner__list {
-  margin-bottom: 20px;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: start;
-  gap: 18px;
-}
-.project-item-page .banner .banner__container .banner__list .banner__item {
-  display: grid;
-  grid-auto-flow: column;
-  place-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-}
-.project-item-page .banner .banner__container .banner__list .banner__item .banner__item-text {
-  font-family: Inter Tight;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 16px;
-  text-align: left;
-  color: #fff;
-}
-.project-item-page .banner .banner__container .banner__text {
-  margin-bottom: 35px;
-  font-family: Inter;
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 30.26px;
-  text-align: left;
-}
-@media (max-width: 660px) {
-  .project-item-page .banner .banner__container .banner__text {
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19.36px;
-    text-align: left;
-  }
-}
-.project-item-page .banner .banner__container .banner__btn {
-  width: 271px;
-  height: 60px;
-  background: #89b36a;
-  border-color: #89b36a;
-}
-@media (max-width: 660px) {
-  .project-item-page .banner .banner__container .banner__btn {
-    width: 214px;
-    height: 49px;
-    font-family: Inter;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 18.15px;
-    text-align: center;
-  }
-}
-.project-item-page .apartments {
-  position: relative;
-  background: #f5f5f5;
-}
-.project-item-page .apartments .apartments__container {
-  padding: 90px 0 80px;
-  overflow: hidden;
-}
-.project-item-page .apartments .apartments__container .apartments__top-wrap {
-  margin-bottom: 35px;
-  gap: 20px;
-  display: grid;
-  grid-template-columns: 1fr 420px;
-}
-.project-item-page .apartments .apartments__container .apartments__top-wrap .apartments__button {
-  width: 100%;
-}
-.project-item-page .apartments .apartments__container .apartments__list {
-  grid-column: 3 span;
-  min-width: 0;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item {
-  max-width: 420.5px;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link {
-  padding: 20px;
-  width: 100%;
-  min-height: 655px;
-  background: #ffffff;
-  border-radius: 5px;
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-rows: auto 1fr auto auto;
-  gap: 10px;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-title {
-  font-family: Inter;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 18.15px;
-  text-align: left;
-  color: #616161;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-img {
-  padding: 30px;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-img img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-desc {
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 21.78px;
-  text-align: left;
-  color: #616161;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-price-wrap {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: start;
-  align-items: end;
-  gap: 10px;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-price-wrap .apartments__item-new-price {
-  font-family: Inter;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: 36.3px;
-  text-align: left;
-  color: #000;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-price-wrap .apartments__item-old-price {
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21.78px;
-  text-align: left;
-  color: #8c8c8c;
-  text-decoration: line-through;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-footer {
-  display: flex;
-  gap: 5px;
-  flex-flow: row wrap;
-  align-content: flex-end;
-  border-top: 1px solid #cedfb8;
-  padding-top: 15px;
-  min-height: 90px;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-footer .apartments__item-footer-item {
-  padding: 8px 16px;
-  border: 1px solid #748d55;
-  border-radius: 50px;
-  display: grid;
-  grid-auto-flow: column;
-  gap: 10px;
-  height: max-content;
-}
-.project-item-page .apartments .apartments__container .apartments__list .apartments__item .apartments__item-footer .apartments__item-footer-item .apartments__item-footer-item-text {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19.36px;
-  text-align: left;
-  color: #748d55;
-  text-wrap: nowrap;
-}
-.project-item-page .apartments .apartments__container .about {
-  grid-row: 3/4;
-}
-.project-item-page .apartments .apartments__container .about .about__container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: minmax(253px, auto) 820px;
-  gap: 60px 0;
-}
-@media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container {
-    grid-template-rows: minmax(253px, auto) 710px;
-    gap: 16px 0;
-  }
-}
-@media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container {
-    grid-template-rows: minmax(366px, auto) 560px;
-  }
-}
-@media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container {
-    grid-template-rows: minmax(326px, auto) 273px;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap {
-  display: grid;
-  grid-template-columns: 57% 32%;
-  grid-template-rows: 19px 1fr;
-  gap: 16% 11%;
-}
-@media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap {
-    gap: 16% 8%;
-  }
-}
-@media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    gap: 0;
-  }
-}
-@media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap {
-    grid-template-columns: 1fr;
-    grid-template-rows: max-content max-content max-content;
-    gap: 20px;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__desc {
-  grid-area: 1/1/2/2;
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19.36px;
-  text-align: left;
-  color: #8c8c8c;
-}
-@media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__desc {
-    grid-area: 1/1/2/2;
-  }
-}
-@media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__desc {
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.94px;
-    text-align: left;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
-  grid-area: 2/1/3/2;
-  font-family: Inter;
-  font-size: 80px;
-  font-weight: 400;
-  line-height: 96.82px;
-  text-align: left;
-  color: #56693e;
-}
-@media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
-    font-size: 62px;
-    line-height: 74.82px;
-  }
-}
-@media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
-    grid-area: 2/1/3/2;
-  }
-}
-@media (max-width: 960px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
-    font-size: 50px;
-    line-height: 60.82px;
-  }
-}
-@media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__title {
-    font-family: Inter;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 36.31px;
-    text-align: left;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block {
-  grid-area: 2/2/3/3;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 24px auto 12px 1fr;
-  align-items: start;
-}
-@media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block {
-    grid-template-rows: 0px auto 12px 1fr;
-  }
-}
-@media (max-width: 1340px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block {
-    grid-area: 3/1/4/2;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block .about__text {
-  grid-row: 2/3;
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22.4px;
-  text-align: left;
-  color: #616161;
-  letter-spacing: -1.4px;
-}
-@media (max-width: 660px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block .about__text {
-    letter-spacing: -1.1px;
-    line-height: 20.4px;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__content-wrap .about__text-block .about__text:last-child {
-  grid-row: 4/5;
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap {
-  grid-column: 2 span;
-  position: relative;
-}
-@media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap {
-    height: 100%;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img {
-  border-radius: 10px;
-  display: block;
-}
-@media (max-width: 1512px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    object-position: center;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp {
-  cursor: pointer;
-}
-@media (max-width: 1750px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp {
-    display: none;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp path {
-  stroke: transparent;
-  transition: stroke 0.3s ease-in-out;
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp path:hover {
-  stroke: white;
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp_1 {
-  position: absolute;
-  left: 399.5px;
-  top: 330.5px;
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp_2 {
-  position: absolute;
-  left: 924.5px;
-  top: 303.5px;
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp_3 {
-  position: absolute;
-  left: 541.5px;
-  top: 206.5px;
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .gp-no {
-  position: absolute;
-  left: 795.5px;
-  top: 53.5px;
-  pointer-events: none;
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img-first {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 7px 14px;
-  gap: 10px;
-  position: absolute;
-  width: 106px;
-  height: 36px;
-  left: 727px;
-  top: 425px;
-  background: #ffffff;
-  border-radius: 5px;
-}
-@media (max-width: 1750px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img-first {
-    display: none;
-  }
-}
-.project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img-second {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 7px 14px;
-  gap: 10px;
-  position: absolute;
-  width: 109px;
-  height: 36px;
-  left: 1009px;
-  top: 155px;
-  background: #748d55;
-  border-radius: 5px;
-  color: white;
-}
-@media (max-width: 1750px) {
-  .project-item-page .apartments .apartments__container .about .about__container .about__img-wrap .about__img-second {
-    display: none;
-  }
-}
-.project-item-page .apartments .swiper-navigation {
-  position: absolute;
-  top: 90px;
-  left: 340px;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: end;
-  gap: 20px;
-  align-items: center;
-}
-.project-item-page .apartments .swiper-navigation .swiper-button {
-  position: relative;
-  width: 56px;
-  height: 56px;
-  top: initial;
-  right: initial;
-  left: initial;
-  bottom: initial;
-  margin: 0;
-}
-.project-item-page .apartments .swiper-navigation .swiper-button svg {
-  width: 56px;
-  height: 56px;
-}
-.project-item-page .apartments .swiper-navigation .swiper-button::after {
-  display: none;
-}
-.project-item-page .news {
-  position: relative;
-}
-.project-item-page .news .news__container {
-  padding: 100px 0 95px;
-}
-@media (max-width: 1750px) {
-  .project-item-page .news .news__container {
-    padding: 103px 0 89px;
-  }
-}
-@media (max-width: 660px) {
-  .project-item-page .news .news__container {
-    padding: 110px 0 89px;
-  }
-}
-.project-item-page .news .news__container .news__title {
-  max-width: 1712px;
-  width: 100%;
-  text-align: left;
-  margin: 0 auto 42px;
-}
-@media (max-width: 1750px) {
-  .project-item-page .news .news__container .news__title {
-    max-width: 1280px;
-  }
-}
-@media (max-width: 1400px) {
-  .project-item-page .news .news__container .news__title {
-    padding: 0 30px;
-  }
-}
-@media (max-width: 960px) {
-  .project-item-page .news .news__container .news__title {
-    margin: 0 auto 33px;
-  }
-}
-@media (max-width: 660px) {
-  .project-item-page .news .news__container .news__title {
-    padding: 0 15px;
-    margin: 0 auto 38px;
-  }
-}
-.project-item-page .news .news__container .news__list {
-  margin: 0 auto 40px;
-}
-.project-item-page .news .news__container .news__list .swiper-slide {
-  max-width: 544px;
-  display: grid;
-  grid-auto-flow: row;
-  grid-template: auto auto 1fr/1fr;
-  gap: 15px;
-}
-.project-item-page .news .news__container .news__list .swiper-slide .news-slider__card-img-wrapper {
-  margin-bottom: 10px;
-  aspect-ratio: 544/280;
-}
-.project-item-page .news .news__container .news__list .swiper-slide .news-slider__card-img-wrapper img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-.project-item-page .news .news__container .news__list .swiper-slide .news-slider__card-date {
-  font-family: Inter;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 18.15px;
-  text-align: left;
-  color: #616161;
-}
-.project-item-page .news .news__container .news__list .swiper-slide .news-slider__card-link {
-  color: #363636;
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24.2px;
-  text-align: left;
-  color: #363636;
-}
-.project-item-page .news .swiper-navigation {
-  position: absolute;
-  top: 50px;
-  right: 100px;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: end;
-  gap: 20px;
-  align-items: center;
-}
-.project-item-page .news .swiper-navigation .swiper-button {
-  position: relative;
-  width: 56px;
-  height: 56px;
-  top: initial;
-  right: initial;
-  left: initial;
-  bottom: initial;
-  margin: 0;
-}
-.project-item-page .news .swiper-navigation .swiper-button svg {
-  width: 56px;
-  height: 56px;
-}
-.project-item-page .news .swiper-navigation .swiper-button::after {
-  display: none;
 }
 /*# sourceMappingURL=style.css.map */
