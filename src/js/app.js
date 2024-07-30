@@ -12,6 +12,7 @@ if (projectMapBtn) {
   });
 }
 
+// --------------------------------------- start бокове меню: ---------------------------------------------
 const asideMenu = document.querySelector(".aside-menu");
 if (asideMenu) {
   const links = asideMenu.querySelectorAll(".slider__toggle-link");
@@ -49,6 +50,37 @@ if (asideMenu) {
       }
     });
   });
+}
+// --------------------------------------- end бокове меню: ---------------------------------------------
+
+const contactsPage = document.querySelector(".contacts-page");
+if (contactsPage) {
+  const btnsOpen = contactsPage.querySelectorAll(".address__item-btn_plus");
+  const wrappers = contactsPage.querySelectorAll(".address__wrapper");
+  const minusOpen = contactsPage.querySelectorAll(".address__item-btn_minus");
+
+  btnsOpen.forEach((item) => {
+    item.addEventListener("click", function () {
+      console.log('тест');
+      wrappers.forEach((item) => {
+        item.classList.add("address__wrapper_close");
+      })
+      const wrapper = item.closest(".address__wrapper");
+      wrapper.classList.remove("address__wrapper_close");
+
+    });
+  });
+
+  minusOpen.forEach((item) => {
+    item.addEventListener("click", function () {
+      console.log('тест');
+      wrappers.forEach((item) => {
+        item.classList.add("address__wrapper_close");
+      })
+      const wrapper = item.closest(".address__wrapper");
+      wrapper.classList.add("address__wrapper_close");
+    });
+  })
 }
 
 // --------------------------------------- start кнопки ремонта: ---------------------------------------------
