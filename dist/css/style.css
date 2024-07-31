@@ -10529,20 +10529,26 @@ a {
   color: #fff;
 }
 
-.company .company__container {
-  padding: 30px 0 120px;
+.company .about .about__container {
+  padding: 40px 0 100px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 40px;
+}
+.company .about .about__container .about__top {
   display: grid;
   grid-template-columns: 1fr 292px;
   grid-auto-flow: row;
   gap: 40px;
+  align-items: center;
 }
-.company .company__container .company__btn-wrapper {
+.company .about .about__container .about__top .about__btn-wrapper {
   display: grid;
   grid-auto-flow: column;
   justify-content: end;
   gap: 18px;
 }
-.company .company__container .company__btn-wrapper .company__btn {
+.company .about .about__container .about__top .about__btn-wrapper .about__btn {
   padding: 16px 34px;
   border-radius: 50px;
   font-family: Inter;
@@ -10550,17 +10556,319 @@ a {
   font-weight: 500;
   line-height: 18px;
   text-align: left;
+  background: transparent;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
-.company .company__container .company__btn-wrapper .company__btn_green {
+.company .about .about__container .about__top .about__btn-wrapper .about__btn_green {
   background: #56693e;
   color: #fff;
   border: 1px solid #56693e;
   text-wrap: nowrap;
+  pointer-events: none;
 }
-.company .company__container .company__btn-wrapper .company__btn_white {
+.company .about .about__container .about__top .about__btn-wrapper .about__btn_white {
   background: #fff;
   color: #616161;
   border: 1px solid #56693e;
   text-wrap: nowrap;
+}
+.company .about .about__container .about__top .about__btn-wrapper .about__btn_white:hover {
+  background: #9ABC6F;
+  border: 1px solid #9ABC6F;
+  color: #fff;
+}
+.company .about .about__container .about__content {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: auto 820px/1fr;
+  gap: 80px;
+}
+.company .about .about__container .about__content .about__content-top {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: end;
+  gap: 30px;
+}
+.company .about .about__container .about__content .about__content-top .about__content-title {
+  font-family: Inter;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 96.82px;
+  text-align: left;
+  color: #56693E;
+}
+.company .about .about__container .about__content .about__content-top .about__content-text {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  color: #363636;
+}
+.company .about .about__container .about__content .slider_swiper {
+  overflow: hidden;
+  position: relative;
+}
+.company .about .about__container .about__content .slider_swiper .slider__list {
+  height: 820px;
+  width: 100%;
+}
+.company .about .about__container .about__content .slider_swiper .slider__list .slider__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.company .about .about__container .about__content .slider_swiper .swiper-button {
+  width: 55px;
+  height: 55px;
+  top: 53%;
+  translate: 0 -50%;
+  z-index: 1;
+}
+.company .about .about__container .about__content .slider_swiper .swiper-button::after {
+  display: none;
+}
+.company .about .about__container .about__content .slider_swiper .swiper-button-prev_slider {
+  left: 50px;
+}
+.company .about .about__container .about__content .slider_swiper .swiper-button-next_slider {
+  right: 50px;
+}
+.company .standarts .standarts__container {
+  padding: 0 0 40px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 80px;
+}
+.company .standarts .standarts__container .standarts__content {
+  max-width: 778px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 40px;
+  align-content: start;
+}
+.company .standarts .standarts__container .standarts__content .standarts__head-text {
+  margin-bottom: 55px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  color: #616161;
+  letter-spacing: -1px;
+}
+.company .standarts .standarts__container .standarts__content .standarts__title {
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48.41px;
+  text-align: left;
+  color: #56693E;
+}
+.company .standarts .standarts__container .standarts__content .standarts__text {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  text-align: left;
+  color: #616161;
+}
+.company .history .history__container {
+  padding: 62px 0 100px;
+}
+.company .history .history__container .history__title {
+  margin-bottom: 30px;
+}
+.company .history .history__container .history__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2px;
+}
+.company .history .history__container .history__list .history__item {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 20px;
+  align-content: end;
+  padding: 30px;
+  max-width: 570.67px;
+  min-height: 360px;
+  background: #F5F5F5;
+}
+.company .history .history__container .history__list .history__item .history__item-title {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: left;
+  color: #363636;
+}
+.company .history .history__container .history__list .history__item .history__item-text {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  text-align: left;
+  color: #616161;
+}
+.company .projects {
+  background: #F5F5F5;
+}
+.company .projects .projects__container {
+  padding: 80px 0 80px;
+}
+.company .projects .projects__container .projects__title {
+  margin-bottom: 50px;
+}
+.company .projects .projects__container .project-page__list {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  gap: 10px;
+  overflow: auto;
+  padding-right: 10px;
+}
+.company .projects .projects__container .project-page__list::-webkit-scrollbar {
+  width: 4px;
+}
+.company .projects .projects__container .project-page__list::-webkit-scrollbar-track {
+  width: 4px;
+  background-color: #dedede;
+  border-radius: 100px;
+}
+.company .projects .projects__container .project-page__list::-webkit-scrollbar-thumb {
+  width: 4px;
+  border-radius: 100px;
+  background: #b1b1b1;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__link {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 356px 1fr;
+  min-height: 563px;
+  height: max-content;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.company .projects .projects__container .project-page__list .project-page__item.project-page__item_no-show {
+  display: none;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-img {
+  position: relative;
+  height: 356px;
+  overflow: hidden;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-img .project-page__card-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 15px;
+  grid-template-columns: auto auto 1fr;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-img .project-page__card-info .project-page__card-label {
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36.31px;
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-img .project-page__card-info .project-page__card-label.project-page__card-label_small {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.2px;
+  text-align: left;
+  color: #fff;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-img .project-page__card-info .project-page__card-info-btn {
+  /* Статус проекта */
+  /* Auto layout */
+  display: grid;
+  place-items: center;
+  padding: 10px 15px;
+  margin-left: auto;
+  background: #ffffff;
+  backdrop-filter: blur(15px);
+  border-radius: 5px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  text-align: center;
+  color: #56693e;
+  text-transform: uppercase;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-content {
+  padding: 30px;
+  display: grid;
+  height: 100%;
+  background: #fff;
+  align-items: end;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-content .project-page__card-title {
+  margin-bottom: 15px;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-content .project-page__card-text {
+  margin-bottom: 55px;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-content .project-page__card-price {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  text-align: left;
+  color: #000000;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer {
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-auto-flow: row;
+  gap: 10px;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap .project-page__card-key {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  color: #616161;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap .project-page__card-value {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  text-align: left;
+  color: #363636;
+}
+.company .projects .projects__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer .project-page__card-link {
+  margin-top: 10px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  text-align: left;
+  color: #748d55;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
