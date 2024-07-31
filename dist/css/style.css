@@ -10378,20 +10378,26 @@ a {
 .buy-page .main .bot .bot__container .bot__wrap .address__wrapper .address__item.address__item_address {
   grid-column: 2 span;
 }
-.cooperation .cooperation__container {
-  padding: 30px 0 120px;
+.cooperation-page .cooperation__container {
+  padding: 40px 0 100px;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 120px;
+}
+.cooperation-page .cooperation__container .cooperation__top {
   display: grid;
   grid-template-columns: 1fr 292px;
   grid-auto-flow: row;
   gap: 40px;
+  align-items: center;
 }
-.cooperation .cooperation__container .cooperation__btn-wrapper {
+.cooperation-page .cooperation__container .cooperation__top .cooperation__btn-wrapper {
   display: grid;
   grid-auto-flow: column;
   justify-content: end;
   gap: 18px;
 }
-.cooperation .cooperation__container .cooperation__btn-wrapper .cooperation__btn {
+.cooperation-page .cooperation__container .cooperation__top .cooperation__btn-wrapper .cooperation__btn {
   padding: 16px 34px;
   border-radius: 50px;
   font-family: Inter;
@@ -10399,18 +10405,128 @@ a {
   font-weight: 500;
   line-height: 18px;
   text-align: left;
+  background: transparent;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
-.cooperation .cooperation__container .cooperation__btn-wrapper .cooperation__btn_green {
+.cooperation-page .cooperation__container .cooperation__top .cooperation__btn-wrapper .cooperation__btn_green {
   background: #56693e;
   color: #fff;
   border: 1px solid #56693e;
   text-wrap: nowrap;
+  pointer-events: none;
 }
-.cooperation .cooperation__container .cooperation__btn-wrapper .cooperation__btn_white {
+.cooperation-page .cooperation__container .cooperation__top .cooperation__btn-wrapper .cooperation__btn_white {
   background: #fff;
   color: #616161;
   border: 1px solid #56693e;
   text-wrap: nowrap;
+}
+.cooperation-page .cooperation__container .cooperation__top .cooperation__btn-wrapper .cooperation__btn_white:hover {
+  background: #9ABC6F;
+  border: 1px solid #9ABC6F;
+  color: #fff;
+}
+.cooperation-page .cooperation__container .cooperation__content {
+  margin-bottom: 20px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+}
+.cooperation-page .cooperation__container .cooperation__content .cooperation__left-block {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 40px;
+  justify-content: start;
+}
+.cooperation-page .cooperation__container .cooperation__content .cooperation__left-block .cooperation__card {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 30px;
+  max-width: 323px;
+  width: 100%;
+}
+.cooperation-page .cooperation__container .cooperation__content .cooperation__left-block .cooperation__card .cooperation__card-title {
+  font-family: Inter;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 96.82px;
+  text-align: left;
+  color: #56693E;
+}
+.cooperation-page .cooperation__container .cooperation__content .cooperation__left-block .cooperation__card .cooperation__card-text {
+  color: #363636;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  text-align: left;
+  color: #363636;
+}
+.cooperation-page .cooperation__container .cooperation__content .cooperation__right-block {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 20px;
+  max-width: 836px;
+  justify-self: end;
+  align-items: center;
+}
+.cooperation-page .cooperation__container .cooperation__content .cooperation__right-block .cooperation__right-block-title {
+  align-self: end;
+}
+.cooperation-page .cooperation__container .cooperation__content .cooperation__right-block .cooperation__right-block-text {
+  color: #616161;
+}
+.cooperation-page .cooperation__container .cooperation__list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fill, minmax(557.33px, 1fr));
+  gap: 20px;
+}
+.cooperation-page .cooperation__container .cooperation__list .cooperation__list-item .cooperation__list-link {
+  position: relative;
+  padding: 40px;
+  display: grid;
+  grid-auto-flow: row;
+  align-content: space-between;
+  gap: 20px;
+  max-width: 557.33px;
+  min-height: 250px;
+  background: #F5F5F5;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+.cooperation-page .cooperation__container .cooperation__list .cooperation__list-item .cooperation__list-link .cooperation__list-title {
+  font-family: Inter;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30.26px;
+  text-align: left;
+  color: #363636;
+  transition: color 0.3s ease-in-out;
+}
+.cooperation-page .cooperation__container .cooperation__list .cooperation__list-item .cooperation__list-link .cooperation__list-text {
+  max-width: 77%;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.2px;
+  text-align: left;
+  color: #616161;
+  transition: color 0.3s ease-in-out;
+}
+.cooperation-page .cooperation__container .cooperation__list .cooperation__list-item .cooperation__list-link svg {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+.cooperation-page .cooperation__container .cooperation__list .cooperation__list-item .cooperation__list-link:hover {
+  background: #56693E;
+}
+.cooperation-page .cooperation__container .cooperation__list .cooperation__list-item .cooperation__list-link:hover .cooperation__list-title {
+  color: #fff;
+}
+.cooperation-page .cooperation__container .cooperation__list .cooperation__list-item .cooperation__list-link:hover .cooperation__list-text {
+  color: #fff;
 }
 
 .company .company__container {

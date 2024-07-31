@@ -13533,45 +13533,186 @@ a {
 }
 // --------------------------------------- buy-page end ---------------------------------------
 // --------------------------------------- cooperation start ---------------------------------------
-.cooperation {
+.cooperation-page {
   .cooperation__container {
-    padding: 30px 0 120px;
+    padding: 40px 0 100px;
     display: grid;
-    grid-template-columns: 1fr 292px;
     grid-auto-flow: row;
-    gap: 40px;
-
-    .cooperation__title {
-    }
+    gap: 120px;
     
-    .cooperation__btn-wrapper {
+    .cooperation__top {
+      // margin-bottom: 90px;
+      display: grid;
+      grid-template-columns: 1fr 292px;
+      grid-auto-flow: row;
+      gap: 40px;
+      align-items: center;
+
+
+
+      .cooperation__title {
+      }
+      
+      .cooperation__btn-wrapper {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        gap: 18px;
+  
+        .cooperation__btn {
+          padding: 16px 34px;
+          border-radius: 50px;
+          font-family: Inter;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 18px;
+          text-align: left;
+          background: transparent;          
+          transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+  
+        .cooperation__btn_green {
+          background: #56693e;
+          color: #fff;
+          border: 1px solid #56693e;
+          text-wrap: nowrap;
+          pointer-events: none;
+        }
+  
+        .cooperation__btn_white {
+          background: #fff;
+          color: #616161;
+          border: 1px solid #56693e;
+          text-wrap: nowrap;
+
+          &:hover {
+            background: #9ABC6F;
+            border: 1px solid #9ABC6F;
+            color: #fff;
+          }
+  
+        }
+      }
+    }
+
+
+    .cooperation__content {
+      margin-bottom: 20px;
       display: grid;
       grid-auto-flow: column;
-      justify-content: end;
-      gap: 18px;
+      gap: 20px;
 
-      .cooperation__btn {
-        padding: 16px 34px;
-        border-radius: 50px;
-        font-family: Inter;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 18px;
-        text-align: left;
+      .cooperation__left-block {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 40px;
+        justify-content: start;
+
+        .cooperation__card {
+          display: grid;
+          grid-auto-flow: row;
+          gap: 30px;
+          max-width: 323px;
+          width: 100%;
+
+          .cooperation__card-title {
+            font-family: Inter;
+            font-size: 80px;
+            font-weight: 600;
+            line-height: 96.82px;
+            text-align: left;
+            color: #56693E;
+          }
+
+          .cooperation__card-text {
+            color: #363636;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 23.2px;
+            text-align: left;
+            color: #363636 ;
+          }
+        }
       }
+      .cooperation__right-block {
+        display: grid;
+        grid-auto-flow: row;
+        gap: 20px;
+        max-width: 836px;
+        justify-self: end;
+        align-items: center;
 
-      .cooperation__btn_green {
-        background: #56693e;
-        color: #fff;
-        border: 1px solid #56693e;
-        text-wrap: nowrap;
+        .cooperation__right-block-title {
+          align-self: end;
+        }
+
+        .cooperation__right-block-text {
+          color: #616161;
+        }
       }
+    }
+    .cooperation__list {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: repeat(auto-fill, minmax(557.33px, 1fr));
+      gap: 20px;
 
-      .cooperation__btn_white {
-        background: #fff;
-        color: #616161;
-        border: 1px solid #56693e;
-        text-wrap: nowrap;
+      .cooperation__list-item {        
+        .cooperation__list-link {
+          position: relative;
+          padding: 40px;
+          display: grid;
+          grid-auto-flow: row;
+          align-content: space-between;
+          gap: 20px;
+          max-width: 557.33px;
+          min-height: 250px;
+          background: #F5F5F5;
+          border-radius: 5px;
+          transition: background-color 0.3s ease-in-out;
+
+          .cooperation__list-title {
+            font-family: Inter;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 30.26px;
+            text-align: left;
+            color: #363636;
+            transition: color 0.3s ease-in-out;
+
+          }
+  
+          .cooperation__list-text {
+            max-width: 77%;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 23.2px;
+            text-align: left;
+            color: #616161;
+            transition: color 0.3s ease-in-out;
+
+          }
+  
+          & svg {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+          }
+
+          &:hover {
+            background: #56693E;
+
+            .cooperation__list-title {
+              color: #fff;
+            }
+    
+            .cooperation__list-text {
+              color: #fff;
+            }
+          }
+        }
 
       }
     }
