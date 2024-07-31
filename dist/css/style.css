@@ -7220,7 +7220,7 @@ a {
 }
 .project-item-page .project-item-page__main .slim .aside-menu .slider__toggle-list {
   position: sticky;
-  top: 330px;
+  top: 123px;
   right: 0;
   width: 100%;
   display: grid;
