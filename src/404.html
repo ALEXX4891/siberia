@@ -4,7 +4,7 @@
 "title": "Сибирь. Ошибка 404",
 })
 
-<body class="not-found" data-page="404">
+<body class="not-found-page" data-page="404">
   @@include('./html/header.html', {})
 
   <!-- <div class="container container_not-found not-found">
@@ -25,9 +25,9 @@
   <main class="main">
     <section class="section not-found">
       <div class="container not-found__container">
-        <div class="not-found__img">
+        <!-- <div class="not-found__img">
           <img src="@img/404.png" alt="ошибка 404">
-        </div>
+        </div> -->
 
         <h1 class="not-found__title">
           Страница не найдена
@@ -36,15 +36,18 @@
           Неправильно набран адрес или такой страницы не существует
         </p>
         <div class="not-found__btns-wrapper">
-          <a class="not-found__link btn btn_white" href="javascript:history.back()">
+          <a class="not-found__link btn btn_green" href="javascript:history.back()">
             Вернуться назад
           </a>
-          <a class="not-found__link btn btn_blue" href="index.html">
+          <a class="not-found__link btn btn_dark" href="index.html">
             На главную
           </a>
         </div>
       </div>
     </section>
+    <div>
+
+    </div>
 
   </main>
 

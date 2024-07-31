@@ -3559,7 +3559,7 @@ a {
               }
 
               &:hover {
-                // color: #fff;
+                color: #748D55;
               }
             }
 
@@ -3830,6 +3830,7 @@ a {
           line-height: 14.52px;
           text-align: left;
           color: white;
+          transition: color 0.3s ease-in-out;
 
           @media (max-width: 1100px) {
             font-family: Inter;
@@ -3840,6 +3841,7 @@ a {
           }
 
           &:hover {
+            color: #748D55;
           }
         }
       }
@@ -3920,6 +3922,12 @@ a {
           line-height: 19.36px;
           text-align: center;
           color: rgba(#fff, 0.5);
+          transition: color 0.3s ease-in-out;
+
+          
+          &:hover {
+            color: #748D55;
+          }
         }
       }
     }
@@ -6500,60 +6508,56 @@ a {
 // --------------------------------------- GLAVNAYA end ---------------------------------------
 // --------------------------------------- 404 start ---------------------------------------
 
-.not-found {
+.not-found-page {
+  display: grid;
+  grid-template: 1fr auto / 1fr;
+  min-height: 100vh;
+
   .not-found {
-    background: $color-F3FAFC;
-  }
-  .not-found__container {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 186px 10px 148px;
-    border-bottom: 1px solid var(--color-E9E9E9);
-
-    .not-found__img {
-      margin-bottom: 20px;
-
-      // width: 500px;
-      // height: 300px;
-      // background: url(@img/404.png);
-      // mix-blend-mode: hard-light;
-      // transform: matrix(0, -1, -1, 0, 0, 0);
-      & img {
-        mix-blend-mode: hard-light;
-      }
-    }
-
-    .not-found__title {
-      font-size: 40px;
-      font-weight: 500;
-      line-height: 48.92px;
-      text-align: center;
-      color: $color-555A5E;
-      text-transform: uppercase;
-      // margin-bottom: 100px;
-    }
-
-    .not-found__text {
-      font-size: 22px;
-      font-weight: 400;
-      line-height: 26.91px;
-      text-align: center;
-      color: $color-555A5E;
-    }
-
-    .not-found__btns-wrapper {
+    .not-found__container {
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
       align-items: center;
       justify-content: center;
       gap: 20px;
-    }
-    .btn {
-      width: 174px;
-      border-radius: 6px;
+      padding: 186px 10px 148px;
+  
+      .not-found__img {
+        margin-bottom: 20px;
+        & img {
+          mix-blend-mode: hard-light;
+        }
+      }
+  
+      .not-found__title {
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 48.92px;
+        text-align: center;
+        color: #555A5E;
+        text-transform: uppercase;
+      }
+  
+      .not-found__text {
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 26.91px;
+        text-align: center;
+        color: #555A5E;
+      }
+  
+      .not-found__btns-wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .btn {
+        width: 174px;
+        border-radius: 6px;
+        // color: #000;
+      }
     }
   }
 }
