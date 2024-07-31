@@ -7216,7 +7216,7 @@ a {
   top: 123px;
   right: 100px;
   width: 232px;
-  height: 100%;
+  height: calc(100% - 200px);
 }
 .project-item-page .project-item-page__main .slim .aside-menu .slider__toggle-list {
   position: sticky;
@@ -7251,7 +7251,7 @@ a {
   border-left: 3px solid #56693e;
 }
 .project-item-page .project-item-page__main .slim .aside-menu .slider__toggle-list .slider__toggle-link_active {
-  color: #000000;
+  color: #56693e;
   border-left: 3px solid #56693e;
 }
 .project-item-page .project-item-page__main .slim .container {
@@ -10377,5 +10377,74 @@ a {
 }
 .buy-page .main .bot .bot__container .bot__wrap .address__wrapper .address__item.address__item_address {
   grid-column: 2 span;
+}
+.cooperation .cooperation__container {
+  padding: 30px 0 120px;
+  display: grid;
+  grid-template-columns: 1fr 292px;
+  grid-auto-flow: row;
+  gap: 40px;
+}
+.cooperation .cooperation__container .cooperation__btn-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 18px;
+}
+.cooperation .cooperation__container .cooperation__btn-wrapper .cooperation__btn {
+  padding: 16px 34px;
+  border-radius: 50px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+}
+.cooperation .cooperation__container .cooperation__btn-wrapper .cooperation__btn_green {
+  background: #56693e;
+  color: #fff;
+  border: 1px solid #56693e;
+  text-wrap: nowrap;
+}
+.cooperation .cooperation__container .cooperation__btn-wrapper .cooperation__btn_white {
+  background: #fff;
+  color: #616161;
+  border: 1px solid #56693e;
+  text-wrap: nowrap;
+}
+
+.company .company__container {
+  padding: 30px 0 120px;
+  display: grid;
+  grid-template-columns: 1fr 292px;
+  grid-auto-flow: row;
+  gap: 40px;
+}
+.company .company__container .company__btn-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 18px;
+}
+.company .company__container .company__btn-wrapper .company__btn {
+  padding: 16px 34px;
+  border-radius: 50px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+}
+.company .company__container .company__btn-wrapper .company__btn_green {
+  background: #56693e;
+  color: #fff;
+  border: 1px solid #56693e;
+  text-wrap: nowrap;
+}
+.company .company__container .company__btn-wrapper .company__btn_white {
+  background: #fff;
+  color: #616161;
+  border: 1px solid #56693e;
+  text-wrap: nowrap;
 }
 /*# sourceMappingURL=style.css.map */

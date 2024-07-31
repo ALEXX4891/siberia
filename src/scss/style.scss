@@ -9752,7 +9752,7 @@ a {
         top: 123px;
         right: 100px;
         width: 232px;
-        height: 100%;
+        height: calc(100% - 200px); // 100%;
         // height: 200vh;
 
         .slider__toggle-list {
@@ -9793,7 +9793,7 @@ a {
             }
 
             &_active {
-              color: #000000;
+              color: #56693e;
               border-left: 3px solid #56693e;
             }
           }
@@ -13532,5 +13532,98 @@ a {
   }  
 }
 // --------------------------------------- buy-page end ---------------------------------------
+// --------------------------------------- cooperation start ---------------------------------------
+.cooperation {
+  .cooperation__container {
+    padding: 30px 0 120px;
+    display: grid;
+    grid-template-columns: 1fr 292px;
+    grid-auto-flow: row;
+    gap: 40px;
+
+    .cooperation__title {
+    }
+    
+    .cooperation__btn-wrapper {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: end;
+      gap: 18px;
+
+      .cooperation__btn {
+        padding: 16px 34px;
+        border-radius: 50px;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 18px;
+        text-align: left;
+      }
+
+      .cooperation__btn_green {
+        background: #56693e;
+        color: #fff;
+        border: 1px solid #56693e;
+        text-wrap: nowrap;
+      }
+
+      .cooperation__btn_white {
+        background: #fff;
+        color: #616161;
+        border: 1px solid #56693e;
+        text-wrap: nowrap;
+
+      }
+    }
+  }
+}
+// --------------------------------------- cooperation end ---------------------------------------
+// --------------------------------------- company start ---------------------------------------
+.company {
+  .company__container {
+    padding: 30px 0 120px;
+    display: grid;
+    grid-template-columns: 1fr 292px;
+    grid-auto-flow: row;
+    gap: 40px;
+
+    .company__title {
+    }
+    
+    .company__btn-wrapper {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: end;
+      gap: 18px;
+
+      .company__btn {
+        padding: 16px 34px;
+        border-radius: 50px;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 18px;
+        text-align: left;
+      }
+
+      .company__btn_green {
+        background: #56693e;
+        color: #fff;
+        border: 1px solid #56693e;
+        text-wrap: nowrap;
+
+      }
+
+      .company__btn_white {
+        background: #fff;
+        color: #616161;
+        border: 1px solid #56693e;
+        text-wrap: nowrap;
+
+      }
 
 
+    }
+  }
+}
+// --------------------------------------- company end ---------------------------------------
