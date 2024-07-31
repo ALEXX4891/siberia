@@ -1847,25 +1847,30 @@ let queryParams = {
 const choiceForm = document.querySelector(".choice__form");
 if (choiceForm) {
   const selectProject = document.querySelector(".choice__select");
-  // selects.forEach((select) => {
-  selectProject.addEventListener("click", (event) => {
-    // console.log("click");
-    selectProject.classList.toggle("select_open");
-  });
-  const selectOptions = selectProject.querySelectorAll(".select__item");
-  selectOptions.forEach((item) => {
-    item.addEventListener("click", (event) => {
-      const input = selectProject.querySelector(".select__text");
-      event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
-      input.innerHTML = item.innerHTML;
-      input.classList.add("select__text_active");
-      input.setAttribute("data-id", item.getAttribute("data-id"));
-      queryParams.project = item.getAttribute("data-id");
-      // console.log(queryParams);
-      selectProject.classList.remove("select_open");
-      selectProject.classList.add("select_active");
+  if (selectProject) {
+    selectProject.addEventListener("click", (event) => {
+      // console.log("click");
+      selectProject.classList.toggle("select_open");
     });
-  });
+    
+    const selectOptions = selectProject.querySelectorAll(".select__item");
+    if (selectOptions) {
+      selectOptions.forEach((item) => {
+        item.addEventListener("click", (event) => {
+          const input = selectProject.querySelector(".select__text");
+          event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+          input.innerHTML = item.innerHTML;
+          input.classList.add("select__text_active");
+          input.setAttribute("data-id", item.getAttribute("data-id"));
+          queryParams.project = item.getAttribute("data-id");
+          // console.log(queryParams);
+          selectProject.classList.remove("select_open");
+          selectProject.classList.add("select_active");
+        });
+      });
+    }
+  }
+  // selects.forEach((select) => {
   // });
 
   const choiceButtonsSelect = document.querySelector(".choice__buttons-select");
