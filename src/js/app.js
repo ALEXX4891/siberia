@@ -1846,29 +1846,43 @@ let queryParams = {
 // console.log(selects);
 const choiceForm = document.querySelector(".choice__form");
 if (choiceForm) {
-  const selectProject = document.querySelector(".choice__select");
-  if (selectProject) {
-    selectProject.addEventListener("click", (event) => {
-      // console.log("click");
-      selectProject.classList.toggle("select_open");
+  const selectProjectList = document.querySelectorAll(".choice__select");
+  if (selectProjectList) {
+
+    selectProjectList.forEach((selectProject) => {
+      selectProject.addEventListener("click", (event) => {
+        console.log("тест");
+        selectProjectList.forEach((selectProject) => {
+          selectProject.classList.remove("select_open");
+        });
+        selectProject.classList.toggle("select_open");
+      });      
+      const selectOptions = selectProject.querySelectorAll(".select__item");
+      if (selectOptions) {
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", (event) => {
+            const input = selectProject.querySelector(".select__text");
+            event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
+            input.innerHTML = item.innerHTML;
+            input.classList.add("select__text_active");
+            input.setAttribute("data-id", item.getAttribute("data-id"));
+            queryParams.project = item.getAttribute("data-id");
+            // console.log(queryParams);
+            selectProject.classList.remove("select_open");
+            selectProject.classList.add("select_active");
+          });
+        });
+      }
+    })
+
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".choice__select")) {
+        selectProjectList.forEach((selectProject) => {
+          selectProject.classList.remove("select_open");
+        });
+      }
     });
     
-    const selectOptions = selectProject.querySelectorAll(".select__item");
-    if (selectOptions) {
-      selectOptions.forEach((item) => {
-        item.addEventListener("click", (event) => {
-          const input = selectProject.querySelector(".select__text");
-          event.stopPropagation(); // отменяем всплытие, что бы повторно не сработало событие на самом селекте
-          input.innerHTML = item.innerHTML;
-          input.classList.add("select__text_active");
-          input.setAttribute("data-id", item.getAttribute("data-id"));
-          queryParams.project = item.getAttribute("data-id");
-          // console.log(queryParams);
-          selectProject.classList.remove("select_open");
-          selectProject.classList.add("select_active");
-        });
-      });
-    }
   }
   // selects.forEach((select) => {
   // });

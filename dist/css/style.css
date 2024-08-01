@@ -289,13 +289,6 @@ a {
   outline: none;
   box-shadow: none;
 }
-.btn.btn_dark:active {
-  color: white;
-  background-color: #455432;
-  border-color: #455432;
-  outline: none;
-  box-shadow: none;
-}
 .btn.btn_green {
   border: 1px solid #56693e;
   min-height: 60px;
