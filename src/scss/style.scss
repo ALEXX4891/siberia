@@ -6962,6 +6962,7 @@ a {
   }
 
   .news-page-item__news-slider {
+    overflow: hidden;
     position: relative;
 
     .news-slider__container-top {

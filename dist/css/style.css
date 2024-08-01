@@ -5233,6 +5233,7 @@ a {
   color: #646464;
 }
 .news-page-item .news-page-item__news-slider {
+  overflow: hidden;
   position: relative;
 }
 .news-page-item .news-page-item__news-slider .news-slider__container-top {
