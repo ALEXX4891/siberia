@@ -8,7 +8,7 @@
   @@include('./html/header.html', {})
 
   <main class="main apartments-page__main">
-    <section class="section section_choice choice">
+    <section class="section section_choice choice choice_fixed">
       <div class="container choice__container">
         <h1 class="choice__title title title_40">
           Квартиры
@@ -42,7 +42,7 @@
               </div>
             </li>
 
-            <li class="choice__input-block choice__input-block_buttons">
+            <li class="choice__input-block choice__input-block_buttons choice__input-block_buttons_rooms">
               <p class="choice__label">
                 Комнат
               </p>
@@ -141,14 +141,14 @@
           </ul>
 
           <ul class="choice__inputs-list choice__inputs-list_bot">
-            <li class="choice__input-block choice__input-block_select">
+            <li class="choice__input-block choice__input-block_select choice__input-block_select_house">
               <p class="choice__label">
-                Проект
+                Дом
               </p>
               <div class="choice__select select select-frame">
                 <div class="select__wrapper">
                   <span class="select__placeholder">
-                    Сосновый
+                    Все
                   </span>
                   <p class="select__text select__text_carton"></p>
                 </div>
@@ -159,21 +159,21 @@
                   </svg>
                 </span>
                 <ul class="select__list select__list_carton">
-                  <li class="select__item" data-id="sosnoviy">Сосновый</li>
-                  <!-- <li class="select__item" data-id="duboviy">Дубовый</li> -->
-                  <!-- <li class="select__item" data-id="berezoviy">Березовый</li> -->
+                  <li class="select__item" data-id="sosnoviy">Все</li>
+                  <li class="select__item" data-id="duboviy">1</li>
+                  <li class="select__item" data-id="berezoviy">2</li>
                 </ul>
               </div>
             </li>
 
-            <li class="choice__input-block choice__input-block_select choice__input-block_select">
+            <li class="choice__input-block choice__input-block_select choice__input-block_select_section">
               <p class="choice__label">
-                Проект
+                Секция
               </p>
               <div class="choice__select select select-frame">
                 <div class="select__wrapper">
                   <span class="select__placeholder">
-                    Сосновый
+                    Все
                   </span>
                   <p class="select__text select__text_carton"></p>
                 </div>
@@ -184,9 +184,9 @@
                   </svg>
                 </span>
                 <ul class="select__list select__list_carton">
-                  <li class="select__item" data-id="sosnoviy">Сосновый</li>
-                  <!-- <li class="select__item" data-id="duboviy">Дубовый</li> -->
-                  <!-- <li class="select__item" data-id="berezoviy">Березовый</li> -->
+                  <li class="select__item" data-id="sosnoviy">Все</li>
+                  <li class="select__item" data-id="duboviy">5</li>
+                  <li class="select__item" data-id="berezoviy">8</li>
                 </ul>
               </div>
             </li>
