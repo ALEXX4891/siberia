@@ -12,6 +12,15 @@ if (projectMapBtn) {
   });
 }
 
+//------------------- start трансформация фильтра:----------------
+// const choiceTop = document.querySelector(".choice__inputs-list_top");
+// const choiceBot = document.querySelector(".choice__inputs-list_bot");
+
+// // const el = Array.from(choiceBot.children)[3];
+// const el = document.querySelector(".choice__inputs-list_bot").querySelector(".choice__input-block_slider"); //
+// console.log(el);
+// choiceTop.append(el);
+//------------------- end трансформация фильтра----------------
 // --------------------------------------- start бокове меню: ---------------------------------------------
 const asideMenu = document.querySelector(".aside-menu");
 if (asideMenu) {
