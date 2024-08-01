@@ -265,16 +265,9 @@ a {
   outline-offset: 3px;
 }
 .btn.btn_light-green:hover {
-  color: white;
-  background-color: #56693e;
-  border-color: #56693e;
-  outline: none;
-  box-shadow: none;
-}
-.btn.btn_light-green:active {
-  color: white;
-  background-color: #455432;
-  border-color: #455432;
+  color: #748D55;
+  background-color: #fff;
+  border-color: #9ABC6F;
   outline: none;
   box-shadow: none;
 }
@@ -6280,7 +6273,7 @@ a {
 .apartments-item-page .slider .slider__container .slider__left .slider__btn-list .slider__btn:hover {
   color: #56693e;
   background-color: transparent;
-  border-color: #748d55;
+  border-color: #748D55;
 }
 .apartments-item-page .slider .slider__container .slider__left .slider__btn-list .slider__btn:active {
   background-color: transparent;

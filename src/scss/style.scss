@@ -346,18 +346,18 @@ a {
       outline-offset: 3px;
     }
     &:hover {
-      color: white;
-      background-color: #56693e;
-      border-color: #56693e;
+      color: #748D55;
+      background-color: #fff;
+      border-color: #9ABC6F;
       outline: none;
       box-shadow: none;
     }
     &:active {
-      color: white;
-      background-color: #455432;
-      border-color: #455432;
-      outline: none;
-      box-shadow: none;
+      // color: white;
+      // background-color: #455432;
+      // border-color: #455432;
+      // outline: none;
+      // box-shadow: none;
     }
   }
 
@@ -8167,7 +8167,7 @@ a {
             &:hover {
               color: #56693e;
               background-color: transparent;
-              border-color: #748d55;
+              border-color: #748D55;
             }
 
             &:active {
