@@ -675,12 +675,7 @@ new Swiper(".news_swiper", {
   breakpoints: {
     0: {
       // slidesPerView: 1,
-    },
-    500: {
-      // slidesPerView: 2,
-    },
-    800: {
-      // slidesPerView: 3.35,
+      spaceBetween: 20,
     },
   },
 });
