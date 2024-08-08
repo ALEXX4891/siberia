@@ -2172,6 +2172,7 @@ a {
 .header .header__section .header__container {
   max-width: 1714px;
   width: 100%;
+  margin: 0 auto;
 }
 .header .header__section .header__container .burger {
   display: none;
