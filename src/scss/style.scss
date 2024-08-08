@@ -231,7 +231,6 @@ a {
 }
 
 .section {
-  // max-width: 1920px;
   margin: 0 auto;
   padding: 100px 104px;
 
@@ -253,32 +252,6 @@ a {
   width: 100%;
   margin: 0 auto;
   position: relative;
-  // padding: 30px 0 40px;
-
-  // &_w_1180 {
-  //   max-width: 1180px;
-  // }
-  @media (max-width: 1900px) {
-    // max-width: calc(100% - (116px * 2));
-
-    // padding: 30px 0 40px;
-  }
-  @media (max-width: 1512px) {
-    // padding: 40px 20px 40px;
-
-    // padding: 0;
-
-    // max-width: 1280px;
-  }
-
-  @media (max-width: 1340px) {
-    // padding: 0 30px;
-    // max-width: 100%;
-  }
-
-  @media (max-width: 660px) {
-    // padding: 0 15px;
-  }
 }
 
 .btn {
@@ -3937,30 +3910,26 @@ a {
       // grid-template-rows: 748px 120px auto 100px auto;
     }
 
-    @media (max-width: 660px) {
+    @media (max-width: 960px) {
+      padding-top: 80px;
+
       // grid-template-rows: 309px 100px auto 100px auto;
     }
 
     .banner {
       padding: 0 104px 100px;
-
-      // padding-bottom: 100px;
       grid-row: 1 / 2;
 
-      @media (max-width: 1750px) {
-        // padding: 0 20px;
-      }
       @media (max-width: 1560px) {
-        padding-bottom: 120px;
-
-        // max-width: 1280px;
-      }
-      @media (max-width: 1400px) {
-        padding: 0 30px;
+        padding: 0 116px 100px;
       }
 
-      @media (max-width: 660px) {
-        padding: 0 15px;
+      @media (max-width: 960px) {
+        padding: 0 30px 100px;
+      }
+
+      @media (max-width: 560px) {
+        padding: 0 15px 100px;
       }
 
       .banner__container {
@@ -3970,7 +3939,6 @@ a {
         grid-auto-flow: row;
         gap: 20px;
         align-content: start;
-
         color: white;
         background: url("@img/banner-img.jpg");
         background-repeat: no-repeat;
@@ -3978,16 +3946,37 @@ a {
         background-size: cover;
         border-radius: 10px;
 
+        @media (max-width: 1560px) {
+          background: url("@img/banner-img-1280.jpg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+
         @media (max-width: 960px) {
           grid-template-columns: 1fr;
-          padding: 100px 30px;
+          padding: 100px 40px;
+          background: url("@img/banner-img-760.jpg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          min-height: 748px;
+
         }
 
         @media (max-width: 660px) {
-          padding: 30px 20px;
+          padding: 43px 20px;
+          gap: 15px;
+          min-height: 490px;
+
         }
 
-        @media (max-width: 660px) {
+        @media (max-width: 400px) {
+          background: url("@img/banner-img-345.jpg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+
           // gap: 15px;
         }
 
@@ -4018,11 +4007,18 @@ a {
 
         .banner__list {
           margin-bottom: 20px;
-          display: grid;
-          grid-auto-flow: column;
+          display: flex;
+          flex-flow: row wrap;
+          // grid-auto-flow: column;
           justify-content: start;
-          justify-items: start;
+          // justify-items: start;
           gap: 18px;
+
+          @media (max-width: 660px) {
+            gap: 5px 10px;
+            margin-bottom: 5px;
+
+          }
 
           .banner__item {
             display: grid;
@@ -4032,7 +4028,11 @@ a {
             padding: 8px 20px;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 20px;
-            width: max-content;            
+            width: max-content;  
+            
+            @media (max-width: 660px) {
+              padding: 8px 15px;
+            }
 
             .banner__item-text {
               font-family: Inter Tight;
@@ -4054,22 +4054,25 @@ a {
           text-align: left;
 
           @media (max-width: 660px) {
+            margin-bottom: 15px;
             font-family: Inter;
             font-size: 16px;
             font-weight: 400;
             line-height: 19.36px;
             text-align: left;
+
           }
         }
         .banner__btn {
-          width: 271px;
-          height: 60px;
+          max-width: 271px;
+          min-height: 60px;
           background: #89b36a;
           border-color: #89b36a;
 
           @media (max-width: 660px) {
-            width: 214px;
-            height: 49px;
+            max-width: 214px;
+            width: 100%;
+            min-height: 47px;
             font-family: Inter;
             font-size: 15px;
             font-weight: 500;

@@ -210,6 +210,7 @@ a {
   margin: 0 auto;
   position: relative;
 }
+
 .btn {
   display: flex;
   align-items: center;
@@ -2757,23 +2758,28 @@ a {
     padding-top: 96px;
   }
 }
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top {
+    padding-top: 80px;
+  }
+}
 .glavnaya .glavnaya__main_top .banner {
   padding: 0 104px 100px;
   grid-row: 1/2;
 }
 @media (max-width: 1560px) {
   .glavnaya .glavnaya__main_top .banner {
-    padding-bottom: 120px;
+    padding: 0 116px 100px;
   }
 }
-@media (max-width: 1400px) {
+@media (max-width: 960px) {
   .glavnaya .glavnaya__main_top .banner {
-    padding: 0 30px;
+    padding: 0 30px 100px;
   }
 }
-@media (max-width: 660px) {
+@media (max-width: 560px) {
   .glavnaya .glavnaya__main_top .banner {
-    padding: 0 15px;
+    padding: 0 15px 100px;
   }
 }
 .glavnaya .glavnaya__main_top .banner .banner__container {
@@ -2790,15 +2796,38 @@ a {
   background-size: cover;
   border-radius: 10px;
 }
+@media (max-width: 1560px) {
+  .glavnaya .glavnaya__main_top .banner .banner__container {
+    background: url("../img/banner-img-1280.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
 @media (max-width: 960px) {
   .glavnaya .glavnaya__main_top .banner .banner__container {
     grid-template-columns: 1fr;
-    padding: 100px 30px;
+    padding: 100px 40px;
+    background: url("../img/banner-img-760.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 748px;
   }
 }
 @media (max-width: 660px) {
   .glavnaya .glavnaya__main_top .banner .banner__container {
-    padding: 30px 20px;
+    padding: 43px 20px;
+    gap: 15px;
+    min-height: 490px;
+  }
+}
+@media (max-width: 400px) {
+  .glavnaya .glavnaya__main_top .banner .banner__container {
+    background: url("../img/banner-img-345.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 }
 .glavnaya .glavnaya__main_top .banner .banner__container .banner__title {
@@ -2829,11 +2858,16 @@ a {
 }
 .glavnaya .glavnaya__main_top .banner .banner__container .banner__list {
   margin-bottom: 20px;
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
+  flex-flow: row wrap;
   justify-content: start;
-  justify-items: start;
   gap: 18px;
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main_top .banner .banner__container .banner__list {
+    gap: 5px 10px;
+    margin-bottom: 5px;
+  }
 }
 .glavnaya .glavnaya__main_top .banner .banner__container .banner__list .banner__item {
   display: grid;
@@ -2844,6 +2878,11 @@ a {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   width: max-content;
+}
+@media (max-width: 660px) {
+  .glavnaya .glavnaya__main_top .banner .banner__container .banner__list .banner__item {
+    padding: 8px 15px;
+  }
 }
 .glavnaya .glavnaya__main_top .banner .banner__container .banner__list .banner__item .banner__item-text {
   font-family: Inter Tight;
@@ -2863,6 +2902,7 @@ a {
 }
 @media (max-width: 660px) {
   .glavnaya .glavnaya__main_top .banner .banner__container .banner__text {
+    margin-bottom: 15px;
     font-family: Inter;
     font-size: 16px;
     font-weight: 400;
@@ -2871,15 +2911,16 @@ a {
   }
 }
 .glavnaya .glavnaya__main_top .banner .banner__container .banner__btn {
-  width: 271px;
-  height: 60px;
+  max-width: 271px;
+  min-height: 60px;
   background: #89b36a;
   border-color: #89b36a;
 }
 @media (max-width: 660px) {
   .glavnaya .glavnaya__main_top .banner .banner__container .banner__btn {
-    width: 214px;
-    height: 49px;
+    max-width: 214px;
+    width: 100%;
+    min-height: 47px;
     font-family: Inter;
     font-size: 15px;
     font-weight: 500;
