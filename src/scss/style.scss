@@ -4375,7 +4375,7 @@ a {
         }
 
         @media (max-width: 660px) {
-          padding: 30px 20px;
+          padding: 30px 20px 20px;
           gap: 25px;
 
         }
@@ -4708,6 +4708,19 @@ a {
 
     .regions {
       overflow: hidden;
+      padding: 0 104px 95px;
+
+      @media (max-width: 1560px) {
+        padding: 0 116px 95px;
+      }
+    
+      @media (max-width: 1300px) {
+        padding: 0 30px 95px;
+      }
+    
+      @media (max-width: 560px) {
+        padding: 0 15px 95px;
+      }
       // min-width: 1920px;
       .regions__container {
         // padding: 50px 0 95px;
@@ -4728,23 +4741,21 @@ a {
           max-width: 1712px;
           width: 100%;
           text-align: left;
-          margin: 0 auto 42px;
-
-          @media (max-width: 1750px) {
-            // max-width: 1280px;
-          }
+          margin-bottom: 42px;
 
           @media (max-width: 1560px) {
-            margin: 0 auto 50px;
-
-            // padding: 0 30px;
+              margin-bottom: 50px;
           }
 
           @media (max-width: 960px) {
             // margin: 0 auto 33px;
+            margin-bottom: 30px;
+
           }
 
           @media (max-width: 660px) {
+            margin-bottom: 42px;
+
             // padding: 0 15px;
             // margin: 0 auto 38px;
           }
@@ -4879,88 +4890,6 @@ a {
               }
             }
           }
-
-          .owl-nav {
-            position: absolute;
-            top: -93px;
-            right: 105px;
-            // width: 100%;
-            display: grid;
-            grid-auto-flow: column;
-            justify-content: end;
-            gap: 20px;
-            align-items: center;
-
-            @media (max-width: 1750px) {
-              right: 116px;
-            }
-
-            @media (max-width: 1280px) {
-              // display: none;
-            }
-
-            @media (max-width: 960px) {
-              top: -74px;
-              right: 30px;
-            }
-
-            @media (max-width: 660px) {
-              // top: -73px;
-              right: 15px;
-            }
-
-            @media (max-width: 350px) {
-              display: none;
-            }
-
-            .owl-prev {
-              background: url("@img/owl-index-prew-btn.svg") !important;
-              width: 55px;
-              height: 55px;
-              background-size: cover !important;
-              background-repeat: no-repeat !important;
-              background-position: center !important;
-              cursor: pointer;
-
-              @media (max-width: 960px) {
-                width: 45px;
-                height: 45px;
-              }
-
-              & span {
-                display: none;
-              }
-            }
-
-            .owl-next {
-              // position: absolute;
-              // top: 0;
-              // right: 0;
-              background: url("@img/owl-index-next-btn.svg") !important;
-              width: 55px;
-              height: 55px;
-
-              background-size: cover !important;
-              background-repeat: no-repeat !important;
-              background-position: center !important;
-              cursor: pointer;
-
-              @media (max-width: 960px) {
-                width: 45px;
-                height: 45px;
-              }
-
-              & span {
-                display: none;
-                /* display: block; */
-                /* background-image: url("../img/owl_next.svg");
-                width: 50px;
-                height: 50px;
-                background-size: cover;
-                cursor: pointer; */
-              }
-            }
-          }
         }
 
         .regions-banner {
@@ -4983,6 +4912,27 @@ a {
 
           @media (max-width: 1560px) {
             padding: 56px 50px 50px;
+            background: url("@img/regions-bg-1512.jpg"), #363636;
+                      background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+          }
+
+          @media (max-width: 960px) {
+            background: url("@img/regions-bg-820.jpg"), #363636;
+                      background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+            padding: 55px 40px 50px;
+          }
+
+          @media (max-width: 460px) {
+            background: url("@img/regions-bg-375.jpg"), #363636;
+                      background-repeat: no-repeat;
+            background-position: top;
+            background-size: contain;
+            max-width: 100%;
+            padding: 332px 30px 18px;
           }
 
           .regions-banner__title {
@@ -4995,8 +4945,29 @@ a {
 
             @media (max-width: 1560px) {
               max-width: 530px;
+              
+            }
+            
+            @media (max-width: 960px) {
+            //styleName: tablet/h2;
+            font-family: Inter;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 42px;
+            text-align: left;
+              max-width: 370px;
+            }
+
+            @media (max-width: 560px) {
+              //styleName: mobile/h2;
+              font-family: Inter;
+              font-size: 22px;
+              font-weight: 400;
+              line-height: 30.8px;
+              text-align: left;
             }
           }
+
           .regions-banner__text {
             margin-bottom: 5px;
             font-family: Inter;
@@ -5005,6 +4976,19 @@ a {
             line-height: 27px;
             text-align: left;
             color: #ffffff;
+            
+            @media (max-width: 960px) {
+              max-width: 370px;
+            }
+            @media (max-width: 560px) {
+              //styleName: текст боди;
+              font-family: Inter;
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 23.2px;
+              text-align: left;
+
+            }
           }
           .regions-banner__button {
             display: grid;
@@ -5023,6 +5007,16 @@ a {
             color: #ffffff;
             transition: color 0.3s ease-in-out,
               background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+              @media (max-width: 560px) {
+                font-family: Inter;
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 18.15px;
+                text-align: center;
+                max-width: 214px;
+                min-height: 49px;
+              }
 
             &:hover {
               background: #56693e;
@@ -5046,9 +5040,10 @@ a {
           justify-content: end;
           gap: 20px;
           align-items: center;
+          
+          @media (max-width: 560px) {
+            gap: 10px;
 
-          @media (max-width: 1560px) {
-            right: 114px;
           }
 
           .swiper-button {
@@ -5059,11 +5054,21 @@ a {
             right: initial;
             left: initial;
             bottom: initial;
-            margin: 0;
+            margin: 0; 
+            
+            @media (max-width: 560px) {
+              width: 45px;
+              height: 45px;
+            }
 
             & svg {
               width: 56px;
               height: 56px;
+
+              @media (max-width: 560px) {
+                width: 45px;
+                height: 45px;
+              }
             }
 
             &::after {

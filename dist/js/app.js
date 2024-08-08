@@ -485,13 +485,15 @@ new Swiper(".regions_swiper", {
   breakpoints: {
     0: {
       // slidesPerView: 1,
+      spaceBetween: 10,
     },
-    500: {
-      // slidesPerView: 2,
+    560: {
+      // slidesPerView: 1,
+      spaceBetween: 20,
     },
-    800: {
-      // slidesPerView: 3.35,
-    },
+    960: {
+      // spaceBetween: 40,
+    }
   },
 });
 
