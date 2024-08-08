@@ -2769,7 +2769,7 @@ a {
 }
 @media (max-width: 1560px) {
   .glavnaya .glavnaya__main_top .banner {
-    padding: 0 116px 100px;
+    padding: 0 116px 120px;
   }
 }
 @media (max-width: 960px) {
@@ -2933,8 +2933,28 @@ a {
   overflow: hidden;
   padding: 80px 104px;
 }
+@media (max-width: 1560px) {
+  .glavnaya .glavnaya__main_top .building {
+    padding: 86px 116px 80px;
+  }
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top .building {
+    padding: 86px 30px 80px;
+  }
+}
+@media (max-width: 560px) {
+  .glavnaya .glavnaya__main_top .building {
+    padding: 48px 15px 80px;
+  }
+}
 .glavnaya .glavnaya__main_top .building .building__container .building__title {
   margin-bottom: 50px;
+}
+@media (max-width: 1560px) {
+  .glavnaya .glavnaya__main_top .building .building__container .building__title {
+    margin-bottom: 56px;
+  }
 }
 .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item {
   display: grid;
@@ -2944,9 +2964,28 @@ a {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
+  min-height: 502px;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    max-width: 530px;
+  }
 }
 .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-img {
   position: relative;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-img {
+    height: 355px;
+  }
+}
+.glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-img .building__card-info {
   position: absolute;
@@ -3003,6 +3042,12 @@ a {
   grid-template-rows: auto auto 1fr auto;
   background: #fff;
 }
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-content {
+    padding: 32px 30px 30px;
+    min-height: 436px;
+  }
+}
 .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-content .building__card-title {
   margin-bottom: 15px;
   font-family: Inter;
@@ -3012,16 +3057,30 @@ a {
   text-align: left;
   color: #363636;
 }
-.glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-content .building__card-text {
-  margin-bottom: 55px;
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-content .building__card-title {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-content .building__card-text {
+    line-height: 22.2px;
+  }
 }
 .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-content .building__card-price {
+  align-self: center;
+  margin-bottom: 22px;
   font-family: Inter;
   font-size: 20px;
   font-weight: 400;
   line-height: 24.2px;
   text-align: left;
   color: #000000;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-content .building__card-price {
+    align-self: end;
+  }
 }
 .glavnaya .glavnaya__main_top .building .building__container .building__cards-list .building__cards-item .building__card-content .building__card-footer {
   padding-top: 15px;
@@ -3071,24 +3130,20 @@ a {
   gap: 20px;
   align-items: center;
 }
-@media (max-width: 1560px) {
+@media (max-width: 560px) {
   .glavnaya .glavnaya__main_top .building .building__container .swiper-navigation {
-    right: 114px;
+    gap: 10px;
   }
-}
-.glavnaya .glavnaya__main_top .building .building__container .swiper-navigation .swiper-button {
-  position: relative;
-  width: 56px;
-  height: 56px;
-  top: initial;
-  right: initial;
-  left: initial;
-  bottom: initial;
-  margin: 0;
 }
 .glavnaya .glavnaya__main_top .building .building__container .swiper-navigation .swiper-button svg {
   width: 56px;
   height: 56px;
+}
+@media (max-width: 560px) {
+  .glavnaya .glavnaya__main_top .building .building__container .swiper-navigation .swiper-button svg {
+    width: 45px;
+    height: 45px;
+  }
 }
 .glavnaya .glavnaya__main_top .building .building__container .swiper-navigation .swiper-button::after {
   display: none;
