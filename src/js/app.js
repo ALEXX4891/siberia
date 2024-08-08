@@ -677,6 +677,9 @@ new Swiper(".news_swiper", {
       // slidesPerView: 1,
       spaceBetween: 20,
     },
+    1560: {
+      spaceBetween: 40,
+    }
   },
 });
 
@@ -1685,6 +1688,7 @@ jQuery(($) => {
 // -------------------------------------------- start BURGER: ---------------------------------------------
 
 const burger = document.querySelector(".burger");
+console.log(burger);
 const headerNav = document.querySelector(".header__nav");
 
 if (burger) {

@@ -8,7 +8,7 @@
   @@include('./html/header.html', {})
 
   <main class="main glavnaya__main glavnaya__main_top">
-    <section class="section section_banner banner">
+    <section style="display: none;" class="section section_banner banner">
       <div class="container banner__container">
 
         <!-- <div class="banner__content-wrap"> -->
@@ -62,14 +62,14 @@
       </div>
     </section>
 
-    <section class="section section_building building">
-      <div class="container building__container-top">
+    <section style="display: none;" class="section section_building building">
+
+      <div class="container building__container building_swiper">
+
         <h2 class="building__title title title_40">
           Мы строим
         </h2>
-      </div>
 
-      <div class="container building__container-bot building_swiper">
         <ul class="building__cards-list swiper-wrapper">
           <li class="building__cards-item swiper-slide">
             <div class="building__card-img">
@@ -168,33 +168,35 @@
             </div>
           </li>
         </ul>
-      </div>
 
-      <div class="swiper-navigation">
-        <div class="swiper-button swiper-button-prev-building">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
+        <div class="swiper-navigation">
+          <div class="swiper-button swiper-button-prev-building">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="swiper-button swiper-button-next-building">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+
         </div>
 
-        <div class="swiper-button swiper-button-next-building">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
-        </div>
-
       </div>
+
     </section>
 
-    <section class="section section_choice choice">
+    <section style="display: none;" class="section section_choice choice">
       <div class="container choice__container">
         <h2 class="choice__title title title_40">
           Выбрать квартиру мечты
@@ -340,7 +342,7 @@
       </div>
     </section>
 
-    <section class="section section_regions regions">
+    <section style="display: none;" class="section section_regions regions">
       <div class="container regions__container regions_swiper">
         <h2 class="regions__title title title_40">
           В районах Сибири
@@ -425,35 +427,34 @@
           </a>
         </div>
 
-      </div>
-      </div>
-
-      <div class="swiper-navigation">
-        <div class="swiper-button swiper-button-prev swiper-button-prev_reg">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
+        <div class="swiper-navigation">
+          <div class="swiper-button swiper-button-prev swiper-button-prev_reg">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+  
+          <div class="swiper-button swiper-button-next swiper-button-next_reg">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+  
         </div>
-
-        <div class="swiper-button swiper-button-next swiper-button-next_reg">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
-        </div>
-
       </div>
+
 
     </section>
 
-    <section class="section section_apartments apartments">
+    <section style="display: none;" class="section section_apartments apartments">
       <div class="container apartments__container apartments_swiper">
         <div class="apartments__top-wrap">
           <h2 class="apartments__title title title_40">
@@ -1143,34 +1144,35 @@
 
           </li>
         </ul>
+
+        <div class="swiper-navigation">
+          <div class="swiper-button swiper-button-prev swiper-button-prev_apart">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+  
+          <div class="swiper-button swiper-button-next swiper-button-next_apart">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+  
+        </div>
       </div>
 
-      <div class="swiper-navigation">
-        <div class="swiper-button swiper-button-prev swiper-button-prev_apart">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
-        </div>
-
-        <div class="swiper-button swiper-button-next swiper-button-next_apart">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
-        </div>
-
-      </div>
 
     </section>
 
-    <section class="section section_promo promo">
+    <section style="display: none;" class="section section_promo promo">
       <div class="container promo__container">
         <h2 class="promo__title title title_40">
           Акции
@@ -1337,32 +1339,32 @@
           </div>
         </a>
 
-      </div>
-      <div class="swiper-navigation">
-        <div class="swiper-button swiper-button-prev swiper-button-prev_promo">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
+        <div class="swiper-navigation">
+          <div class="swiper-button swiper-button-prev swiper-button-prev_promo">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+  
+          <div class="swiper-button swiper-button-next swiper-button-next_promo">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+  
         </div>
-
-        <div class="swiper-button swiper-button-next swiper-button-next_promo">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
-        </div>
-
       </div>
     </section>
 
-    <section class="section section_news news">
+    <section style="display: none;" class="section section_news news">
       <div class="container news__container news_swiper">
         <h2 class="news__title title title_40">
           Что нового
@@ -1419,28 +1421,28 @@
         <button class="news-slider__button btn btn_white">
           Все новости
         </button>
-      </div>
-      <div class="swiper-navigation">
-        <div class="swiper-button swiper-button-prev swiper-button-prev_news">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
+        <div class="swiper-navigation">
+          <div class="swiper-button swiper-button-prev swiper-button-prev_news">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M32.25 20.5L23.25 28L32.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+  
+          <div class="swiper-button swiper-button-next swiper-button-next_news">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.8">
+                <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
+                  stroke="#CBCBCB" />
+                <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
+              </g>
+            </svg>
+          </div>
+  
         </div>
-
-        <div class="swiper-button swiper-button-next swiper-button-next_news">
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.8">
-              <rect x="-0.5" y="0.5" width="54" height="54" rx="27" transform="matrix(-1 0 0 1 54.25 0.5)"
-                stroke="#CBCBCB" />
-              <path d="M23.25 20.5L32.25 28L23.25 35.5" stroke="#CBCBCB" stroke-width="2" stroke-linejoin="round" />
-            </g>
-          </svg>
-        </div>
-
       </div>
     </section>
   </main>
