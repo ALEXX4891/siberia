@@ -26,19 +26,26 @@ if (apartmentsPage) {
     .querySelector(".choice__inputs-list_bot")
     .querySelector(".choice__input-block_slider_floor"); //
   console.log(el);
+  console.log(window.scrollY);
 
-  window.addEventListener("scroll", () => {
-    console.log("scroll");
-    if (window.scrollY > 500) {
-      console.log(window.scrollY);
+  if (window.innerWidth >= 1512) {
+    if (window.scrollY > 500 ) {
       choiceTop.append(el);
       choice.classList.add("choice_fixed");
-    } else {
-      // choiceTop.prepend(el);
-      choiceBot.append(el);
-      choice.classList.remove("choice_fixed");
     }
-  });
+
+    window.addEventListener("scroll", () => {
+      console.log("scroll");
+      if (window.scrollY > 500) {
+        choiceTop.append(el);
+        choice.classList.add("choice_fixed");
+      } else {
+        // choiceTop.prepend(el);
+        choiceBot.append(el);
+        choice.classList.remove("choice_fixed");
+      }
+    });
+  }
 }
 //------------------- end трансформация фильтра----------------
 // --------------------------------------- start бокове меню: ---------------------------------------------
