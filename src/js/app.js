@@ -1702,23 +1702,67 @@ jQuery(($) => {
 // -------------------------------------------- start BURGER: ---------------------------------------------
 
 const burger = document.querySelector(".burger");
-console.log(burger);
-const headerNav = document.querySelector(".header__nav");
+// console.log(burger);
 
 if (burger) {
+  const popup = document.querySelector("#menu");
+  const popupContent = popup.querySelector(".popup__content.menu");
+
+  const content = document.querySelector(".header__nav");
+  const headerNavWrap = document.querySelector(".header__nav-wrap");
+
+
   burger.addEventListener("click", function (e) {
     console.log("тест");
-    burger.classList.toggle("burger_active");
-    headerNav.classList.toggle("nav_active");
+    popupOpen(popup);
+    // bodyLock()
+    popup.classList.add("open");
+    popupContent.append(content);
+    console.log(popup);
   });
 
-  document.addEventListener("click", function (e) {
-    console.log("тест-глобальный");
-    if (!e.target.closest(".header__nav") && !e.target.closest(".burger")) {
-      burger.classList.remove("burger_active");
-      headerNav.classList.remove("nav_active");
-    }
-  });
+    // закрытие popup по Esc
+    document.addEventListener("keydown", function (e) {
+      console.log("тест");
+      if (e.key === "Escape") {
+        popupClose(popup);
+        bodyUnLock()
+        popup.classList.remove("open");    
+        if (popup.classList.contains("open")) {
+
+          // передача формы обратно на главную страницу
+          headerNavWrap.append(content);
+        }
+      }
+    });
+  
+    // закрытие popup по клику вне его
+    popup.addEventListener("click", function (e) {
+      console.log("тест");
+      console.log(e.target);
+      if (!e.target.closest(".popup__content")) {
+        popupClose(popup);
+        bodyUnLock()
+        popup.classList.remove("open");    
+        if (popup.classList.contains("open")) {
+          // передача формы обратно на главную страницу
+          headerNavWrap.append(content);
+        }
+      }
+    });
+  
+    // закрытие popup по кнопке
+    const popupCloseIcon = popup.querySelector(".promo__close");
+      popupCloseIcon.addEventListener("click", function (e) {
+        popupClose(popup);
+        bodyUnLock()
+        popup.classList.remove("open");    
+        if (popup.classList.contains("open")) {
+          // передача формы обратно на главную страницу
+          headerNavWrap.append(content);
+        }
+      }); 
+
 }
 // -------------------------------------------- end BURGER ---------------------------------------------
 
@@ -2218,6 +2262,9 @@ if (indexChoice) {
   button.addEventListener("click", () => {
     console.log("тест");
     popupOpen(popup);
+    bodyLock()
+
+    popup.classList.add("open");
     popup.querySelector(".popup__content").append(content);
   });
 
@@ -2225,23 +2272,32 @@ if (indexChoice) {
   document.addEventListener("keydown", function (e) {
     console.log("тест");
     if (e.key === "Escape") {
-      popup.classList.remove("open");    
-      bodyUnLock();
-      console.log(popup);
-      // передача формы обратно на главную страницу
-      indexChoice.append(content);
+      popupClose(popup);
+      // bodyUnLock()
+
+      popup.classList.remove("open");
+      if (!popup.classList.contains("open")) {
+        console.log("111");
+
+        // передача формы обратно на главную страницу
+        indexChoice.append(content);
+      }
     }
   });
 
   // закрытие popup по клику вне его
   popup.addEventListener("click", function (e) {
     console.log("тест");
-    console.log(e.target);
     if (!e.target.closest(".popup__content")) {
       // если клик был по области вокруг попапа то ничего не делаем
-      popup.classList.remove("open");   
-      bodyUnLock();
-      indexChoice.append(content);
+      if (popup.classList.contains("open")) {
+        popupClose(popup);
+        bodyUnLock()
+
+        popup.classList.remove("open");
+        // передача формы обратно на главную страницу
+        indexChoice.append(content);
+      }
     }
   });
 
@@ -2249,9 +2305,14 @@ if (indexChoice) {
   const popupCloseIcon = popup.querySelector(".promo__close");
     popupCloseIcon.addEventListener("click", function (e) {
       console.log("тест");
-      popup.classList.remove("open");    
-      bodyUnLock();
-      indexChoice.append(content);
+
+      if (popup.classList.contains("open")) {
+        popupClose(popup);
+        bodyUnLock()
+        popup.classList.remove("open");
+        // передача формы обратно на главную страницу
+        indexChoice.append(content);
+      }
     });  
 }
 // -------------------------------------------- end Селект ---------------------------------------------

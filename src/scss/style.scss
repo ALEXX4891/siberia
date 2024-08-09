@@ -1793,7 +1793,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(#000, 0.4);
+  background-color: rgba(#212121, 0.6);
+  backdrop-filter: blur(3px);
   z-index: 900;
   opacity: 0;
   // opacity: 1;
@@ -2613,7 +2614,7 @@ a {
             display: grid;
             font-size: 15px;
             min-height: 50px;
-            
+
             &.choice__btn-request_mobile {
               display: none;
             }
@@ -2626,6 +2627,113 @@ a {
       position: absolute;
       top: 15px;
       right: 15px;
+      padding: 5px;
+      z-index: 2000;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.8s ease 0s;
+    background: #ffffff;
+    // border-radius: 10px;
+    width: 100%;
+    height: 100vh;
+    max-width: 320px;
+    padding: 15px;
+
+    display: grid;
+    grid-template-areas: 
+    "a"
+    "b"
+    "c";
+
+    grid-auto-flow: row;
+    grid-template-rows: auto 1fr auto;
+    gap: 40px;
+
+    .logo {
+      grid-area: a;
+    }
+
+    .nav {
+      grid-area: b;
+
+      .nav__list {
+        display: grid;
+        grid-auto-flow: row;
+        gap: 26px;
+
+        .nav__item {
+          .nav__link {
+            text-decoration: underline;
+            text-underline-offset: 26px;
+            text-decoration-color: transparent;
+            text-decoration-thickness: 4px;
+            transition: color 0.3s ease-in-out,
+              text-decoration-color 0.3s ease-in-out;
+  
+            .nav__text {
+              font-family: Inter;
+              font-size: 16px;
+              font-weight: 400;
+              text-align: left;
+              color: #363636;
+              transition: color 0.3s ease-in-out;
+              
+              &:hover {
+                color: #56693e;
+              }
+            }
+          }
+        }
+        
+      }
+      .nav__dot {
+        display: none;
+      }        
+    }
+
+    .contacts {
+      grid-area: c;
+      display: grid;
+      grid-auto-flow: row;
+      border-top: 1px solid #CBCBCB;
+      padding: 15px 0px 0px;
+      gap: 9px;
+      width: 100%;
+
+      .contacts__item {
+        transition: color 0.3s ease-in-out;
+
+        &_email {
+          font-family: Inter;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 21.78px;
+          text-align: left;          
+          color: #748d55;
+        }
+
+        &_phone {
+          font-family: Inter;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 21.78px;
+          text-align: left;
+          color: #363636;
+        }
+      }
+    }
+
+
+    .promo__close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
       padding: 5px;
       z-index: 2000;
     }
@@ -3155,6 +3263,12 @@ a {
 
             @media (max-width: 1560px) {
               gap: 22px;
+            }
+
+            .nav__item {
+              &.nav__item_apartments {
+                display: none;
+              }
             }
 
             .nav__link {

@@ -1361,7 +1361,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(33, 33, 33, 0.6);
+  backdrop-filter: blur(3px);
   z-index: 900;
   opacity: 0;
   visibility: hidden;
@@ -2011,6 +2012,90 @@ a {
   padding: 5px;
   z-index: 2000;
 }
+.popup .menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.8s ease 0s;
+  background: #ffffff;
+  width: 100%;
+  height: 100vh;
+  max-width: 320px;
+  padding: 15px;
+  display: grid;
+  grid-template-areas: "a" "b" "c";
+  grid-auto-flow: row;
+  grid-template-rows: auto 1fr auto;
+  gap: 40px;
+}
+.popup .menu .logo {
+  grid-area: a;
+}
+.popup .menu .nav {
+  grid-area: b;
+}
+.popup .menu .nav .nav__list {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 26px;
+}
+.popup .menu .nav .nav__list .nav__item .nav__link {
+  text-decoration: underline;
+  text-underline-offset: 26px;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 4px;
+  transition: color 0.3s ease-in-out, text-decoration-color 0.3s ease-in-out;
+}
+.popup .menu .nav .nav__list .nav__item .nav__link .nav__text {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  color: #363636;
+  transition: color 0.3s ease-in-out;
+}
+.popup .menu .nav .nav__list .nav__item .nav__link .nav__text:hover {
+  color: #56693e;
+}
+.popup .menu .nav .nav__dot {
+  display: none;
+}
+.popup .menu .contacts {
+  grid-area: c;
+  display: grid;
+  grid-auto-flow: row;
+  border-top: 1px solid #CBCBCB;
+  padding: 15px 0px 0px;
+  gap: 9px;
+  width: 100%;
+}
+.popup .menu .contacts .contacts__item {
+  transition: color 0.3s ease-in-out;
+}
+.popup .menu .contacts .contacts__item_email {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.78px;
+  text-align: left;
+  color: #748d55;
+}
+.popup .menu .contacts .contacts__item_phone {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.78px;
+  text-align: left;
+  color: #363636;
+}
+.popup .menu .promo__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  z-index: 2000;
+}
 
 .burger {
   position: relative;
@@ -2267,6 +2352,9 @@ a {
   .header .header__section .header__container .header__top-block .nav .nav__list {
     gap: 22px;
   }
+}
+.header .header__section .header__container .header__top-block .nav .nav__list .nav__item.nav__item_apartments {
+  display: none;
 }
 .header .header__section .header__container .header__top-block .nav .nav__list .nav__link {
   text-decoration: underline;
