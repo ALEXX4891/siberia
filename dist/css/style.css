@@ -2204,7 +2204,6 @@ a {
   top: 100%;
   left: 0;
   width: 100%;
-  /* высота выпадающего списка: */
   height: auto;
   border: 1px solid #d9d9d9;
   background: white;
@@ -2215,7 +2214,6 @@ a {
   line-height: 110%;
   color: rgb(34, 34, 34);
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
   display: none;
 }
 .select-frame .select__list .select__list_type-filter {

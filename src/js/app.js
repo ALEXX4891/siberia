@@ -1937,10 +1937,16 @@ if (choiceForm) {
     selectProjectList.forEach((selectProject) => {
       selectProject.addEventListener("click", (event) => {
         console.log("тест");
-        selectProjectList.forEach((selectProject) => {
-          selectProject.classList.remove("select_open");
-        });
-        selectProject.classList.toggle("select_open");
+        if (selectProject.classList.contains("select_open")) {
+          selectProjectList.forEach((selectProject) => {
+            selectProject.classList.remove("select_open");
+          });
+        } else {
+          selectProjectList.forEach((selectProject) => {
+            selectProject.classList.remove("select_open");
+          });
+          selectProject.classList.add("select_open");
+        }
       });
       const selectOptions = selectProject.querySelectorAll(".select__item");
       if (selectOptions) {
@@ -2249,9 +2255,9 @@ if (choiceForm) {
   //   });
 }
 
-
-const indexChoice = document.querySelector(".glavnaya").querySelector(".choice");
-if (indexChoice) {
+const indexPage = document.querySelector(".glavnaya");
+if (indexPage) {
+  const indexChoice = indexPage.querySelector(".choice");
   console.log(indexChoice);
   const content = indexChoice.querySelector(".choice__container");
   const popup = document.querySelector("#filter");

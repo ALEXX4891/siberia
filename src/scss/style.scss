@@ -2866,7 +2866,6 @@ a {
     top: 100%;
     left: 0;
     width: 100%;
-    /* высота выпадающего списка: */
     height: auto;
 
     border: 1px solid #d9d9d9;
@@ -2878,26 +2877,29 @@ a {
     line-height: 110%;
     color: rgb(34, 34, 34);
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    // transition: all 0.3s ease-in-out;
     display: none;
 
     .select__list_type-filter {
       height: auto;
     }
-    & .select__item {
+
+    .select__item {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       height: 34px;
-      // padding: 0 12px;
       padding: 8px 27px 8px 20px;
     }
-    & .select__item:hover {
+
+    .select__item:hover {
       background: rgba(87, 0, 0, 0.2);
     }
-    & .select__item:hover .checkbox__mark {
+
+    .select__item:hover .checkbox__mark {
       border: 1.06px solid rgb(255, 255, 255);
     }
+
     .select:hover {
       border: 1px solid rgb(140, 139, 139);
       background: rgb(249, 249, 249);
