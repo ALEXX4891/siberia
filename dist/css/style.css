@@ -3807,7 +3807,7 @@ a {
 }
 @media (max-width: 1560px) {
   .glavnaya .glavnaya__main_top .apartments {
-    padding: 82px 116px 100px;
+    padding: 82px 116px 80px;
   }
 }
 @media (max-width: 1300px) {
@@ -3874,7 +3874,12 @@ a {
   }
 }
 .glavnaya .glavnaya__main_top .apartments .apartments__container .apartments__list .apartments__item {
-  max-width: 375px;
+  max-width: 420px;
+}
+@media (max-width: 960px) {
+  .glavnaya .glavnaya__main_top .apartments .apartments__container .apartments__list .apartments__item {
+    max-width: 375px;
+  }
 }
 .glavnaya .glavnaya__main_top .apartments .apartments__container .apartments__list .apartments__item .apartments__item-link {
   padding: 20px;
@@ -4094,6 +4099,9 @@ a {
 .glavnaya .glavnaya__main_top .apartments .apartments__container .swiper-navigation .swiper-button::after {
   display: none;
 }
+.glavnaya .glavnaya__main_top .promo {
+  overflow: hidden;
+}
 .glavnaya .glavnaya__main_top .promo .promo__container {
   padding-bottom: 90px;
   display: grid;
@@ -4106,11 +4114,31 @@ a {
     gap: 35px 20px;
   }
 }
+@media (max-width: 1200px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container {
+    gap: 47px;
+  }
+}
+@media (max-width: 1200px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container {
+    grid-template-columns: 1fr;
+  }
+}
 .glavnaya .glavnaya__main_top .promo .promo__container .promo__title {
   grid-column: 2 span;
 }
+@media (max-width: 1200px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container .promo__title {
+    grid-column: initial;
+  }
+}
 .glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap {
   overflow: hidden;
+}
+@media (max-width: 560px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap {
+    overflow: initial;
+  }
 }
 .glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list {
   max-width: 826px;
@@ -4123,12 +4151,28 @@ a {
   align-content: start;
   border-radius: 10px;
 }
+@media (max-width: 560px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item {
+    max-width: 300px;
+  }
+}
 .glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-img {
   grid-column: 2 span;
   width: 100%;
   aspect-ratio: 403/245;
   border-radius: 10px;
   overflow: hidden;
+}
+@media (max-width: 1200px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-img {
+    border-radius: 5px;
+    aspect-ratio: 370/245;
+  }
+}
+@media (max-width: 560px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-img {
+    aspect-ratio: 297/245;
+  }
 }
 .glavnaya .glavnaya__main_top .promo .promo__container .promo__slider-wrap .promo__list .promo__item .promo__item-img img {
   display: block;
@@ -4189,6 +4233,11 @@ a {
     align-content: space-between;
   }
 }
+@media (max-width: 1200px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container .promo__link {
+    display: none;
+  }
+}
 .glavnaya .glavnaya__main_top .promo .promo__container .promo__link .promo__link-text {
   font-family: Inter;
   font-size: 32px;
@@ -4216,6 +4265,15 @@ a {
   gap: 20px;
   align-items: center;
 }
+@media (max-width: 1200px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container .swiper-navigation {
+    bottom: initial;
+    left: initial;
+    top: 0;
+    right: 0;
+    gap: 10px;
+  }
+}
 .glavnaya .glavnaya__main_top .promo .promo__container .swiper-navigation .swiper-button {
   position: relative;
   width: 56px;
@@ -4225,6 +4283,12 @@ a {
   left: initial;
   bottom: initial;
   margin: 0;
+}
+@media (max-width: 1200px) {
+  .glavnaya .glavnaya__main_top .promo .promo__container .swiper-navigation .swiper-button {
+    width: 45px;
+    height: 45px;
+  }
 }
 .glavnaya .glavnaya__main_top .promo .promo__container .swiper-navigation .swiper-button svg {
   width: 56px;

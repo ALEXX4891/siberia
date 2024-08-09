@@ -5084,7 +5084,7 @@ a {
       padding: 82px 104px;
 
         @media (max-width: 1560px) {
-          padding: 82px 116px 100px;
+          padding: 82px 116px 80px;
         }
 
         @media (max-width: 1300px) {
@@ -5153,7 +5153,11 @@ a {
           }
 
           .apartments__item {
-            max-width: 375px;
+            max-width: 420px;
+
+            @media (max-width: 960px) {
+              max-width: 375px;
+            }
 
             .apartments__item-link {
               padding: 20px;
@@ -5644,10 +5648,8 @@ a {
     }
 
     .promo {
-      // min-width: 1920px;
+      overflow: hidden;
       .promo__container {
-        // padding: 100px 0 95px;
-        // max-width: 100%;
         padding-bottom: 90px;
         display: grid;
         grid-auto-flow: row;
@@ -5656,26 +5658,35 @@ a {
 
         @media (max-width: 1560px) {
           gap: 35px 20px;
-          // padding: 103px 0 89px;
         }
 
-        @media (max-width: 660px) {
-          // padding: 110px 0 89px;
+        @media (max-width: 1200px) {
+          gap: 47px;
+        }
+
+        @media (max-width: 1200px) {
+        grid-template-columns: 1fr;
+
         }
 
         .promo__title {
           grid-column: 2 span;
+
+          @media (max-width: 1200px) {
+            grid-column: initial;
+          }
         }
 
         .promo__slider-wrap {
-          // max-width: 826px;
           overflow: hidden;
-          // min-width: 0;
+
+          @media (max-width: 560px) {
+            overflow: initial;
+
+          }
 
           .promo__list {
-            // overflow: hidden;
             max-width: 826px;
-            // margin: 0 auto 100px;
 
             .promo__item {
               padding: 0px;
@@ -5683,14 +5694,11 @@ a {
               grid-template-columns: auto 1fr;
               gap: 20px 15px;
               align-content: start;
-              // max-width: 413px;
-              // width: 100%;
-              // min-height: 371px;
-              // height: 100%;
               border-radius: 10px;
 
-              // width: 403px;
-              // height: 345px;
+              @media (max-width: 560px) {
+                max-width: 300px;
+              }
 
               .promo__item-img {
                 grid-column: 2 span;
@@ -5698,6 +5706,16 @@ a {
                 aspect-ratio: 403/245;
                 border-radius: 10px;
                 overflow: hidden;
+
+                @media (max-width: 1200px) {
+                  border-radius: 5px;
+                  aspect-ratio: 370 / 245;
+                }
+
+                @media (max-width: 560px) {
+                  aspect-ratio: 297 / 245
+                }
+
 
                 & img {
                   display: block;
@@ -5764,6 +5782,10 @@ a {
             align-content: space-between;
           }
 
+          @media (max-width: 1200px) {
+            display: none;
+          }
+
           .promo__link-text {
             font-family: Inter;
             font-size: 32px;
@@ -5797,6 +5819,14 @@ a {
           gap: 20px;
           align-items: center;
 
+          @media (max-width: 1200px) {
+            bottom: initial;
+            left: initial;
+            top: 0;
+            right: 0;
+            gap: 10px;
+          }
+
           .swiper-button {
             position: relative;
             width: 56px;
@@ -5806,6 +5836,11 @@ a {
             left: initial;
             bottom: initial;
             margin: 0;
+
+            @media (max-width: 1200px) {
+              width: 45px;
+              height: 45px;
+            }
 
             & svg {
               width: 56px;

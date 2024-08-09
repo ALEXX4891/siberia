@@ -630,9 +630,12 @@ new Swiper(".promo_swiper", {
   breakpoints: {
     0: {
       // slidesPerView: 1,
+      slidesPerView: "auto", // сколько слайдов показывать, можно дробно
+
     },
-    500: {
+    560: {
       // slidesPerView: 2,
+      slidesPerView: 2, // сколько слайдов показывать, можно дробно
     },
     800: {
       // slidesPerView: 3.35,
