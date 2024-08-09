@@ -845,8 +845,9 @@ function popupOpen(curentPopup) {
 }
 
 function popupClose(popupActive, doUnlock = true) {
+  console.log("popupClose");
   if (unlock) {
-    popupActive.classList.remove("open");
+    popupActive.classList.remove("open");    
     if (doUnlock) {
       bodyUnLock();
     }
@@ -1937,6 +1938,7 @@ if (choiceForm) {
     if (choiceBtns) {
       choiceBtns.forEach((item) => {
         item.addEventListener("click", (event) => {
+          console.log("тест");
           item.classList.toggle("choice__buttons-select-item_active");
           queryParams.numbers_of_rooms = "";
 
@@ -1959,6 +1961,7 @@ if (choiceForm) {
   if (filterBtns) {
     filterBtns.forEach((item) => {
       item.addEventListener("click", (event) => {
+        console.log("тест");
         item.classList.toggle("choice__btn-filter_active");
         let key = item.getAttribute("data-id");
         if (item.classList.contains("choice__btn-filter_active")) {
@@ -2200,6 +2203,56 @@ if (choiceForm) {
   //       });
   //     });
   //   });
+}
+
+
+const indexChoice = document.querySelector(".glavnaya").querySelector(".choice");
+if (indexChoice) {
+  console.log(indexChoice);
+  const content = indexChoice.querySelector(".choice__container");
+  const popup = document.querySelector("#filter");
+  console.log(popup);
+  const button = indexChoice.querySelector(".choice__btn-request_mobile");
+
+  // открытие popup и заполнение его формой
+  button.addEventListener("click", () => {
+    console.log("тест");
+    popupOpen(popup);
+    popup.querySelector(".popup__content").append(content);
+  });
+
+  // закрытие popup по Esc
+  document.addEventListener("keydown", function (e) {
+    console.log("тест");
+    if (e.key === "Escape") {
+      popup.classList.remove("open");    
+      bodyUnLock();
+      console.log(popup);
+      // передача формы обратно на главную страницу
+      indexChoice.append(content);
+    }
+  });
+
+  // закрытие popup по клику вне его
+  popup.addEventListener("click", function (e) {
+    console.log("тест");
+    console.log(e.target);
+    if (!e.target.closest(".popup__content")) {
+      // если клик был по области вокруг попапа то ничего не делаем
+      popup.classList.remove("open");   
+      bodyUnLock();
+      indexChoice.append(content);
+    }
+  });
+
+  // закрытие popup по кнопке
+  const popupCloseIcon = popup.querySelector(".promo__close");
+    popupCloseIcon.addEventListener("click", function (e) {
+      console.log("тест");
+      popup.classList.remove("open");    
+      bodyUnLock();
+      indexChoice.append(content);
+    });  
 }
 // -------------------------------------------- end Селект ---------------------------------------------
 // -------------------------------------------- start Карта ---------------------------------------------
