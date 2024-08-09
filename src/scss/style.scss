@@ -5649,6 +5649,12 @@ a {
 
     .promo {
       overflow: hidden;
+
+      @media (max-width: 960px) {
+        // padding: 100px 30px 50px;
+
+    }
+
       .promo__container {
         padding-bottom: 90px;
         display: grid;
@@ -5662,11 +5668,8 @@ a {
 
         @media (max-width: 1200px) {
           gap: 47px;
-        }
-
-        @media (max-width: 1200px) {
-        grid-template-columns: 1fr;
-
+          grid-template-columns: 1fr;
+          padding-bottom: 0;
         }
 
         .promo__title {
@@ -5837,7 +5840,7 @@ a {
             bottom: initial;
             margin: 0;
 
-            @media (max-width: 1200px) {
+            @media (max-width: 560px) {
               width: 45px;
               height: 45px;
             }
@@ -5860,6 +5863,20 @@ a {
       position: relative;
       // min-width: 1920px;
       padding: 0 104px 100px;
+
+      @media (max-width: 1560px) {
+        padding: 0 116px 95px;
+      }
+    
+      @media (max-width: 1300px) {
+        padding: 0 30px 95px;
+
+      }
+    
+      @media (max-width: 560px) {
+        padding: 0 15px 95px;
+
+      }
 
       .news__container {
         // padding: 95px 0 95px;
@@ -5919,9 +5936,22 @@ a {
             grid-auto-flow: row;
             grid-template: auto auto 1fr / 1fr;
             gap: 15px;
+
+            @media (max-width: 560px) {
+              max-width: 325px;
+            }
+
             .news-slider__card-img-wrapper {
               margin-bottom: 10px;
               aspect-ratio: 544 / 280;
+
+              @media (max-width: 960px) {
+                aspect-ratio: 419 / 280;
+              }
+
+              @media (max-width: 560px) {
+                aspect-ratio: 367 / 280;
+              }
 
               & img {
                 display: block;
@@ -5932,6 +5962,7 @@ a {
                 border-radius: 5px;
               }
             }
+
             .news-slider__card-date {
               font-family: Inter;
               font-size: 15px;
@@ -5972,18 +6003,13 @@ a {
           position: absolute;
           top: 0;
           right: 0;
-          // width: 150px;
-          // height: 56px;
           display: grid;
           grid-auto-flow: column;
           justify-content: end;
           gap: 20px;
           align-items: center;
 
-          @media (max-width: 1560px) {
-            top: 95px;
-            right: 114px;
-          }
+
 
           .swiper-button {
             position: relative;
@@ -5994,6 +6020,11 @@ a {
             left: initial;
             bottom: initial;
             margin: 0;
+
+            @media (max-width: 560px) {
+              width: 45px;
+              height: 45px;
+            }
 
             & svg {
               width: 56px;
@@ -6009,6 +6040,14 @@ a {
 
             &.swiper-button-prev_reg {
             }
+          }
+        }
+
+        .news-slider__button {
+
+          @media (max-width: 560px) {
+            max-width: 150px;
+            min-height: 50px;
           }
         }
       }

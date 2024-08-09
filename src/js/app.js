@@ -679,7 +679,15 @@ new Swiper(".news_swiper", {
   // },
   breakpoints: {
     0: {
-      // slidesPerView: 1,
+      slidesPerView: "auto",
+      spaceBetween: 20,
+    },
+    560: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    960: {
+      slidesPerView: "auto",
       spaceBetween: 20,
     },
     1560: {
