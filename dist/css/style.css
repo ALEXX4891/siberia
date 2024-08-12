@@ -7903,12 +7903,38 @@ a {
 .project-page .project-page__section {
   position: relative;
   background: #f5f5f5;
+  padding: 36px 104px 100px;
+}
+@media (max-width: 1560px) {
+  .project-page .project-page__section {
+    padding: 40px 116px 75px;
+  }
+}
+@media (max-width: 1300px) {
+  .project-page .project-page__section {
+    padding: 40px 30px 75px;
+  }
+}
+@media (max-width: 560px) {
+  .project-page .project-page__section {
+    padding: 20px 15px 30px;
+  }
 }
 .project-page .project-page__section .project-page__container {
-  padding: 36px 0 95px;
   display: grid;
-  grid-template: auto 729px/870px 1fr;
-  gap: 40px;
+  grid-template: auto 729px/51% 47%;
+  gap: 40px 2%;
+}
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container {
+    gap: 20px 2%;
+    grid-template: auto 640px/51% 47%;
+  }
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container {
+    grid-template: auto 1fr/51% 47%;
+  }
 }
 .project-page .project-page__section .project-page__container .project-page__top-wrap {
   grid-column: 2 span;
@@ -7918,6 +7944,13 @@ a {
   align-items: center;
   gap: 10px;
 }
+@media (max-width: 560px) {
+  .project-page .project-page__section .project-page__container .project-page__top-wrap {
+    grid-auto-flow: row;
+    gap: 20px;
+    justify-content: initial;
+  }
+}
 .project-page .project-page__section .project-page__container .project-page__top-wrap .project-page__btns-wrap {
   position: relative;
   width: 330px;
@@ -7926,11 +7959,19 @@ a {
   border: 1px solid #d5d5d5;
   border-radius: 50px;
 }
+@media (max-width: 560px) {
+  .project-page .project-page__section .project-page__container .project-page__top-wrap .project-page__btns-wrap {
+    grid-template: auto/1fr;
+    width: 100%;
+  }
+}
 .project-page .project-page__section .project-page__container .project-page__top-wrap .project-page__btns-wrap .project-page__button {
   padding: 9px 10px;
   background: #363636;
   border-radius: 140px;
   border-radius: 50px;
+  display: grid;
+  place-content: center;
 }
 .project-page .project-page__section .project-page__container .project-page__top-wrap .project-page__btns-wrap .project-page__button .project-page__button-text {
   font-family: Inter;
@@ -7940,6 +7981,15 @@ a {
   text-align: center;
   color: #fff;
   text-transform: uppercase;
+}
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__top-wrap .project-page__btns-wrap .project-page__button .project-page__button-text {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    text-align: center;
+  }
 }
 .project-page .project-page__section .project-page__container .project-page__top-wrap .project-page__btns-wrap .project-page__button svg {
   display: none;
@@ -7968,10 +8018,22 @@ a {
 .project-page .project-page__section .project-page__container .project-page__list {
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   overflow: auto;
   padding-right: 10px;
+  align-content: start;
+}
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list {
+    gap: 10px;
+  }
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__list {
+    grid-column: 2 span;
+    padding-right: 0;
+  }
 }
 .project-page .project-page__section .project-page__container .project-page__list::-webkit-scrollbar {
   width: 4px;
@@ -7987,30 +8049,38 @@ a {
   background: #b1b1b1;
 }
 .project-page .project-page__section .project-page__container .project-page__list .project-page__item {
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-rows: 356px 1fr;
-  min-height: 563px;
-  height: max-content;
+  min-height: 475px;
   border-radius: 10px;
   overflow: hidden;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item.project-page__item_no-show {
-  display: none;
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: auto 1fr;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-img {
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img {
   position: relative;
-  height: 356px;
   overflow: hidden;
+  aspect-ratio: 356/300;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-img img {
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img {
+    aspect-ratio: 356/257;
+  }
+}
+@media (max-width: 560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img {
+    aspect-ratio: 356/280;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-img .project-page__card-info {
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info {
   position: absolute;
   top: 0;
   left: 0;
@@ -8022,7 +8092,29 @@ a {
   gap: 15px;
   grid-template-columns: auto auto 1fr;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-img .project-page__card-info .project-page__card-label {
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info {
+    padding: 25px;
+    gap: 10px;
+  }
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info {
+    padding: 20px;
+    gap: 10px;
+  }
+}
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info svg {
+    width: 15px;
+  }
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info svg {
+    width: 30px;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info .project-page__card-label {
   font-family: Inter;
   font-size: 30px;
   font-weight: 500;
@@ -8031,7 +8123,25 @@ a {
   color: #fff;
   text-transform: uppercase;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-img .project-page__card-info .project-page__card-label.project-page__card-label_small {
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info .project-page__card-label {
+    font-family: Inter;
+    font-size: 22.49px;
+    font-weight: 500;
+    line-height: 27.21px;
+    text-align: left;
+  }
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info .project-page__card-label {
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.31px;
+    text-align: left;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info .project-page__card-label.project-page__card-label_small {
   font-family: Inter;
   font-size: 20px;
   font-weight: 700;
@@ -8039,7 +8149,26 @@ a {
   text-align: left;
   color: #fff;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-img .project-page__card-info .project-page__card-info-btn {
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info .project-page__card-label.project-page__card-label_small {
+    font-family: Inter;
+    font-size: 14.99px;
+    font-weight: 700;
+    line-height: 18.14px;
+    text-align: left;
+  }
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info .project-page__card-label.project-page__card-label_small {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    text-align: left;
+    color: #fff;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info .project-page__card-info-btn {
   /* Статус проекта */
   /* Auto layout */
   display: grid;
@@ -8057,21 +8186,60 @@ a {
   color: #56693e;
   text-transform: uppercase;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-content {
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info .project-page__card-info-btn {
+    font-family: Inter;
+    font-size: 11.99px;
+    font-weight: 500;
+    line-height: 14.51px;
+    text-align: center;
+    padding: 8px 12px;
+  }
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-img .project-page__card-info .project-page__card-info-btn {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    text-align: center;
+    padding: 10px 15px;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content {
   padding: 30px;
   display: grid;
-  height: 100%;
+  min-height: 202px;
+  align-content: start;
+  align-items: start;
   grid-template-rows: 1fr auto;
   background: #fff;
   align-self: start;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-content .project-page__card-title {
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content {
+    padding: 20px;
+    min-height: 157px;
+  }
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content {
+    padding: 20px 20px;
+    min-height: 200px;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-title {
   margin-bottom: 15px;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-content .project-page__card-text {
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-title {
+    margin-bottom: 5px;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-text {
   margin-bottom: 55px;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-content .project-page__card-price {
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-price {
   font-family: Inter;
   font-size: 20px;
   font-weight: 400;
@@ -8079,19 +8247,30 @@ a {
   text-align: left;
   color: #000000;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer {
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer {
   padding-top: 15px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   display: grid;
   grid-auto-flow: row;
   gap: 10px;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap {
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer {
+    padding-top: 10px;
+    gap: 5px;
+  }
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer {
+    gap: 9px;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap .project-page__card-key {
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap .project-page__card-key {
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
@@ -8099,7 +8278,12 @@ a {
   text-align: left;
   color: #616161;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap .project-page__card-value {
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap .project-page__card-key {
+    font-size: 14px;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap .project-page__card-value {
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
@@ -8107,7 +8291,16 @@ a {
   text-align: left;
   color: #363636;
 }
-.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__card-content .project-page__card-footer .project-page__card-link {
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer .project-page__card-bot-wrap .project-page__card-value {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer .project-page__card-link {
   margin-top: 10px;
   font-family: Inter;
   font-size: 16px;
@@ -8117,10 +8310,27 @@ a {
   color: #748d55;
   text-decoration: underline;
 }
+@media (max-width: 1560px) {
+  .project-page .project-page__section .project-page__container .project-page__list .project-page__item .project-page__link .project-page__card-content .project-page__card-footer .project-page__card-link {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+    text-align: left;
+  }
+}
+.project-page .project-page__section .project-page__container .project-page__list .project-page__item.project-page__item_no-show {
+  display: none;
+}
 .project-page .project-page__section .project-page__container .project-page__map {
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
+}
+@media (max-width: 1500px) {
+  .project-page .project-page__section .project-page__container .project-page__map {
+    display: none;
+  }
 }
 .project-page.project-page__full-map .project-page__section {
   height: calc(100vh - 70px);
