@@ -2262,6 +2262,73 @@ if (choiceForm) {
   //   });
 }
 
+const projectPage = document.querySelector(".project-item-page");
+if (projectPage) {
+  const projectChoice = projectPage.querySelector(".choice");
+  console.log(projectChoice);
+  const content = projectChoice.querySelector(".choice__container");
+  const popup = document.querySelector("#filter");
+  console.log(popup);
+  const button = projectChoice.querySelector(".choice__btn-request_mobile");
+
+  // открытие popup и заполнение его формой
+  button.addEventListener("click", () => {
+    console.log("тест");
+    popupOpen(popup);
+    bodyLock()
+
+    popup.classList.add("open");
+    popup.querySelector(".popup__content").append(content);
+  });
+
+  // закрытие popup по Esc
+  document.addEventListener("keydown", function (e) {
+    console.log("тест");
+    if (e.key === "Escape") {
+      popupClose(popup);
+      // bodyUnLock()
+
+      popup.classList.remove("open");
+      if (!popup.classList.contains("open")) {
+        console.log("111");
+
+        // передача формы обратно на главную страницу
+        projectChoice.append(content);
+      }
+    }
+  });
+
+  // закрытие popup по клику вне его
+  popup.addEventListener("click", function (e) {
+    console.log("тест");
+    if (!e.target.closest(".popup__content")) {
+      // если клик был по области вокруг попапа то ничего не делаем
+      if (popup.classList.contains("open")) {
+        popupClose(popup);
+        bodyUnLock()
+
+        popup.classList.remove("open");
+        // передача формы обратно на главную страницу
+        projectChoice.append(content);
+      }
+    }
+  });
+
+  // закрытие popup по кнопке
+  const popupCloseIcon = popup.querySelector(".promo__close");
+    popupCloseIcon.addEventListener("click", function (e) {
+      console.log("тест");
+
+      if (popup.classList.contains("open")) {
+        popupClose(popup);
+        bodyUnLock()
+        popup.classList.remove("open");
+        // передача формы обратно на главную страницу
+        projectChoice.append(content);
+      }
+    });  
+}
+
 const indexPage = document.querySelector(".glavnaya");
 if (indexPage) {
   const indexChoice = indexPage.querySelector(".choice");
