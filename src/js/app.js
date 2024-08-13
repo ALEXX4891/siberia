@@ -29,7 +29,7 @@ if (apartmentsPage) {
   console.log(window.scrollY);
 
   if (window.innerWidth >= 1512) {
-    if (window.scrollY > 500 ) {
+    if (window.scrollY > 500) {
       choiceTop.append(el);
       choice.classList.add("choice_fixed");
     }
@@ -48,6 +48,78 @@ if (apartmentsPage) {
   }
 }
 //------------------- end трансформация фильтра----------------
+
+// --------------------------------------- start карта: ---------------------------------------------
+const map = document.querySelector(".map");
+if (map) {
+  const filter = map.querySelectorAll(".map__mark-item_point");
+  filter.forEach((item) => {
+    item.addEventListener("click", function () {
+      console.log("тест");
+      item.classList.toggle("map__mark-item_active");
+      checkAll();
+    });
+  });
+
+  const resetBtns = map.querySelector(".reset-btn");
+
+  resetBtns.addEventListener("click", function () {
+    console.log("тест");
+    filter.forEach((item) => {
+      item.classList.remove("map__mark-item_active");
+      checkAll();
+    });
+  });
+
+  const allBtn = map.querySelector(".map__mark-item-all");
+
+  allBtn.addEventListener("click", function () {
+    console.log("тест");
+    if (allBtn.classList.contains("map__mark-item_active")) {
+      allBtn.classList.remove("map__mark-item_active");
+      filter.forEach((item) => {
+        item.classList.remove("map__mark-item_active");
+      });
+    } else {
+      filter.forEach((item) => {
+        item.classList.add("map__mark-item_active");
+      });
+      allBtn.classList.add("map__mark-item_active");
+    }
+  });
+
+  function checkAll() {
+    console.log("тест");
+    let activeItems = map.querySelectorAll(
+      ".map__mark-item_point.map__mark-item_active"
+    );
+    console.log(activeItems.length);
+    console.log(filter.length);
+
+    if (activeItems.length === filter.length) {
+      allBtn.classList.add("map__mark-item_active");
+    } else {
+      allBtn.classList.remove("map__mark-item_active");
+    }
+  }
+
+  const markListBtnOpen = map.querySelector(".map__menu-btn-filters");
+  const markListBtnClose = map.querySelector(".map__menu-btn-apply");
+
+
+  markListBtnOpen.addEventListener("click", function () {
+    const markList = map.querySelector(".map__mark-list-wrap");
+    console.log("тест");
+    markList.classList.add("map__mark-list-wrap_active");
+  });
+
+  markListBtnClose.addEventListener("click", function () {
+    const markList = map.querySelector(".map__mark-list-wrap");
+    console.log("тест");
+    markList.classList.remove("map__mark-list-wrap_active");
+  });
+}
+// --------------------------------------- end карта: ---------------------------------------------
 // --------------------------------------- start бокове меню: ---------------------------------------------
 const asideMenu = document.querySelector(".aside-menu");
 if (asideMenu) {
@@ -459,7 +531,7 @@ new Swiper(".regions_swiper", {
   direction: "horizontal",
   // loop: true,
   // allowTouchMove: true,
-  // slidesPerView: auto, // сколько слайдов показывать, можно дробно
+  // slidesPerView: 3, // сколько слайдов показывать, можно дробно
   slidesPerView: "auto", // сколько слайдов показывать, можно дробно
   // slidersPerGroup: 3, // сколько слайдов в группе
   // centeredSlides: true, //выравнивание слайдов по центру
@@ -503,6 +575,63 @@ new Swiper(".regions_swiper", {
   },
 });
 
+new Swiper(".regions_swiper_small", {
+  // Optional parameters
+  direction: "horizontal",
+  // loop: true,
+  // allowTouchMove: true,
+  slidesPerView: 3, // сколько слайдов показывать, можно дробно
+  // slidesPerView: "auto", // сколько слайдов показывать, можно дробно
+  // slidersPerGroup: 3, // сколько слайдов в группе
+  // centeredSlides: true, //выравнивание слайдов по центру
+  // initialSlide: 0, //начальный слайд (c нуля)
+
+  spaceBetween: 20,
+  // slideToClickedSlide: true, //перелистывание слайдов по клику
+  // grabCursor: true, //меняет курсор при наведении на руку
+  watchOverflow: true, //отключает слайдер если все слайды входят в область видимости
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next_reg",
+    prevEl: ".swiper-button-prev_reg",
+  },
+  // pagination: {
+  //   el: ".swiper-pagination",
+  //   clickable: true,
+  // },
+  // mousewheel: { //перелистывание слайдов по мышке
+  //   sensitivity: 1,
+  //   eventsTarget: ".news__slider",
+  // },
+  // keyboard: { //перелистывание слайдов по нажатию клавиш
+  //   enabled: true,
+  //   onlyInViewport: true,
+  //   // pageUpDown: true,
+  // },
+  breakpoints: {
+    0: {
+      // slidesPerView: 1,
+      spaceBetween: 10,
+      slidesPerView: "auto", // сколько слайдов показывать, можно дробно
+    },
+    800: {
+      // slidesPerView: 1,
+      spaceBetween: 20,
+      slidesPerView: 2,
+    },
+    1300: {
+      // spaceBetween: 40,
+
+      spaceBetween: 10,
+    },
+    1560: {
+      // spaceBetween: 40,
+
+      spaceBetween: 20,
+    },
+  },
+});
 
 if (window.innerWidth >= 560) {
   new Swiper(".apartments_swiper", {
@@ -558,9 +687,9 @@ new Swiper(".commercial_swiper", {
   direction: "horizontal",
   // loop: true,
   // allowTouchMove: true,
-  // slidesPerView: auto, // сколько слайдов показывать, можно дробно
-  slidesPerView: "auto", // сколько слайдов показывать, можно дробно
-  // slidersPerGroup: 3, // сколько слайдов в группе
+  slidesPerView: 3, // сколько слайдов показывать, можно дробно
+  // slidesPerView: "auto", // сколько слайдов показывать, можно дробно
+  slidersPerGroup: 3, // сколько слайдов в группе
   // centeredSlides: true, //выравнивание слайдов по центру
   // initialSlide: 0, //начальный слайд (c нуля)
 
@@ -638,7 +767,6 @@ new Swiper(".promo_swiper", {
     0: {
       // slidesPerView: 1,
       slidesPerView: "auto", // сколько слайдов показывать, можно дробно
-
     },
     560: {
       // slidesPerView: 2,
@@ -854,7 +982,7 @@ function popupOpen(curentPopup) {
 function popupClose(popupActive, doUnlock = true) {
   console.log("popupClose");
   if (unlock) {
-    popupActive.classList.remove("open");    
+    popupActive.classList.remove("open");
     if (doUnlock) {
       bodyUnLock();
     }
@@ -1718,7 +1846,6 @@ if (burger) {
   const content = document.querySelector(".header__nav");
   const headerNavWrap = document.querySelector(".header__nav-wrap");
 
-
   burger.addEventListener("click", function (e) {
     console.log("тест");
     popupOpen(popup);
@@ -1728,48 +1855,46 @@ if (burger) {
     console.log(popup);
   });
 
-    // закрытие popup по Esc
-    document.addEventListener("keydown", function (e) {
-      console.log("тест");
-      if (e.key === "Escape") {
-        popupClose(popup);
-        bodyUnLock()
-        popup.classList.remove("open");    
-        if (popup.classList.contains("open")) {
-
-          // передача формы обратно на главную страницу
-          headerNavWrap.append(content);
-        }
+  // закрытие popup по Esc
+  document.addEventListener("keydown", function (e) {
+    console.log("тест");
+    if (e.key === "Escape") {
+      popupClose(popup);
+      bodyUnLock();
+      popup.classList.remove("open");
+      if (popup.classList.contains("open")) {
+        // передача формы обратно на главную страницу
+        headerNavWrap.append(content);
       }
-    });
-  
-    // закрытие popup по клику вне его
-    popup.addEventListener("click", function (e) {
-      console.log("тест");
-      console.log(e.target);
-      if (!e.target.closest(".popup__content")) {
-        popupClose(popup);
-        bodyUnLock()
-        popup.classList.remove("open");    
-        if (popup.classList.contains("open")) {
-          // передача формы обратно на главную страницу
-          headerNavWrap.append(content);
-        }
-      }
-    });
-  
-    // закрытие popup по кнопке
-    const popupCloseIcon = popup.querySelector(".promo__close");
-      popupCloseIcon.addEventListener("click", function (e) {
-        popupClose(popup);
-        bodyUnLock()
-        popup.classList.remove("open");    
-        if (popup.classList.contains("open")) {
-          // передача формы обратно на главную страницу
-          headerNavWrap.append(content);
-        }
-      }); 
+    }
+  });
 
+  // закрытие popup по клику вне его
+  popup.addEventListener("click", function (e) {
+    console.log("тест");
+    console.log(e.target);
+    if (!e.target.closest(".popup__content")) {
+      popupClose(popup);
+      bodyUnLock();
+      popup.classList.remove("open");
+      if (popup.classList.contains("open")) {
+        // передача формы обратно на главную страницу
+        headerNavWrap.append(content);
+      }
+    }
+  });
+
+  // закрытие popup по кнопке
+  const popupCloseIcon = popup.querySelector(".promo__close");
+  popupCloseIcon.addEventListener("click", function (e) {
+    popupClose(popup);
+    bodyUnLock();
+    popup.classList.remove("open");
+    if (popup.classList.contains("open")) {
+      // передача формы обратно на главную страницу
+      headerNavWrap.append(content);
+    }
+  });
 }
 // -------------------------------------------- end BURGER ---------------------------------------------
 
@@ -2275,7 +2400,7 @@ if (projectPage) {
   button.addEventListener("click", () => {
     console.log("тест");
     popupOpen(popup);
-    bodyLock()
+    bodyLock();
 
     popup.classList.add("open");
     popup.querySelector(".popup__content").append(content);
@@ -2305,7 +2430,7 @@ if (projectPage) {
       // если клик был по области вокруг попапа то ничего не делаем
       if (popup.classList.contains("open")) {
         popupClose(popup);
-        bodyUnLock()
+        bodyUnLock();
 
         popup.classList.remove("open");
         // передача формы обратно на главную страницу
@@ -2316,17 +2441,17 @@ if (projectPage) {
 
   // закрытие popup по кнопке
   const popupCloseIcon = popup.querySelector(".promo__close");
-    popupCloseIcon.addEventListener("click", function (e) {
-      console.log("тест");
+  popupCloseIcon.addEventListener("click", function (e) {
+    console.log("тест");
 
-      if (popup.classList.contains("open")) {
-        popupClose(popup);
-        bodyUnLock()
-        popup.classList.remove("open");
-        // передача формы обратно на главную страницу
-        projectChoice.append(content);
-      }
-    });  
+    if (popup.classList.contains("open")) {
+      popupClose(popup);
+      bodyUnLock();
+      popup.classList.remove("open");
+      // передача формы обратно на главную страницу
+      projectChoice.append(content);
+    }
+  });
 }
 
 const indexPage = document.querySelector(".glavnaya");
@@ -2342,7 +2467,7 @@ if (indexPage) {
   button.addEventListener("click", () => {
     console.log("тест");
     popupOpen(popup);
-    bodyLock()
+    bodyLock();
 
     popup.classList.add("open");
     popup.querySelector(".popup__content").append(content);
@@ -2372,7 +2497,7 @@ if (indexPage) {
       // если клик был по области вокруг попапа то ничего не делаем
       if (popup.classList.contains("open")) {
         popupClose(popup);
-        bodyUnLock()
+        bodyUnLock();
 
         popup.classList.remove("open");
         // передача формы обратно на главную страницу
@@ -2383,17 +2508,17 @@ if (indexPage) {
 
   // закрытие popup по кнопке
   const popupCloseIcon = popup.querySelector(".promo__close");
-    popupCloseIcon.addEventListener("click", function (e) {
-      console.log("тест");
+  popupCloseIcon.addEventListener("click", function (e) {
+    console.log("тест");
 
-      if (popup.classList.contains("open")) {
-        popupClose(popup);
-        bodyUnLock()
-        popup.classList.remove("open");
-        // передача формы обратно на главную страницу
-        indexChoice.append(content);
-      }
-    });  
+    if (popup.classList.contains("open")) {
+      popupClose(popup);
+      bodyUnLock();
+      popup.classList.remove("open");
+      // передача формы обратно на главную страницу
+      indexChoice.append(content);
+    }
+  });
 }
 // -------------------------------------------- end Селект ---------------------------------------------
 // -------------------------------------------- start Карта ---------------------------------------------
@@ -2544,13 +2669,6 @@ $(document).ready(function () {
   });
 });
 
-const mapMarks = document.querySelector(".map__mark-item");
-if (mapMarks) {
-  mapMarks.addEventListener("click", (event) => {
-    console.log("тест");
-    mapMarks.classList.toggle("map__mark-item_active");
-  });
-}
 // -------------------------------------------- end Карта ---------------------------------------------
 //--------------------------Запрос к БД----------------------------
 // Загружаем список контрагентов с БД:

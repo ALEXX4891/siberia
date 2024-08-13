@@ -8418,7 +8418,7 @@ a {
   grid-column: 2 span;
   position: relative;
 }
-@media (max-width: 1512px) {
+@media (max-width: 1560px) {
   .project-item-page .project-item-page__main .about .about__container .about__img-wrap {
     aspect-ratio: 538/300;
   }
@@ -8437,7 +8437,7 @@ a {
   border-radius: 10px;
   display: block;
 }
-@media (max-width: 1512px) {
+@media (max-width: 1560px) {
   .project-item-page .project-item-page__main .about .about__container .about__img-wrap .about__img {
     object-fit: cover;
     width: 100%;
@@ -9203,17 +9203,17 @@ a {
 }
 @media (max-width: 1560px) {
   .project-item-page .project-item-page__main .slim .regions {
-    padding: 105px 116px;
+    padding: 15px 116px;
   }
 }
 @media (max-width: 1300px) {
   .project-item-page .project-item-page__main .slim .regions {
-    padding: 80px 30px;
+    padding: 20px 30px;
   }
 }
 @media (max-width: 560px) {
   .project-item-page .project-item-page__main .slim .regions {
-    padding: 80px 15px;
+    padding: 100px 15px;
   }
 }
 .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap {
@@ -9222,22 +9222,14 @@ a {
   min-width: 0;
   overflow: hidden;
 }
+@media (max-width: 1300px) {
+  .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap {
+    overflow: initial;
+  }
+}
 .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__title {
-  max-width: 1712px;
-  width: 100%;
-  text-align: left;
   margin: 0;
   margin-bottom: 42px;
-}
-@media (max-width: 1750px) {
-  .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__title {
-    max-width: 1280px;
-  }
-}
-@media (max-width: 1400px) {
-  .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__title {
-    padding: 0 30px;
-  }
 }
 @media (max-width: 960px) {
   .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__title {
@@ -9246,14 +9238,8 @@ a {
 }
 @media (max-width: 660px) {
   .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__title {
-    padding: 0 15px;
     margin: 0 auto 38px;
   }
-}
-.project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__list {
-  max-width: 1920px;
-  margin: 0;
-  height: max-content;
 }
 .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__list .regions__item {
   position: relative;
@@ -9269,6 +9255,12 @@ a {
   background: linear-gradient(231.8deg, #9abc6f 4.26%, #7bad3b 100%);
   border-radius: 10px;
 }
+@media (max-width: 1560px) {
+  .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__list .regions__item {
+    min-height: 300px;
+    padding: 30px;
+  }
+}
 @media (max-width: 960px) {
   .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__list .regions__item {
     min-height: 262px;
@@ -9276,7 +9268,7 @@ a {
     padding: 30px;
   }
 }
-@media (max-width: 660px) {
+@media (max-width: 800px) {
   .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .regions__list .regions__item {
     padding: 20px;
     max-width: 335px;
@@ -9454,6 +9446,16 @@ a {
   gap: 20px;
   align-items: center;
 }
+@media (max-width: 1300px) {
+  .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .swiper-navigation {
+    gap: 10px;
+  }
+}
+@media (max-width: 560px) {
+  .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .swiper-navigation {
+    top: -5px;
+  }
+}
 .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .swiper-navigation .swiper-button {
   position: relative;
   width: 56px;
@@ -9464,6 +9466,12 @@ a {
   bottom: initial;
   margin: 0;
 }
+@media (max-width: 1300px) {
+  .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .swiper-navigation .swiper-button {
+    width: 45px;
+    height: 45px;
+  }
+}
 .project-item-page .project-item-page__main .slim .regions .regions__container .regions__wrap .swiper-navigation .swiper-button svg {
   width: 56px;
   height: 56px;
@@ -9472,11 +9480,11 @@ a {
   display: none;
 }
 .project-item-page .project-item-page__main .slim .geo {
-  padding: 0 104px 100px;
+  padding: 20px 104px 100px;
 }
 @media (max-width: 1560px) {
   .project-item-page .project-item-page__main .slim .geo {
-    padding: 0 116px 100px;
+    padding: 95px 116px 100px;
   }
 }
 @media (max-width: 1300px) {
@@ -9491,27 +9499,29 @@ a {
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap {
   display: grid;
-  grid-template-columns: 544px 1fr;
-  grid-template-rows: 48px 88px 20px 800px;
+  grid-template-columns: 1fr 796px;
   gap: 22px;
 }
-@media (max-width: 1512px) {
+@media (max-width: 1660px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap {
-    grid-template-rows: 48px 88px 20px 758px;
+    grid-template-columns: 1fr 600px;
     gap: 20px 75px;
   }
 }
-@media (max-width: 1250px) {
+@media (max-width: 1400px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap {
     grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(86px, auto) auto 758px;
+    grid-auto-flow: row;
+    gap: 13px;
   }
 }
-@media (max-width: 660px) {
+@media (max-width: 560px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(120px, auto) auto 484px;
+    gap: 20px;
   }
+}
+.project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__title {
+  color: #363636;
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__desc {
   max-width: 500px;
@@ -9522,24 +9532,42 @@ a {
   text-align: left;
   color: #616161;
 }
+@media (max-width: 1300px) {
+  .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__desc {
+    max-width: 100%;
+  }
+}
+@media (max-width: 560px) {
+  .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__desc {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+  }
+}
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__advantages-list {
   grid-area: 1/2/3/3;
   max-width: 800px;
   justify-self: end;
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 314px));
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 20px;
+  align-content: start;
 }
-@media (max-width: 1250px) {
+@media (max-width: 1560px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__advantages-list {
-    grid-column: initial;
-    grid-row: initial;
-    justify-self: center;
+    padding-top: 40px;
+    gap: 10px;
   }
 }
-@media (max-width: 960px) {
+@media (max-width: 1400px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__advantages-list {
-    margin-bottom: 40px;
+    grid-area: initial;
+    margin-bottom: 10px;
+    justify-self: initial;
+    max-width: 100%;
+    padding-top: 27px;
   }
 }
 @media (max-width: 560px) {
@@ -9559,11 +9587,11 @@ a {
   gap: 15px 17px;
   padding: 31px 53px;
   width: 100%;
-  height: 100%;
+  min-height: 140px;
   border: 1px solid #ededed;
   border-radius: 5px;
 }
-@media (max-width: 1512px) {
+@media (max-width: 1560px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__advantages-list .geo__advantages-item {
     gap: 0 17px;
     box-sizing: border-box;
@@ -9573,12 +9601,15 @@ a {
 @media (max-width: 960px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__advantages-list .geo__advantages-item {
     padding: 23px;
+    min-height: 150px;
   }
 }
 @media (max-width: 560px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__advantages-list .geo__advantages-item {
-    width: 100%;
     padding: 19px;
+    grid-template: auto auto/7fr 5fr;
+    gap: 0 15px;
+    min-height: 116px;
   }
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__advantages-list .geo__advantages-item .geo__advantages-title {
@@ -9589,6 +9620,14 @@ a {
   text-align: right;
   color: #000000;
   white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__advantages-list .geo__advantages-item .geo__advantages-title {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.78px;
+  }
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__advantages-list .geo__advantages-item .geo__advantages-desc {
   align-self: start;
@@ -9601,19 +9640,31 @@ a {
   color: #616161;
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map {
+  margin-top: 35px;
   position: relative;
   width: 100%;
   height: 100%;
   border: 1px solid #ededed;
   grid-column: 2 span;
-  grid-row: 4/5;
   border-radius: 10px;
   overflow: hidden;
+  height: 800px;
 }
-@media (max-width: 1250px) {
+@media (max-width: 1560px) {
+  .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map {
+    height: 755px;
+  }
+}
+@media (max-width: 1400px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map {
     grid-column: initial;
     grid-row: initial;
+  }
+}
+@media (max-width: 560px) {
+  .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map {
+    margin-top: 0;
+    height: 484px;
   }
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__container {
@@ -9657,11 +9708,13 @@ a {
   display: grid;
   grid-auto-flow: row;
   align-content: start;
+  transition: opacity 0.8s ease 0s, visibility 0.8s ease 0s;
 }
-@media (max-width: 1512px) {
+@media (max-width: 1560px) {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap {
     top: 40px;
     left: 40px;
+    bottom: 40px;
     padding: 40px;
     max-width: 425px;
   }
@@ -9670,7 +9723,18 @@ a {
   .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap {
     opacity: 0;
     visibility: hidden;
+    top: initial;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: initial;
+    padding: 30px;
+    gap: 110px;
   }
+}
+.project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap.map__mark-list-wrap_active {
+  opacity: 1;
+  visibility: visible;
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap .map__title {
   font-family: Inter;
@@ -9679,6 +9743,11 @@ a {
   line-height: 30.26px;
   text-align: left;
   color: #000;
+}
+@media (max-width: 960px) {
+  .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap .map__title {
+    display: none;
+  }
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap .map__mark-list {
   display: grid;
@@ -9696,8 +9765,9 @@ a {
   font-weight: 400;
   line-height: 24.2px;
   text-align: left;
-  color: rgba(0, 0, 0, 0.6);
+  color: #333333;
   cursor: pointer;
+  opacity: 0.6;
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap .map__mark-list .map__mark-item .map__mark-text {
   justify-self: start;
@@ -9706,10 +9776,63 @@ a {
   justify-self: end;
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap .map__mark-list .map__mark-item_active {
-  color: black;
+  opacity: 1;
 }
 .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap .map__mark-list .map__mark-item_active svg path {
-  fill: #000000;
+  fill: #fff;
+  stroke: #fff;
+}
+.project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap .map__mark-list .map__mark-item_active svg clipPath {
+  fill: blue;
+}
+.project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__mark-list-wrap .map__mark-list .map__mark-item_active svg circle {
+  fill: #748D55;
+}
+.project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .btn-wrap {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template: 1fr/1fr 1fr;
+  gap: 15px;
+  display: none;
+}
+@media (max-width: 960px) {
+  .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .btn-wrap {
+    display: grid;
+  }
+}
+.project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .btn-wrap .map__menu-btn-apply {
+  min-height: 54px;
+}
+.project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .btn-wrap .map__menu-btn-reset {
+  min-height: 54px;
+  max-width: 100%;
+}
+.project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__menu-btn-filters {
+  padding: 16px 16px;
+  width: initial;
+  max-width: initial;
+  min-height: 59px;
+  display: none;
+  opacity: 1;
+  border: 1px solid #EDEDED;
+}
+@media (max-width: 960px) {
+  .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__menu-btn-filters {
+    display: grid;
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+@media (max-width: 560px) {
+  .project-item-page .project-item-page__main .slim .geo .geo__container .geo__wrap .geo__map .map__menu-btn-filters {
+    width: initial;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    min-height: 49px;
+  }
 }
 .project-item-page .project-item-page__main .slim .commercial {
   position: relative;
@@ -9746,7 +9869,6 @@ a {
   max-width: 100%;
 }
 .project-item-page .project-item-page__main .slim .commercial .commercial__container .commercial__wrap .commercial__list {
-  grid-column: 3 span;
   min-width: 0;
   height: max-content;
 }
