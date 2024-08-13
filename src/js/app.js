@@ -719,13 +719,25 @@ new Swiper(".commercial_swiper", {
   breakpoints: {
     0: {
       // slidesPerView: 1,
+      spaceBetween: 10,
+      slidesPerView: 1, // сколько слайдов показывать, можно дробно
+      
+    },    
+    760: {
+      // slidesPerView: 1,
+      spaceBetween: 10,
+      slidesPerView: 2, // сколько слайдов показывать, можно дробно
+      
     },
-    500: {
-      // slidesPerView: 2,
+    1460: {
+      spaceBetween: 10,
+
+      slidesPerView: 3, // сколько слайдов показывать, можно дробно
     },
-    800: {
-      // slidesPerView: 3.35,
-    },
+    1560: {
+        spaceBetween: 20,
+
+    }
   },
 });
 
